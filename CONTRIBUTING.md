@@ -4,8 +4,8 @@
 Hello team! Please follwing the following guidelines when contributing to the reop!
 
 Our app will be deployed on the following 2 websites.
-  * https://regexellence.[hostingSite].com
-  * https://regexellencetest.[hostingSite].com
+  * https://regexcellence.[hostingSite].com
+  * https://regexcellencetest.[hostingSite].com
 
 All changes will initially be deployed to our test domain before merging to the master.
 
@@ -21,8 +21,8 @@ Make sure that you have properly forked the repo before cloning the repo into yo
 1) Clone repository onto your local workstation
 2) Upon cloning make sure to add the remote for your upstream repository.
 ```sh
-$ git clone https://github.com/[insert_username]/Regexellence.git
-$ git remote add upstream https://github.com/Regexellence/Regexellence.git
+$ git clone https://github.com/[insert_username]/Regexcellence.git
+$ git remote add upstream https://github.com/Regexcellence/Regexellence.git
 ```
 3) Checkout to the "dev" branch. This is where most of your edits will be made.
 ```sh
