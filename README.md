@@ -8,7 +8,9 @@ An application that provides the user with a variety of Regular Expression toy p
 
 # Install
 Make sure you have Eslint installed to run linter. 
-	i.e. npm i -g eslint
+	i.e. ```
+	npm i -g eslint
+	```
 
 # Style Guide
 
@@ -22,8 +24,10 @@ Space before leading brace. eslint: space-before-blocks jscs: requireSpaceBefore
 
 
 Function declarations: eslint: func-style jscs: requireFunctionDeclarations
-````const x = function () {};
-const y = function a() {};```
+````sh
+const x = function () {};
+const y = function a() {};
+```
 Expressions: eslint: space-infix-ops jscs: requireSpaceBeforeBinaryOperators, requireSpaceAfterBinaryOperators
 Set off operators with spaces. 
 
@@ -31,7 +35,9 @@ Set off operators with spaces.
 React (ES6)
 Component flow eslint: ???
 e.g.
-```export default class Comp extends React.Component({
+
+```sh
+export default class Comp extends React.Component({
 	constructor() {
 
 	}
@@ -39,34 +45,35 @@ e.g.
 
 	}
 	//...helper functions
-})```
+})
+```
 
 # Greenfield Notes
--Standards
-	-style guide/linting before commits
-	-readme - constant updates
-	-standard JSON
--standups - peer review
--comments - why you did it
--mobile - React/CSS from beginning
--moment.js
+* Standards
+	* style guide/linting before commits
+	* readme - constant updates
+	* standard JSON
+* standups - peer review
+* comments - why you did it
+* mobile - React/CSS from beginning
+* moment.js
 
 # File Structure
--client/
-	-components/
-		-dummyComponents/
-		-smartComponents/
-	-app.jsx
-	-styles/
-		-main.css
--server/
--tests/
--bower.json
--node_modules/*
--index.js
--.eslintrc
--package.json
--README.md
--CONTRIBUTING.md
--LICENSE
++--client/
+|	+--components/
+|		+--dummyComponents/
+|		+--smartComponents/
+|	+--app.jsx
+|	+--styles/
+|		+--main.css
++--server/
++--tests/
++--bower.json
++--node_modules/*
++--index.js
++--.eslintrc
++--package.json
++--README.md
++--CONTRIBUTING.md
++--LICENSE
 
