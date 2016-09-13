@@ -66,11 +66,11 @@ Pull Requests will be made from your feature branch and will be compared with th
 ### Multiline Commits
 When implementing complex features make sure to provide a thorough descriptions of the feature within your commit message. Provide 2-3 sentences describing the feature, how to use it, and any outstanding issues on your feature.
 
-    ```sh
-        $ git add .
-        $ git commit
-        i
-        [commit messages]
-        esc
-        $ :wq
-    ```
+```sh
+$ git add .
+$ git commit
+i
+[commit messages]
+esc
+$ :wq
+```
