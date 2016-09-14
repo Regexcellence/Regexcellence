@@ -15,7 +15,7 @@ const PATHS = {
 
 const common = {
   entry: {
-  	app: PATHS.app + '/app.js',
+  	app: PATHS.app + '/app.jsx',
     style: PATHS.style,
   	vendor: Object.keys(pkg.dependencies)
   },
@@ -27,7 +27,27 @@ const common = {
   	new HtmlWebpackPlugin({
   		title: 'Testing'
   	})
-  ]
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        //Cache directory improves performance.
+        loaders: ['babel?cacheDirectory'],
+        include: PATHS.app
+      }
+    ],
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: PATHS.app
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 };
 
 var config;
