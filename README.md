@@ -1,4 +1,5 @@
 TODO: Use eslint-plugin-react
+TODO: Use webpack --watch => watches for changes?
 
 # Regexellence
 
@@ -7,30 +8,31 @@ TODO: Use eslint-plugin-react
 An application that provides the user with a variety of Regular Expression toy problems, provided in sequential difficulty. 
 
 # Install
+For developing: 
 Make sure you have Eslint installed to run linter. 
-	i.e. ```
-	npm i -g eslint
-	```
+$ npm i -g eslint
+Webpack for deploying and linting: 
+$ npm install webpack -g
 
 # Style Guide
 
-Function Declarations
+Uses Airbnb Style Guide
 
-Whitespace 
-Tabs: 
-Use soft tabs set to 2 spaces. eslint: indent jscs: validateIndentation
-Blocks:
-Space before leading brace. eslint: space-before-blocks jscs: requireSpaceBeforeBlockStatements
-
-
-Function declarations: eslint: func-style jscs: requireFunctionDeclarations
-````sh
-const x = function () {};
-const y = function a() {};
-```
-Expressions: eslint: space-infix-ops jscs: requireSpaceBeforeBinaryOperators, requireSpaceAfterBinaryOperators
-Set off operators with spaces. 
-
+If you want to escape the linter: 
+	// For everything:
+	/* eslint-disable */
+	...
+	/* eslint-enable */
+	// For specific rule:
+	/* eslint-disable no-unused-vars */
+	...
+	/* eslint-enable no-unused-vars */
+	// For tweaking a rule:
+	/* eslint no-comma-dangle:1 */
+	// To disable rule per line:
+	alert('foo'); // eslint-disable-line no-alert
+	//For the entire file: 
+	/*eslint-env node, mocha */
 
 React (ES6)
 Component flow eslint: ???
@@ -63,9 +65,15 @@ export default class Comp extends React.Component({
 |	+--components/
 |		+--dummyComponents/
 |		+--smartComponents/
+|	+--containers/
+|	+--reducers/
 |	+--app.jsx
 |	+--styles/
 |		+--main.css
+|	+--index.html
++--build/
++--libs/
+|	+--parts.js
 +--server/
 +--tests/
 +--bower.json
