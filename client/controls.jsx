@@ -3,7 +3,7 @@ import React from 'react';
 export default class Controls extends React.Component {
 	render() {
 		return (
-			<h1>Im in controls same with me wooooo</h1>
+			<h3>Im in controls same with me wooooo hi lucy and ben hi chris and troy!</h3>
 		);
 	}
 }

@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//For creating eventual <Provider /> tag
+import { Provider } from 'react-redux';
+//To create 'store' variable
+import { createStore } from 'redux';
 
 import Controls from './controls';
 
@@ -14,4 +18,4 @@ class App extends React.Component {
 	}
 }
 
-ReactDOM.render(<App />, document.body);
+ReactDOM.render(<App />, document.getElementById('main'));
