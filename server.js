@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/build/index.html')
 });
 
-app.listen(3000, console.log('Listening on http://localhost:3000/'));
+app.listen(port, function() {console.log(`Listening on http://localhost:${port}/`)});

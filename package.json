@@ -4,7 +4,8 @@
   "description": "Version 0.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base build/",
+    "start": "node server.js",
+    "webStart": "webpack-dev-server --content-base build/",
     "build": "webpack",
     "devServer": "webpack-dev-server --content-base build/",
     "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
