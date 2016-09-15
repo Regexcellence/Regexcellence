@@ -25,7 +25,8 @@ const common = {
   },
   plugins: [
   	new HtmlWebpackPlugin({
-  		title: 'Testing'
+  		title: 'Regexcellence',
+      template: PATHS.app + '/index.ejs'
   	})
   ],
   module: {
@@ -35,6 +36,10 @@ const common = {
         //Cache directory improves performance.
         loaders: ['babel?cacheDirectory'],
         include: PATHS.app
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ],
     preLoaders: [
@@ -46,13 +51,23 @@ const common = {
     ]
   },
   resolve: {
+    //Empty string needed. 
     extensions: ['', '.js', '.jsx']
+  },
+  node: {
+    // For fixing erorr in modules 'fs' and 'net'
+    fs: 'empty',
+    net: 'empty'
   }
 };
 
 var config;
+
+const TARGET = process.env.npm_lifecycle_event;
 // Detect how npm is run and branch based on that
-switch(process.env.npm_lifecycle_event) {
+process.env.BABEL_ENV = TARGET;
+
+switch(TARGET) {
   case 'build':
     config = merge(common, 
     	{
@@ -72,13 +87,14 @@ switch(process.env.npm_lifecycle_event) {
 			),
 			parts.extractBundle({
         name: 'vendor',
-        entries: ['react']
+        entries: ['react', 'redux', 'react-redux']
 			}),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
       parts.purifyCSS([PATHS.app])
     );
     break;
+
   default:
     config = merge(common, 
     	{
@@ -92,6 +108,4 @@ switch(process.env.npm_lifecycle_event) {
 			})
     );
 }
-
-module.exports = validate(config); 
-
+module.exports = validate(config);
