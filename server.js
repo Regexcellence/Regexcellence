@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 app.set('port', port);
 
-//app.use(express.static(path.join(__dirname, '/build')));
+// app.use(express.static(path.join(__dirname, '/build')));
 
 app.get('/*', (req, res) => {
   console.log('Serving ' + req.url);

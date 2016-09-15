@@ -36,6 +36,10 @@ const common = {
         //Cache directory improves performance.
         loaders: ['babel?cacheDirectory'],
         include: PATHS.app
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ],
     preLoaders: [
@@ -49,6 +53,11 @@ const common = {
   resolve: {
     //Empty string needed. 
     extensions: ['', '.js', '.jsx']
+  },
+  node: {
+    // For fixing erorr in modules 'fs' and 'net'
+    fs: 'empty',
+    net: 'empty'
   }
 };
 

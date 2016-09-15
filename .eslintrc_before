@@ -8,3 +8,10 @@
     "space-infix-ops": 1
   }
 }
+
+ // "extends": "airbnb",
+    // "plugins": [
+    //     "react",
+    //     "jsx-a11y",
+    //     "import"
+    // ]
