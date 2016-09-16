@@ -3,9 +3,9 @@ import Challenge from './challenge';
 import Progress from './progress';
 import Lesson from './lesson';
 
-class Main extends Component{
+class Main extends Component {
   render(){
-    return(
+    return (
       <div>
         <Progress />
         <Lesson />
