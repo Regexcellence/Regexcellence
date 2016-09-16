@@ -26,7 +26,7 @@ exports.devServer = function(options) {
 		  host: options.host, // Defaults to `localhost` 
 		  port: options.port, // Defaults to 8080
 		  proxy: {
-		  	"/api": {
+		  	"/regex/*": {
 		  		"target": {
 		  			"host": "localhost",
 		  			"protocol": "http:",

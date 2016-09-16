@@ -35,7 +35,7 @@ const common = {
         test: /\.jsx?$/,
         //Cache directory improves performance.
         loaders: ['babel?cacheDirectory'],
-        include: PATHS.app
+        include: PATHS.app,
       },
       {
         test: /\.json$/,
@@ -49,6 +49,11 @@ const common = {
         include: PATHS.app
       }
     ]
+  },
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   },
   resolve: {
     //Empty string needed. 
