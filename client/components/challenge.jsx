@@ -1,73 +1,23 @@
 import React, { Component } from 'react';
 import TestResult from './testResult';
 
-class Challenge extends Component {
+export default class Challenge extends Component {
   constructor(props) {
     super(props);
-
     const challengeInfo = [
       { id: 1, case: 'abcd', result: null, task: 'Match', expectation: true },
       { id: 2, case: 'acd', result: null, task: 'Skip', expectation: false },
-      { id: 3, case: 'abcde', result: null, task: 'Match', expectation: true }];
-
-    // const tests = [
-    //   {
-    //     case: 'abcd',
-    //     expectation: true,
-    //   },
-    //   {
-    //     case: 'acd',
-    //     expectation: false,
-    //   },
-    //   {
-    //     case: 'abcde',
-    //     expectation: true,
-    //   },
-    // ];
+      { id: 3, case: 'abcde', result: null, task: 'Match', expectation: true }
+    ];
     this.state = {
       challengeInfo,
-      solution: 'abc',
       input: '',
     };
-
     this.checkRegex = this.checkRegex.bind(this);
+    this.setFlag = this.setFlag.bind(this);
+    this.setFlagsToNull = this.setFlagsToNull.bind(this);
+    this.changeInputState = this.changeInputState.bind(this);
   }
-
-  checkRegex(event, testCases = this.state.challengeInfo) {
-    event.preventDefault();
-    this.setState({ input: event.target.value });
-    const regex = new RegExp(this.state.input);
-    let passed = true;
-
-    testCases.forEach((test) => {
-        if (regex.test(test.case) !== test.expectation) {
-            passed = false;
-            this.setState({
-                challengeInfo: this.state.challengeInfo.map((item) => {
-                    if (test.id === item.id) {
-                        item.result = false;
-                    }
-                    return item;
-                }),
-            });
-        } else {
-          this.setState({
-              challengeInfo: this.state.challengeInfo.map((item) => {
-                  if (test.id === item.id) {
-                      item.result = true;
-                  }
-                  return item;
-              }),
-          });
-        }
-    });
-    console.log('***passed***', passed);
-    return passed;
-}
-
-  // onInputChange(event){
-  //   this.setState({ input: event.target.value});
-  // }
   render() {
     const table = this.state.challengeInfo.map(item => (
       <tr>
@@ -97,7 +47,7 @@ class Challenge extends Component {
             className="form-control"
             placeholder="enter your pattern here..."
             value={this.state.input}
-            onChange={this.checkRegex}
+            onChange={this.changeInputState}
           />
           <span className="input-group-btn">
             <button type="submit" className="btn btn-secondary">
@@ -108,6 +58,44 @@ class Challenge extends Component {
       </div>
     );
   }
+  changeInputState(event) {
+    event.preventDefault();
+    //Keep in mind setState is asynchronous, so callback here neccessary.
+    this.setState({ input: event.target.value }, () => {
+      this.checkRegex();
+    });
+  }
+  checkRegex(testCases = this.state.challengeInfo) {
+   
+    //For reseting flags to null when there's no input.
+    if (!this.state.input) {
+      this.setFlagsToNull(testCases);
+      return; 
+    }
+    const regex = new RegExp(this.state.input);
+    let passed = true;
+    testCases.forEach(test => {
+        if (regex.test(test.case) !== test.expectation) {
+          passed = false;
+          this.setFlag(test, false);
+        } else {
+          this.setFlag(test, true);
+        }
+    });
+    console.log('***passed***', passed);
+    return passed;
+  }
+  setFlag(itemToChange, flagValue) {
+    this.setState({
+        challengeInfo: this.state.challengeInfo.map(test => {
+            if (itemToChange.id === test.id) {
+                itemToChange.result = flagValue;
+            }
+            return test;
+        }),
+    });
+  }
+  setFlagsToNull(testCases) {
+    testCases.forEach(test => this.setFlag(test, null));
+  }
 }
-
-export default Challenge;

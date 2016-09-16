@@ -21,7 +21,7 @@ export default class TestResult extends Component {
         </div>
       );
     } else {
-      return <div> HELLO </div>;
+      return <div></div>;
     }
   }
 }
