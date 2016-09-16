@@ -88,9 +88,9 @@ class Challenge extends Component {
             onChange={this.checkRegex.bind(this)}
           />
           <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">
-            submit
-          </button>
+            <button type="submit" className="btn btn-secondary">
+              submit
+            </button>
           </span>
         </form>
       </div>
