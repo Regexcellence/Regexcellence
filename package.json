@@ -6,7 +6,7 @@
   "scripts": {
     "devStart": "webpack-dev-server --content-base build/",
     "test": "mocha -w spec/helpers/browser.js spec/*.test.js",
-    "production": "node server.js",
+    "production": "node index.js",
     "build": "webpack",
     "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
   },
