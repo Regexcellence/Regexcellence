@@ -5,16 +5,16 @@ import ReactDOM from 'react-dom';
 // To create 'store' variable
 // import { createStore } from 'redux';
 
-import Controls from './controls';
+import Main from './components/main';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-      	<p>Hello react</p>
-				<Controls />
-			</div>
-		);
+        <p>Hello Regexcellence</p>
+        <Main />
+      </div>
+    );
   }
 }
 
