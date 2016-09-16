@@ -51,7 +51,14 @@ class Challenge extends Component {
                 }),
             });
         } else {
-            console.log('Case ', test.case, ' passed!');
+          this.setState({
+              challengeInfo: this.state.challengeInfo.map((item) => {
+                  if (test.id === item.id) {
+                      item.result = true;
+                  }
+                  return item;
+              }),
+          });
         }
     });
     console.log('***passed***', passed);
