@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const handleRequest = require('./server/handlers');
+const mongoose = require('mongoose');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,5 +21,6 @@ if (TARGET === 'devStart') {
   });
 }
 
+mongoose.connect('mongodb://localhost/db_reg');
 
 app.listen(port, () => { console.log(` Listening on http://localhost:${port}/`); });
