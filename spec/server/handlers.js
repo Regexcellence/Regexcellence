@@ -1,28 +1,9 @@
-const assert = require('assert');
-const http = require('http');
+var assert = require('assert');
 
-describe('hello world', () => {
-    describe('inner', () => {
-        it('Should work', () => {
-            assert.equal(1, 1);
-        });
-    });
-});
-
-describe('index "/"', () => {
-    it('Should return 404', (done) => {
-        http.get('http://localhost:3000', (res) => {
-            assert.equal(404, res.statusCode);
-            done();
-        });
-    });
-});
-
-describe('dev server', () => {
-    it('Should return 200', (done) => {
-        http.get('http://localhost:8080', (res) => {
-            assert.equal(200, res.statusCode);
-            done();
-        });
-    });
+describe('hello world', function() {
+	describe('inner', function() {
+		it('Should work', function() {
+			assert.equal(1,1)
+		})
+	});
 });
