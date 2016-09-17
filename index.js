@@ -8,6 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.set('port', port);
+process.env.PWD = process.cwd()
 
 const TARGET = process.env.npm_lifecycle_event;
 
@@ -16,7 +17,7 @@ if (TARGET === 'devStart') {
     handleRequest(req, res);
   });
 } else {
-  app.use(express.static(path.join(__dirname, '/build')));
+	app.use(express.static(path.join(process.env.PWD, 'build')))
   app.get('/regex/*', (req, res) => {
     handleRequest(req, res);
   });

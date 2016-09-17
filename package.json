@@ -7,6 +7,7 @@
     "devStart": "webpack-dev-server --content-base build/",
     "test": "mocha -w spec/helpers/browser.js spec/*.test.js",
     "start": "node index.js",
+    "postinstall": "webpack",
     "production": "node index.js",
     "build": "webpack",
     "test:lint": "eslint . --ext .js --ext .jsx --cache"
