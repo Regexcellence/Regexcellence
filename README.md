@@ -2,7 +2,7 @@ TODO: Use eslint-plugin-react
 TODO: Use webpack --watch => watches for changes?
 
 # Regexcellence
-Regexcellence is an thorough educational tool for learning about and implementing regular expressions. 
+Regexcellence is an thorough educational tool for learning about and implementing Regular Expressions. 
 
 # Version 0.0.0
 
