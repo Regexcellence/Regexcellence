@@ -42,13 +42,6 @@ const common = {
         loader: 'json-loader'
       }
     ],
-    preLoaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['eslint'],
-        include: PATHS.app
-      }
-    ]
   },
   externals: {
     'react/addons': true,

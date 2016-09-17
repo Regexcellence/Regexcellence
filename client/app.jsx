@@ -7,6 +7,7 @@ import { createStore } from 'redux';
 import store from './reducers/index';
 
 import Main from './components/main';
+import Controls from './controls';
 
 
 
@@ -16,7 +17,7 @@ class App extends React.Component {
       <div>
         <p>Hello Regexcellence</p>
         <Provider store={store}>
-        	<Main />
+        	<Controls />
         </Provider>
       </div>
     );

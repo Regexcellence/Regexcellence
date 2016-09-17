@@ -1,11 +1,3 @@
-// import { combineReducers } from 'redux';
-// import Lessons from './reducer_lessons';
-
-// const allReducers = combineReducers({
-//   lessons: Lessons
-// });
-
-// export default allReducers;
 import { createStore } from 'redux';
 
 const initialState = [
@@ -16,15 +8,16 @@ const initialState = [
 
 /* Action = {
 	type: 'UPDATE-RESULT',
-	newVal: null/true/false,
+	testResult: null/true/false,
 	challengeId: INTEGER
 }
 */
+
 const reducer = (state = initialState, action) => {
 	if (action.type === 'UPDATE-RESULT') {
 		return state.map((challenge) => {
-			if (action.id === challenge.id) {
-				challenge.id = action.newVal;
+			if (action.challengeId === challenge.id) {
+				challenge.result = action.testResult;
 			} 
 			return challenge;
 		});
