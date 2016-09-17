@@ -6,11 +6,6 @@ import { connect } from 'react-redux';
 class Challenge extends Component {
   constructor(props) {
     super(props);
-    // const challengeInfo = [
-    //   { id: 1, case: 'abcd', result: null, task: 'Match', expectation: true },
-    //   { id: 2, case: 'acd', result: null, task: 'Skip', expectation: false },
-    //   { id: 3, case: 'abcde', result: null, task: 'Match', expectation: true },
-    // ];
     this.state = {
       input: '',
     };
@@ -115,14 +110,6 @@ class Challenge extends Component {
   // To set individual flags to null, true or false.
   setFlag(itemToChange, flagValue) {
     this.props.dispatch(this.flagActionCreator(itemToChange, flagValue));
-    // this.setState({
-    //     challengeInfo: this.props.challengeInfo.map((test) => {
-    //         if (itemToChange.id === test.id) {
-    //             itemToChange.result = flagValue;
-    //         }
-    //         return test;
-    //     }),
-    // });
   }
   // To set all flags to null, true, or false based on current situation.
   setAllFlags(testCases, flagValue) {
