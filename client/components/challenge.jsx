@@ -47,7 +47,7 @@ class Challenge extends Component {
           <input
             className="form-control"
             placeholder="enter your pattern here..."
-            value={this.state.input}
+            value={this.props.input}
             onChange={this.changeInputState}
           />
           <span className="input-group-btn">
@@ -115,25 +115,29 @@ class Challenge extends Component {
   setAllFlags(testCases, flagValue) {
     testCases.forEach(test => this.setFlag(test, flagValue));
   }
-
+  inputActionCreator(newInput) {
+    return {
+      type: 'INPUT-PATTERN-UPDATE',
+      newInput,
+    }
+  }
   changeInputState(event) {
     event.preventDefault();
-    const input = event.target.value;
-    this.setState({ input }, () => {
-      if (this.regexValidator(input)) {
-        this.checkRegex(this.regexParser(input));
-      } else if (!this.props.input) {
-        // For reseting flags to null when there's no input.
-        this.setAllFlags(this.props.challengeInfo, null);
-      } else {
-        this.setAllFlags(this.props.challengeInfo, false);
-      }
-    });
+    const newInput = event.target.value;
+    this.props.dispatch(this.inputActionCreator(newInput));
+    if (this.regexValidator(newInput)) {
+      this.checkRegex(this.regexParser(newInput));
+    } else if (!this.props.input) {
+      // For reseting flags to null when there's no input.
+      this.setAllFlags(this.props.challengeInfo, null);
+    } else {
+      this.setAllFlags(this.props.challengeInfo, false);
+    }
   }
 }
 
 const mapStateToProps = state => {
-  return { challengeInfo: state };
+  return { challengeInfo: state.challenges, input: state.userInput };
 };
 
 export default connect(mapStateToProps)(Challenge);
