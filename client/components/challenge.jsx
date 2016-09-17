@@ -20,7 +20,6 @@ export default class Challenge extends Component {
     this.changeInputState = this.changeInputState.bind(this);
     this.regexParser = this.regexParser.bind(this);
   }
-  
   render() {
     const table = this.state.challengeInfo.map(item => (
       <tr>
