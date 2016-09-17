@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TestResult from './testResult';
-import { regexValidator, regexParser } from '../regexValidators';
 import { dispatch } from 'redux';
 import { connect } from 'react-redux';
 
