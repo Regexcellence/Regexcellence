@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const validate = require('webpack-validator');
 const parts = require('./libs/parts');
 const pkg = require('./package.json');
+// occurence order; dedup 
 
 const PATHS = {
 	app: path.join(__dirname, 'client'), 
@@ -17,7 +18,7 @@ const common = {
   entry: {
   	app: PATHS.app + '/app.jsx',
     style: PATHS.style,
-  	vendor: Object.keys(pkg.dependencies)
+  	vendor: Object.keys(pkg.dependencies).filter(packages => packages !== 'mongoose')
   },
   output: {
       path: PATHS.build,
@@ -40,6 +41,10 @@ const common = {
       {
         test: /\.json$/,
         loader: 'json-loader'
+      },
+      {
+        test: /\.node$/,
+        loader: 'node-loader'
       }
     ],
   },
@@ -50,12 +55,14 @@ const common = {
   },
   resolve: {
     //Empty string needed. 
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.node']
   },
   node: {
-    // For fixing erorr in modules 'fs' and 'net'
+    // For fixing erorr in modules 'fs' and 'net'; console/tls for mongoose error.
+    console: true,
     fs: 'empty',
-    net: 'empty'
+    net: 'empty',
+    tls: 'empty'
   }
 };
 

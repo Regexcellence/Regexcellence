@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import TestResult from './testResult';
 import { dispatch } from 'redux';
 import { connect } from 'react-redux';
+
+import TestResult from '../components/testResult';
+import { flagActionCreator, inputActionCreator } from '../actions/index';
 
 class Challenge extends Component {
   constructor(props) {
@@ -16,9 +18,9 @@ class Challenge extends Component {
     this.regexParser = this.regexParser.bind(this);
     this.snagRegexFlags = this.snagRegexFlags.bind(this);
     this.regexValidator = this.regexValidator.bind(this);
-    this.flagActionCreator = this.flagActionCreator.bind(this);
+    // this.props.flagActionCreator = this.props.flagActionCreator.bind(this);
   }
-  
+
   render() {
     const table = this.props.challengeInfo.map(item => (
       <tr>
@@ -99,32 +101,21 @@ class Challenge extends Component {
     console.log('***passed***', passed);
     return passed;
   }
-  flagActionCreator(challenge, flagValue) {
-    return {
-      type: 'UPDATE-RESULT',
-      testResult: flagValue,
-      challengeId: challenge.id,
-    }
-  }
+
   // END OF REGEX RELATED FUNCTIONS
   // To set individual flags to null, true or false.
   setFlag(itemToChange, flagValue) {
-    this.props.dispatch(this.flagActionCreator(itemToChange, flagValue));
+    this.props.flagActionCreator(itemToChange, flagValue);
   }
   // To set all flags to null, true, or false based on current situation.
   setAllFlags(testCases, flagValue) {
     testCases.forEach(test => this.setFlag(test, flagValue));
   }
-  inputActionCreator(newInput) {
-    return {
-      type: 'INPUT-PATTERN-UPDATE',
-      newInput,
-    }
-  }
+
   changeInputState(event) {
     event.preventDefault();
     const newInput = event.target.value;
-    this.props.dispatch(this.inputActionCreator(newInput));
+    this.props.inputActionCreator(newInput);
     if (this.regexValidator(newInput)) {
       this.checkRegex(this.regexParser(newInput));
     } else if (!this.props.input) {
@@ -140,4 +131,4 @@ const mapStateToProps = state => {
   return { challengeInfo: state.challenges, input: state.userInput };
 };
 
-export default connect(mapStateToProps)(Challenge);
+export default connect(mapStateToProps, { flagActionCreator, inputActionCreator })(Challenge);

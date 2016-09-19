@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom';
 // For creating eventual <Provider /> tag
 import { Provider } from 'react-redux';
 // To create 'store' variable
+import { createStore } from 'redux';
+import reducer from './reducers/index';
 
-import { Router, Route, browserHistory } from 'react-router';
-
-import store from './reducers/index';
-
-import Main from './components/main';
 import Controls from './controls';
 
-
+const store = createStore(reducer);
 
 class App extends React.Component {
   render() {
@@ -19,9 +16,7 @@ class App extends React.Component {
       <div>
         <p>Hello Regexcellence</p>
         <Provider store={store}>
-          <Router history={browserHistory}>
-            <Route path="/" component={Controls} />
-          </Router>
+          <Controls />
         </Provider>
       </div>
     );
