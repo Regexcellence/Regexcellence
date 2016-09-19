@@ -1,0 +1,60 @@
+[
+{
+	"order": 0,
+	"name": "Learning your ABCs",
+	"description": "Write a pattern that matches 'abc' within any string",
+	"author": "Troy",
+	"difficulty": "easy",
+	"testCases": [
+	  { "case": "abcd", "result": "null", "task": "Match", "expectation": true },
+	  { "case": "acd", "result": "null", "task": "Skip", "expectation": false },
+	  { "case": "abcde", "result": "null", "task": "Match", "expectation": true }
+	]
+},
+{
+	"order": 1,
+	"name": "Matching Zip Codes",
+	"description": "Write a pattern that matches a 5-digit zipcode",
+	"author": "Lucy",
+	"difficulty": "easy",
+	"testCases": [
+		{ "case": "94549", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "94105", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "666", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "9999999", "result": "null", "task": "Skip", "expectation": false }
+	]
+},
+{
+	"order": 2,
+	"name": "Matching Phone Numbers",
+	"description": "Write a pattern that matches a variety of phone number formats",
+	"author": "Ben",
+	"difficulty": "medium",
+	"testCases":[
+		{ "case": "(925) 145-5555", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "(925) 1455555", "result": "null", "task": "Match", "expectation": false },
+		{ "case": "925-145-5555", "result": "null", "task": "Skip", "expectation": true },
+		{ "case": "(925) 145-55555", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "925 145-5555", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "925 145 5555", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "(925)hello145-5555", "result": "null", "task": "Skip", "expectation": false }
+	]
+},
+{
+	"order": 3,
+	"name": "Words that end with 'en'",
+	"description": "Write a pattern that matches expressions that end with 'en'",
+	"author": "Dana",
+	"difficulty": "medium",
+	"testCases": [
+		{ "case": "glenn", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "glen", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "turkmen", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "cayenne", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "big ben", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "opium den", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "wise men", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "never again", "result": "null", "task": "Skip", "expectation": false }
+	]
+}
+]
