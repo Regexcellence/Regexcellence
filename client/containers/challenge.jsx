@@ -111,7 +111,7 @@ class Challenge extends Component {
   // END OF REGEX RELATED FUNCTIONS
   // To set individual flags to null, true or false.
   setFlag(itemToChange, flagValue) {
-    this.props.dispatch(this.props.flagActionCreator(itemToChange, flagValue));
+    this.props.flagActionCreator(itemToChange, flagValue);
   }
   // To set all flags to null, true, or false based on current situation.
   setAllFlags(testCases, flagValue) {
@@ -126,7 +126,7 @@ class Challenge extends Component {
   changeInputState(event) {
     event.preventDefault();
     const newInput = event.target.value;
-    this.props.dispatch(this.props.inputActionCreator(newInput));
+    this.props.inputActionCreator(newInput);
     if (this.regexValidator(newInput)) {
       this.checkRegex(this.regexParser(newInput));
     } else if (!this.props.input) {
