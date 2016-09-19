@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+// import { createStore } from 'redux';
 
 const initialState = {
 	challenges: [
@@ -32,4 +32,5 @@ const reducer = (state = initialState, action) => {
 	return state; 
 };
 
-export default createStore(reducer); 
+export default reducer;
+// export default createStore(reducer); 
