@@ -1,7 +1,7 @@
 
 # Contributing to Regexellence
 
-Hello team! Please follwing the following guidelines when contributing to the reop!
+Hello team! Please heed the following guidelines when contributing to the repo!
 
 Our app will be deployed on the following 2 websites.
   * https://regexcellence.[hostingSite].com
