@@ -1,7 +1,9 @@
 TODO: Use eslint-plugin-react
 TODO: Use webpack --watch => watches for changes?
 
-# Regexellence
+# Regexcellence
+Regexcellence is an thorough educational tool for learning about and implementing
+Regular Expressions.
 
 # Version 0.0.0
 
@@ -14,25 +16,37 @@ $ npm i -g eslint
 Webpack for deploying and linting: 
 $ npm install webpack -g
 
+# Technology
+* Frontend: React & Redux
+* Backend: Express, Node, MongoDB, & Mongoose
+* Testing: Mocha, Chai, & Enzyme
+* Build Tools: Webpack
+
+#Team
+* [This link](https://github.com/troygibb)Troy Gibb
+* [This link](https://github.com/hellodanali)Dana Li
+* [This link](https://github.com/bbtran)Benjamin Tran
+* [This link](https://github.com/lwonsower)Lucy Wonsower
+
 # Style Guide
 
 Uses Airbnb Style Guide
 
 If you want to escape the linter: 
-	// For everything:
-	/* eslint-disable */
-	...
-	/* eslint-enable */
-	// For specific rule:
-	/* eslint-disable no-unused-vars */
-	...
-	/* eslint-enable no-unused-vars */
-	// For tweaking a rule:
-	/* eslint no-comma-dangle:1 */
-	// To disable rule per line:
-	alert('foo'); // eslint-disable-line no-alert
-	//For the entire file: 
-	/*eslint-env node, mocha */
+  // For everything:
+  /* eslint-disable */
+  ...
+  /* eslint-enable */
+  // For specific rule:
+  /* eslint-disable no-unused-vars */
+  ...
+  /* eslint-enable no-unused-vars */
+  // For tweaking a rule:
+  /* eslint no-comma-dangle:1 */
+  // To disable rule per line:
+  alert('foo'); // eslint-disable-line no-alert
+  //For the entire file: 
+  /*eslint-env node, mocha */
 
 React (ES6)
 Component flow eslint: ???
@@ -40,21 +54,21 @@ e.g.
 
 ```sh
 export default class Comp extends React.Component({
-	constructor() {
+  constructor() {
 
-	}
-	render() {
+  }
+  render() {
 
-	}
-	//...helper functions
+  }
+  //...helper functions
 })
 ```
 
 # Greenfield Notes
 * Standards
-	* style guide/linting before commits
-	* readme - constant updates
-	* standard JSON
+  * style guide/linting before commits
+  * readme - constant updates
+  * standard JSON
 * standups - peer review
 * comments - why you did it
 * mobile - React/CSS from beginning
@@ -62,18 +76,18 @@ export default class Comp extends React.Component({
 
 # File Structure
 +--client/
-|	+--components/
-|		+--dummyComponents/
-|		+--smartComponents/
-|	+--containers/
-|	+--reducers/
-|	+--app.jsx
-|	+--styles/
-|		+--main.css
-|	+--index.html
+| +--components/
+|   +--dummyComponents/
+|   +--smartComponents/
+| +--containers/
+| +--reducers/
+| +--app.jsx
+| +--styles/
+|   +--main.css
+| +--index.html
 +--build/
 +--libs/
-|	+--parts.js
+| +--parts.js
 +--server/
 +--tests/
 +--bower.json
