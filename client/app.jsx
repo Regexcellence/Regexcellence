@@ -16,7 +16,7 @@ class App extends React.Component {
       <div>
         <p>Hello Regexcellence</p>
         <Provider store={store}>
-        	<Controls />
+          <Controls />
         </Provider>
       </div>
     );

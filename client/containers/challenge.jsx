@@ -20,7 +20,7 @@ class Challenge extends Component {
     this.regexValidator = this.regexValidator.bind(this);
     // this.props.flagActionCreator = this.props.flagActionCreator.bind(this);
   }
-  
+
   render() {
     const table = this.props.challengeInfo.map(item => (
       <tr>
@@ -101,32 +101,21 @@ class Challenge extends Component {
     console.log('***passed***', passed);
     return passed;
   }
-  // flagActionCreator(challenge, flagValue) {
-  //   return {
-  //     type: 'UPDATE-RESULT',
-  //     testResult: flagValue,
-  //     challengeId: challenge.id,
-  //   }
-  // }
+
   // END OF REGEX RELATED FUNCTIONS
   // To set individual flags to null, true or false.
   setFlag(itemToChange, flagValue) {
-    this.props.dispatch(this.props.flagActionCreator(itemToChange, flagValue));
+    this.props.flagActionCreator(itemToChange, flagValue);
   }
   // To set all flags to null, true, or false based on current situation.
   setAllFlags(testCases, flagValue) {
     testCases.forEach(test => this.setFlag(test, flagValue));
   }
-  // inputActionCreator(newInput) {
-  //   return {
-  //     type: 'INPUT-PATTERN-UPDATE',
-  //     newInput,
-  //   }
-  // }
+
   changeInputState(event) {
     event.preventDefault();
     const newInput = event.target.value;
-    this.props.dispatch(this.props.inputActionCreator(newInput));
+    this.props.inputActionCreator(newInput);
     if (this.regexValidator(newInput)) {
       this.checkRegex(this.regexParser(newInput));
     } else if (!this.props.input) {
