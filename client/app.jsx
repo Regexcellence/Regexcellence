@@ -4,12 +4,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 // To create 'store' variable
 import { createStore } from 'redux';
-import store from './reducers/index';
+import reducer from './reducers/index';
 
-import Main from './components/main';
 import Controls from './controls';
 
-
+const store = createStore(reducer);
 
 class App extends React.Component {
   render() {
