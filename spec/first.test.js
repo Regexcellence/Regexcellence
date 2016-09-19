@@ -23,3 +23,14 @@ describe('<Challenge />', () => {
     expect(wrapper.instance().checkRegex).to.be.a('function');
   });
 });
+
+describe('<Challenge />', () => {
+  const wrapper = shallow(<Challenge />);
+  it('should have a state', () =>{
+    expect(wrapper.state()).to.be.defined;
+  });
+
+  it('should have a checkRegex function', () => {
+    expect(wrapper.checkRegex).to.be.defined;
+  });
+});
