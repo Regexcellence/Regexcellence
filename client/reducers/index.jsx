@@ -1,5 +1,3 @@
-// import { createStore } from 'redux';
-
 const initialState = {
 	challenges: [
 	  { id: 1, case: 'abcd', result: null, task: 'Match', expectation: true },
@@ -8,13 +6,6 @@ const initialState = {
 	],
 	userInput: '',
 };
-
-/* Action = {
-	type: 'UPDATE-RESULT',
-	testResult: null/true/false,
-	challengeId: INTEGER
-}
-*/
 
 const reducer = (state = initialState, action) => {
 	if (action.type === 'UPDATE-RESULT') {
@@ -33,4 +24,3 @@ const reducer = (state = initialState, action) => {
 };
 
 export default reducer;
-// export default createStore(reducer); 
