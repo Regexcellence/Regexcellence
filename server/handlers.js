@@ -1,14 +1,12 @@
+const app = require('../index');
+const getChallenges = require('./db/dbQueryHandler');
 
-// const requestHandler = (req, res) => ({
-//   if (req.method === 'GET') {
-//     if (req.url === '/regex/*') {
-//       console.log('entering /regex/*!!!!');
-//       res.redirect('/');
-//       res.end('success');
-//     }
-//   } else {
-//     res.end(404);
-//   }
-// });
-
-// module.exports = requestHandler;
+module.exports = (app) => {
+	app.get('/regex/challenges', (req, res) => {
+		// Review if async issues become a problem!
+		getChallenges((challenges) => {
+			console.log(challenges);
+			res.send(challenges);
+		})
+	})
+}

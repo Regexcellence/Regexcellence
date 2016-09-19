@@ -1,0 +1,27 @@
+[
+{
+	name: "Learning your ABCs",
+	description: ,
+	author: "Troy",
+	difficulty: "easy",
+	testCases: [
+	  { case: 'abcd', result: null, task: 'Match', expectation: true },
+	  { case: 'acd', result: null, task: 'Skip', expectation: false },
+	  { case: 'abcde', result: null, task: 'Match', expectation: true },
+	],
+},
+{
+	name:,
+	description:,
+	author:,
+	difficulty:,
+	testCases:,
+},
+{
+	name:,
+	description:,
+	author:,
+	difficulty:,
+	testCases:,
+},
+]
