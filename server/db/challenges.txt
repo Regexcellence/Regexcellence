@@ -6,9 +6,9 @@
 	"author": "Troy",
 	"difficulty": "easy",
 	"testCases": [
-	  { "case": "abcd", "result": "null", "task": "Match", "expectation": true },
-	  { "case": "acd", "result": "null", "task": "Skip", "expectation": false },
-	  { "case": "abcde", "result": "null", "task": "Match", "expectation": true }
+	  { "case": "abcd", "result": null, "task": "Match", "expectation": true },
+	  { "case": "acd", "result": null, "task": "Skip", "expectation": false },
+	  { "case": "abcde", "result": null, "task": "Match", "expectation": true }
 	]
 },
 {
@@ -18,10 +18,10 @@
 	"author": "Lucy",
 	"difficulty": "easy",
 	"testCases": [
-		{ "case": "94549", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "94105", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "666", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "9999999", "result": "null", "task": "Skip", "expectation": false }
+		{ "case": "94549", "result": null, "task": "Match", "expectation": true },
+		{ "case": "94105", "result": null, "task": "Match", "expectation": true },
+		{ "case": "666", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "9999999", "result": null, "task": "Skip", "expectation": false }
 	]
 },
 {
@@ -31,13 +31,13 @@
 	"author": "Ben",
 	"difficulty": "medium",
 	"testCases":[
-		{ "case": "(925) 145-5555", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "(925) 1455555", "result": "null", "task": "Match", "expectation": false },
-		{ "case": "925-145-5555", "result": "null", "task": "Skip", "expectation": true },
-		{ "case": "(925) 145-55555", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "925 145-5555", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "925 145 5555", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "(925)hello145-5555", "result": "null", "task": "Skip", "expectation": false }
+		{ "case": "(925) 145-5555", "result": null, "task": "Match", "expectation": true },
+		{ "case": "(925) 1455555", "result": null, "task": "Match", "expectation": false },
+		{ "case": "925-145-5555", "result": null, "task": "Skip", "expectation": true },
+		{ "case": "(925) 145-55555", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "925 145-5555", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "925 145 5555", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "(925)hello145-5555", "result": null, "task": "Skip", "expectation": false }
 	]
 },
 {
@@ -47,14 +47,14 @@
 	"author": "Dana",
 	"difficulty": "medium",
 	"testCases": [
-		{ "case": "glenn", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "glen", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "turkmen", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "cayenne", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "big ben", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "opium den", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "wise men", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "never again", "result": "null", "task": "Skip", "expectation": false }
+		{ "case": "glenn", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "glen", "result": null, "task": "Match", "expectation": true },
+		{ "case": "turkmen", "result": null, "task": "Match", "expectation": true },
+		{ "case": "cayenne", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "big ben", "result": null, "task": "Match", "expectation": true },
+		{ "case": "opium den", "result": null, "task": "Match", "expectation": true },
+		{ "case": "wise men", "result": null, "task": "Match", "expectation": true },
+		{ "case": "never again", "result": null, "task": "Skip", "expectation": false }
 	]
 }
 ]

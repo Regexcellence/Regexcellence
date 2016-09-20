@@ -14,7 +14,6 @@ const addEntries = (data) => {
     const NewChallenge = new Challenge(challenge);
     NewChallenge.save((err, newData) => {
       if (err) throw err;
-      getChallenges(data => console.log(data));
     });
   });
 };
