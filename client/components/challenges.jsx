@@ -28,23 +28,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { getAllChallenges })(Challenges);
-
-  // componentWillMount() {
-  //   this.props.getAllChallenges();
-  // }
-  //
-  // renderChallenges() {
-  //   if (this.props.allChallenges.length > 0) {
-  //     return this.props.allChallenges.map((challenge) => {
-  //       console.log(challenge);
-  //       return (
-  //         <li className="list-group-item" key={challenge.order}>
-  //           <p>{ challenge.author }</p>
-  //           <strong>{challenge.name}</strong>
-  //           <p><span className="pull-xs-right">{challenge.description}</span></p>
-  //         </li>
-  //       );
-  //     });
-  //   }
-  //   return <div> LOADING !!!!</div>;
-  // }
