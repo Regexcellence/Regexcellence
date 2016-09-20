@@ -1,9 +1,8 @@
-// import axios from 'axios';
-export function flagActionCreator(challenge, flagValue) {
+export function flagActionCreator(challengeId, input) {
   return {
     type: 'UPDATE-RESULT',
-    testResult: flagValue,
-    challengeId: challenge.id,
+    challengeId,
+    input,
   };
 }
 

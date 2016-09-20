@@ -1,28 +1,22 @@
+import { inputValidator } from './inputValidation';
+import { updateChallenges } from './updateChallenges';
+import { regexValidator } from './regexValidation';
+
 const initialState = {
-  challenges: [
-    { id: 1, case: 'abcd', result: null, task: 'Match', expectation: true },
-    { id: 2, case: 'acd', result: null, task: 'Skip', expectation: false },
-    { id: 3, case: 'abcde', result: null, task: 'Match', expectation: true },
-  ],
+  challenges: [],
   userInput: '',
-  allChallenges: [],
+  wellFormedInput: true,
+};
+
+const actionHandler = {
+  'INPUT-PATTERN-UPDATE': inputValidator,
+  'UPDATE-RESULT': regexValidator,
+  'GET-CHALLENGES': updateChallenges,
 };
 
 const reducer = (state = initialState, action) => {
-  if (action.type === 'UPDATE-RESULT') {
-    const challenges = state.challenges.map((challenge) => {
-      if (action.challengeId === challenge.id) {
-        challenge.result = action.testResult;
-      }
-      return challenge;
-    });
-    return Object.assign({}, state, { challenges });
-  } else if (action.type === 'INPUT-PATTERN-UPDATE') {
-    const userInput = action.newInput;
-    return Object.assign({}, state, { userInput });
-  } else if (action.type === 'GET-CHALLENGES') {
-    const allChallenges = action.payload;
-    return Object.assign({}, state, { allChallenges });
+  if (actionHandler[action.type]) { 
+    return actionHandler[action.type](state, action) 
   }
   return state;
 };

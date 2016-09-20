@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class TestCase extends Component {
   render() {
+    console.log('testCase component ', this.props.flag);
     const flag = this.props.flag;
     if (flag === true) {
       const divStyle = { color: 'green' };

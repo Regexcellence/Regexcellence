@@ -4,27 +4,23 @@ import { getAllChallenges } from '../actions/index';
 import Challenge from '../containers/challenge';
 
 class Challenges extends Component {
-  componentWillMount(){
+  componentWillMount() {
     this.props.getAllChallenges();
   }
-
   render() {
-    if (this.props.allChallenges.length > 0) {
-      const challenges = this.props.allChallenges.map((challenge) => {
-        return (
-            <Challenge challengeInfo={challenge.testCases} />
-          );
-        });
+    if (this.props.challenges.length) {
+    	const challengeInfo = this.props.challenges[0];
+      console.log(challengeInfo._id);
       return (
-        <div> {challenges} </div>
+          <Challenge key={challengeInfo._id} challengeInfo={challengeInfo} />
       );
     }
     return <div> LOADING!!! </div>;
   }
 }
+
 const mapStateToProps = (state) => {
-  // return { challengeInfo: state.challenges, getAllChallenges: state.allChallenges };
-  return { allChallenges: state.allChallenges };
+  return { challenges: state.challenges };
 };
 
 export default connect(mapStateToProps, { getAllChallenges })(Challenges);
