@@ -23,10 +23,10 @@ $ npm install webpack -g
 * Build Tools: Webpack
 
 #Team
-* [This link](https://github.com/troygibb)Troy Gibb
-* [This link](https://github.com/hellodanali)Dana Li
-* [This link](https://github.com/bbtran)Benjamin Tran
-* [This link](https://github.com/lwonsower)Lucy Wonsower
+* [Troy Gibb](https://github.com/troygibb)
+* [Dana Li](https://github.com/hellodanali)
+* [Benjamin Tran](https://github.com/bbtran)
+* [Lucy Wonsower](https://github.com/lwonsower)
 
 # Style Guide
 
