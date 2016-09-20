@@ -1,18 +1,16 @@
-// TODO: Need to implement state changer for if tests all pass. 
+// TODO: Need to implement state changer for if tests all pass.
 
 export function regexValidator(previousState, action) {
-	const challengeId = action.challengeId;
-	const parsedInput = regexParser(action.input); 
-	const previousChallenges = previousState.challenges.slice();
-	console.log(previousChallenges)
-	const challenges = previousChallenges.map((challenge) => {
-		if (challenge._id === challengeId) {
-			console.log("Found same id")
-			return testCasesExtractor(parsedInput, challenge);
-		}
-		return challenge;
-	});
-	return Object.assign({}, previousState, { challenges })
+  const challengeId = action.challengeId;
+  const parsedInput = regexParser(action.input);
+  const previousChallenges = previousState.challenges.slice();
+  const challenges = previousChallenges.map((challenge) => {
+    if (challenge._id === challengeId) {
+      return testCasesExtractor(parsedInput, challenge);
+    }
+    return challenge;
+  });
+  return Object.assign({}, previousState, { challenges });
 }
 // Strips input pattern of both forward slashes, and separates flags if any.
 function regexParser(input) {
@@ -30,28 +28,26 @@ function snagRegexFlags(input) {
     return flags ? flags[1] : null;
 }
 function testCasesExtractor(parsedInput, challenge) {
-	return Object.assign(
-		{}, 
-		challenge, 
-		{ testCases: checkRegex(parsedInput, challenge.testCases) }
-	);
-};
+  return Object.assign(
+    {},
+    challenge,
+    { testCases: checkRegex(parsedInput, challenge.testCases) }
+  );
+}
 function checkRegex(parsedInput, testCases) {
   // To check to see if there are flags in the pattern,
   // as the RegExp instantiator doesn't allow a null/false value for flags.
-  const regex = parsedInput.flags ? new RegExp(parsedInput.pattern, parsedInput.flags) : new RegExp(parsedInput.pattern);
+  const regex = parsedInput.flags
+    ? new RegExp(parsedInput.pattern, parsedInput.flags)
+    : new RegExp(parsedInput.pattern);
   return testCases.map((test) => {
-  	if (!parsedInput.pattern.length) {
-  		test.result = null;
-  	} else if (regex.test(test.case) === test.expectation) {
-    	console.log("Eval to true")
+    if (!parsedInput.pattern.length) {
+      test.result = null;
+    } else if (regex.test(test.case) === test.expectation) {
       test.result = true;
     } else {
-    	console.log("Eval to false")
       test.result = false;
     }
-    return test; 
+    return test;
   });
 }
-
-

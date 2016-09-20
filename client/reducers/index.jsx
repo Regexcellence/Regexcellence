@@ -15,8 +15,8 @@ const actionHandler = {
 };
 
 const reducer = (state = initialState, action) => {
-  if (actionHandler[action.type]) { 
-    return actionHandler[action.type](state, action) 
+  if (actionHandler[action.type]) {
+    return actionHandler[action.type](state, action);
   }
   return state;
 };
