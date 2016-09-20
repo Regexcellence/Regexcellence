@@ -31,13 +31,13 @@
 	"author": "Ben",
 	"difficulty": "medium",
 	"testCases":[
-		{ "case": "(925) 145-5555", "result": null, "task": "Match", "expectation": true },
-		{ "case": "(925) 1455555", "result": null, "task": "Match", "expectation": false },
-		{ "case": "925-145-5555", "result": null, "task": "Skip", "expectation": true },
-		{ "case": "(925) 145-55555", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "925 145-5555", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "925 145 5555", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "(925)hello145-5555", "result": null, "task": "Skip", "expectation": false }
+		{ "case": "(925) 145-5555", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "(925) 1455555", "result": "null", "task": "Match", "expectation": false },
+		{ "case": "925-145-5555", "result": "null", "task": "Match", "expectation": true },
+		{ "case": "(925) 145-55555", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "925 145-5555", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "925 145 5555", "result": "null", "task": "Skip", "expectation": false },
+		{ "case": "(925)hello145-5555", "result": "null", "task": "Skip", "expectation": false }
 	]
 },
 {
