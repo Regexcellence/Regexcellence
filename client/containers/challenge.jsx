@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import { dispatch } from 'redux';
-import { connect } from 'react-redux';
-
 import InputRegexValidation from './inputRegexValidation';
 import TestCaseList from '../components/testCaseList';
-import { flagActionCreator, inputActionCreator } from '../actions/index';
 
-class Challenge extends Component {
+export default class Challenge extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,7 +16,7 @@ class Challenge extends Component {
               <th>Task</th>
               <th>Text</th>
             </tr>
-          </thead>  
+          </thead>
           <TestCaseList challengeInfo={this.props.challengeInfo} />
         </table>
         <InputRegexValidation testCases={this.props.challengeInfo} />
@@ -28,9 +24,3 @@ class Challenge extends Component {
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return { challengeInfo: state.challenges };
-};
-
-export default connect(mapStateToProps)(Challenge);
