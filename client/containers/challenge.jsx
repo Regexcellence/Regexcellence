@@ -11,16 +11,16 @@ export default class Challenge extends Component {
     const challengeInfo = this.props.challengeInfo;
     return (
       <div>
-        <ChallengeDescription 
-          name={challengeInfo.name} 
-          description={challengeInfo.description} 
+        <ChallengeDescription
+          name={challengeInfo.name}
+          description={challengeInfo.description}
         />
-        <TestCaseList 
-          testCases={challengeInfo.testCases} 
+        <TestCaseList
+          testCases={challengeInfo.testCases}
         />
-        <InputRegexValidation 
-          challengeId={challengeInfo._id} 
-          testCases={challengeInfo.testCases} 
+        <InputRegexValidation
+          challengeId={challengeInfo._id}
+          testCases={challengeInfo.testCases}
         />
       </div>
     );

@@ -20,16 +20,16 @@ describe('<Controls />', () => {
 });
 
 describe('<Challenges />', () => {
+  const wrapper = shallow(<Challenges store={testStore} />);
   it('should have a state', () => {
-    const wrapper = shallow(<Challenges store={testStore} />);
     expect(wrapper.state()).to.be.defined;
     expect(wrapper.state('solution') === 'abc').to.equal(true);
   });
 });
 
 describe('<Challenge />', () => {
+  const wrapper = shallow(<Challenge store={testStore} />);
   it('should have props challengeInfo', () => {
-    const wrapper = shallow(<Challenge store={testStore} />);
     expect(wrapper.props().challengeInfo).to.be.defined;
   });
 });
