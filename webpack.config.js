@@ -18,7 +18,7 @@ const common = {
   entry: {
   	app: PATHS.app + '/app.jsx',
     style: PATHS.style,
-  	vendor: Object.keys(pkg.dependencies).filter(packages => packages !== 'mongoose')
+  	vendor: PATHS.app + '/vendor.jsx'
   },
   output: {
       path: PATHS.build,
