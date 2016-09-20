@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {flagActionCreator, inputActionCreator} from '../actions/index';
+import { connect } from 'react-redux';
+import { flagActionCreator, inputActionCreator } from '../actions/index';
 
 class InputRegexValidation extends React.Component {
   constructor(props) {

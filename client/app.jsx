@@ -7,10 +7,10 @@ import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers/index';
 
 import Controls from './controls';
-import Axios from 'axios';
+import thunk from 'redux-thunk';
 
-const finalStore = applyMiddleware(Axios)(createStore);
-const store = createStore(reducer);
+const finalStore = applyMiddleware(thunk)(createStore);
+const store = finalStore(reducer);
 
 class App extends React.Component {
   render() {

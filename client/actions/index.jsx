@@ -1,6 +1,4 @@
-import axios from 'axios';
-
-
+// import axios from 'axios';
 export function flagActionCreator(challenge, flagValue) {
   return {
     type: 'UPDATE-RESULT',
@@ -18,11 +16,12 @@ export function inputActionCreator(newInput) {
 
 export function getAllChallenges() {
   return (dispatch) => {
-    axios.get('/regex/challenges').then((data) => {
+    $.ajax('/regex/challenges').then((data) => {
+      console.log('DATAAA', data);
       dispatch({
         type: 'GET-CHALLENGES',
         payload: data,
-      })
+      });
     });
   };
 }

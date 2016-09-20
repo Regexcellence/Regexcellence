@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 export default class TestCase extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const flag = this.props.flag;
     if (flag === true) {
@@ -21,7 +18,7 @@ export default class TestCase extends Component {
         </div>
       );
     } else {
-      return <div></div>;
+      return <div> </div>;
     }
   }
 }

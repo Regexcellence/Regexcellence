@@ -21,9 +21,8 @@ const reducer = (state = initialState, action) => {
     const userInput = action.newInput;
     return Object.assign({}, state, { userInput });
   } else if (action.type === 'GET-CHALLENGES') {
-    const allChallenges = action.payload.data;
-    console.log("IN REDUCER!!!", allChallenges);
-    return Object.assign({}, state, {allChallenges});
+    const allChallenges = action.payload;
+    return Object.assign({}, state, { allChallenges });
   }
   return state;
 };
