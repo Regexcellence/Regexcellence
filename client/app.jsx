@@ -8,13 +8,13 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createHistory from 'history/lib/createHashHistory';
 
-import Controls from './controls/controls';
 import reducer from './reducers/index';
 import Navigation from './controls/navbar';
 
 import Tutorial from './pages/tutorial';
 import About from './pages/about';
-
+import Home from './pages/home';
+import TutorialMain from './tutorials/tutorialMain';
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
@@ -28,8 +28,12 @@ class App extends React.Component {
         <Provider store={store}>
           <Router history={history}>
             <Route path="/" component={Navigation} />
-            <Route path="/tutorial" component={Tutorial} />
+            <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
+
+            <Route path="/tutorial" component={Tutorial}>
+              <Route path="/:name" component={TutorialMain} />
+            </Route>
           </Router>
         </Provider>
       </div>

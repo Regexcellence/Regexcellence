@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from '../controls/navbar';
+import Controls from '../controls/controls';
 
 class Home extends Component {
   render() {
@@ -7,6 +8,7 @@ class Home extends Component {
       <div>
         <Navigation />
         <h1>This is the home page</h1>
+        <Controls />
       </div>
     );
   }
