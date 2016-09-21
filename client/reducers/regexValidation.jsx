@@ -43,6 +43,7 @@ function checkRegex(parsedInput, testCases) {
   const regex = parsedInput.flags
     ? new RegExp(parsedInput.pattern, parsedInput.flags)
     : new RegExp(parsedInput.pattern);
+  console.log("Newly formed regex is ", regex)
   return testCases.map((test) => {
     if (!parsedInput.pattern.length) {
       test.result = null;

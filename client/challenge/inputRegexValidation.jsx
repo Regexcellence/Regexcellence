@@ -21,7 +21,10 @@ class InputRegexValidation extends React.Component {
             onChange={this.changeInputState}
             onFocus={this.addSlashes}
           />
-          <TestPassedButton testPassed={this.props.testPassed} />
+          <TestPassedButton 
+            nextTutorial={this.props.nextTutorial} 
+            testPassed={this.props.testPassed} 
+          />
         </form>
         <InputValidationFlag wellFormedInput={this.props.wellFormedInput} />
       </div>
