@@ -12,9 +12,7 @@ class Tutorial extends Component {
    this.props.getAllChallenges();
   }
   render() {
-  	console.log(this.props.location.pathname)
     if (this.props.challenges.length) {
-      console.log('***', this.props.challenges);
       const firstTutorial = this.props.challenges[0].name;
       return (
         <div>
