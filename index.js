@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const MONGO_URI = require('./config').MONGO_URI;
 
 const app = express();
-const handleRequest = require('./server/handlers')(app);
+const handleRequest = require('./server/handlers').GET(app);
 
 const port = process.env.PORT || 3000;
 

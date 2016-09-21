@@ -15,10 +15,10 @@ const multiUseSchema = new Schema({
       case: String,
       result: String,
       task: String,
-      expectation: Boolean
-    }
+      expectation: Boolean,
+    },
   ],
-  testPassed: Boolean
+  testPassed: Boolean,
 });
 
 const Challenges = mongoose.model('Challenges', multiUseSchema);

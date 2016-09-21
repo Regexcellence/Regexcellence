@@ -32,6 +32,6 @@ describe('MongoDB', () => {
     http.get('http://localhost:8080/regex/challenges', (res) => {
       assert.equal(200, res.statusCode);
       done();
-    })
+    });
   });
 });
