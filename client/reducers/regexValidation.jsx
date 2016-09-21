@@ -13,7 +13,7 @@ export function regexValidator(previousState, action) {
   return Object.assign({}, previousState, { challenges });
 }
 // Strips input pattern of both forward slashes, and separates flags if any.
-function regexParser(input) {
+export function regexParser(input) {
     const inputArr = input.split('');
     // To take off first forward slash.
     inputArr.shift();
@@ -29,7 +29,12 @@ function snagRegexFlags(input) {
 }
 function testCasesExtractor(parsedInput, challenge) {
   const testCases = checkRegex(parsedInput, challenge.testCases);
-  const testPassed = testCases.reduce((prev, curr) => prev === curr.result, true);
+  let testPassed = true;
+  for (let i = 0; i < testCases.length; i++) {
+    if (!testCases[i].result) {
+      testPassed = false;
+    }
+  }
   console.log('test result : ', testPassed);
   return Object.assign(
     {},
