@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAllChallenges } from '../actions/index';
-import Challenge from '../containers/challenge';
+import { getAllChallenges } from './actions/index';
+import Challenge from './challenge/challenge';
 
 class Challenges extends Component {
   componentWillMount() {

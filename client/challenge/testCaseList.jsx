@@ -1,5 +1,5 @@
 import React from 'react';
-import TestCase from '../components/testCase';
+import TestCase from './testCase';
 
 export default class TestCaseList extends React.Component {
   render() {
