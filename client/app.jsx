@@ -8,7 +8,6 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createHistory from 'history/lib/createHashHistory';
 
-import Controls from './controls/controls';
 import reducer from './reducers/index';
 import Navigation from './controls/navbar';
 
@@ -34,7 +33,7 @@ class App extends React.Component {
 
             <Route path="/tutorial" component={Tutorial}>
               <Route path="/:name" component={TutorialMain} />
-            </Route>        
+            </Route>
           </Router>
         </Provider>
       </div>
