@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const challengeSchema = new Schema({
+const multiUseSchema = new Schema({
   _id: ObjectId,
   order: Number,
   name: String,
@@ -21,8 +21,10 @@ const challengeSchema = new Schema({
   testPassed: Boolean
 });
 
-const Challenge = mongoose.model('Challenges', challengeSchema);
-module.exports = Challenge;
+const Challenges = mongoose.model('Challenges', multiUseSchema);
+const Tutorial = mongoose.model('Tutorials', multiUseSchema);
+
+module.exports = { Challenges, Tutorial };
 
 // insert function
   // _id: ObjectId(),

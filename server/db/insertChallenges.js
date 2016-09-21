@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const getChallenges = require('./dbQueryHandler');
-const Challenge = require('./dbmodel');
+const Challenge = require('./dbmodel').Challenge;
 const MONGO_URI = require('../../config').MONGO_URI;
 const mongoose = require('mongoose');
 // Below is to fix deprecated mongoose promise.
