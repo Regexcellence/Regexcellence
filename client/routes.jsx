@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import App from './app';
 import Home from './components/pages/home';
 import Tutorial from './components/pages/tutorial.jsx';
 import About from './components/pages/about.jsx';
