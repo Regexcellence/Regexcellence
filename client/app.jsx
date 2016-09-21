@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, useRouterHistory } from 'react-router';
+import { Router, Route, useRouterHistory } from 'react-router';
 // For creating eventual <Provider /> tag
 import { Provider } from 'react-redux';
 // To create 'store' variable
@@ -13,6 +13,10 @@ import reducer from './reducers/index';
 import routes from './routes.jsx';
 import Navigation from './components/navbar';
 
+import Home from './components/pages/home';
+import Tutorial from './components/pages/tutorial.jsx';
+import About from './components/pages/about.jsx';
+
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
@@ -23,10 +27,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navigation />
         <Provider store={store}>
           <div>
-            <Router routes={routes} history={history} />
+            <Router history={history}>
+
+            <Route path="/" component={Navigation} />
+
+            <Route path="/tutorial" component={Tutorial} />
+            <Route path="/about" component={About} />
+            </Router>
             <Controls />
           </div>
         </Provider>
