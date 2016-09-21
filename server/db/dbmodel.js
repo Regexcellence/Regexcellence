@@ -7,6 +7,7 @@ const multiUseSchema = new Schema({
   _id: ObjectId,
   order: Number,
   name: String,
+  nameurl: String,
   description: String,
   author: String,
   difficulty: String,
@@ -22,7 +23,7 @@ const multiUseSchema = new Schema({
 });
 
 const Challenges = mongoose.model('Challenges', multiUseSchema);
-const Tutorial = mongoose.model('Tutorials', multiUseSchema);
+const Tutorial = mongoose.model('Tutorial', multiUseSchema);
 
 module.exports = { Challenges, Tutorial };
 

@@ -12,9 +12,12 @@ module.exports = {
     });
   },
   POST: (app) => {
-    app.post('regex/challenges', (req, res) => {
-      console.log('posting to challenges');
-      res.send();
+    app.post('/regex/challenges', (req, res) => {
+      console.log("inside POST", req.body);
+      handlers.postChallenges((challenges, req) => {
+        console.log('posting to challenges');
+        res.json({ message: 'challenge created' });
+      });
     });
   },
 };
