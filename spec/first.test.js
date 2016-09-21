@@ -3,11 +3,15 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import Controls from '../client/controls';
-import Challenge from '../client/containers/challenge';
-import Challenges from '../client/components/challenges';
-import InputRegexValidation from '../client/containers/inputRegexValidation';
+import Controls from '../client/controls/controls';
+import Challenge from '../client/challenge/challenge';
+import Challenges from '../client/challenges';
+import InputRegexValidation from '../client/challenge/inputRegexValidation';
 import reducer from '../client/reducers/index';
+
+import { inputValidator } from '../client/reducers/inputValidation';
+import { regexValidator } from '../client/reducers/regexValidation';
+
 
 const finalStore = applyMiddleware(thunk)(createStore);
 const testStore = finalStore(reducer);
@@ -19,32 +23,38 @@ describe('<Controls />', () => {
   });
 });
 
-describe('<Challenges />', () => {
-  const wrapper = shallow(<Challenges store={testStore} />);
-  it('should have a state', () => {
-    expect(wrapper.state()).to.be.defined;
-    expect(wrapper.state('solution') === 'abc').to.equal(true);
-  });
-});
-
-describe('<Challenge />', () => {
-  const wrapper = shallow(<Challenge store={testStore} />);
-  it('should have props challengeInfo', () => {
-    expect(wrapper.props().challengeInfo).to.be.defined;
-  });
-});
-
-describe('<InputRegexValidation />', () => {
-  it('checkRegex should be defined', () => {
-    const wrapper = shallow(<InputRegexValidation store={testStore} />);
-    expect(wrapper.checkRegex).to.be.defined;
+describe('[Reducer]: InputValidator', () => {
+  it('should be a function.', () => {
+    // console.log(inputValidator,'***');
+    expect(typeof inputValidator).to.equal('function');
   });
 
-  it('checkRegex should be a function', () => {
-    const wrapper = shallow(<InputRegexValidation store={testStore} />);
-    expect(wrapper.instance().checkRegex).to.be.a('function');
+  it('should return an object with a property of wellFormedInput.', () => {
+    const action = { newInput: '/abc/'};
+    const result = inputValidator({}, action);
+    expect(result.hasOwnProperty('wellFormedInput')).to.equal(true);
   });
+
+  it('should check if user input is in proper regex format.', () => {
+    const action = { newInput: '/abc/'};
+    const action2 = { newInput: 'abc'};
+    const result = inputValidator({}, action);
+    const result2 = inputValidator({}, action2);
+    expect(result.wellFormedInput).to.equal(true);
+    expect(result2.wellFormedInput).to.equal(false);
+  })
+
 });
+// describe('<InputRegexValidation />', () => {
+//   const wrapper = shallow(<InputRegexValidation store={testStore} />);
+//   it('checkRegex should be defined', () => {
+//     expect(wrapper.checkRegex).to.be.defined;
+//   });
+
+//   it('checkRegex should be a function', () => {
+//     expect(wrapper.instance().checkRegex).to.be.a('function');
+//   });
+// });
 
 
 // Invariant Violation: Could not find "store" in either the context or props of.
