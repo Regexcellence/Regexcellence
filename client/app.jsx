@@ -10,10 +10,8 @@ import createHistory from 'history/lib/createHashHistory';
 
 import Controls from './controls';
 import reducer from './reducers/index';
-import routes from './routes.jsx';
 import Navigation from './components/navbar';
 
-import Home from './components/pages/home';
 import Tutorial from './components/pages/tutorial.jsx';
 import About from './components/pages/about.jsx';
 
@@ -30,11 +28,9 @@ class App extends React.Component {
         <Provider store={store}>
           <div>
             <Router history={history}>
-
-            <Route path="/" component={Navigation} />
-
-            <Route path="/tutorial" component={Tutorial} />
-            <Route path="/about" component={About} />
+              <Route path="/" component={Navigation} />
+              <Route path="/tutorial" component={Tutorial} />
+              <Route path="/about" component={About} />
             </Router>
             <Controls />
           </div>
