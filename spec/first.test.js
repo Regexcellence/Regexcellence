@@ -42,9 +42,10 @@ describe('[Reducer]: InputValidator', () => {
     const result2 = inputValidator({}, action2);
     expect(result.wellFormedInput).to.equal(true);
     expect(result2.wellFormedInput).to.equal(false);
-  })
-
+  });
 });
+
+
 // describe('<InputRegexValidation />', () => {
 //   const wrapper = shallow(<InputRegexValidation store={testStore} />);
 //   it('checkRegex should be defined', () => {

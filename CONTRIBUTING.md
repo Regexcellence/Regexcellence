@@ -61,6 +61,7 @@ Pull Requests will be made from your feature branch and will be compared with th
     * [FIRE] - when removing code or files
     * [DEV] - when changing dependencies
     * [FEATURE] - when changing/adding features
+    * [TEST] - when changing/adding test suits
 * Commit frequently to avoid chaining together commits (Try not to do this: ```[ CLEANUP,BUGFIX,DEV ]``` )
 
 ### Multiline Commits
