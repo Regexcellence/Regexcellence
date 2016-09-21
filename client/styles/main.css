@@ -1,3 +1,14 @@
 body {
-  margin:20px;
+  margin: 0;
+  background-color: antiquewhite;
+}
+.challenge {
+	background-color: white;
+	width: 50%;
+	margin: auto;
+	padding: 15px; 
+	border-radius: 10px;
+}
+#input-pattern {
+	width: 100%;
 }

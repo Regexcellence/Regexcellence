@@ -9,7 +9,7 @@ class Challenges extends Component {
   }
   render() {
     if (this.props.challenges.length) {
-      const challengeInfo = this.props.challenges[0];
+    	const challengeInfo = this.props.challenges[0];
       return (
           <Challenge key={challengeInfo._id} challengeInfo={challengeInfo} />
       );

@@ -17,7 +17,8 @@ const challengeSchema = new Schema({
       task: String,
       expectation: Boolean
     }
-  ]
+  ],
+  testPassed: Boolean
 });
 
 const Challenge = mongoose.model('Challenges', challengeSchema);

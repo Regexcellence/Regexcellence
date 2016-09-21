@@ -8,7 +8,6 @@ export default class Controls extends React.Component {
     return (
       <div>
         <Progress />
-        <Lesson />
         <Challenges />
       </div>
     );

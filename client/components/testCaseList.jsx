@@ -15,8 +15,7 @@ export default class TestCaseList extends React.Component {
           {this.props.testCases.map(testCase => (
             <tr key={testCase._id}>
               <td>{testCase.task}</td>
-              <td>{testCase.case}</td>
-              <td><TestCase flag={testCase.result} /></td>
+              <td>{testCase.case} <TestCase flag={testCase.result} /> </td>
             </tr>
           ))}
         </tbody>
