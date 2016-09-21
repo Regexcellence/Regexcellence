@@ -29,7 +29,12 @@ function snagRegexFlags(input) {
 }
 function testCasesExtractor(parsedInput, challenge) {
   const testCases = checkRegex(parsedInput, challenge.testCases);
-  const testPassed = testCases.reduce((prev, curr) => prev === curr.result, true);
+  let testPassed = true;
+  for (let i = 0; i < testCases.length; i++) {
+    if (!testCases[i].result) {
+      testPassed = false;
+    }
+  }
   console.log('test result : ', testPassed);
   return Object.assign(
     {},
