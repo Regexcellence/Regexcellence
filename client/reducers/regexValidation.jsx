@@ -13,7 +13,7 @@ export function regexValidator(previousState, action) {
   return Object.assign({}, previousState, { challenges });
 }
 // Strips input pattern of both forward slashes, and separates flags if any.
-function regexParser(input) {
+export function regexParser(input) {
     const inputArr = input.split('');
     // To take off first forward slash.
     inputArr.shift();
