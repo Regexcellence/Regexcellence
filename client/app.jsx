@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, useRouterHistory } from 'react-router';
+import { Router, useRouterHistory } from 'react-router';
 // For creating eventual <Provider /> tag
 import { Provider } from 'react-redux';
 // To create 'store' variable
 import { createStore, applyMiddleware } from 'redux';
-import reducer from './reducers/index';
+import thunk from 'redux-thunk';
+import createHistory from 'history/lib/createHashHistory';
 
 import Controls from './controls';
-import thunk from 'redux-thunk';
+import reducer from './reducers/index';
 import routes from './routes.jsx';
+import Navigation from './components/navbar';
 
-import createHistory from 'history/lib/createHashHistory';
+
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
 const finalStore = applyMiddleware(thunk)(createStore);
@@ -21,12 +23,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>Hello Regexcellence</p>
-          <Provider store={store}>
+        <Navigation />
+        <Provider store={store}>
           <div>
-          <Router routes={routes} history={history} />
-          <Controls />
-        </div>
+            <Router routes={routes} history={history} />
+            <Controls />
+          </div>
         </Provider>
       </div>
     );
