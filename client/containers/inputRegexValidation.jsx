@@ -1,28 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { flagActionCreator, inputActionCreator } from '../actions/index';
+import InputValidationFlag from '../components/inputValidationFlag';
+import TestPassedButton from '../components/testPassedButton';
 
 class InputRegexValidation extends React.Component {
   constructor(props) {
     super(props);
     this.changeInputState = this.changeInputState.bind(this);
+    this.addSlashes = this.addSlashes.bind(this);
   }
   render() {
     return (
-      <form className="input-group">
-        <input
-          className="form-control"
-          placeholder="enter your pattern here..."
-          value={this.props.input}
-          onChange={this.changeInputState}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">
-            submit
-          </button>
-        </span>
-      </form>
+      <div>
+        <form id="input-pattern" className="input-group">
+          <input
+            className="form-control"
+            placeholder="enter your pattern here..."
+            value={this.props.input}
+            onChange={this.changeInputState}
+            onFocus={this.addSlashes}
+          />
+          <TestPassedButton testPassed={this.props.testPassed} />
+        </form>
+        <InputValidationFlag wellFormedInput={this.props.wellFormedInput} />
+      </div>
     );
+  }
+  addSlashes(event) {
+    if (!event.target.value.length) {
+      this.props.inputActionCreator('//'); 
+    }
   }
   changeInputState(event) {
     event.preventDefault();

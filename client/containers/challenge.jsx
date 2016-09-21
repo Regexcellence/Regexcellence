@@ -10,17 +10,18 @@ export default class Challenge extends Component {
   render() {
     const challengeInfo = this.props.challengeInfo;
     return (
-      <div>
-        <ChallengeDescription
-          name={challengeInfo.name}
-          description={challengeInfo.description}
+      <div className="challenge">
+        <ChallengeDescription 
+          name={challengeInfo.name} 
+          description={challengeInfo.description} 
         />
-        <TestCaseList
-          testCases={challengeInfo.testCases}
+        <TestCaseList 
+          testCases={challengeInfo.testCases} 
         />
-        <InputRegexValidation
-          challengeId={challengeInfo._id}
-          testCases={challengeInfo.testCases}
+        <InputRegexValidation 
+          challengeId={challengeInfo._id} 
+          testCases={challengeInfo.testCases} 
+          testPassed={challengeInfo.testPassed}
         />
       </div>
     );

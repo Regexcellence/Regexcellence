@@ -28,10 +28,13 @@ function snagRegexFlags(input) {
     return flags ? flags[1] : null;
 }
 function testCasesExtractor(parsedInput, challenge) {
+  const testCases = checkRegex(parsedInput, challenge.testCases);
+  const testPassed = testCases.reduce((prev, curr) => prev === curr.result, true);
+  console.log('test result : ', testPassed);
   return Object.assign(
     {},
     challenge,
-    { testCases: checkRegex(parsedInput, challenge.testCases) }
+    { testCases, testPassed }
   );
 }
 function checkRegex(parsedInput, testCases) {

@@ -9,7 +9,8 @@
 	  { "case": "abcd", "result": null, "task": "Match", "expectation": true },
 	  { "case": "acd", "result": null, "task": "Skip", "expectation": false },
 	  { "case": "abcde", "result": null, "task": "Match", "expectation": true }
-	]
+	],
+	"testPassed": false
 },
 {
 	"order": 1,
@@ -22,7 +23,8 @@
 		{ "case": "94105", "result": null, "task": "Match", "expectation": true },
 		{ "case": "666", "result": null, "task": "Skip", "expectation": false },
 		{ "case": "9999999", "result": null, "task": "Skip", "expectation": false }
-	]
+	],
+	"testPassed": false
 },
 {
 	"order": 2,
@@ -31,14 +33,15 @@
 	"author": "Ben",
 	"difficulty": "medium",
 	"testCases":[
-		{ "case": "(925) 145-5555", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "(925) 1455555", "result": "null", "task": "Match", "expectation": false },
-		{ "case": "925-145-5555", "result": "null", "task": "Match", "expectation": true },
-		{ "case": "(925) 145-55555", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "925 145-5555", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "925 145 5555", "result": "null", "task": "Skip", "expectation": false },
-		{ "case": "(925)hello145-5555", "result": "null", "task": "Skip", "expectation": false }
-	]
+		{ "case": "(925) 145-5555", "result": null, "task": "Match", "expectation": true },
+		{ "case": "(925) 1455555", "result": null, "task": "Match", "expectation": false },
+		{ "case": "925-145-5555", "result": null, "task": "Match", "expectation": true },
+		{ "case": "(925) 145-55555", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "925 145-5555", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "925 145 5555", "result": null, "task": "Skip", "expectation": false },
+		{ "case": "(925)hello145-5555", "result": null, "task": "Skip", "expectation": false }
+	],
+	"testPassed": false
 },
 {
 	"order": 3,
@@ -55,6 +58,7 @@
 		{ "case": "opium den", "result": null, "task": "Match", "expectation": true },
 		{ "case": "wise men", "result": null, "task": "Match", "expectation": true },
 		{ "case": "never again", "result": null, "task": "Skip", "expectation": false }
-	]
+	],
+	"testPassed": false
 }
 ]
