@@ -32,7 +32,7 @@ describe('Database Work: ', () => {
         it('Should respond with an array of data', () => {
             http.get('http://localhost:3000/regex/challenges', (res) => {
                 assert(Array.isArray(res));
-                donde();
+                done();
             });
         });
     });
