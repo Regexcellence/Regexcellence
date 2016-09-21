@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputRegexValidation from './inputRegexValidation';
-import TestCaseList from '../components/testCaseList';
-import ChallengeDescription from '../components/challenge-description';
+import TestCaseList from './testCaseList';
+import ChallengeDescription from './challenge-description';
 
 export default class Challenge extends Component {
   constructor(props) {
