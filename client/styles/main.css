@@ -2,7 +2,10 @@ body {
   margin: 0;
   background-color: #F5F5F5;
 }
-
+@font-face {
+ font-family: Lavanderia-Sturdy;
+ src: url('./fonts/Lavanderia-Sturdy.woff') format('woff');
+}
 .challenge {
 	background-color: white;
 	width: 60%;

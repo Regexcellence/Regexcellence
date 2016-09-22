@@ -11,7 +11,8 @@ const PATHS = {
   style: [
     path.join(__dirname, 'client/styles', 'main.css')
   ],
-	build: path.join(__dirname, 'build')
+	build: path.join(__dirname, 'build'),
+  fonts: path.join(__dirname, 'client/styles/fonts')
 };
 
 const common = {
@@ -45,6 +46,11 @@ const common = {
       {
         test: /\.node$/,
         loader: 'node-loader'
+      },
+      {
+        test: /\.woff$/,  
+        loader: 'url?limit=50000',
+        include: PATHS.fonts
       }
     ],
   },

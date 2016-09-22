@@ -1,16 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Router, Link } from 'react-router';
 
-export default class TestPassedButton extends React.Component {
+import { inputActionCreator } from '../actions/index';
+
+
+class TestPassedButton extends React.Component {
 	constructor(props) {
 		super(props);
+		this.clearText = this.clearText.bind(this);
+	}
+	clearText() {
+		this.props.inputActionCreator('');
 	}
 	render() {
 		if (this.props.testPassed) {
 			return (
 				<span className="input-group-btn">
 				  <Link to={`/${this.props.nextTutorial}`}>
-					  <button className="btn btn-secondary">
+					  <button onClick={this.clearText} className="btn btn-secondary">
 					    Continue
 					  </button>
 				  </Link>
@@ -21,3 +29,9 @@ export default class TestPassedButton extends React.Component {
 		}
 	}
 }
+
+const mapStateToProps = (state) => {
+	return { text: state.userInput }
+};
+
+export default connect(mapStateToProps, { inputActionCreator })(TestPassedButton);
