@@ -1,105 +1,96 @@
 [
-{
-	"order": 0,
-	"name": "Tutorial Test",
-	"description": "Write a pattern that matches 'abc' within any string",
-	"author": "Troy",
-	"difficulty": "easy",
-	"testCases": [
-	  { "case": "abcd", "result": null, "task": "Match", "expectation": true },
-	  { "case": "acd", "result": null, "task": "Skip", "expectation": false },
-	  { "case": "abcde", "result": null, "task": "Match", "expectation": true }
-	],
-	"testPassed": false
-},
-{
-	"order": 1,
-	"name": "Matching Zip Codes",
-	"description": "Write a pattern that matches a 5-digit zipcode",
-	"author": "Lucy",
-	"difficulty": "easy",
-	"testCases": [
-		{ "case": "94549", "result": null, "task": "Match", "expectation": true },
-		{ "case": "94105", "result": null, "task": "Match", "expectation": true },
-		{ "case": "666", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "9999999", "result": null, "task": "Skip", "expectation": false }
-	],
-	"testPassed": false
-},
-{
-	"order": 2,
-	"name": "Matching Phone Numbers",
-	"description": "Write a pattern that matches a variety of phone number formats",
-	"author": "Ben",
-	"difficulty": "medium",
-	"testCases":[
-		{ "case": "(925) 145-5555", "result": null, "task": "Match", "expectation": true },
-		{ "case": "(925) 1455555", "result": null, "task": "Match", "expectation": false },
-		{ "case": "925-145-5555", "result": null, "task": "Match", "expectation": true },
-		{ "case": "(925) 145-55555", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "925 145-5555", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "925 145 5555", "result": null, "task": "Skip", "expectation": false },
-		{ "case": "(925)hello145-5555", "result": null, "task": "Skip", "expectation": false }
-	],
-	"testPassed": false
-},
   {
-    "_id": "57e31e626a4c52a363af9d6c",
+  	"order": 0,
+  	"name": "Tutorial Test",
+  	"description": "Let’s start with the basics! You are writing patterns with the pure intent of matching certain characters in strings. Simple letters and digits easily match to themselves. /a/ will match to anything containing an 'a', /1/ will match to anything with a '1'. A word, /meow/ for example, will match to the word ‘meow’ if it appears in that order. However, when wrapping characters inside of square brackets you can match specific characters. For example, /[meow]/ will match to one of the characters ‘m’, ‘e’, ‘o’, or ‘w’, in any order, and will be case sensitive unless specified otherwise. Fun fact! The DOT! The /./ character is actually a wild card that will match to any character, although if you throw in some brackets /[.]/ it matches only to itself. Use with caution. To check for only one dot be sure to escape the dot using a backslash! /\\./ Got it? Give it a try! Remember to start and end your expression with forward slashes.",
+  	"author": "Troy",
+  	"difficulty": "easy",
+  	"testCases": [
+  	  { "case": "abcd", "result": null, "task": "Match", "expectation": true },
+  	  { "case": "acd", "result": null, "task": "Skip", "expectation": false },
+  	  { "case": "abcde", "result": null, "task": "Match", "expectation": true }
+  	],
+  	"testPassed": false
+  },
+  {
+  	"order": 1,
+  	"name": "Excluding Characters",
+  	"description": "Let’s review! In our previous challenge we used square brackets to match single characters. Conversely, we can simply use the caret character '^' inside of square brackets to exclude characters. Here’s an example! The regex /[^xyx]/ will exclude ‘x’, ‘y’, or ‘z’. Try it out. Using the caret, write a pattern that skips the verbs in the list.",
+  	"author": "Ben",
+  	"difficulty": "easy",
+  	"testCases":[
+  		{ "case": "mall", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "fall", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "tall", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "stall", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "ball", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "call", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "wall", "result": null, "task": "Match", "expectation": true }
+  	],
+  	"testPassed": false
+  },
+  {
+  	"order": 2,
+  	"name": "Matching Zip Codes",
+  	"description": "Well done! Now that you’re getting used to the basics we can get a little fancier. The hyphen is a wonderful tool for creating a concise way of matching to many different characters. Instead of writing /[abcdefg]/, we can simply write /[a-g]/. This also works for digits, for example writing /[0-9]/ is a great way to match to any number. But wait! There’s an even better way to match numbers. You can use metacharacters to match specific classes of characters. The \\d metacharacter is used to match only numbers and is equivalent to /[0-9]/. Matching to a certain number of character repetitions is as easy as following the character with some curly braces. /a{1}/ will match to a string containing one ‘a’, while /a{1,}/ will match a string as long as it has at least one ‘a’, but could contain one hundred ‘a’s. If you would like to match various strings that range in 'a'-length, create a limit. /a{2,5}/ will match strings with two to five continuous ‘a’s. Try to use curly brackets and the metacharacter to validate and match the 5-digit zip codes!",
+  	"author": "Lucy",
+  	"difficulty": "easy",
+  	"testCases": [
+  		{ "case": "94549", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "94105", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "666", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "9999999", "result": null, "task": "Skip", "expectation": false }
+  	],
+  	"testPassed": false
+  },
+  {
     "order": 3,
     "name": "Words that end with 'en'",
-    "description": "Write a pattern that matches expressions that end with 'en'",
+    "description": "Sweet! Now let’s increase the specificity of our matches. Sometimes we want to make sure a line starts or ends with a specific word. Using the caret character without square brackets will guarantee that the regular expression only matches to lines that begin with the given string. For example we want to validate that a url is on a secured protocol. To do so we want to make sure that the url starts with “https://” by using the pattern /^https:\/\// Additionally it is also possible to match lines that end with specific characters or words. You can do that using the dollar sign ($). Give it a whirl! Try to match only the words that end with 'en'.",
     "author": "Dana",
     "difficulty": "medium",
     "testPassed": false,
     "testCases": [
-      {
-        "case": "glenn",
-        "result": null,
-        "task": "Skip",
-        "expectation": false
-      },
-      {
-        "case": "glen",
-        "result": null,
-        "task": "Match",
-        "expectation": true
-      },
-      {
-        "case": "turkmen",
-        "result": null,
-        "task": "Match",
-        "expectation": true
-      },
-      {
-        "case": "cayenne",
-        "result": null,
-        "task": "Skip",
-        "expectation": false
-      },
-      {
-        "case": "big ben",
-        "result": null,
-        "task": "Match",
-        "expectation": true
-      },
-      {
-        "case": "opium den",
-        "result": null,
-        "task": "Match",
-        "expectation": true
-      },
-      {
-        "case": "wise men",
-        "result": null,
-        "task": "Match",
-        "expectation": true
-      },
-      {
-        "case": "never again",
-        "result": null,
-        "task": "Skip",
-        "expectation": false
-      }
+      { "case": "glenn", "result": null, "task": "Skip", "expectation": false },
+      { "case": "glen", "result": null, "task": "Match", "expectation": true },
+      { "case": "turkmen", "result": null, "task": "Match", "expectation": true },
+      { "case": "cayenne", "result": null, "task": "Skip", "expectation": false },
+      { "case": "big ben", "result": null, "task": "Match", "expectation": true },
+      { "case": "opium den", "result": null, "task": "Match", "expectation": true },
+      { "case": "wise men", "result": null, "task": "Match", "expectation": true },
+      { "case": "never again", "result": null, "task": "Skip", "expectation": false}
     ]
+  },
+  {
+  	"order": 4,
+  	"name": "Matching Phone Numbers",
+  	"description": "Great job! Let’s move on to yet another metacharacter! Often when you build a website, like Regexcellence.co, you may run into scenarios where you do not want to have any whitespaces in your URL. Good news! There’s a metacharacter for that! You can use \\s to match any whitespace in a given line. Write a pattern that matches each sentence and be sure to include the spaces!",
+  	"author": "Ben",
+  	"difficulty": "medium",
+  	"testCases":[
+  		{ "case": "Regexcellence is a great site!", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "Regex is the only source truth", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "Lucy and Dana are awesome!", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "Troy is a beast!", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "Remove all of the whitespaces.", "result": null, "task": "Match", "expectation": true }
+  	],
+  	"testPassed": false
+  },
+  {
+  	"order": 5,
+  	"name": "Matching Phone Numbers",
+  	"description": "Write a pattern that matches a variety of phone number formats",
+  	"author": "Ben",
+  	"difficulty": "medium",
+  	"testCases":[
+  		{ "case": "(925) 145-5555", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "(925) 1455555", "result": null, "task": "Match", "expectation": false },
+  		{ "case": "925-145-5555", "result": null, "task": "Match", "expectation": true },
+  		{ "case": "(925) 145-55555", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "925 145-5555", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "925 145 5555", "result": null, "task": "Skip", "expectation": false },
+  		{ "case": "(925)hello145-5555", "result": null, "task": "Skip", "expectation": false }
+  	],
+  	"testPassed": false
   }
 ]
