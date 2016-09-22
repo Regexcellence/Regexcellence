@@ -16,7 +16,7 @@ export function inputActionCreator(newInput) {
 export function getAllChallenges() {
   return (dispatch) => {
     $.ajax('/regex/challenges').then((data) => {
-      console.log('DATAAA', data);
+      console.log('User Challenge DATAAA', data);
       dispatch({
         type: 'GET-CHALLENGES',
         payload: data,

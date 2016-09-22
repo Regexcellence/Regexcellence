@@ -14,6 +14,7 @@ import Navigation from './controls/navbar';
 import Tutorial from './pages/tutorial';
 import About from './pages/about';
 import Home from './pages/home';
+import UserChallenges from './pages/userChallenges';
 import TutorialMain from './tutorials/tutorialMain';
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
@@ -30,7 +31,7 @@ class App extends React.Component {
             <Route path="/" component={Navigation} />
             <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
-
+            <Route path="/user-challenges" component={UserChallenges}/>
             <Route path="/tutorial" component={Tutorial}>
               <Route path="/:nameurl" component={TutorialMain} />
             </Route>
