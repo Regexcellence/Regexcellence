@@ -1,5 +1,7 @@
 import React from 'react';
+
 import TestCase from './testCase';
+import TestCaseText from './testCaseText';
 
 export default class TestCaseList extends React.Component {
   render() {
@@ -15,7 +17,10 @@ export default class TestCaseList extends React.Component {
           {this.props.testCases.map(testCase => (
             <tr key={testCase._id}>
               <td>{testCase.task}</td>
-              <td>{testCase.case} <TestCase flag={testCase.result} /> </td>
+              <td>
+                <TestCaseText testCase={testCase.innerMatches || testCase.case} /> 
+                <TestCase flag={testCase.result} /> 
+              </td>
             </tr>
           ))}
         </tbody>

@@ -31,11 +31,12 @@ function testCasesExtractor(parsedInput, challenge) {
   const testCases = checkRegex(parsedInput, challenge.testCases);
   let testPassed = true;
   for (let i = 0; i < testCases.length; i++) {
+    testCases[i].innerMatches = innerTextMatching(parsedInput, testCases[i]);
     if (!testCases[i].result) {
       testPassed = false;
     }
   }
-  console.log('test result : ', testPassed);
+  console.log('test result: ', testPassed);
   return Object.assign(
     {},
     challenge,
@@ -48,7 +49,6 @@ function checkRegex(parsedInput, testCases) {
   const regex = parsedInput.flags
     ? new RegExp(parsedInput.pattern, parsedInput.flags)
     : new RegExp(parsedInput.pattern);
-  console.log("Newly formed regex is ", regex)
   return testCases.map((test) => {
     if (!parsedInput.pattern.length) {
       test.result = null;
@@ -59,4 +59,27 @@ function checkRegex(parsedInput, testCases) {
     }
     return test;
   });
+}
+function innerTextMatching(parsedInput, testCase) {
+  const regex = parsedInput.flags
+    ? new RegExp(parsedInput.pattern, parsedInput.flags)
+    : new RegExp(parsedInput.pattern);
+  let start = testCase.case;
+  let match = '';
+  let end = '';
+  if (!parsedInput.flags) {
+    // Match pattern e.g. 'hello world'.match(/o/) => [ 'o', index: 4, input: 'hello world' ]
+    const matchPattern = testCase.case.match(regex);
+    if (matchPattern !== null) {
+      const caseCopy = testCase.case.split('');
+      start = caseCopy.slice(0, matchPattern.index).join('');
+      end = caseCopy.slice(matchPattern.index + matchPattern[0].length).join('');
+      match = caseCopy.splice(matchPattern.index, matchPattern[0].length).join('');
+    }
+  }
+  return {
+    start,
+    match,
+    end,
+  };
 }

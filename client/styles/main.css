@@ -12,3 +12,6 @@ body {
 #input-pattern {
 	width: 100%;
 }
+.text-match {
+	color: green;
+}
