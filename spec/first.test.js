@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import Controls from '../client/controls/controls';
-import Challenge from '../client/challenge/challenge';
-import Challenges from '../client/challenges';
-import InputRegexValidation from '../client/challenge/inputRegexValidation';
+// import Challenge from '../client/challenge/challenge';
+// import Challenges from '../client/challenges';
+// import InputRegexValidation from '../client/challenge/inputRegexValidation';
 import reducer from '../client/reducers/index';
 
 import { inputValidator } from '../client/reducers/inputValidation';
@@ -25,37 +25,59 @@ describe('<Controls />', () => {
 
 describe('[Reducer]: InputValidator', () => {
   it('should be a function.', () => {
-    // console.log(inputValidator,'***');
     expect(typeof inputValidator).to.equal('function');
   });
 
+  const action = { newInput: '/abc/' };
+  const result = inputValidator({}, action);
   it('should return an object with a property of wellFormedInput.', () => {
-    const action = { newInput: '/abc/'};
-    const result = inputValidator({}, action);
-    expect(result.hasOwnProperty('wellFormedInput')).to.equal(true);
+    const checkProperty = result.hasOwnProperty('wellFormedInput');
+    expect(checkProperty).to.equal(true);
   });
 
+  const action2 = { newInput: 'abc' };
+  const result2 = inputValidator({}, action2);
   it('should check if user input is in proper regex format.', () => {
-    const action = { newInput: '/abc/'};
-    const action2 = { newInput: 'abc'};
-    const result = inputValidator({}, action);
-    const result2 = inputValidator({}, action2);
     expect(result.wellFormedInput).to.equal(true);
     expect(result2.wellFormedInput).to.equal(false);
   });
 });
 
+describe('[Reducer]: RegexValidator', () => {
+  it('should be a function.', () => {
+    // console.log(inputValidator,'***');
+    expect(typeof regexValidator).to.equal('function');
+  });
+  const tempState = { challenges: [{
+  _id: 12345,
+  order: 0,
+  name: 'Learning your ABCs',
+  description: 'Write a pattern that matches "abc" within any string',
+  author: 'Troy',
+  difficulty: 'easy',
+  testCases: [
+    { case: 'abcd', result: null, task: 'Match', expectation: true },
+    { case: 'acd', result: null, task: 'Skip', expectation: false },
+    { case: 'abcde', result: null, task: 'Match', expectation: true },
+  ],
+  testPassed: false }],
+  };
 
-// describe('<InputRegexValidation />', () => {
-//   const wrapper = shallow(<InputRegexValidation store={testStore} />);
-//   it('checkRegex should be defined', () => {
-//     expect(wrapper.checkRegex).to.be.defined;
-//   });
+  const action = { challengeId: 12345, input: '/abcd/' };
+  const action2 = { challengeId: 12345, input: '/acd/' };
 
-//   it('checkRegex should be a function', () => {
-//     expect(wrapper.instance().checkRegex).to.be.a('function');
-//   });
-// });
+  const result = regexValidator(tempState, action);
+  const result2 = regexValidator(tempState, action2);
+
+  it('should return an object.', () => {
+    expect(typeof result).to.equal('object');
+  });
+
+  it('should set property of testPassed to true once passed, vice versa.', () => {
+    expect(result.challenges[0].testPassed).to.equal(true);
+    expect(result2.challenges[0].testPassed).to.equal(false);
+  });
+});
 
 
 // Invariant Violation: Could not find "store" in either the context or props of.
