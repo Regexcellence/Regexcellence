@@ -1,36 +1,80 @@
-body {
-  margin: 0;
-  background-color: #F5F5F5;
-}
 @font-face {
  font-family: Lavanderia-Sturdy;
  src: url('./fonts/Lavanderia-Sturdy.woff') format('woff');
 }
+
+body {
+  margin: 0;
+  background-color: #F5F5F5;
+  font-family: Helvetica;
+}
+
+.intro {
+	width: 60%;
+	margin: auto;
+	padding: 30px;
+	background-color: #FFF;
+}
+
 .challenge {
 	background-color: white;
 	width: 60%;
 	margin: auto;
 	padding: 15px; 
-	border-radius: 10px;
 }
 
 .nav {
-	font-size: 20px;
+	font-size: 15px;
+	color: #000;
+}
+
+.nav a {
+	color: #000;
+}
+
+.logo {
+	font-size: 35px;
+	font-family: Lavanderia-Sturdy;
+	color: #000;
+}
+
+.logo:hover {
+	color: #000;
 }
 
 .form-control {
 	height: 50px;
 	font-size: 25px;
-	outline: none;
+  box-shadow: none;
+  outline: none;
+  border-color: lightgrey;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: lightgrey;
+}
+
+#continue {
+	background-color: #17A6B6;
+	height: 50px;
+	border-radius: 0;
+	color: #FFF;
+}
+
+.malformed {
+	background-color: #FF4C4D;
+	height: 50px;
+	color: #FFF;
+	padding-top: 15px;
+	padding-left: 15px;
+	border-radius: 0;
+	border: none;
 }
 
 #input-pattern {
 	width: 100%;
 }.text-match {
 	color: green;
-}
-
-*:focus {
-	outline: 0 none;
-	border: none;
 }
