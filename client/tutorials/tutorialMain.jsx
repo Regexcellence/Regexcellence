@@ -9,7 +9,7 @@ class TutorialMain extends Component {
 	}
 	getTutorialProps(param) {
 		return this.props.challenges.reduce((prev, curr) => {
-			if (curr.name === param) {
+			if (curr.nameurl === param) {
 				return curr;
 			} else {
 				return prev; 
@@ -18,13 +18,13 @@ class TutorialMain extends Component {
 	}
   render() {
   	if (this.props.challenges.length) {
-  		const currentChallenge = this.getTutorialProps(this.props.params.name);
+  		const currentChallenge = this.getTutorialProps(this.props.params.nameurl);
   		return (
   			<div>
 	  			<Challenge 
 	  			key={currentChallenge._id} 
 	  			challengeInfo={currentChallenge} 
-	  			nextTutorial={this.props.challenges[currentChallenge.order + 1].name}
+	  			nextTutorial={this.props.challenges[currentChallenge.order + 1].nameurl}
 	  			/>
   			</div>
   		)
