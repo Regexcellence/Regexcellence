@@ -7,6 +7,9 @@ class Navigation extends Component {
     return (
       <div>
         <nav className="navbar navbar-light bg-faded">
+          <div className="navbar-header">
+            <a className="navbar-brand">Regexcellence</a>
+          </div>
           <ul className="nav nav-pills">
             <li><Link to="home">Home</Link></li>
             <li><Link to="tutorial">Tutorial</Link></li>
