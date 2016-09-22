@@ -6,8 +6,11 @@ export default class InputValidationFlag extends React.Component {
 			return false;
 		} else {
 			return (
-				<div className="alert alert-danger">
-					Error: Malformed regex
+				<div>
+				  <br></br>
+				  <div className="malformed">
+					  Error: Please use correct Regex syntax
+				  </div>
 				</div>
 			)
 		}

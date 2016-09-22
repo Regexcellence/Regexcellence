@@ -8,7 +8,7 @@ class Navigation extends Component {
       <div>
         <nav className="navbar navbar-light bg-faded">
           <div className="navbar-header">
-            <a className="navbar-brand" style={{ font: 'Lavanderia' }}>Regexcellence</a>
+            <a className="navbar-brand logo">Regexcellence</a>
           </div>
           <ul className="nav nav-pills">
             <li><Link to="home">Home</Link></li>
