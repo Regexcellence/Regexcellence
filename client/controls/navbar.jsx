@@ -8,6 +8,7 @@ class Navigation extends Component {
       <div>
         <nav className="navbar navbar-light bg-faded">
           <ul className="nav nav-pills">
+            <li className="logo">Regexcellence</li>
             <li><Link to="home">Home</Link></li>
             <li><Link to="tutorial">Tutorial</Link></li>
             <li><Link>Challenges</Link></li>
