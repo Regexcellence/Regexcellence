@@ -42,5 +42,64 @@
 		{ "case": "(925)hello145-5555", "result": null, "task": "Skip", "expectation": false }
 	],
 	"testPassed": false
-}
+},
+  {
+    "_id": "57e31e626a4c52a363af9d6c",
+    "order": 3,
+    "name": "Words that end with 'en'",
+    "description": "Write a pattern that matches expressions that end with 'en'",
+    "author": "Dana",
+    "difficulty": "medium",
+    "testPassed": false,
+    "testCases": [
+      {
+        "case": "glenn",
+        "result": null,
+        "task": "Skip",
+        "expectation": false
+      },
+      {
+        "case": "glen",
+        "result": null,
+        "task": "Match",
+        "expectation": true
+      },
+      {
+        "case": "turkmen",
+        "result": null,
+        "task": "Match",
+        "expectation": true
+      },
+      {
+        "case": "cayenne",
+        "result": null,
+        "task": "Skip",
+        "expectation": false
+      },
+      {
+        "case": "big ben",
+        "result": null,
+        "task": "Match",
+        "expectation": true
+      },
+      {
+        "case": "opium den",
+        "result": null,
+        "task": "Match",
+        "expectation": true
+      },
+      {
+        "case": "wise men",
+        "result": null,
+        "task": "Match",
+        "expectation": true
+      },
+      {
+        "case": "never again",
+        "result": null,
+        "task": "Skip",
+        "expectation": false
+      }
+    ]
+  }
 ]
