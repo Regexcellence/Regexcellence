@@ -13,7 +13,13 @@ class Tutorial extends Component {
   }
   render() {
     if (this.props.challenges.length) {
-      const firstTutorial = this.props.challenges[0].nameurl;
+      console.log('challenges array', this.props.challenges);
+      let firstTutorial;
+      this.props.challenges.forEach((item) => {
+        if (item.order === 0) {
+          firstTutorial = item.nameurl;
+        }
+      });
       console.log('pathname in tutorial ', this.props.location.pathname)
       if (this.props.location.pathname === '/tutorial') {
         return (
@@ -30,7 +36,7 @@ class Tutorial extends Component {
             {this.props.children}
           </div>
         )
-      }    
+      }
     } else {
       return <div>Loading...</div>;
     }
