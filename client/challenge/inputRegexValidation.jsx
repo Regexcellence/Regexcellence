@@ -22,7 +22,7 @@ class InputRegexValidation extends React.Component {
             onFocus={this.addSlashes}
           />
           <TestPassedButton 
-            nextTutorial={this.props.nextTutorial} 
+            nextUrl={this.props.nextUrl} 
             testPassed={this.props.testPassed} 
           />
         </form>

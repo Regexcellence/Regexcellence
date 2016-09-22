@@ -17,9 +17,9 @@ class TestPassedButton extends React.Component {
 		if (this.props.testPassed) {
 			return (
 				<span className="input-group-btn">
-				  <Link to={`/${this.props.nextTutorial}`}>
+				  <Link to={`/${this.props.nextUrl.url}`}>
 					  <button onClick={this.clearText} id="continue" className="btn btn-secondary">
-					    Continue
+					    {this.props.nextUrl.nextText}
 					  </button>
 				  </Link>
 				</span>
