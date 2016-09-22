@@ -15,7 +15,6 @@ class TutorialMain extends Component {
       });
     }
     orderList();
-    console.log('challengesList!', challengesList);
     const getProps = (param) => {
       return challengesList.reduce((prev, curr) => {
         if (curr.nameurl === param) {
@@ -35,19 +34,18 @@ class TutorialMain extends Component {
     if (this.props.challenges.length) {
       const currentChallenge = this.getTutorialProps().getProps(this.props.params.nameurl);
       const orderedList = this.getTutorialProps().challengesList;
-      console.log(orderedList[currentChallenge.order + 1])
-      let nextTutorial;
+      const nextTutorial = { nextText: 'Continue' };
       if (orderedList[currentChallenge.order + 1] === undefined) {
-        nextTutorial = '/home';
+        nextTutorial.url = 'home';
       } else {
-        nextTutorial = orderedList[currentChallenge.order + 1].nameurl;
+        nextTutorial.url = orderedList[currentChallenge.order + 1].nameurl;
       }
       return (
         <div>
           <Challenge
             key={currentChallenge._id}
             challengeInfo={currentChallenge}
-            nextTutorial={nextTutorial}
+            nextUrl={nextTutorial}
           />
         </div>
       );

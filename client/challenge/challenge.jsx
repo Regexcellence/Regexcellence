@@ -9,7 +9,7 @@ export default class Challenge extends Component {
   }
   render() {
     const challengeInfo = this.props.challengeInfo;
-    const nextTutorial = this.props.nextTutorial;
+    const nextUrl = this.props.nextUrl;
     return (
       <div className="challenge">
         <ChallengeDescription 
@@ -23,7 +23,7 @@ export default class Challenge extends Component {
           challengeId={challengeInfo._id} 
           testCases={challengeInfo.testCases} 
           testPassed={challengeInfo.testPassed}
-          nextTutorial={nextTutorial}
+          nextUrl={nextUrl}
         />
       </div>
     );
