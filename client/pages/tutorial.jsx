@@ -13,7 +13,7 @@ class Tutorial extends Component {
   }
   render() {
     if (this.props.challenges.length) {
-      const firstTutorial = this.props.challenges[0].name;
+      const firstTutorial = this.props.challenges[0].nameurl;
       console.log('pathname in tutorial ', this.props.location.pathname)
       if (this.props.location.pathname === '/tutorial') {
         return (

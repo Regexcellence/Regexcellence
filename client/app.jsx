@@ -32,7 +32,7 @@ class App extends React.Component {
             <Route path="/about" component={About} />
 
             <Route path="/tutorial" component={Tutorial}>
-              <Route path="/:name" component={TutorialMain} />
+              <Route path="/:nameurl" component={TutorialMain} />
             </Route>
           </Router>
         </Provider>

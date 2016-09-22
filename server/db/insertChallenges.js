@@ -1,9 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const mongoose = require('mongoose');
+
 const handlers = require('./dbQueryHandler');
 const Tutorial = require('./dbmodel').Tutorial;
 const MONGO_URI = require('../../config').MONGO_URI;
-const mongoose = require('mongoose');
+const parseChallengeName = require('../utils').parseChallengeName;
+
 // Below is to fix deprecated mongoose promise.
 mongoose.Promise = global.Promise;
 const db = mongoose.connect(MONGO_URI);
@@ -11,6 +14,7 @@ const db = mongoose.connect(MONGO_URI);
 const addEntries = (data) => {
   data.forEach((tutorial) => {
     tutorial._id = mongoose.Types.ObjectId();
+    tutorial.nameurl = parseChallengeName(tutorial.name);
     const NewTutorial = new Tutorial(tutorial);
     NewTutorial.save((err, newData) => {
       if (err) throw err;
