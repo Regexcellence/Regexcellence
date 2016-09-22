@@ -46,10 +46,9 @@
   {
     "order": 3,
     "name": "Words that end with 'en'",
-    "description": "Sweet! Now let’s increase the specificity of our matches. Sometimes we want to make sure a line starts or ends with a specific word. Using the caret character without square brackets will guarantee that the regular expression only matches to lines that begin with the given string. For example we want to validate that a url is on a secured protocol. To do so we want to make sure that the url starts with “https://” by using the pattern /^https:\/\// Additionally it is also possible to match lines that end with specific characters or words. You can do that using the dollar sign ($). Give it a whirl! Try to match only the words that end with 'en'.",
+    "description": "Sweet! Now let’s increase the specificity of our matches. Sometimes we want to make sure a line starts or ends with a specific word. Using the caret character without square brackets will guarantee that the regular expression only matches to lines that begin with the given string. For example we want to validate that a url is on a secured protocol. To do so we want to make sure that the url starts with 'https://' by using the pattern /^https:\\/\\// Additionally it is also possible to match lines that end with specific characters or words. You can do that using the dollar sign ($). Give it a whirl! Try to match only the words that end with 'en'.",
     "author": "Dana",
     "difficulty": "medium",
-    "testPassed": false,
     "testCases": [
       { "case": "glenn", "result": null, "task": "Skip", "expectation": false },
       { "case": "glen", "result": null, "task": "Match", "expectation": true },
@@ -59,14 +58,15 @@
       { "case": "opium den", "result": null, "task": "Match", "expectation": true },
       { "case": "wise men", "result": null, "task": "Match", "expectation": true },
       { "case": "never again", "result": null, "task": "Skip", "expectation": false}
-    ]
+    ],
+    "testPassed": false
   },
   {
   	"order": 4,
-  	"name": "Matching Phone Numbers",
+  	"name": "Removing Spaces",
   	"description": "Great job! Let’s move on to yet another metacharacter! Often when you build a website, like Regexcellence.co, you may run into scenarios where you do not want to have any whitespaces in your URL. Good news! There’s a metacharacter for that! You can use \\s to match any whitespace in a given line. Write a pattern that matches each sentence and be sure to include the spaces!",
   	"author": "Ben",
-  	"difficulty": "medium",
+  	"difficulty": "easy",
   	"testCases":[
   		{ "case": "Regexcellence is a great site!", "result": null, "task": "Match", "expectation": true },
   		{ "case": "Regex is the only source truth", "result": null, "task": "Match", "expectation": true },
