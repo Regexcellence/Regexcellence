@@ -14,14 +14,23 @@ class Tutorial extends Component {
   render() {
     if (this.props.challenges.length) {
       const firstTutorial = this.props.challenges[0].name;
-      return (
-        <div>
-          <Navigation />
-          <h1>This is the Tutorial page</h1>
-          <Link to={"/" + firstTutorial}>First Tutorial Here</Link>
-          {this.props.children}
-        </div>
-      );      
+      console.log('pathname in tutorial ', this.props.location.pathname)
+      if (this.props.location.pathname === '/tutorial') {
+        return (
+          <div>
+            <Navigation />
+            <h1>This is the Tutorial page</h1>
+            <Link to={"/" + firstTutorial}>First Tutorial Here</Link>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <Navigation />
+            {this.props.children}
+          </div>
+        )
+      }    
     } else {
       return <div>Loading...</div>;
     }
