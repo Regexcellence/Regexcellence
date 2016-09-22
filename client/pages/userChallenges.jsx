@@ -12,14 +12,17 @@ class UserChallenges extends Component {
   render() {
     if(this.props.challenges.length){
       console.log('***user challenges: ', this.props.challenges);
+      return (
+        <div>
+          <Navigation />
+          <h1>User Challenges Page</h1>
+          <ListView userChallenges={this.props.challenges} />
+        </div>
+      );
     }
-    return (
-      <div>
-        <Navigation />
-        <h1>User Challenges Page</h1>
-        <ListView />
-      </div>
-    );
+    else{
+      return <div>Loading</div>
+    }
   }
 }
 
