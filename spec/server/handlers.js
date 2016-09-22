@@ -1,5 +1,6 @@
 const assert = require('assert');
 const http = require('http');
+const utils = require('../../server/utils');
 
 describe('hello world', () => {
   describe('inner', () => {
@@ -37,12 +38,21 @@ describe('MongoDB', () => {
 });
 
 describe('Database Work: ', () => {
-    describe('Retrieving challenges', () => {
-        it('Should respond with an array of data', () => {
-            http.get('http://localhost:3000/regex/challenges', (res) => {
-                assert(Array.isArray(res));
-                done();
-            });
-        });
-    });
+  describe('Retrieving challenges', () => {
+      it('Should respond with an array of data', () => {
+          http.get('http://localhost:3000/regex/challenges', (res) => {
+              assert(Array.isArray(res));
+              done();
+          });
+      });
+  });
 });
+
+describe('Utils', () => {
+  describe('parseChallengeName', () => {
+    it('Should parse challenge names into url strings', () => {
+      assert.equal(utils.parseChallengeName('Hello World'), 'hello-world');
+      assert.equal(utils.parseChallengeName('Troy is the freaking worst!'), 'troy-is-the-freaking-worst');
+    })
+  })
+})
