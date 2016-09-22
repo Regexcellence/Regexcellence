@@ -1,4 +1,11 @@
+const mongoose = require('mongoose');
 const models = require('./dbmodel');
+
+// Below is to fix deprecated mongoose promise.
+mongoose.Promise = global.Promise;
+const Challenges = models.Challenges;
+
+const parseChallengeName = require('../utils').parseChallengeName;
 
 module.exports = {
   getChallenges: (callback) => {
@@ -7,11 +14,14 @@ module.exports = {
       callback(challenges);
     });
   },
-  postChallenges: (callback, req) => {
-    models.Challenges.save(newChallenge, (err, tutorial) => {
-    //This function will eventually take information for the input forms and use it to make a post request, but right now this is a placeholder for that function.
-    if (err) throw err;
-      callback(challenges);
+  postChallenge: (challengeObject, callback) => {
+    challengeObject._id = mongoose.Types.ObjectId();
+    challengeObject.nameurl = parseChallengeName(challengeObject.name);
+    challengeObject.testPassed = false;
+    const NewChallenge = new Challenges(challengeObject);
+    NewChallenge.save((err, newData) => {
+      if (err) throw err;
+      callback(newData);
     });
   },
   getTutorial: (callback) => {
