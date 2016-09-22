@@ -31,7 +31,7 @@ class TestPassedButton extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-	{ text: state.userInput }
+	return { text: state.userInput }
 };
 
 export default connect(mapStateToProps, { inputActionCreator })(TestPassedButton);
