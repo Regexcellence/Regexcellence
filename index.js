@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const MONGO_URI = require('./config').MONGO_URI;
-
 const app = express();
 const handleRequest = require('./server/handlers').GET(app);
 

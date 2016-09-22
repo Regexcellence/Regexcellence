@@ -4,12 +4,12 @@ import { Link } from 'react-router';
 
 import Navigation from '../controls/navbar';
 import Controls from '../controls/controls';
-import { getAllChallenges } from '../actions/index';
+import { getAllTutorial } from '../actions/index';
 import Challenge from '../challenge/challenge';
 
 class Tutorial extends Component {
   componentWillMount() {
-   this.props.getAllChallenges();
+   this.props.getAllTutorial();
   }
   render() {
     if (this.props.challenges.length) {
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
   return { challenges: state.challenges };
 };
 
-export default connect(mapStateToProps, { getAllChallenges })(Tutorial);
+export default connect(mapStateToProps, { getAllTutorial })(Tutorial);
