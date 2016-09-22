@@ -5,7 +5,7 @@ body {
 
 .challenge {
 	background-color: white;
-	width: 50%;
+	width: 60%;
 	margin: auto;
 	padding: 15px; 
 	border-radius: 10px;
@@ -15,8 +15,19 @@ body {
 	font-size: 20px;
 }
 
+.form-control {
+	height: 50px;
+	font-size: 25px;
+	outline: none;
+}
+
 #input-pattern {
 	width: 100%;
 }.text-match {
 	color: green;
+}
+
+*:focus {
+	outline: 0 none;
+	border: none;
 }
