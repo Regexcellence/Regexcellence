@@ -24,3 +24,15 @@ export function getAllChallenges() {
     });
   };
 }
+
+export function getAllTutorial() {
+  return (dispatch) => {
+    $.ajax('/regex/tutorial').then((data) => {
+      console.log('TUTORIAL DATA', data);
+      dispatch({
+        type: 'GET-CHALLENGES',
+        payload: data,
+      });
+    });
+  };
+}

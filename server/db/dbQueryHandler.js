@@ -7,11 +7,11 @@ module.exports = {
       callback(challenges);
     });
   },
-  postChallenges: (callback) => {
-    models.Tutorial.insert({}, (err, tutorial) => {
+  postChallenges: (callback, req) => {
+    models.Challenges.save(newChallenge, (err, tutorial) => {
     //This function will eventually take information for the input forms and use it to make a post request, but right now this is a placeholder for that function.
     if (err) throw err;
-      callback(tutorial);
+      callback(challenges);
     });
   },
   getTutorial: (callback) => {
