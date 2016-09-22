@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const handlers = require('./dbQueryHandler');
-const Challenge = require('./dbmodel').Challenge;
 const Tutorial = require('./dbmodel').Tutorial;
 const MONGO_URI = require('../../config').MONGO_URI;
 const mongoose = require('mongoose');
