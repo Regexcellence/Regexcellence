@@ -17,6 +17,7 @@ import Home from './pages/home';
 import Post from './pages/post';
 import UserChallenges from './pages/userChallenges';
 import TutorialMain from './tutorials/tutorialMain';
+import UserChallengeMain from './userChallenges/userChallengeMain';
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
@@ -33,7 +34,9 @@ class App extends React.Component {
               <IndexRoute component={Home}/>
               <Route path="/about" component={About} />
               <Route path="/post" component={Post} />
-              <Route path="/user-challenges" component={UserChallenges} />
+              <Route path="/user-challenges" component={UserChallenges}>
+                <Route path="/user-challenges/:challengeid" component={UserChallengeMain} />
+              </Route>
               <Route path="/tutorial" component={Tutorial}>
                 <Route path="/tutorial/:nameurl" component={TutorialMain} />
               </Route>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Challenge from '../challenge/challenge';
-import { inputActionCreator } from '../actions/index';
 
 class TutorialMain extends Component {
   constructor(props) {
@@ -59,4 +58,4 @@ const mapStateToProps = (state) => {
     return { challenges: state.challenges };
 };
 
-export default connect(mapStateToProps, { inputActionCreator })(TutorialMain);
+export default connect(mapStateToProps)(TutorialMain);
