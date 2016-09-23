@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import Cheatsheet from '../pages/cheatsheet';
 
-export default class Navigation extends Component {
+export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +34,7 @@ export default class Navigation extends Component {
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </nav>
-
+        {this.props.children}
       </div>
     );
   }
