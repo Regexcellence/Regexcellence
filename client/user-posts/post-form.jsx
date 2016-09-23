@@ -24,8 +24,8 @@ class UserChallengePost extends Component {
   render() {
 
     if (true) {
-      return <Challenge 
-      challengeInfo={this.props.newUserPost} 
+      return <Challenge
+      challengeInfo={this.props.newUserPost}
       editable={true}
       nextUrl={{ url: 'user-challenges', nextText: 'Submit New Challenge!' }}
       />
