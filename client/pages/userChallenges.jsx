@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Navigation from '../controls/navbar';
 import ListView from '../userChallenges/listView';
 import { getAllChallenges } from '../actions/index';
 
@@ -10,7 +9,7 @@ class UserChallenges extends Component {
     this.props.getAllChallenges();
   }
   render() {
-    if(this.props.challenges.length){
+    if (this.props.challenges.length) {
       console.log('***user challenges: ', this.props.challenges);
       return (
         <div>
@@ -21,11 +20,11 @@ class UserChallenges extends Component {
           </h1>
           <p className="lead">Pratice your Regex skills at our challenges page!</p>
           </div>
-          <ListView userChallenges={this.props.challenges} />
+          { this.props.children || <ListView userChallenges={this.props.challenges} />}
         </div>
       );
     }
-    else{
+    else {
       return <div>Loading</div>
     }
   }
