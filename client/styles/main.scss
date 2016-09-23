@@ -147,7 +147,7 @@ textarea {
   :hover {
     color: #000;
   }
-  :visited {
+  &:visited {
   	color: #000;
   }
 }
@@ -209,6 +209,23 @@ textarea {
   margin-top: 9%;
 }
 
+.footer {
+  li {
+  	list-style: none;
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  &.logo {
+  font-size: 20px;
+  color: #4F4F4F;  	
+  }
+  img {
+    border:none;
+    height: 15px;
+    width: 15px;
+    margin: 1px 5px 0px 0px;  	
+  }
+}
 
 
 
