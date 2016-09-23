@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { postChallengeActionCreator } from '../actions/index';
 
+import Challenge from '../challenge/challenge';
+
 class UserChallengePost extends Component {
   constructor(props) {
     super(props);
     this.submitPost = this.submitPost.bind(this);
   }
-  submitPost(event) {
-    event.preventDefault();
+  submitPost() {
     const postInfo = {
       name: this.name.value,
       author: this.author.value,
@@ -18,13 +19,15 @@ class UserChallengePost extends Component {
         task: this.task.value,
       },
     };
-  console.log('POST INFO:', postInfo);
     this.props.postChallengeActionCreator(postInfo);
   }
   render() {
+    if (true) {
+      return <Challenge challengeInfo={this.props.newUserPost} editable={true}/>
+    } else {
     return (
       <div>
-        <form className="input-group post" onSubmit={this.submitPost}>
+        <form className="input-group post" >
           <div>
             Challenge Name:
             <input ref={input => this.name = input} />
@@ -48,14 +51,21 @@ class UserChallengePost extends Component {
             </textarea>
           </div>
           <div>
-            <button type="submit" className="btn btn-info">
+            <button onClick={this.submitPost} className="btn btn-info">
               Submit
             </button>
           </div>
         </form>
       </div>
-      );
-    }
+    );
   }
+  }
+}
 
-export default connect(null, { postChallengeActionCreator })(UserChallengePost);
+const mapStateToProps = (state) => {
+  return {
+    newUserPost: state.newUserPost
+  }
+};
+
+export default connect(mapStateToProps, { postChallengeActionCreator })(UserChallengePost);

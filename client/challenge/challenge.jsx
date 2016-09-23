@@ -15,6 +15,7 @@ export default class Challenge extends Component {
         <ChallengeDescription 
           name={challengeInfo.name} 
           description={challengeInfo.description} 
+          editable={challengeInfo.editable}
         />
         <TestCaseList 
           testCases={challengeInfo.testCases} 

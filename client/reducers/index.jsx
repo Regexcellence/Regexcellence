@@ -11,6 +11,8 @@ const initialState = {
     author: '',
     difficulty: '',
     description: '',
+    testCases: [],
+    testPassed: false
   },
 };
 

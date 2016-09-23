@@ -23,6 +23,7 @@ class UserChallengeMain extends React.Component {
         key={currentChallenge._id}
         challengeInfo={currentChallenge}
         nextUrl={nextUrl} 
+        editable={false}
       />
     } else {
       return false; 
