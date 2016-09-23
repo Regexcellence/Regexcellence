@@ -40,39 +40,45 @@ body {
   border-bottom-right-radius: 0px;
   color: #17A6B6;
 }
-
-/*.nav-pills>li>a:focus {
-  background-color: #F5F5F5;
-  border-bottom: 1px solid #FF4C4D;
-  color: #FF4C4D;
-}*/
-
+h1{
+  background-color: #17A6B6;
+  color:white;
+  padding: 5%;
+}
 a:hover{
   text-decoration: none;
 }
 
-.list-group-item{
-  background-color: #F5F5F5;
-  border-color: #FF4C4D;
-  border-radius: 0px;
-  border-width: 0px 0px 1px 0px;
-  margin-bottom: 0px;
+.list-group{
+  box-shadow: none;
 }
 
 .list-group-item a {
   color: #000;
 }
 
+.list-group-item {
+  background-color: #F5F5F5;
+  border-color: #FF4C4D;
+  border-width: 0px 0px 1px 0px;
+  margin-bottom: 0px;
+}
+
 .list-group-item:last-child{
   border-radius: 0px;
 }
 
+.list-group-item:hover{
+  background-color: #F2D6D3;
+  border-radius: 0px;
+}
+
 #cheat-sheet {
-	position: absolute;
-	background-color: white;
-	margin-right: 0;
-	left: 75%;
-	right: 0;
+  position: absolute;
+  background-color: white;
+  margin-right: 0;
+  left: 75%;
+  right: 0;
 }
 
 .logo {
@@ -119,6 +125,7 @@ a:hover{
 .challenge-list{
   width: 80%;
   margin: auto;
+  box-shadow: none;
 }
 
 #input-pattern {

@@ -14,7 +14,8 @@ class UserChallenges extends Component {
       console.log('***user challenges: ', this.props.challenges);
       return (
         <div>
-          <h1>User Challenges Page</h1>
+          <Navigation />
+          <h1 className="text-center">User Challenges Page</h1>
           <ListView userChallenges={this.props.challenges} />
         </div>
       );
