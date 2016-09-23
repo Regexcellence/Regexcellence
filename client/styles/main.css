@@ -195,6 +195,24 @@ a:hover {
   box-shadow: none;
 }
 
+.footer li{
+  list-style: none;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+.footer .logo{
+  font-size: 20px;
+  color: #4F4F4F;
+}
+
+.footer img{
+  border:none;
+  height: 15px;
+  width: 15px;
+  margin: 1px 5px 0px 0px;
+}
+
 #input-pattern {
 	width: 100%;
 }.text-match {
