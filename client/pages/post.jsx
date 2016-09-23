@@ -5,7 +5,7 @@ class Post extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron">
+        <div className="jumbotron clear-top">
           <h1 className="text-center title">This is the post page</h1>
         </div>
         <br />

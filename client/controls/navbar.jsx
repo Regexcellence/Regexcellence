@@ -22,12 +22,11 @@ export default class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-light bg-faded">
+        <nav className="navbar-fixed-top navbar navbar-light bg-faded">
           <div className="navbar-header">
-            <a className="navbar-brand logo">Regexcellence</a>
+            <Link to="" className="navbar-brand logo">Regexcellence</Link>
           </div>
           <ul className="nav nav-pills pull-right">
-            <li><Link to="">HOME</Link></li>
             <li><Link to="tutorial">TUTORIAL</Link></li>
             <li><Link to="user-challenges">CHALLENGES</Link></li>
             <li><Link to="about">ABOUT</Link></li>

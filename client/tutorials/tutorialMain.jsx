@@ -40,7 +40,7 @@ class TutorialMain extends Component {
         nextTutorial.url = `tutorial/${orderedList[currentChallenge.order + 1].nameurl}`;
       }
       return (
-        <div>
+        <div className="clear-top">
           <Challenge
             key={currentChallenge._id}
             challengeInfo={currentChallenge}
