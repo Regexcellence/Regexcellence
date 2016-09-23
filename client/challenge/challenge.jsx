@@ -36,11 +36,11 @@ Challenge.propTypes = {
   nextUrl: React.PropTypes.object,
   editable: React.PropTypes.bool,
   challengeInfo: React.PropTypes.shape({
-    name: React.PropTypes.number,
+    name: React.PropTypes.string,
     description: React.PropTypes.string,
     _id: React.PropTypes.string,
     testCases: React.PropTypes.array.isRequired,
     testPassed: React.PropTypes.any,
-    challengeType: React.PropTypes.object,
+    challengeType: React.PropTypes.string,
   }),
 };
