@@ -45,6 +45,7 @@ class TutorialMain extends Component {
             key={currentChallenge._id}
             challengeInfo={currentChallenge}
             nextUrl={nextTutorial}
+            editable={false}
           />
         </div>
       );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // TODO: Bootstrap table can take classes .table-danger and .table-success to highlight entire row
 // based on success of test. Should we do?
+// TODO: Move styling here into css. 
 
 export default class TestCase extends Component {
   render() {

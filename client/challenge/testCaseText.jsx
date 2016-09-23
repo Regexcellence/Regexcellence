@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class TestCaseList extends React.Component {
+export default class TestCaseText extends React.Component {
 	constructor(props) {
 		super(props);
 	}
