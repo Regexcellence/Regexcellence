@@ -34,6 +34,7 @@ class Tutorial extends Component {
       } else {
         return (
           <div>
+            <span className="glyphicon-list"></span>
             {this.props.children}
           </div>
         )
