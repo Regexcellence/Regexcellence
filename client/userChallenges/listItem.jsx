@@ -7,8 +7,9 @@ class ListItem extends Component {
       <li className="list-group-item">  
         <Link>
         {this.props.name + '\n'}
-        <span className="glyphicon glyphicon-pencil pull-right"></span>
-        <span className="pull-right">{this.props.author}</span>
+        <span className="pull-right">
+          {this.props.author}
+        </span>
         </Link>
       </li>
     );
