@@ -7,15 +7,15 @@ class TutorialMain extends Component {
     super(props);
   }
   getTutorialProps() {
-    const challengesList = [];
+    const tutorialsList = [];
     const orderList = () => {
-      this.props.challenges.forEach((item) => {
-        challengesList[item.order] = item;
+      this.props.tutorials.forEach((item) => {
+        tutorialsList[item.order] = item;
       });
     }
     orderList();
     const getProps = (param) => {
-      return challengesList.reduce((prev, curr) => {
+      return tutorialsList.reduce((prev, curr) => {
         if (curr.nameurl === param) {
           return curr;
         } else {
@@ -26,24 +26,24 @@ class TutorialMain extends Component {
     return {
       getProps,
       orderList,
-      challengesList,
+      tutorialsList,
     };
   }
   render() {
-    if (this.props.challenges.length) {
-      const currentChallenge = this.getTutorialProps().getProps(this.props.params.nameurl);
-      const orderedList = this.getTutorialProps().challengesList;
+    if (this.props.tutorials.length) {
+      const currentTutorial = this.getTutorialProps().getProps(this.props.params.nameurl);
+      const orderedList = this.getTutorialProps().tutorialsList;
       const nextTutorial = { nextText: 'Continue' };
-      if (orderedList[currentChallenge.order + 1] === undefined) {
+      if (orderedList[currentTutorial.order + 1] === undefined) {
         nextTutorial.url = '';
       } else {
-        nextTutorial.url = `tutorial/${orderedList[currentChallenge.order + 1].nameurl}`;
+        nextTutorial.url = `tutorial/${orderedList[currentTutorial.order + 1].nameurl}`;
       }
       return (
         <div className="clear-top">
           <Challenge
-            key={currentChallenge._id}
-            challengeInfo={currentChallenge}
+            key={currentTutorial._id}
+            challengeInfo={currentTutorial}
             nextUrl={nextTutorial}
             editable={false}
           />
@@ -56,7 +56,7 @@ class TutorialMain extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { challenges: state.challenges };
+    return { tutorials: state.tutorials };
 };
 
 export default connect(mapStateToProps)(TutorialMain);

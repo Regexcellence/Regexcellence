@@ -1,9 +1,11 @@
 import { inputValidator } from './inputValidation';
-import { updateChallenges } from './updateChallenges';
+import { updateChallenges, updateTutorials } from './updateChallenges';
 import { regexValidator } from './regexValidation';
+import { updatePostInput } from './postChallengeInputUpdate';
 
 const initialState = {
   challenges: [],
+  tutorials: [],
   userInput: '',
   wellFormedInput: true,
   newUserPost: {
@@ -18,8 +20,10 @@ const initialState = {
 
 const actionHandler = {
   'INPUT-PATTERN-UPDATE': inputValidator,
-  'UPDATE-RESULT': regexValidator,
+  'TEST-REGEX': regexValidator,
   'GET-CHALLENGES': updateChallenges,
+  'GET-TUTORIALS': updateTutorials,
+  'UPDATE-POST-INPUT': updatePostInput,
 };
 
 const reducer = (state = initialState, action) => {

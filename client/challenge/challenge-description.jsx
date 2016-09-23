@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class ChallengeDescription extends Component {
+import { postChallengeInputUpdate } from '../actions/index';
+
+class ChallengeDescription extends Component {
 	constructor(props) {
 		super(props);
+		this.updateInput = this.updateInput.bind(this);
+	}
+	updateInput(event) {
+		const inputObject = {
+			name: event.target.name,
+			value: event.target.value,
+		};
+		this.props.postChallengeInputUpdate(inputObject);
 	}
   render() {
-  	console.log(this.props.editable)
   	if (this.props.editable) {
   		return (
   		  <div>
-  		    <h3><input value={this.props.name} /></h3>
-  		    <p><textarea placeholder="Enter A Description" value={this.props.description} /></p>
+  		    <h3><input onChange={this.updateInput} name="name" value={this.props.name} /></h3>
+  		    <textarea 
+  		    onChange={this.updateInput}
+  		    name="description" 
+  		    placeholder="Enter A Description" 
+  		    value={this.props.description} 
+  		    />
   		  </div>
   		);
   	} else {
@@ -23,3 +38,5 @@ export default class ChallengeDescription extends Component {
 	  }
   }
 }
+
+export default connect(null, { postChallengeInputUpdate })(ChallengeDescription)
