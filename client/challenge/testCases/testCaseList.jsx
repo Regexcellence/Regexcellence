@@ -30,10 +30,12 @@ export default class TestCaseList extends React.Component {
             <th>Match</th>
           </tr>
           {this.props.testCases.length ? this.fitlerTestCases('Match') : false}
+          {this.props.editable ? <TestCaseEdit /> : false}
           <tr>
             <th>Skip</th>
           </tr>
           {this.props.testCases.length ? this.fitlerTestCases('Skip') : false}
+          {this.props.editable ? <TestCaseEdit /> : false}
         </tbody>
       </table>
     );
