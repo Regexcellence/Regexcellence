@@ -20,7 +20,7 @@ class Tutorial extends Component {
           firstTutorial = item.nameurl;
         }
       });
-      console.log('pathname in tutorial ', this.props.location.pathname)
+      console.log('pathname in tutorial ', this.props.location.pathname);
       if (this.props.location.pathname === '/tutorial') {
         return (
           <div className="clear-top">
