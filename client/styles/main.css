@@ -199,11 +199,17 @@ a:hover {
   list-style: none;
   display: inline;
   padding: 0 20px 0 20px;
+  color: #949494;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #949494;
 }
 
 .footer .logo{
   font-size: 20px;
-  color: #4F4F4F;
+  color: #949494;
 }
 
 .footer img{
