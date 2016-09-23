@@ -14,6 +14,9 @@ class UserChallengePost extends Component {
       author: this.author.value,
       difficulty: this.difficulty.value,
       description: this.description.value,
+      testCases: {
+        task: this.task.value,
+      },
     };
   console.log('POST INFO:', postInfo);
     this.props.postChallengeActionCreator(postInfo);
@@ -21,7 +24,7 @@ class UserChallengePost extends Component {
   render() {
     return (
       <div>
-        <form id="challenge-post" className="input-group" onSubmit={this.submitPost}>
+        <form className="input-group post" onSubmit={this.submitPost}>
           <div>
             Challenge Name:
             <input ref={input => this.name = input} />
@@ -35,9 +38,11 @@ class UserChallengePost extends Component {
             <input ref={input => this.difficulty = input} />
           </div>
           <div>
-            Test Cases: Please add at least 3 tests Skip/Match Expected Result
+            Test Cases: Please add a tests <br></br>
+            <input type="radio" name="Skip" ref={input => this.task = input} /> Skip
+            <input type="radio" name="Match" ref={input => this.task = input} /> Match
           </div>
-          <div>
+          <div className="postDescription">
             Description:
             <textarea placeholder="Enter A Description" ref={input => this.description = input} >
             </textarea>
@@ -49,8 +54,8 @@ class UserChallengePost extends Component {
           </div>
         </form>
       </div>
-        );
-      }
+      );
     }
+  }
 
 export default connect(null, { postChallengeActionCreator })(UserChallengePost);
