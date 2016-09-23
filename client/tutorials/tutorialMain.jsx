@@ -41,6 +41,7 @@ class TutorialMain extends Component {
       }
       return (
         <div className="clear-top">
+          
           <Challenge
             key={currentTutorial._id}
             challengeInfo={currentTutorial}
