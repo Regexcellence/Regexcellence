@@ -1,0 +1,15 @@
+[
+{
+	"order": 0,
+	"name": "User submit",
+	"description": "A user will explain their tite regex challenge",
+	"author": "user123",
+	"difficulty": "superXhard",
+	"testCases": [
+	  { "case": "123", "result": null, "task": "Match", "expectation": true },
+	  { "case": "567", "result": null, "task": "Skip", "expectation": false },
+	  { "case": "hi there", "result": null, "task": "Match", "expectation": true }
+	],
+	"testPassed": false
+},
+]

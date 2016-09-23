@@ -6,9 +6,12 @@
   "scripts": {
     "devStart": "webpack-dev-server --content-base build/",
     "test": "mocha -w spec/helpers/browser.js spec/*.test.js",
-    "production": "node server.js",
+    "start": "node index.js",
+    "postinstall": "webpack",
+    "production": "node index.js",
     "build": "webpack",
-    "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
+    "test:lint": "eslint . --ext .js --ext .jsx --cache",
+    "db": "mongo ds147975.mlab.com:47975/db_reg -u teamUser -p regOrDie"
   },
   "repository": {
     "type": "git",
@@ -40,13 +43,16 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.2.2",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "jsdom": "^9.5.0",
     "json-loader": "^0.5.4",
     "mocha": "^3.0.2",
+    "node-loader": "^0.6.0",
     "purifycss-webpack-plugin": "^2.0.3",
     "react-addons-test-utils": "^15.3.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.7.0",
     "webpack-dev-server": "^1.15.1",
@@ -55,11 +61,16 @@
     "webpack-validator": "^2.2.7"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
+    "mocha": "^3.0.2",
+    "mongoose": "^4.6.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
-    "redux": "^3.6.0"
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
   }
 }

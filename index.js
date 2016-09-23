@@ -1,24 +1,27 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
-const port = process.env.PORT || 3000;
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+const handleRequest = require('./server/handlers');
 
+handleRequest(app);
+
+const mongoose = require('mongoose');
+const MONGO_URI = require('./config').MONGO_URI;
+
+const port = process.env.PORT || 3000;
 app.set('port', port);
+process.env.PWD = process.cwd();
 
 const TARGET = process.env.npm_lifecycle_event;
-
-if (TARGET === "devStart") {
-	app.get('/regex/*', (req, res) => {
-		handleRequest(req, res);
-	})
-} else if (TARGET === "production") {
-	app.use(express.static(path.join(__dirname, '/build')));
-	app.get('/regex/*', (req, res) => {
-		handleRequest(req, res);
-	})
+if (TARGET !== 'devStart') {
+  app.use(express.static(path.join(process.env.PWD, 'build')));
 }
 
-
-
-app.listen(port, function() {console.log(` Listening on http://localhost:${port}/`)});
+mongoose.connect(MONGO_URI);
+app.listen(port, () => { console.log(`Listening on http://localhost:${port}/`); });
