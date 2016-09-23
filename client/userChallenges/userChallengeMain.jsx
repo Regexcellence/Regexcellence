@@ -19,20 +19,26 @@ class UserChallengeMain extends React.Component {
     const currentChallenge = this.findChallengeId(this.props.params.challengeid);
     const nextUrl = { url: 'user-challenges', nextText: 'Back to Challenges' };
     if (this.props.challenges.length) {
-      return <Challenge
-        key={currentChallenge._id}
-        challengeInfo={currentChallenge}
-        nextUrl={nextUrl} 
-        editable={false}
-      />
+      return (
+        <Challenge
+          key={currentChallenge._id}
+          challengeInfo={currentChallenge}
+          nextUrl={nextUrl}
+          editable={false}
+        />
+      );
     } else {
-      return false; 
+      return false;
     }
   }
 }
+UserChallengeMain.propTypes = {
+  challenges: React.PropTypes.arrayOf(React.PropTypes.any),
+  params: React.PropTypes.objectOf(React.PropTypes.string),
+};
 
 const mapStateToProps = (state) => {
-  return { challenges: state.challenges }
-}
+  return { challenges: state.challenges };
+};
 
 export default connect(mapStateToProps)(UserChallengeMain);
