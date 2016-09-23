@@ -91,9 +91,13 @@ textarea {
   margin: 0 10px 0 10px;
 }
 
-.jumbotron h1 {
-  /*background-color: #17A6B6;*/
-  /*color: #17A6B6;*/
+
+.jumbotron {
+  border: 1px solid #E3E3E3 ;
+
+}
+
+.jumbotron h1{
   font-size: 40px;
   font-weight: bold;
 }
@@ -189,6 +193,24 @@ a:hover {
   width: 80%;
   margin: auto;
   box-shadow: none;
+}
+
+.footer li{
+  list-style: none;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+.footer .logo{
+  font-size: 20px;
+  color: #4F4F4F;
+}
+
+.footer img{
+  border:none;
+  height: 15px;
+  width: 15px;
+  margin: 1px 5px 0px 0px;
 }
 
 #input-pattern {

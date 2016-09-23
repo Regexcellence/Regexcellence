@@ -10,6 +10,7 @@ import createHistory from 'history/lib/createHashHistory';
 
 import reducer from './reducers/index';
 import Navbar from './controls/navbar';
+import Footer from './controls/footer';
 
 import Tutorial from './pages/tutorial';
 import About from './pages/about';
@@ -43,6 +44,7 @@ class App extends React.Component {
             </Route>
           </Router>
         </Provider>
+        <Footer />
       </div>
     );
   }
