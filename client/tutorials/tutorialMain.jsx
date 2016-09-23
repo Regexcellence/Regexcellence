@@ -36,9 +36,9 @@ class TutorialMain extends Component {
       const orderedList = this.getTutorialProps().challengesList;
       const nextTutorial = { nextText: 'Continue' };
       if (orderedList[currentChallenge.order + 1] === undefined) {
-        nextTutorial.url = 'home';
+        nextTutorial.url = '';
       } else {
-        nextTutorial.url = orderedList[currentChallenge.order + 1].nameurl;
+        nextTutorial.url = `tutorial/${orderedList[currentChallenge.order + 1].nameurl}`;
       }
       return (
         <div>

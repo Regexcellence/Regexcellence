@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, useRouterHistory } from 'react-router';
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
 // For creating eventual <Provider /> tag
 import { Provider } from 'react-redux';
 // To create 'store' variable
@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import createHistory from 'history/lib/createHashHistory';
 
 import reducer from './reducers/index';
-import Navigation from './controls/navbar';
+import Navbar from './controls/navbar';
 
 import Tutorial from './pages/tutorial';
 import About from './pages/about';
@@ -28,12 +28,13 @@ class App extends React.Component {
       <div>
         <Provider store={store}>
           <Router history={history}>
-            <Route path="/" component={Navigation} />
-            <Route path="/home" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/user-challenges" component={UserChallenges}/>
-            <Route path="/tutorial" component={Tutorial}>
-              <Route path="/:nameurl" component={TutorialMain} />
+            <Route path="/" component={Navbar}>
+              <IndexRoute component={Home}/>
+              <Route path="/about" component={About} />
+              <Route path="/user-challenges" component={UserChallenges}/>
+              <Route path="/tutorial" component={Tutorial}>
+                <Route path="/tutorial/:nameurl" component={TutorialMain} />
+              </Route>
             </Route>
           </Router>
         </Provider>
