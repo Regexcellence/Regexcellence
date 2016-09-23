@@ -6,6 +6,12 @@ const initialState = {
   challenges: [],
   userInput: '',
   wellFormedInput: true,
+  newUserPost: {
+    name: '',
+    author: '',
+    difficulty: '',
+    description: '',
+  },
 };
 
 const actionHandler = {

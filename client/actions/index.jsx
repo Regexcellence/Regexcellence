@@ -36,3 +36,20 @@ export function getAllTutorial() {
     });
   };
 }
+
+export function postChallengeActionCreator(postInput) {
+  console.log('Post Input: ', postInput);
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: '/regex/challenges',
+      contentType: 'application/x-www-form-urlencoded',
+      data: postInput,
+    }).then((data) => {
+      dispatch({
+        type: 'POST-CHALLENGE',
+        data,
+      });
+    });
+  };
+}
