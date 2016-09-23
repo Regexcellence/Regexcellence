@@ -14,7 +14,13 @@ class UserChallenges extends Component {
       console.log('***user challenges: ', this.props.challenges);
       return (
         <div>
-          <h1>User Challenges Page</h1>
+          <div className="jumbotron">
+          <img src="http://static1.squarespace.com/static/51a9aa9fe4b02f35a70e4fb5/52edec83e4b03137dd9c38c3/52f5763ee4b0021595ac9139/1391818331083/icon-illus-v2.png?format=300w"></img>
+          <h1>
+            Challenge Yourself !
+          </h1>
+          <p className="lead">Pratice your Regex skills at our challenges page!</p>
+          </div>
           <ListView userChallenges={this.props.challenges} />
         </div>
       );

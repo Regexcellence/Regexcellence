@@ -9,6 +9,11 @@ body {
   font-family: Helvetica;
 }
 
+.navbar-brand{
+  margin-top: 5%;
+  margin-left: 5px;
+}
+
 .intro {
 	width: 60%;
 	margin: auto;
@@ -41,44 +46,70 @@ body {
   color: #17A6B6;
 }
 
-/*.nav-pills>li>a:focus {
-  background-color: #F5F5F5;
-  border-bottom: 1px solid #FF4C4D;
-  color: #FF4C4D;
-}*/
+img{
+  border-radius: 100%;
+  height: 150px;
+  width: 150px;
+  border: 5px solid black;
+  float: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: -20px;
+}
+
+.jumbotron h1{
+  /*background-color: #17A6B6;*/
+  /*color: #17A6B6;*/
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.jumbotron p{
+  color: #17A6B6;
+}
+
 
 a:hover{
   text-decoration: none;
 }
 
-.list-group-item{
-  background-color: #F5F5F5;
-  border-color: #FF4C4D;
-  border-radius: 0px;
-  border-width: 0px 0px 1px 0px;
-  margin-bottom: 0px;
+.list-group{
+  box-shadow: none;
 }
 
 .list-group-item a {
-  color: #000;
+  color: #4F4F4F;
+}
+
+.list-group-item {
+  background-color: #F5F5F5;
+  border-color: #17A6B6;
+  border-width: 0px 0px 1px 0px;
+  margin-bottom: 0px;
 }
 
 .list-group-item:last-child{
   border-radius: 0px;
 }
 
+.list-group-item:hover{
+  background-color: #CEEAED;
+  border-radius: 0px;
+}
+
 #cheat-sheet {
-	position: absolute;
-	background-color: white;
-	margin-right: 0;
-	left: 75%;
-	right: 0;
+  position: absolute;
+  background-color: white;
+  margin-right: 0;
+  left: 75%;
+  right: 0;
 }
 
 .logo {
-	font-size: 35px;
+	font-size: 50px;
 	font-family: Lavanderia-Sturdy;
 	color: #000;
+  font-weight: bold;
 }
 
 .logo:hover {
@@ -119,6 +150,7 @@ a:hover{
 .challenge-list{
   width: 80%;
   margin: auto;
+  box-shadow: none;
 }
 
 #input-pattern {
