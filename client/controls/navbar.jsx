@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import Cheatsheet from '../pages/cheatsheet';
+import Footer from '../controls/footer';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Navbar extends Component {
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </nav>
         {this.props.children}
+        <Footer />
       </div>
     );
   }
