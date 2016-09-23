@@ -12,22 +12,35 @@ export default class Challenge extends Component {
     const nextUrl = this.props.nextUrl;
     return (
       <div className="challenge">
-        <ChallengeDescription 
-          name={challengeInfo.name} 
-          description={challengeInfo.description} 
+        <ChallengeDescription
+          name={this.props.challengeInfo.name}
+          description={this.props.challengeInfo.description}
           editable={this.props.editable}
         />
-        <TestCaseList 
-          testCases={challengeInfo.testCases} 
+        <TestCaseList
+          testCases={this.props.challengeInfo.testCases}
         />
-        <InputRegexValidation 
-          challengeId={challengeInfo._id} 
-          testCases={challengeInfo.testCases} 
-          testPassed={challengeInfo.testPassed}
-          challengeType={challengeInfo.challengeType}
+        <InputRegexValidation
+          challengeId={this.props.challengeInfo._id}
+          testCases={this.props.challengeInfo.testCases}
+          testPassed={this.props.challengeInfo.testPassed}
+          challengeType={this.props.challengeInfo.challengeType}
           nextUrl={nextUrl}
         />
       </div>
     );
   }
 }
+
+Challenge.propTypes = {
+  nextUrl: React.PropTypes.object,
+  editable: React.PropTypes.bool,
+  challengeInfo: React.PropTypes.shape({
+    name: React.PropTypes.number,
+    description: React.PropTypes.string,
+    _id: React.PropTypes.string,
+    testCases: React.PropTypes.array.isRequired,
+    testPassed: React.PropTypes.any,
+    challengeType: React.PropTypes.object,
+  }),
+};
