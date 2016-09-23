@@ -21,9 +21,9 @@ class InputRegexValidation extends React.Component {
             onChange={this.changeInputState}
             onFocus={this.addSlashes}
           />
-          <TestPassedButton 
-            nextUrl={this.props.nextUrl} 
-            testPassed={this.props.testPassed} 
+          <TestPassedButton
+            nextUrl={this.props.nextUrl}
+            testPassed={this.props.testPassed}
           />
         </form>
         <InputValidationFlag wellFormedInput={this.props.wellFormedInput} />
@@ -32,7 +32,7 @@ class InputRegexValidation extends React.Component {
   }
   addSlashes(event) {
     if (!event.target.value.length) {
-      this.props.inputActionCreator('//'); 
+      this.props.inputActionCreator('//');
     }
   }
   changeInputState(event) {

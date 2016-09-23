@@ -12,7 +12,7 @@ export default class Navbar extends Component {
     this.showCheatSheet = this.showCheatSheet.bind(this);
   }
   showCheatSheet() {
-    this.setState({ showCheatSheet: !this.state.showCheatSheet }); 
+    this.setState({ showCheatSheet: !this.state.showCheatSheet });
   }
             // <li className="pull-right">
             //   <button onClick={() => this.showCheatSheet()}>
@@ -31,6 +31,7 @@ export default class Navbar extends Component {
             <li><Link to="tutorial">TUTORIAL</Link></li>
             <li><Link to="user-challenges">CHALLENGES</Link></li>
             <li><Link to="about">ABOUT</Link></li>
+            <li><Link to="post">POST</Link></li>
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </nav>
@@ -39,4 +40,3 @@ export default class Navbar extends Component {
     );
   }
 }
-

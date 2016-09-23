@@ -25,7 +25,7 @@ body {
 	background-color: white;
 	width: 60%;
 	margin: auto;
-	padding: 15px; 
+	padding: 15px;
 }
 
 .nav-pills>li>a{
@@ -35,7 +35,7 @@ body {
 	color: #000;
   border-radius: 0px;
   border-bottom: 1px solid black;
-  padding: 5px; 
+  padding: 5px;
   margin: 15px;
 }
 
@@ -44,6 +44,27 @@ body {
   border-bottom: 1px solid #17A6B6;
   border-bottom-right-radius: 0px;
   color: #17A6B6;
+}
+
+.post {
+  background-color: white;
+  width: 60%;
+  margin: auto;
+  font-size: 16px;
+  padding: 15px;
+  font-family: Helvetica;
+  vertical-align: text-top;
+}
+
+.postDescription {
+  vertical-align: middle; 
+}
+
+textarea {
+  width: 400px;
+  height: 100px;
+  outline: none;
+  resize: none;
 }
 
 img{
@@ -158,4 +179,3 @@ a:hover{
 }.text-match {
 	color: green;
 }
-
