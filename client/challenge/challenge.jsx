@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputRegexValidation from './inputRegexValidation';
-import TestCaseList from './testCaseList';
+import TestCaseList from './testCases/testCaseList';
 import ChallengeDescription from './challenge-description';
 
 export default class Challenge extends Component {
@@ -19,6 +19,7 @@ export default class Challenge extends Component {
         />
         <TestCaseList
           testCases={this.props.challengeInfo.testCases}
+          editable={this.props.editable}
         />
         <InputRegexValidation
           challengeId={this.props.challengeInfo._id}
