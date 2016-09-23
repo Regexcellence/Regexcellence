@@ -11,10 +11,10 @@ class Navigation extends Component {
             <a className="navbar-brand logo">Regexcellence</a>
           </div>
           <ul className="nav nav-pills">
-            <li><Link to="home">Home</Link></li>
-            <li><Link to="tutorial">Tutorial</Link></li>
-            <li><Link>Challenges</Link></li>
-            <li><Link to="about">About</Link></li>
+            <li><Link to="home">HOME</Link></li>
+            <li><Link to="tutorial">TUTORIAL</Link></li>
+            <li><Link to="user-challenges">CHALLENGES</Link></li>
+            <li><Link to="about">ABOUT</Link></li>
           </ul>
         </nav>
       </div>
