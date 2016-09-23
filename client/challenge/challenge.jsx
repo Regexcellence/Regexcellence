@@ -15,7 +15,7 @@ export default class Challenge extends Component {
         <ChallengeDescription 
           name={challengeInfo.name} 
           description={challengeInfo.description} 
-          editable={challengeInfo.editable}
+          editable={this.props.editable}
         />
         <TestCaseList 
           testCases={challengeInfo.testCases} 
@@ -24,6 +24,7 @@ export default class Challenge extends Component {
           challengeId={challengeInfo._id} 
           testCases={challengeInfo.testCases} 
           testPassed={challengeInfo.testPassed}
+          challengeType={challengeInfo.challengeType}
           nextUrl={nextUrl}
         />
       </div>

@@ -1,16 +1,33 @@
 // TODO: Need to implement state changer for if tests all pass.
 
 export function regexValidator(previousState, action) {
-  const challengeId = action.challengeId;
-  const parsedInput = regexParser(action.input);
-  const previousChallenges = previousState.challenges.slice();
-  const challenges = previousChallenges.map((challenge) => {
-    if (challenge._id === challengeId) {
-      return testCasesExtractor(parsedInput, challenge);
-    }
-    return challenge;
-  });
-  return Object.assign({}, previousState, { challenges });
+  const regexObject = action.regexObject;
+  const challengeId = regexObject.challengeId;
+  console.log(regexObject.challengeType)
+  const parsedInput = regexParser(regexObject.input);
+
+  if (regexObject.challengeType === 'challenge') {
+    const previousChallenges = previousState.challenges.slice();
+    const challenges = previousChallenges.map((challenge) => {
+      if (challenge._id === challengeId) {
+        return testCasesExtractor(parsedInput, challenge);
+      }
+      return challenge;
+    });
+    return Object.assign({}, previousState, { challenges });
+  } else if (regexObject.challengeType === 'tutorial') {
+    const previousTutorials = previousState.tutorials.slice();
+    const tutorials = previousTutorials.map((challenge) => {
+      if (challenge._id === challengeId) {
+        return testCasesExtractor(parsedInput, challenge);
+      }
+      return challenge;
+    });
+    return Object.assign({}, previousState, { tutorials });
+  }
+}
+function funnelReducer() {
+
 }
 // Strips input pattern of both forward slashes, and separates flags if any.
 export function regexParser(input) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { flagActionCreator, inputActionCreator } from '../actions/index';
+import { testRegexInput, inputActionCreator } from '../actions/index';
 import InputValidationFlag from './inputValidationFlag';
 import TestPassedButton from './testPassedButton';
 
@@ -39,7 +39,7 @@ class InputRegexValidation extends React.Component {
     event.preventDefault();
     const newInput = event.target.value;
     this.props.inputActionCreator(newInput);
-    this.props.flagActionCreator(this.props.challengeId, newInput);
+    this.props.testRegexInput(this.props.challengeId, newInput, this.props.challengeType);
   }
 }
 
@@ -47,4 +47,4 @@ const mapStateToProps = (state) => {
   return { input: state.userInput, wellFormedInput: state.wellFormedInput };
 };
 
-export default connect(mapStateToProps, { flagActionCreator, inputActionCreator })(InputRegexValidation);
+export default connect(mapStateToProps, { testRegexInput, inputActionCreator })(InputRegexValidation);

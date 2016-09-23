@@ -1,8 +1,11 @@
-export function flagActionCreator(challengeId, input) {
+export function testRegexInput(challengeId, input, challengeType) {
   return {
-    type: 'UPDATE-RESULT',
-    challengeId,
-    input,
+    type: 'TEST-REGEX',
+    regexObject: {
+      challengeId,
+      input,
+      challengeType: challengeType || 'tutorial',
+    }
   };
 }
 
@@ -25,16 +28,23 @@ export function getAllChallenges() {
   };
 }
 
-export function getAllTutorial() {
+export function getAllTutorials() {
   return (dispatch) => {
     $.ajax('/regex/tutorial').then((data) => {
       console.log('TUTORIAL DATA', data);
       dispatch({
-        type: 'GET-CHALLENGES',
+        type: 'GET-TUTORIALS',
         payload: data,
       });
     });
   };
+}
+
+export function postChallengeInputUpdate(inputObject) {
+  return {
+    type: 'UPDATE-POST-INPUT',
+    inputObject
+  }
 }
 
 export function postChallengeActionCreator(postInput) {

@@ -4,18 +4,18 @@ import { Link } from 'react-router';
 
 import Navigation from '../controls/navbar';
 import Controls from '../controls/controls';
-import { getAllTutorial } from '../actions/index';
+import { getAllTutorials } from '../actions/index';
 import Challenge from '../challenge/challenge';
 
 class Tutorial extends Component {
   componentWillMount() {
-   this.props.getAllTutorial();
+   this.props.getAllTutorials();
   }
   render() {
-    if (this.props.challenges.length) {
-      console.log('challenges array', this.props.challenges);
+    if (this.props.tutorials.length) {
+      console.log('tutorials array', this.props.tutorials);
       let firstTutorial;
-      this.props.challenges.forEach((item) => {
+      this.props.tutorials.forEach((item) => {
         if (item.order === 0) {
           firstTutorial = item.nameurl;
         }
@@ -45,7 +45,7 @@ class Tutorial extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { challenges: state.challenges };
+  return { tutorials: state.tutorials };
 };
 
-export default connect(mapStateToProps, { getAllTutorial })(Tutorial);
+export default connect(mapStateToProps, { getAllTutorials })(Tutorial);
