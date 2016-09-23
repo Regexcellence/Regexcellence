@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-class Navigation extends Component {
+import Cheatsheet from '../pages/cheatsheet';
 
+export default class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCheatSheet: false,
+    };
+    this.showCheatSheet = this.showCheatSheet.bind(this);
+  }
+  showCheatSheet() {
+    this.setState({ showCheatSheet: !this.state.showCheatSheet }); 
+  }
   render() {
     return (
       <div>
@@ -15,12 +26,17 @@ class Navigation extends Component {
             <li><Link to="tutorial">TUTORIAL</Link></li>
             <li><Link to="user-challenges">CHALLENGES</Link></li>
             <li><Link to="about">ABOUT</Link></li>
+            <li className="pull-right">
+              <button onClick={() => this.showCheatSheet()}>
+              Cheatsheet
+              </button>
+            </li>
           </ul>
+          { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </nav>
+
       </div>
     );
   }
 }
-
-export default Navigation;
 
