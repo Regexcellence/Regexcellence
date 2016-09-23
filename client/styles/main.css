@@ -67,6 +67,14 @@ a:hover{
   border-radius: 0px;
 }
 
+#cheat-sheet {
+	position: absolute;
+	background-color: white;
+	margin-right: 0;
+	left: 75%;
+	right: 0;
+}
+
 .logo {
 	font-size: 35px;
 	font-family: Lavanderia-Sturdy;
@@ -118,3 +126,4 @@ a:hover{
 }.text-match {
 	color: green;
 }
+
