@@ -13,13 +13,16 @@ const initialState = {
   wellFormedInput: true,
   newUserPost: {
     name: '',
-    author: '',
+    author: 'User',
     difficulty: '',
     description: '',
     testCases: [],
     testPassed: false,
     challengeType: 'new-challenge',
   },
+  newTestCase: {
+    case: '',
+  }
 };
 
 const actionHandler = {

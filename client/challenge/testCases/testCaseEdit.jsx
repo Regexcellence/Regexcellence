@@ -58,4 +58,8 @@ class TestCaseEdit extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return { testCases: newUserPost.testCases }
+}
+
 export default connect(null, { postEditTestCase })(TestCaseEdit)
