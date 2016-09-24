@@ -8,6 +8,7 @@ const initialState = {
   challenges: [],
   tutorials: [],
   userInput: '',
+  progress: { width: 0 },
   wellFormedInput: true,
   newUserPost: {
     name: '',
