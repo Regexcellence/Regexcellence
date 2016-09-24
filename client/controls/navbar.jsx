@@ -24,9 +24,10 @@ export default class Navbar extends Component {
     return (
       <div>
         <nav className="navbar-fixed-top navbar navbar-light bg-faded">
-          <div className="navbar-header">
-            <Link to="" className="navbar-brand logo">Regexcellence</Link>
-          </div>
+        <div class="container">
+
+        <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
+        <div>
           <ul className="nav nav-pills pull-right">
             <li><Link to="tutorial">TUTORIAL</Link></li>
             <li><Link to="user-challenges">CHALLENGES</Link></li>
@@ -34,6 +35,8 @@ export default class Navbar extends Component {
             <li><Link to="post">POST</Link></li>
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
+        </div>
+        </div>
         </nav>
         {this.props.children}
         <Footer />

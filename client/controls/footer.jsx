@@ -15,8 +15,8 @@ class Footer extends Component {
               GitHub
             </a>
           </li>
-          <li className="logo" onClick={()=>{window.scrollTo(0,0)}}>R</li>
-          <li>© 2016 - Regexcellence</li>
+          <li className="logo"><Link to="">R</Link></li>
+          <li>© 2016 - Regexcellence | San Francisco CA</li>
 
         </ul>
       </div>
