@@ -14,7 +14,6 @@ module.exports = (app) => {
   });
   app.post('/regex/challenges', (req, res) => {
     handlers.postChallenge(req.body, () => {
-      console.log(req.body);
       res.end('challenge created');
     });
   });

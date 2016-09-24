@@ -65,8 +65,8 @@ export function postChallengeActionCreator(postInput) {
     $.ajax({
       method: 'POST',
       url: '/regex/challenges',
-      contentType: 'application/x-www-form-urlencoded',
-      data: postInput,
+      contentType: 'application/json',
+      data: JSON.stringify(postInput),
     }).then((data) => {
       dispatch({
         type: 'POST-CHALLENGE',

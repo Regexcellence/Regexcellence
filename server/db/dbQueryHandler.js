@@ -16,9 +16,9 @@ module.exports = {
   },
   postChallenge: (challengeObject, callback) => {
     challengeObject._id = mongoose.Types.ObjectId();
+    console.log(challengeObject.testCases);
     challengeObject.nameurl = parseChallengeName(challengeObject.name);
     challengeObject.testPassed = false;
-    console.log(challengeObject.testCases);
     const NewChallenge = new Challenges(challengeObject);
     NewChallenge.save((err, newData) => {
       if (err) throw err;
