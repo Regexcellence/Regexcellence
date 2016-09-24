@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Link } from 'react-router';
 
-import { inputActionCreator } from '../actions/index';
-import { postChallengeActionCreator } from '../actions/api';
-
+import { inputActionCreator } from '../../actions/index';
+import { postChallengeActionCreator } from '../../actions/api';
 
 class TestPassedButton extends React.Component {
   constructor(props) {

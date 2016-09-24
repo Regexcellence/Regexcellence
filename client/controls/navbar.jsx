@@ -24,7 +24,7 @@ export default class Navbar extends Component {
     return (
       <div>
         <nav className="navbar-fixed-top navbar navbar-light bg-faded">
-        <div class="container">
+        <div className="container">
 
         <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
         <div>

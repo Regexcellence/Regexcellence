@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { testRegexInput, inputActionCreator } from '../actions/index';
+import { testRegexInput, inputActionCreator } from '../../actions/index';
 import InputValidationFlag from './inputValidationFlag';
 import TestPassedButton from './testPassedButton';
 

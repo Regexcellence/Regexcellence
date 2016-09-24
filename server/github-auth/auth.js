@@ -1,6 +1,6 @@
 const GithubStrategy = require('passport-github2').Strategy;
 const passport = require('passport');
-const gitApi = require('./config');
+const gitApi = require('../../config').GITHUB;
 const User = require('../../server/db/dbmodel').Users;
 
 passport.use(new GithubStrategy({
