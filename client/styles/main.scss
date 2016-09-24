@@ -1,4 +1,11 @@
-@import 'progress_bar';
+@import 
+'progress_bar',
+'cheat-sheet',
+'form-control',
+'challenge-list',
+'footer',
+'homepage',
+'about';
 
 @font-face {
  font-family: Lavanderia-Sturdy;
@@ -9,6 +16,21 @@ body {
   margin: 0;
   background-color: #F5F5F5;
   font-family: Helvetica;
+}
+
+.logo {
+  font-size: 50px;
+  font-family: Lavanderia-Sturdy;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 20px;
+  :hover {
+    color: #000;
+  }
+  &:visited {
+    color: #000;
+  }
 }
 
 a:hover {
@@ -22,27 +44,6 @@ a:hover {
     margin-top: 1%;
     margin-left: 5px;
   }
-}
-
-
-.intro {
-	width: 60%;
-	margin: auto;
-	padding: 30px;
-	background-color: #FFF;
-}
-
-.challenge {
-	background-color: white;
-	width: 60%;
-	margin: auto;
-	padding: 15px;
-}
-
-.challenge-list {
-  width: 80%;
-  margin: auto;
-  box-shadow: none;
 }
 
 .nav-pills>li>a {
@@ -70,13 +71,52 @@ a:hover {
   min-margin-top: 90px;
   border: 1px solid #E3E3E3;
   padding-right: 10%;
-	h1 {
+  h1 {
     font-size: 40px;
     font-weight: bold;
-	}
+  }
   p {
     color: #17A6B6;
   }
+
+  .banner-img {
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    border: 5px solid black;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: -20px;
+  }
+}
+
+.list-img {
+  border-radius: 100%;
+  height: 220px;
+  width: 220px;
+  border: 5px solid black;
+  margin: 0 10px 0 10px;
+}
+
+.intro {
+  width: 60%;
+  margin: auto;
+  padding: 30px;
+  background-color: #FFF;
+}
+
+.challenge {
+  background-color: white;
+  width: 60%;
+  margin: auto;
+  padding: 15px;
+}
+
+.challenge-list {
+  width: 80%;
+  margin: auto;
+  box-shadow: none;
 }
 
 .post {
@@ -100,177 +140,13 @@ textarea {
   resize: none;
 }
 
-.banner-img {
-  border-radius: 100%;
-  height: 150px;
-  width: 150px;
-  border: 5px solid black;
-  float: left;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: -20px;
-}
-
-.list-img {
-  border-radius: 100%;
-  height: 220px;
-  width: 220px;
-  border: 5px solid black;
-  margin: 0 10px 0 10px;
-}
-
-
-.list-group {
-  box-shadow: none;
-}
-
-.list-group-item {
-  background-color: #F5F5F5;
-  border-color: #17A6B6;
-  border-width: 0px 0px 1px 0px;
-  margin-bottom: 0px;
-  a {
-  	color: #4F4F4F;
-  }
-  &:hover {
-    background-color: #CEEAED;
-    border-radius: 0px;
-  }
-  &:last-child {
-    border-radius: 0px;
-  }
-}
-
-.logo {
-	font-size: 50px;
-	font-family: Lavanderia-Sturdy;
-	color: #000;
-  cursor: pointer;
-  font-weight: bold;
-  padding: 20px;
-  :hover {
-    color: #000;
-  }
-  &:visited {
-  	color: #000;
-  }
-}
-
-.form-control {
-	height: 50px;
-	font-size: 25px;
-  box-shadow: none;
-  outline: none;
-  border-color: lightgrey;
-  border-radius: 0px;
-  &:focus {
-    box-shadow: none;
-    outline: none;
-    border-color: lightgrey;
-  }
-}
-
-#continue {
-	background-color: #17A6B6;
-	height: 50px;
-	border-radius: 0;
-	color: #FFF;
-}
-
-.malformed {
-	background-color: #FF4C4D;
-	height: 50px;
-	color: #FFF;
-	padding-top: 15px;
-	padding-left: 15px;
-	border-radius: 0;
-	border: none;
-}
-
-#input-pattern {
-	width: 100%;
-}.text-match {
-	color: green;
-}
-
-.home-page {
-  margin: auto;
-  width: 75%;
-  align-content: center;
-}
-
-.home-list {
-  width: 250px;
-  text-align: center;
-  display: inline-block;
-  list-style: none;
-}
-
-.table-style {
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
-
 .clear-top {
   // position:absolute;
   margin-top: 8%;
 }
 
-.footer {
-  li {
-  	list-style: none;
-    display: inline;
-    padding: 0 20px 0 20px;
-    color: #949494;
+@media all and (max-width: 960px){
+  .clear-top {
+    margin-top: 45%;
   }
-  .logo {
-    font-size: 20px;
-    cursor: pointer;
-    color: #4F4F4F;
-    &:hover {
-      color: #17A6B6;
-    }
-    img {
-      border:none;
-      height: 15px;
-      width: 15px;
-      margin: 1px 5px 0px 0px;
-    }
-    a {
-      text-decoration: none;
-      color: #949494;
-      &:hover {
-      color: #17A6B6;
-      }
-    }
-  }
-}
-
-.cheat-sheet {
-  background-color: #FFF;
-  border: 2px solid #17A6B6;
-  font-size: 11px;
-  list-style: none;
-  float: right;
-  position: absolute;
-  margin-right: 0;
-  left: 79%;
-  padding: 5px;
-}
-
-.cheat-glyph {
-  float: right;
-}
-
-.about-img {
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  border: 5px solid #000;
-  margin: 0px 10px 0px 10px;
-}
-
-.about-table {
-  margin: auto;
-  text-align: center;
 }

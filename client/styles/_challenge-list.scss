@@ -1,0 +1,20 @@
+.list-group {
+  box-shadow: none;
+}
+
+.list-group-item {
+  background-color: #F5F5F5;
+  border-color: #17A6B6;
+  border-width: 0px 0px 1px 0px;
+  margin-bottom: 0px;
+  a {
+    color: #4F4F4F;
+  }
+  &:hover {
+    background-color: #CEEAED;
+    border-radius: 0px;
+  }
+  &:last-child {
+    border-radius: 0px;
+  }
+}
