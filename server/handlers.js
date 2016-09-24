@@ -1,7 +1,17 @@
 const handlers = require('./db/dbQueryHandler');
 
 module.exports = (app) => {
-  app.get('/regex/challenges', (req, res) => {
+  const checkAuth = (req, res, next) => {
+    console.log('REQUESST session:', req.session);
+    if (req.isAuthenticated()) {
+      next();
+    } else {
+      res.redirect('/');
+    }
+  };
+
+  app.get('/regex/challenges', checkAuth, (req, res) => {
+    console.log('SESSION:', req.session);
   // Review if async issues become a problem!
     handlers.getChallenges((challenges) => {
       res.send(challenges);
@@ -18,3 +28,13 @@ module.exports = (app) => {
     });
   });
 };
+// app.get('/checkAuth', checkAuth, (req, res) => {
+//   console.log('SESSION', req.session.passport.user);
+//   User.findById(req.session.passport.user, (err, user) => {
+//     if(err) {
+//       console.log(err);  // handle errors
+//     } else {
+//       res.send('this works');
+//     }
+//   });
+// });
