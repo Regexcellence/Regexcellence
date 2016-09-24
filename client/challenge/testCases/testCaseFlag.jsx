@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // based on success of test. Should we do?
 // TODO: Move styling here into css. 
 
-export default class TestCase extends Component {
+export default class TestCaseFlag extends Component {
   render() {
     const flag = this.props.flag;
     const inline = { display: 'inline-block'}

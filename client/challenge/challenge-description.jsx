@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { postChallengeInputUpdate } from '../actions/index';
+import Difficulty from './difficulty';
 
 class ChallengeDescription extends Component {
 	constructor(props) {
@@ -20,6 +21,7 @@ class ChallengeDescription extends Component {
   		return (
   		  <div>
   		    <h3><input onChange={this.updateInput} name="name" value={this.props.name} /></h3>
+  		    <Difficulty difficulty={this.props.difficulty} editable={this.props.editable} />
   		    <textarea 
   		    onChange={this.updateInput}
   		    name="description" 
@@ -32,6 +34,7 @@ class ChallengeDescription extends Component {
 	    return (
 	      <div>
 	        <h3>{this.props.name}</h3>
+	        <Difficulty difficulty={this.props.difficulty} />
 	        <p>{this.props.description}</p>
 	      </div>
 	    );

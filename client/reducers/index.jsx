@@ -1,7 +1,8 @@
 import { inputValidator } from './inputValidation';
 import { updateChallenges, updateTutorials } from './updateChallenges';
 import { regexValidator } from './regexValidation';
-import { updatePostInput, updatePostTestCases } from './postChallengeInputUpdate';
+import { updatePostInput } from './postChallengeInputUpdate';
+import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 
 const initialState = {
@@ -12,13 +13,16 @@ const initialState = {
   wellFormedInput: true,
   newUserPost: {
     name: '',
-    author: '',
+    author: 'User',
     difficulty: '',
     description: '',
     testCases: [],
     testPassed: false,
     challengeType: 'new-challenge',
   },
+  newTestCase: {
+    case: '',
+  }
 };
 
 const actionHandler = {
