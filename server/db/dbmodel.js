@@ -22,8 +22,15 @@ const multiUseSchema = new Schema({
 const userSchema = new Schema({
   githubId: Number,
   accessToken: String,
+  refreshToken: String,
   name: String,
   created: Date,
+  company: String,
+  blog: String,
+  location: String,
+  bio: String,
+  html_url: String,
+  avatar_url: String,
 });
 
 const Users = mongoose.model('Users', userSchema);
