@@ -1,4 +1,4 @@
-import { regexParser } from './regexValidation';
+import { regexParser } from './regexHelpers';
 
 export function inputValidator(previousState, action) {
   const userInput = action.newInput;
