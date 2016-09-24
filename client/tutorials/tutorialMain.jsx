@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Challenge from '../challenge/challenge';
+import ProgressBar from './progressBar';
 
 class TutorialMain extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      progress: { width: "10%" }
-    };
   }
   getTutorialProps() {
     const tutorialsList = [];
@@ -32,6 +30,7 @@ class TutorialMain extends Component {
       tutorialsList,
     };
   }
+
   render() {
     if (this.props.tutorials.length) {
       const currentTutorial = this.getTutorialProps().getProps(this.props.params.nameurl);
@@ -42,12 +41,14 @@ class TutorialMain extends Component {
       } else {
         nextTutorial.url = `tutorial/${orderedList[currentTutorial.order + 1].nameurl}`;
       }
+      let percent = { width: (currentTutorial.order*10).toString()+"%" };
+      console.log("in tutorials", percent)
+
       return (
         <div className="clear-top">
-          <div className="outerProgress">
-            <div className="innerProgress" style={this.state.progress}>
-            </div>
-          </div>
+          <ProgressBar 
+            progress={percent}
+          />
           <Challenge
             key={currentTutorial._id}
             challengeInfo={currentTutorial}
