@@ -5,6 +5,9 @@ import Challenge from '../challenge/challenge';
 class TutorialMain extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      progress: { width: "10%" }
+    };
   }
   getTutorialProps() {
     const tutorialsList = [];
@@ -41,8 +44,8 @@ class TutorialMain extends Component {
       }
       return (
         <div className="clear-top">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">70%
+          <div className="outerProgress">
+            <div className="innerProgress" style={this.state.progress}>
             </div>
           </div>
           <Challenge

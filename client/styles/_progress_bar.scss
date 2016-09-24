@@ -1,0 +1,14 @@
+.outerProgress {
+    position: relative;
+    width: 30%;
+    height: 30px;
+    background-color: #eee;
+    margin: auto auto 10px auto;
+}
+
+.innerProgress {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    background-color: #17A6B6;
+}
