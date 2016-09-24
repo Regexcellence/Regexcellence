@@ -15,13 +15,13 @@ a:hover {
 
 .navbar {
   background-color: rgba(245,245,245,.8);
-  height: 80px;
+  min-height: 100px;
+  .navbar-brand{
+    margin-top: 1%;
+    margin-left: 5px;
+  }
 }
 
-.navbar-brand{
-  margin-top: 5%;
-  margin-left: 5px;
-}
 
 .intro {
 	width: 60%;
@@ -52,14 +52,30 @@ a:hover {
   border-bottom: 1px solid black;
   padding: 5px;
   margin: 15px;
-  :hover {
-    background-color: #F5F5F5;
+  &:hover {
+    background-color: transparent;
     border-bottom: 1px solid #17A6B6;
-    border-bottom-right-radius: 0px;
     color: #17A6B6;
+  }
+  &:focus {
+    background-color: transparent;
+    border-bottom: 1px solid #FF4C4D;
+    color: #FF4C4D;
   }
 }
 
+.jumbotron {
+  min-margin-top: 90px;
+  border: 1px solid #E3E3E3;
+  padding-right: 10%;
+	h1 {
+    font-size: 40px;
+    font-weight: bold;
+	}
+  p {
+    color: #17A6B6;
+  }
+}
 .post {
   background-color: white;
   width: 60%;
@@ -100,15 +116,6 @@ textarea {
   margin: 0 10px 0 10px;
 }
 
-.jumbotron {
-	h1 {
-    font-size: 40px;
-    font-weight: bold;		
-	}
-  p {
-    color: #17A6B6;
-  }
-}
 
 .list-group {
   box-shadow: none;
@@ -122,11 +129,11 @@ textarea {
   a {
   	color: #4F4F4F;
   }
-  :hover {
+  &:hover {
     background-color: #CEEAED;
     border-radius: 0px;  	
   }
-  :last-child {
+  &:last-child {
     border-radius: 0px;
   }
 }
@@ -144,6 +151,7 @@ textarea {
 	font-family: Lavanderia-Sturdy;
 	color: #000;
   font-weight: bold;
+  padding: 20px;
   :hover {
     color: #000;
   }
@@ -158,7 +166,8 @@ textarea {
   box-shadow: none;
   outline: none;
   border-color: lightgrey;
-  :focus {
+  border-radius: 0px;
+  &:focus {
     box-shadow: none;
     outline: none;
     border-color: lightgrey;  	
@@ -206,7 +215,8 @@ textarea {
 }
 
 .clear-top {
-  margin-top: 9%;
+  // position:absolute;
+  margin-top: 8%;
 }
 
 .footer {
@@ -214,16 +224,27 @@ textarea {
   	list-style: none;
     display: inline;
     padding: 0 20px 0 20px;
+    color: #949494;
   }
-  &.logo {
-  font-size: 20px;
-  color: #4F4F4F;  	
+  .logo {
+    font-size: 20px;
+    color: #4F4F4F;
+    &:hover{
+      color: #17A6B6;
+    }
   }
   img {
     border:none;
     height: 15px;
     width: 15px;
-    margin: 1px 5px 0px 0px;  	
+    margin: 1px 5px 0px 0px;
+  }
+  a{
+    text-decoration: none;
+    color: #949494;
+    &:hover{
+      color: #17A6B6;
+    }
   }
 }
 
