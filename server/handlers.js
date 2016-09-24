@@ -10,7 +10,7 @@ module.exports = (app) => {
     }
   };
 
-  app.get('/regex/challenges', checkAuth, (req, res) => {
+  app.get('/regex/challenges', (req, res) => {
     console.log('SESSION:', req.session);
   // Review if async issues become a problem!
     handlers.getChallenges((challenges) => {
