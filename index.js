@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const GithubStrategy = require('passport-github2').Strategy;
+const passport = require('passport');
+const gitHubAuth = require('./server/github-auth/auth');
 
 const app = express();
 // parse application/x-www-form-urlencoded
@@ -22,6 +25,26 @@ const TARGET = process.env.npm_lifecycle_event;
 if (TARGET !== 'devStart') {
   app.use(express.static(path.join(process.env.PWD, 'build')));
 }
+// serialize and deserialize
+passport.serializeUser((user, done) => {
+  console.log('serializeUser: ', user._id);
+  done(null, user._id);
+});
+// passport.deserializeUser((id, done) => {
+//   User.findById(id, (err, user) => {
+//     console.log(user);
+//       if(!err) done(null, user);
+//       else done(err, null);
+//     });
+// });
+app.get('/auth/github', passport.authenticate('github', { session: false, scope: ['user:email'] }));
+
+app.get('/auth/github/callback',
+passport.authenticate('github', { session: false, failureRedirect: '/' }),
+(req, res) => {
+  console.log('RESPONSE', res);
+  res.redirect('/#');
+});
 
 mongoose.connect(MONGO_URI);
 app.listen(port, () => { console.log(`Listening on http://localhost:${port}/`); });
