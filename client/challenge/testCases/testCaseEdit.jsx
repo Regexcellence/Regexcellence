@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { postEditTestCase } from '../../actions/index';
+import uuid from 'uuid';
 
 class TestCaseEdit extends React.Component {
   constructor(props) {
@@ -20,7 +21,13 @@ class TestCaseEdit extends React.Component {
     this.props.postEditTestCase('ADD', {
       task: this.props.matchType,
       case: this.state.newTestCase,
-    })
+      _id: uuid.v4(),
+      editing: false
+    });
+    this.setState({
+      newTestCase: '',
+      editing: false
+    });
   }
   updateInput(event) {
     this.setState({
