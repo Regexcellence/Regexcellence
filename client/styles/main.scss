@@ -88,7 +88,7 @@ a:hover {
 }
 
 .postDescription {
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 textarea {
@@ -132,7 +132,7 @@ textarea {
   }
   &:hover {
     background-color: #CEEAED;
-    border-radius: 0px;  	
+    border-radius: 0px;
   }
   &:last-child {
     border-radius: 0px;
@@ -143,6 +143,7 @@ textarea {
 	font-size: 50px;
 	font-family: Lavanderia-Sturdy;
 	color: #000;
+  cursor: pointer;
   font-weight: bold;
   padding: 20px;
   :hover {
@@ -163,7 +164,7 @@ textarea {
   &:focus {
     box-shadow: none;
     outline: none;
-    border-color: lightgrey;  	
+    border-color: lightgrey;
   }
 }
 
@@ -222,6 +223,7 @@ textarea {
   }
   .logo {
     font-size: 20px;
+    cursor: pointer;
     color: #4F4F4F;
     &:hover {
       color: #17A6B6;
@@ -270,4 +272,3 @@ textarea {
   margin: auto;
   text-align: center;
 }
-

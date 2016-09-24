@@ -22,10 +22,18 @@ const multiUseSchema = new Schema({
   testPassed: Boolean,
 });
 
+const userSchema = new Schema({
+  githubId: Number,
+  accessToken: String,
+  name: String,
+  created: Date,
+});
+
+const Users = mongoose.model('Users', userSchema);
 const Challenges = mongoose.model('Challenges', multiUseSchema);
 const Tutorial = mongoose.model('Tutorial', multiUseSchema);
 
-module.exports = { Challenges, Tutorial };
+module.exports = { Challenges, Tutorial, Users };
 
 // insert function
   // _id: ObjectId(),

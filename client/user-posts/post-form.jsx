@@ -22,13 +22,14 @@ class UserChallengePost extends Component {
     this.props.postChallengeActionCreator(postInfo);
   }
   render() {
-
     if (true) {
-      return <Challenge 
-      challengeInfo={this.props.newUserPost} 
-      editable={true}
-      nextUrl={{ url: 'user-challenges', nextText: 'Submit New Challenge!' }}
-      />
+      return (
+        <Challenge
+          challengeInfo={this.props.newUserPost}
+          editable={true}
+          nextUrl={{ url: 'user-challenges', nextText: 'Submit New Challenge!' }}
+        />
+      );
     } else {
     return (
       <div>
@@ -66,11 +67,15 @@ class UserChallengePost extends Component {
   }
   }
 }
+UserChallengePost.propTypes = {
+  newUserPost: React.PropTypes.object,
+  postChallengeActionCreator: React.PropTypes.func,
+}
 
 const mapStateToProps = (state) => {
   return {
-    newUserPost: state.newUserPost
-  }
+    newUserPost: state.newUserPost,
+  };
 };
 
 export default connect(mapStateToProps, { postChallengeActionCreator })(UserChallengePost);
