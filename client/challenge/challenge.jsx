@@ -2,16 +2,31 @@ import React, { Component } from 'react';
 import InputRegexValidation from './inputRegexValidation';
 import TestCaseList from './testCases/testCaseList';
 import ChallengeDescription from './challenge-description';
+import Cheatsheet from '../pages/cheatsheet';
 
 export default class Challenge extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showCheatSheet: false,
+    };
+    this.showCheatSheet = this.showCheatSheet.bind(this);
   }
+  showCheatSheet() {
+    this.setState({ showCheatSheet: !this.state.showCheatSheet }); 
+  }
+
   render() {
     const challengeInfo = this.props.challengeInfo;
     const nextUrl = this.props.nextUrl;
     return (
       <div className="challenge">
+        <div>
+          <span onClick={() => this.showCheatSheet()} className="cheat-glyph glyphicon glyphicon-th-list" title="Cheat Sheet!" />
+        </div><br />
+        <div>
+          { this.state.showCheatSheet ? <Cheatsheet /> : null }
+        </div>
         <ChallengeDescription
           name={this.props.challengeInfo.name}
           description={this.props.challengeInfo.description}

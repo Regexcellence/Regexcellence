@@ -138,14 +138,6 @@ textarea {
   }
 }
 
-#cheat-sheet {
-  position: absolute;
-  background-color: white;
-  margin-right: 0;
-  left: 75%;
-  right: 0;
-}
-
 .logo {
 	font-size: 50px;
 	font-family: Lavanderia-Sturdy;
@@ -232,7 +224,6 @@ textarea {
     &:hover{
       color: #17A6B6;
     }
-  }
   img {
     border:none;
     height: 15px;
@@ -248,8 +239,34 @@ textarea {
   }
 }
 
+.cheat-sheet {
+  background-color: #FFF;
+  border: 2px solid #17A6B6;
+  font-size: 11px;
+  list-style: none;
+  float: right;
+  position: absolute;
+  margin-right: 0;
+  left: 79%;
+  padding: 5px;
+}
 
+.cheat-glyph {
+  float: right;
+}
 
+.about-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 5px solid #000;
+  margin: 0px 10px 0px 10px;
+}
+
+.about-table {
+  margin: auto;
+  text-align: center;
+}
 
 
 
