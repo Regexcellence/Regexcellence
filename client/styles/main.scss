@@ -1,4 +1,6 @@
-@import 'progress_bar';
+@import 'progress_bar',
+'footer';
+
 
 @font-face {
  font-family: Lavanderia-Sturdy;
@@ -216,35 +218,34 @@ textarea {
   margin-top: 8%;
 }
 
-.footer {
-  li {
-  	list-style: none;
-    display: inline;
-    padding: 0 20px 0 20px;
-    color: #949494;
-  }
-  .logo {
-    font-size: 20px;
-    cursor: pointer;
-    color: #4F4F4F;
-    &:hover {
-      color: #17A6B6;
-    }
-    img {
-      border:none;
-      height: 15px;
-      width: 15px;
-      margin: 1px 5px 0px 0px;
-    }
-    a {
-      text-decoration: none;
-      color: #949494;
-      &:hover {
-      color: #17A6B6;
-      }
-    }
-  }
-}
+// .footer {
+//   li {
+//   	list-style: none;
+//     display: inline;
+//     padding: 0 20px 0 20px;
+//     color: #949494;
+//   }
+//   .logo {
+//     font-size: 20px;
+//     cursor: pointer;
+//     color: #4F4F4F;
+//     }
+
+//   img {
+//     border:none;
+//     height: 1-px;
+//     width: 15px;
+//     margin: 0px 5px 0px 0px;
+//   }
+
+//   a {
+//     text-decoration: none;
+//     color: #949494;
+//     &:hover {
+//       color: #17A6B6;
+//     }
+//   }
+// }
 
 .cheat-sheet {
   background-color: #FFF;
