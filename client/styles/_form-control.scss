@@ -1,0 +1,57 @@
+.form-control {
+  height: 50px;
+  font-size: 25px;
+  box-shadow: none;
+  outline: none;
+  border-color: lightgrey;
+  border-radius: 0px;
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: lightgrey;
+  }
+}
+
+#continue {
+  background-color: #17A6B6;
+  height: 50px;
+  border-radius: 0;
+  color: #FFF;
+}
+
+.malformed {
+  background-color: #FF4C4D;
+  height: 50px;
+  color: #FFF;
+  padding-top: 15px;
+  padding-left: 15px;
+  border-radius: 0;
+  border: none;
+}
+
+#input-pattern {
+  width: 100%;
+}.text-match {
+  color: green;
+}
+
+.post {
+  background-color: white;
+  width: 60%;
+  margin: auto;
+  font-size: 16px;
+  padding: 15px;
+  font-family: Helvetica;
+  vertical-align: text-top;
+}
+
+.postDescription {
+  vertical-align: middle;
+}
+
+textarea {
+  width: 400px;
+  height: 100px;
+  outline: none;
+  resize: none;
+}
