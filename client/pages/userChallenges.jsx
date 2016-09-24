@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ListView from '../userChallenges/listView';
-import { getAllChallenges } from '../actions/index';
+import { getAllChallenges } from '../actions/api';
 
 class UserChallenges extends Component {
   componentWillMount() {

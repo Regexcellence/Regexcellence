@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InputRegexValidation from './inputRegexValidation';
+import InputRegexValidation from './regexInput/inputRegexValidation';
 import TestCaseList from './testCases/testCaseList';
 import ChallengeDescription from './challenge-description';
 import Cheatsheet from '../pages/cheatsheet';

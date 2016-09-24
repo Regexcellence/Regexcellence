@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import Navigation from '../controls/navbar';
 import Controls from '../controls/controls';
-import { getAllTutorials } from '../actions/index';
+import { getAllTutorials } from '../actions/api';
 import Challenge from '../challenge/challenge';
 
 class Tutorial extends Component {

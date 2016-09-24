@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAllChallenges } from './actions/index';
+import { getAllChallenges } from './actions/api';
 import Challenge from './challenge/challenge';
 
 class Challenges extends Component {

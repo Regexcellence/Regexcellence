@@ -7,6 +7,7 @@ class About extends Component {
       <div>
         <h1 className="clear-top">Team</h1>
         <table className="about-table">
+          <tbody>
           <tr>
           <td>
             <img className="about-img" src="https://avatars3.githubusercontent.com/u/18633748" />
@@ -35,6 +36,7 @@ class About extends Component {
               <div className="about-table">Lucy Wonsower</div>
             </td>
           </tr>
+          </tbody>
         </table>
       </div>
     );
