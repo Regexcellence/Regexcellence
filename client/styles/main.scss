@@ -16,7 +16,7 @@ a:hover {
 .navbar {
   background-color: rgba(245,245,245,.8);
   min-height: 100px;
-  .navbar-brand{
+  .navbar-brand {
     margin-top: 1%;
     margin-left: 5px;
   }
@@ -43,7 +43,7 @@ a:hover {
   box-shadow: none;
 }
 
-.nav-pills>li>a{
+.nav-pills>li>a {
   width: 150px;
   text-align: center;
 	font-size: 15px;
@@ -76,6 +76,7 @@ a:hover {
     color: #17A6B6;
   }
 }
+
 .post {
   background-color: white;
   width: 60%;
@@ -138,14 +139,6 @@ textarea {
   }
 }
 
-#cheat-sheet {
-  position: absolute;
-  background-color: white;
-  margin-right: 0;
-  left: 75%;
-  right: 0;
-}
-
 .logo {
 	font-size: 50px;
 	font-family: Lavanderia-Sturdy;
@@ -202,6 +195,7 @@ textarea {
   width: 75%;
   align-content: center;
 }
+
 .home-list {
   width: 250px;
   text-align: center;
@@ -229,31 +223,51 @@ textarea {
   .logo {
     font-size: 20px;
     color: #4F4F4F;
-    &:hover{
+    &:hover {
       color: #17A6B6;
     }
-  }
-  img {
-    border:none;
-    height: 15px;
-    width: 15px;
-    margin: 1px 5px 0px 0px;
-  }
-  a{
-    text-decoration: none;
-    color: #949494;
-    &:hover{
+    img {
+      border:none;
+      height: 15px;
+      width: 15px;
+      margin: 1px 5px 0px 0px;
+    }
+    a {
+      text-decoration: none;
+      color: #949494;
+      &:hover {
       color: #17A6B6;
+      }
     }
   }
 }
 
+.cheat-sheet {
+  background-color: #FFF;
+  border: 2px solid #17A6B6;
+  font-size: 11px;
+  list-style: none;
+  float: right;
+  position: absolute;
+  margin-right: 0;
+  left: 79%;
+  padding: 5px;
+}
 
+.cheat-glyph {
+  float: right;
+}
 
+.about-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 5px solid #000;
+  margin: 0px 10px 0px 10px;
+}
 
-
-
-
-
-
+.about-table {
+  margin: auto;
+  text-align: center;
+}
 
