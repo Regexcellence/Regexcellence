@@ -23,19 +23,18 @@ export default class TestCaseList extends React.Component {
     })
   }
   render() {
-    console.log('in testCaseList ', this.props.testCases);
     return (
       <table className="table">
         <tbody>
           <tr>
             <th>Match</th>
           </tr>
-          {this.props.testCases.length ? this.fitlerTestCases('Match') : false}
+          {this.fitlerTestCases('Match')}
           {this.props.editable ? <TestCaseEdit matchType="Match" /> : false}
           <tr>
             <th>Skip</th>
           </tr>
-          {this.props.testCases.length ? this.fitlerTestCases('Skip') : false}
+          {this.fitlerTestCases('Skip')}
           {this.props.editable ? <TestCaseEdit matchType="Skip" /> : false}
         </tbody>
       </table>

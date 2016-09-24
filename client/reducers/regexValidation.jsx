@@ -3,7 +3,6 @@
 export function regexValidator(previousState, action) {
   const regexObject = action.regexObject;
   const challengeId = regexObject.challengeId;
-  console.log(regexObject.challengeType)
   const parsedInput = regexParser(regexObject.input);
 
   if (regexObject.challengeType === 'challenge') {
