@@ -13,7 +13,7 @@ const initialState = {
     author: '',
     difficulty: '',
     description: '',
-    testCases: [{ "case": "hi there", "result": null, "task": "Match", "expectation": true }],
+    testCases: [],
     testPassed: false,
     challengeType: 'new-challenge',
   },
