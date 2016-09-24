@@ -27,7 +27,7 @@ if (TARGET !== 'devStart') {
 }
 // serialize and deserialize
 passport.serializeUser((user, done) => {
-  console.log('serializeUser: ', user._id);
+  // console.log('serializeUser: ', user._id);
   done(null, user._id);
 });
 // passport.deserializeUser((id, done) => {
@@ -42,7 +42,7 @@ app.get('/auth/github', passport.authenticate('github', { session: false, scope:
 app.get('/auth/github/callback',
 passport.authenticate('github', { session: false, failureRedirect: '/' }),
 (req, res) => {
-  console.log('RESPONSE', res);
+  // console.log('RESPONSE', res);
   res.redirect('/#');
 });
 
