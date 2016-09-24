@@ -14,12 +14,9 @@ const multiUseSchema = new Schema({
   testCases: [
     {
       case: String,
-      result: String,
-      task: String,
       expectation: Boolean,
     },
   ],
-  testPassed: Boolean,
 });
 
 const userSchema = new Schema({

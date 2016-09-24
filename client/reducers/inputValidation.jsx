@@ -1,4 +1,4 @@
-import { regexParser } from './regexValidation';
+import { regexParser } from './regexHelpers';
 
 export function inputValidator(previousState, action) {
   const userInput = action.newInput;
@@ -6,7 +6,6 @@ export function inputValidator(previousState, action) {
   let wellFormedInput = /^\/.*\/[gimuy]{0,5}$/.test(userInput);
   if (wellFormedInput) {
   	wellFormedInput = regexErrorHandler(userInput);
-  	console.log("wellFormedInput evaluating to ", wellFormedInput)
   }
   return Object.assign({}, previousState, { userInput, wellFormedInput });
 }

@@ -9,6 +9,19 @@ export function updateTutorials(previousState, action) {
 }
 
 // For adding validation type, e.g. 'tutorial' or 'challenge'
-function tagPayload(payload, tag) {
-	return payload.map(object => Object.assign({}, object, { challengeType: tag }));
+function tagPayload(payload, challengeType) {
+	return payload.map(object => Object.assign({}, object, { 
+		challengeType,
+		testPassed: false,
+		testCases: tagCaseList(object.testCases),
+	}));
+}
+
+// For keeping databse unpolluted by ephemeral data. 
+function tagCaseList(caseList) {
+	return caseList.map((caseObject) => {
+		caseObject.result = null;
+		caseObject.task = caseObject.expectation ? 'Match' : 'Skip';
+		return caseObject; 
+	});
 }
