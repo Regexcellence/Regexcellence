@@ -30,6 +30,7 @@ export default class Challenge extends Component {
         <ChallengeDescription
           name={this.props.challengeInfo.name}
           description={this.props.challengeInfo.description}
+          difficulty={this.props.challengeInfo.difficulty}
           editable={this.props.editable}
         />
         <TestCaseList
