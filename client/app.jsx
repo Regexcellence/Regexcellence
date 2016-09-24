@@ -28,7 +28,7 @@ const store = finalStore(reducer);
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="everything">
         <Provider store={store}>
           <Router history={history}>
             <Route path="/" component={Navbar}>

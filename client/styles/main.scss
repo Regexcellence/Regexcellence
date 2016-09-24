@@ -142,12 +142,11 @@ textarea {
 
 .clear-top {
   // position:absolute;
-  margin-top: 50%;
+  margin-top: 8%;
 }
 
-//need to configure webpack with mediaquery
-@media screen and (min-width: 350px) {
-  .clear-top{
-    margin-top: 10%;
+@media all and (max-width: 960px){
+  .clear-top {
+    margin-top: 45%;
   }
 }
