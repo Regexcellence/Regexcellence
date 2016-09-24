@@ -22,8 +22,13 @@ class UserChallengePost extends Component {
     this.props.postChallengeActionCreator(postInfo);
   }
   render() {
+
     if (true) {
-      return <Challenge challengeInfo={this.props.newUserPost} editable={true}/>
+      return <Challenge 
+      challengeInfo={this.props.newUserPost} 
+      editable={true}
+      nextUrl={{ url: 'user-challenges', nextText: 'Submit New Challenge!' }}
+      />
     } else {
     return (
       <div>

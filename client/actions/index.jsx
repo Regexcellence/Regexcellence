@@ -47,9 +47,21 @@ export function postChallengeInputUpdate(inputObject) {
   }
 }
 
+export function postEditTestCase(action, data) {
+  return {
+    type: 'POST-EDIT-TESTCASE',
+    testCaseObject: {
+      action,
+      data,
+    },
+  }
+}
+
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
   return (dispatch) => {
+    // To clean postInput of client side properties. 
+    if (postInput.innerMatches) delete postInput.innerMatches;
     $.ajax({
       method: 'POST',
       url: '/regex/challenges',
