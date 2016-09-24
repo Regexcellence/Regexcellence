@@ -23,6 +23,7 @@ class InputRegexValidation extends React.Component {
           />
           <TestPassedButton
             nextUrl={this.props.nextUrl}
+            editable={this.props.editable}
             testPassed={this.props.testPassed}
           />
         </form>

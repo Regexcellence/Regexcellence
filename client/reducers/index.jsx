@@ -1,7 +1,7 @@
 import { inputValidator } from './inputValidation';
 import { updateChallenges, updateTutorials } from './updateChallenges';
 import { regexValidator } from './regexValidation';
-import { updatePostInput } from './postChallengeInputUpdate';
+import { updatePostInput, updatePostTestCases } from './postChallengeInputUpdate';
 
 const initialState = {
   challenges: [],
@@ -13,8 +13,9 @@ const initialState = {
     author: '',
     difficulty: '',
     description: '',
-    testCases: [],
-    testPassed: false
+    testCases: [{ "case": "hi there", "result": null, "task": "Match", "expectation": true }],
+    testPassed: false,
+    challengeType: 'new-challenge',
   },
 };
 
@@ -24,6 +25,7 @@ const actionHandler = {
   'GET-CHALLENGES': updateChallenges,
   'GET-TUTORIALS': updateTutorials,
   'UPDATE-POST-INPUT': updatePostInput,
+  'POST-EDIT-TESTCASE': updatePostTestCases,
 };
 
 const reducer = (state = initialState, action) => {

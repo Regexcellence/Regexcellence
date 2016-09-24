@@ -1,30 +1,54 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { postEditTestCase } from '../../actions/index';
 
-export default class TestCaseEdit extends React.Component {
+class TestCaseEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editing: false
+      editing: false,
+      newTestCase: ''
     }
     this.switchEditMode = this.switchEditMode.bind(this);
+    this.addTestCase = this.addTestCase.bind(this);
+    this.updateInput = this.updateInput.bind(this);
   }
   switchEditMode() {
     this.setState({ editing: !this.state.editing });
+  }
+  addTestCase() {
+    this.props.postEditTestCase('ADD', {
+      task: this.props.matchType,
+      case: this.state.newTestCase,
+    })
+  }
+  updateInput(event) {
+    this.setState({
+      newTestCase: event.target.value
+    })
   }
   render() {
     if (this.state.editing) {
       return (
         <tr>
-          <input name="testCases"/>
-          <span onClick={this.switchEditMode}>Done editing</span>
+          <td>
+          <input onChange={this.updateInput} value={this.state.newTestCase} />
+          <span onClick={this.addTestCase} className="glyphicon glyphicon-ok">Save</span>
+          <span onClick={this.switchEditMode} className="glyphicon glyphicon-remove">Remove</span>
+          </td>
         </tr>
       )
     } else {
       return (
         <tr>
-          <span onClick={this.switchEditMode}>Edit me!</span>
+          <td>
+          <span>Add {this.props.matchType} testcase</span>
+          <span onClick={this.switchEditMode} className="glyphicon glyphicon-plus" aria-hidden="true" />
+          </td>
         </tr>
       )
     }
   }
 }
+
+export default connect(null, { postEditTestCase })(TestCaseEdit)

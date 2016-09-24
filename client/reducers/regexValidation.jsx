@@ -24,6 +24,9 @@ export function regexValidator(previousState, action) {
       return challenge;
     });
     return Object.assign({}, previousState, { tutorials });
+  } else if (regexObject.challengeType === 'new-challenge') {
+    const newUserPost = testCasesExtractor(parsedInput, previousState.newUserPost);
+    return Object.assign({}, previousState, { newUserPost })
   }
 }
 function funnelReducer() {
