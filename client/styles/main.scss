@@ -16,7 +16,7 @@ a:hover {
 .navbar {
   background-color: rgba(245,245,245,.8);
   min-height: 100px;
-  .navbar-brand{
+  .navbar-brand {
     margin-top: 1%;
     margin-left: 5px;
   }
@@ -43,7 +43,7 @@ a:hover {
   box-shadow: none;
 }
 
-.nav-pills>li>a{
+.nav-pills>li>a {
   width: 150px;
   text-align: center;
 	font-size: 15px;
@@ -76,6 +76,7 @@ a:hover {
     color: #17A6B6;
   }
 }
+
 .post {
   background-color: white;
   width: 60%;
@@ -194,6 +195,7 @@ textarea {
   width: 75%;
   align-content: center;
 }
+
 .home-list {
   width: 250px;
   text-align: center;
@@ -221,20 +223,21 @@ textarea {
   .logo {
     font-size: 20px;
     color: #4F4F4F;
-    &:hover{
+    &:hover {
       color: #17A6B6;
     }
-  img {
-    border:none;
-    height: 15px;
-    width: 15px;
-    margin: 1px 5px 0px 0px;
-  }
-  a{
-    text-decoration: none;
-    color: #949494;
-    &:hover{
+    img {
+      border:none;
+      height: 15px;
+      width: 15px;
+      margin: 1px 5px 0px 0px;
+    }
+    a {
+      text-decoration: none;
+      color: #949494;
+      &:hover {
       color: #17A6B6;
+      }
     }
   }
 }
@@ -267,10 +270,4 @@ textarea {
   margin: auto;
   text-align: center;
 }
-
-
-
-
-
-
 
