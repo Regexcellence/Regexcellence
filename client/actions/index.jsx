@@ -20,7 +20,7 @@ export function postChallengeInputUpdate(inputObject) {
   return {
     type: 'UPDATE-POST-INPUT',
     inputObject
-  }
+  };
 }
 
 export function postEditTestCase(action, data) {
@@ -30,7 +30,5 @@ export function postEditTestCase(action, data) {
       action,
       data,
     },
-  }
+  };
 }
-
-
