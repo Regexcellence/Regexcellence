@@ -1,16 +1,19 @@
 const handlers = require('./db/dbQueryHandler');
+const passport = require('passport');
 
 module.exports = (app) => {
   const checkAuth = (req, res, next) => {
     console.log('REQUESST session:', req.session);
+    console.log('Passport session:', req.session.passport.session);
     if (req.isAuthenticated()) {
+      console.log('YES');
       next();
     } else {
-      res.redirect('/');
+      res.redirect('/#');
     }
   };
 
-  app.get('/regex/challenges', (req, res) => {
+  app.get('/regex/challenges', checkAuth, (req, res) => {
     console.log('SESSION:', req.session);
   // Review if async issues become a problem!
     handlers.getChallenges((challenges) => {
