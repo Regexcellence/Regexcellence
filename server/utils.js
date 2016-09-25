@@ -10,12 +10,21 @@ exports.parseChallengeName = str => (
 
 exports.checkAuth = (req, res, next) => {
   console.log('REQUESST session:', req.session);
-  console.log('Passport session:', req.session.passport.session);
-  console.log('PASSSPORT SESSION', passport.session);
   if (req.isAuthenticated()) {
-    console.log('YES');
+    console.log('USER AUTHENTICATED', req.session.passport.user.name);
     next();
   } else {
-    res.redirect('/#');
+    res.end('ERROR: PLEASE LOGIN');
+    // res.redirect('/#/home');
   }
 };
+// app.get('/checkAuth', checkAuth, (req, res) => {
+//   console.log('SESSION', req.session.passport.user);
+//   User.findById(req.session.passport.user, (err, user) => {
+//     if(err) {
+//       console.log(err);  // handle errors
+//     } else {
+//       res.send('this works');
+//     }
+//   });
+// });

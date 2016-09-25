@@ -20,13 +20,3 @@ module.exports = (app) => {
     });
   });
 };
-// app.get('/checkAuth', checkAuth, (req, res) => {
-//   console.log('SESSION', req.session.passport.user);
-//   User.findById(req.session.passport.user, (err, user) => {
-//     if(err) {
-//       console.log(err);  // handle errors
-//     } else {
-//       res.send('this works');
-//     }
-//   });
-// });
