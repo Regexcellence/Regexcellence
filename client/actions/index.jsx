@@ -4,8 +4,8 @@ export function testRegexInput(challengeId, input, challengeType) {
     regexObject: {
       challengeId,
       input,
-      challengeType: challengeType,
-    }
+      challengeType,
+    },
   };
 }
 
@@ -19,7 +19,7 @@ export function inputActionCreator(newInput) {
 export function postChallengeInputUpdate(inputObject) {
   return {
     type: 'UPDATE-POST-INPUT',
-    inputObject
+    inputObject,
   };
 }
 

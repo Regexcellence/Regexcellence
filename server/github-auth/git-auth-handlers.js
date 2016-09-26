@@ -29,10 +29,10 @@ module.exports = (app) => {
 
   githubAuth();
 
-  app.get('/auth/github',
+  app.get('/regex/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }));
 
-  app.get('/auth/github/callback',
+  app.get('/regex/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
     console.log('SESSION:', req.session);
