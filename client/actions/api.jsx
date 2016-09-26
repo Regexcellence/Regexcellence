@@ -2,11 +2,18 @@ import { cleanChallenge } from './helpers';
 
 export function userLogin() {
   return (dispatch) => {
-    $.ajax('/auth/github').then((data) => {
-      dispatch({
-        type: 'LOGIN_USER',
-        data,
-      });
+    $.ajax('/regex/auth/github').then((response) => {
+      if (response.status === 200) {
+        dispatch({
+          type: 'LOGIN_USER_SUCCESS',
+          response,
+        });
+      } else {
+        dispatch({
+          type: 'LOGIN_USER_ERROR',
+          response,
+        });
+      }
     });
   };
 }
