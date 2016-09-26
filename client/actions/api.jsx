@@ -3,7 +3,7 @@ import { cleanChallenge } from './helpers';
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
   return (dispatch) => {
-    // To clean postInput of client side properties. 
+    // To clean postInput of client side properties.
     //if (postInput.innerMatches) delete postInput.innerMatches;
     postInput = cleanChallenge(postInput);
     $.ajax({

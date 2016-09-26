@@ -1,20 +1,20 @@
 export function cleanChallenge(challengeObject) {
-	return {
-		name: challengeObject.name,
-		description: challengeObject.description,
-		author: challengeObject.author,
-		difficulty: challengeObject.difficulty,
-		testCases: cleanTestCases(challengeObject.testCases),
-	}
+  return {
+    name: challengeObject.name,
+    description: challengeObject.description,
+    author: challengeObject.author,
+    difficulty: challengeObject.difficulty,
+    testCases: cleanTestCases(challengeObject.testCases),
+  }
 }
 
 function cleanTestCases(testCases) {
-	return testCases.map((testCase) => {
-		return {
-			case: testCase.case,
-			expectation: testCase.expectation,
-		}
-	});
+  return testCases.map((testCase) => {
+    return {
+      case: testCase.case,
+      expectation: testCase.expectation,
+    };
+  });
 }
 
 /*
