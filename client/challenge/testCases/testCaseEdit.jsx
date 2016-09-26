@@ -50,10 +50,14 @@ class TestCaseEdit extends React.Component {
         <tr>
           <td>
           <input onChange={this.updateInput} value={this.state.newTestCase} />
-          <span onClick={this.addTestCase} className="glyphicon glyphicon-ok"></span>
-          <span id="save">Save</span>
-          <span onClick={this.deleteTestCase} className="glyphicon glyphicon-remove"></span>
-          <span id="remove">Remove</span>
+          <span onClick={this.addTestCase} >
+            <span className="glyphicon glyphicon-ok"></span>
+            <span id="save">Save</span>
+          </span>
+          <span onClick={this.deleteTestCase}>
+            <span className="glyphicon glyphicon-remove"></span>
+            <span id="remove">Remove</span>
+          </span>
           </td>
         </tr>
       )
