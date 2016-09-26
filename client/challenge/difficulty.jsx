@@ -7,7 +7,7 @@ class Difficulty extends React.Component {
 	constructor(props) {
 		super(props)
 		this.updateDifficulty = this.updateDifficulty.bind(this);
-	}
+  }
 	updateDifficulty(event) {
 		const inputObject = {
 			name: event.target.name,
@@ -32,11 +32,11 @@ class Difficulty extends React.Component {
 						<option value="5">5 : very hard</option>
 					</select>
 				</div>
-			)
+			);
 		} else {
-			return <h3>{this.props.difficulty}</h3>
+			return <h3>{this.props.difficulty}</h3>;
 		}
 	}
 }
 
-export default connect(null, { postChallengeInputUpdate })(Difficulty)
+export default connect(null, { postChallengeInputUpdate })(Difficulty);
