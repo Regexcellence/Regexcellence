@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
-const MONGO_URI = require('./config').MONGO_URI;
+const MONGO_URI = process.env.MONGO_URL || require('./config').MONGO_URI;
 
 const port = process.env.PORT || 3000;
 app.set('port', port);
