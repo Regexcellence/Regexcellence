@@ -41,8 +41,7 @@ class TutorialMain extends Component {
       } else {
         nextTutorial.url = `tutorial/${orderedList[currentTutorial.order + 1].nameurl}`;
       }
-      let percent = { width: (currentTutorial.order*10).toString()+"%" };
-      console.log("in tutorials", percent)
+    const percent = { width: (currentTutorial.order*10).toString()+"%" };
 
       return (
         <div className="clear-top">
