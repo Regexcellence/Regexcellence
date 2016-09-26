@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const multiUseSchema = new Schema({
+const tutorialSchema = new Schema({
   _id: ObjectId,
   order: Number,
   name: String,
@@ -17,6 +17,31 @@ const multiUseSchema = new Schema({
       expectation: Boolean,
     },
   ],
+  answers: {
+    explanation: String,
+    answer: String
+  }
+});
+
+const challengeSchema = new Schema({
+  _id: ObjectId,
+  name: String,
+  nameurl: String,
+  description: String,
+  author: String,
+  difficulty: String,
+  testCases: [
+    {
+      case: String,
+      expectation: Boolean,
+    },
+  ],
+  answers: [
+    {
+      answer: String,
+      user: String,
+    }
+  ]
 });
 
 const userSchema = new Schema({
@@ -34,8 +59,8 @@ const userSchema = new Schema({
 });
 
 const Users = mongoose.model('Users', userSchema);
-const Challenges = mongoose.model('Challenges', multiUseSchema);
-const Tutorial = mongoose.model('Tutorial', multiUseSchema);
+const Challenges = mongoose.model('Challenges', challengeSchema);
+const Tutorial = mongoose.model('Tutorial', tutorialSchema);
 
 module.exports = { Challenges, Tutorial, Users };
 

@@ -3,6 +3,7 @@ import InputRegexValidation from './regexInput/inputRegexValidation';
 import TestCaseList from './testCases/testCaseList';
 import ChallengeDescription from './challenge-description';
 import Cheatsheet from '../pages/cheatsheet';
+import RevealAnswer from './revealAnswer';
 
 export default class Challenge extends Component {
   constructor(props) {
@@ -45,6 +46,13 @@ export default class Challenge extends Component {
           editable={this.props.editable}
           nextUrl={nextUrl}
         />
+        {this.props.editable ? false :
+        <RevealAnswer 
+          challengeId={this.props.challengeInfo._id}
+          challengeType={this.props.challengeInfo.challengeType}
+          answers={this.props.challengeInfo.answers}
+          revealAnswer={this.props.challengeInfo.revealAnswer}
+        />}
       </div>
     );
   }

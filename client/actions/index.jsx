@@ -32,3 +32,11 @@ export function postEditTestCase(action, data) {
     },
   };
 }
+
+export function toggleAnswer(challengeId, challengeType) {
+  return {
+    type: 'TOGGLE-REVEAL-ANSWER',
+    challengeId,
+    challengeType,
+  }
+}

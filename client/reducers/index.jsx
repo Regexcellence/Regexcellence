@@ -4,6 +4,7 @@ import { regexValidator } from './regexValidation';
 import { updatePostInput } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
+import { toggleReveal } from './toggleReveal';
 
 const initialState = {
   challenges: [],
@@ -22,6 +23,7 @@ const initialState = {
   },
   newTestCase: {
     case: '',
+    
   }
 };
 
@@ -33,6 +35,7 @@ const actionHandler = {
   'UPDATE-POST-INPUT': updatePostInput,
   'POST-EDIT-TESTCASE': updatePostTestCases,
   'POST-CHALLENGE': postNewChallenge,
+  'TOGGLE-REVEAL-ANSWER': toggleReveal,
 };
 
 const reducer = (state = initialState, action) => {

@@ -14,6 +14,7 @@ function tagPayload(payload, challengeType) {
 		challengeType,
 		testPassed: false,
 		testCases: tagCaseList(object.testCases),
+		revealAnswer: false,
 	}));
 }
 
