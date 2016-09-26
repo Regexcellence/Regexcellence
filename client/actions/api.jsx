@@ -1,5 +1,16 @@
 import { cleanChallenge } from './helpers';
 
+export function userLogin() {
+  return (dispatch) => {
+    $.ajax('/auth/github').then((data) => {
+      dispatch({
+        type: 'LOGIN_USER',
+        data,
+      });
+    });
+  };
+}
+
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
   return (dispatch) => {

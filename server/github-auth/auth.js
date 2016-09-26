@@ -5,9 +5,9 @@ const User = require('../../server/db/dbmodel').Users;
 
 module.exports = () => {
   passport.use(new GithubStrategy({
-    clientID: gitApi.github.clientID || process.env.GITHUBID,
-    clientSecret: gitApi.github.clientSecret || process.env.GITHUBSECRECT,
-    callbackURL: gitApi.github.callbackURL || process.env.URL,
+    clientID: process.env.GITHUBID || gitApi.github.clientID,
+    clientSecret:  process.env.GITHUBSECRET || gitApi.github.clientSecret,
+    callbackURL: process.env.URL || gitApi.github.callbackURL,
   }, (accessToken, refreshToken, profile, cb) => {
       User.findOne({ githubId: profile.id }, (err, user) => {
         if (err) {
