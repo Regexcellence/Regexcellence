@@ -9,7 +9,11 @@
   	  { "case": "abcd", "expectation": true },
   	  { "case": "acd", "expectation": false },
   	  { "case": "abcde", "expectation": true }
-  	]
+  	],
+    "answers": {
+      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
+      "answer": "/abc/"
+    }
   },
   {
   	"order": 1,
@@ -25,7 +29,11 @@
   		{ "case": "ball", "expectation": true },
   		{ "case": "call", "expectation": false },
   		{ "case": "wall", "expectation": true }
-  	]
+  	],
+    "answers": {
+      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
+      "answer": "/abc/"
+    }
   },
   {
   	"order": 2,
@@ -38,7 +46,11 @@
   		{ "case": "94105", "expectation": true },
   		{ "case": "666", "expectation": false },
   		{ "case": "9999999", "expectation": false }
-  	]
+  	],
+    "answers": {
+      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
+      "answer": "/abc/"
+    }
   },
   {
     "order": 3,
@@ -55,7 +67,11 @@
       { "case": "opium den", "expectation": true },
       { "case": "wise men", "expectation": true },
       { "case": "never again", "expectation": false}
-    ]
+    ],
+    "answers": {
+      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
+      "answer": "/abc/"
+    }
   },
   {
   	"order": 4,
@@ -69,7 +85,11 @@
   		{ "case": "Lucy and Dana are awesome!", "expectation": true },
   		{ "case": "Troy is a beast!", "expectation": true },
   		{ "case": "Remove all of the whitespaces.", "expectation": true }
-  	]
+  	],
+    "answers": {
+      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
+      "answer": "/abc/"
+    }
   },
   {
   	"order": 5,
@@ -85,6 +105,10 @@
   		{ "case": "925 145-5555", "expectation": false },
   		{ "case": "925 145 5555", "expectation": false },
   		{ "case": "(925)hello145-5555", "expectation": false }
-  	]
+  	],
+    "answers": {
+      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
+      "answer": "/abc/"
+    }
   }
 ]
