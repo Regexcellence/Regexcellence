@@ -26,9 +26,9 @@ class Tutorial extends Component {
           <div className="clear-top">
             <div className="tutorial-start">
               <div className="text-center title"><h1>Welcome</h1>
-              <p className="tutorial-start">Our tutorial is designed to jump-start your Regex education, taking you from absolute beginner status and putting you well on your way to writing your own challenges for others. If you get stuck, take advantage of the cheat sheet by clicking the icon in the top-right corner. Have fun!<br /><br /><br />
+              <p className="tutorial-start">Our tutorial is designed to jump-start your Regex education, taking you from absolute beginner status and putting you well on your way to writing your own challenges for others. If you get stuck, take advantage of the cheat sheet by clicking the icon in the top-right corner. Have fun!
               </p>
-              <Link to={"/tutorial/" + firstTutorial}><span className="tutorial-start">START TUTORIAL</span></Link><br /><br /><br />
+              <Link to={"/tutorial/" + firstTutorial}><span className="tutorial-start">START TUTORIAL</span></Link>
             </div>
             </div>
           </div>
