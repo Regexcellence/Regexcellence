@@ -49,7 +49,7 @@ class TestCaseEdit extends React.Component {
       return (
         <tr>
           <td>
-          <span>Add {this.props.matchType} testcase</span>
+          <span>Add a {this.props.matchType} test case</span>
           <span onClick={this.switchEditMode} className="glyphicon glyphicon-plus" aria-hidden="true" />
           </td>
         </tr>

@@ -5,7 +5,8 @@
 'challenge-list',
 'footer',
 'homepage',
-'about';
+'about',
+'post';
 
 @font-face {
  font-family: Lavanderia-Sturdy;
@@ -119,29 +120,12 @@ a:hover {
   box-shadow: none;
 }
 
-.post {
-  background-color: white;
-  width: 60%;
-  margin: auto;
-  font-size: 16px;
-  padding: 15px;
-  font-family: Helvetica;
-  vertical-align: text-top;
-}
-
-.postDescription {
-  vertical-align: middle;
-}
-
-textarea {
-  width: 400px;
-  height: 100px;
-  outline: none;
-  resize: none;
+input{
+ box-shadow: none;
+ outline: none;
 }
 
 .clear-top {
-  // position:absolute;
   margin-top: 8%;
 }
 

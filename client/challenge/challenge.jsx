@@ -14,7 +14,7 @@ export default class Challenge extends Component {
     this.showCheatSheet = this.showCheatSheet.bind(this);
   }
   showCheatSheet() {
-    this.setState({ showCheatSheet: !this.state.showCheatSheet }); 
+    this.setState({ showCheatSheet: !this.state.showCheatSheet });
   }
 
   render() {
@@ -23,7 +23,11 @@ export default class Challenge extends Component {
     return (
       <div className="challenge">
         <div>
-          <span onClick={() => this.showCheatSheet()} className="cheat-glyph glyphicon glyphicon-th-list" title="Cheat Sheet!" />
+          <span
+            onClick={() => this.showCheatSheet()}
+            className="cheat-glyph glyphicon glyphicon-th-list"
+            title="Cheat Sheet!"
+          />
         </div><br />
         <div>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
