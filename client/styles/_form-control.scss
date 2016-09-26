@@ -12,6 +12,20 @@
   }
 }
 
+.post-form{
+  form{
+    input{
+     box-shadow: none;
+     outline: none;
+    }
+    select{
+      font-size: 15px;
+    }
+    textarea{
+      font-size: 15px;
+    }
+  }
+}
 #continue {
   background-color: #17A6B6;
   height: 50px;

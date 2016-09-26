@@ -19,15 +19,22 @@ class ChallengeDescription extends Component {
   render() {
   	if (this.props.editable) {
   		return (
-  		  <div>
-  		    <h3><input onChange={this.updateInput} name="name" value={this.props.name} /></h3>
+  		  <div className="form-group post-form">
+        <form>
+          <label>Challenge Name</label>
+          <input 
+          onChange={this.updateInput} name="name" 
+          value={this.props.name}/>
+
   		    <Difficulty difficulty={this.props.difficulty} editable={this.props.editable} />
-  		    <textarea 
+
+          <label>Description:</label>
+  		    <textarea className="form-control"
   		    onChange={this.updateInput}
   		    name="description" 
-  		    placeholder="Enter A Description" 
   		    value={this.props.description} 
   		    />
+        </form>
   		  </div>
   		);
   	} else {
