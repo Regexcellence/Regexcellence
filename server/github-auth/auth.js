@@ -1,13 +1,12 @@
 const GithubStrategy = require('passport-github2').Strategy;
 const passport = require('passport');
-const gitApi = require('../../config').GITHUB;
 const User = require('../../server/db/dbmodel').Users;
 
 module.exports = () => {
   passport.use(new GithubStrategy({
-    clientID: process.env.GITHUBID || gitApi.github.clientID,
-    clientSecret:  process.env.GITHUBSECRET || gitApi.github.clientSecret,
-    callbackURL: process.env.URL || gitApi.github.callbackURL,
+    clientID: process.env.GITHUBID || require('../../config').GITHUB.github.clientID,
+    clientSecret:  process.env.GITHUBSECRET || require('../../config').GITHUB.github.clientSecret,
+    callbackURL: process.env.URL || require('../../config').GITHUB.github.callbackURL,
   }, (accessToken, refreshToken, profile, cb) => {
       User.findOne({ githubId: profile.id }, (err, user) => {
         if (err) {
