@@ -2,11 +2,18 @@
   height: 200px;
   width: 200px;
   border-radius: 100%;
-  border: 5px solid #000;
-  margin: 0px 10px 0px 10px;
+  border: 7px solid #17A6B6;
+  margin: 0px 18px 0px 18px;
+  padding: -2px;
 }
 
 .about-table {
   margin: auto;
   text-align: center;
+  font-weight: bold;
+  .about-links {
+  	height: 25px;
+  	width: 25px;
+  	margin: 0 2px 0 2px;
+  }
 }

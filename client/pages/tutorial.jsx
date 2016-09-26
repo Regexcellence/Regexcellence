@@ -24,7 +24,8 @@ class Tutorial extends Component {
       if (this.props.location.pathname === '/tutorial') {
         return (
           <div className="clear-top">
-            <div className="tutorial-start">
+            <div className="tutorial-start jumbotron">
+              <img className="banner-img" src="http://static1.squarespace.com/static/51a9aa9fe4b02f35a70e4fb5/52edec83e4b03137dd9c38c3/52f5763ee4b0021595ac9139/1391818331083/icon-illus-v2.png?format=300w" />
               <div className="text-center title"><h1>Welcome</h1>
               <p className="tutorial-start">Our tutorial is designed to jump-start your Regex education, taking you from absolute beginner status and putting you well on your way to writing your own challenges for others. If you get stuck, take advantage of the cheat sheet by clicking the icon in the top-right corner. Have fun!
               </p>
