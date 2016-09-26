@@ -134,3 +134,31 @@ input{
     margin-top: 45%;
   }
 }
+
+.tutorial-start {
+  p {
+    width: 70%;
+    color: #17A6B6;
+    font-size: 18px;
+  }
+  h1 {
+    margin-right: 30%;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  span {
+    background-color: #17A6B6;
+    color: #FFF;
+    padding: 20px;
+    font-size: 20px;
+    margin: 0 30% 30% 0; 
+    z-index: +3;
+  }
+  div {
+    min-margin-top: 90px;
+    background-color: #eee;
+    border: 1px solid #E3E3E3;
+    padding: 5% 0 5% 20%;
+  }
+}
+
