@@ -21,14 +21,14 @@ class ChallengeDescription extends Component {
   		return (
   		  <div className="form-group post-form">
         <form>
-          <label>Challenge Name</label>
+          <h3>Challenge Name</h3>
           <input 
           onChange={this.updateInput} name="name" 
           value={this.props.name}/>
 
   		    <Difficulty difficulty={this.props.difficulty} editable={this.props.editable} />
 
-          <label>Description:</label>
+          <h4>Description:</h4>
   		    <textarea className="form-control"
   		    onChange={this.updateInput}
   		    name="description" 

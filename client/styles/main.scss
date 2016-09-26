@@ -121,27 +121,41 @@ a:hover {
 
 .post {
   background-color: white;
-  width: 60%;
+  border: 5px solid #F55D3E;
+  width: 80%;
   margin: auto;
   font-size: 16px;
   padding: 15px;
   font-family: Helvetica;
   vertical-align: text-top;
+  table{
+    .glyphicon.glyphicon-ok{
+      margin-left: 5px;
+      padding: 5px;
+      color: #17A6B6;
+    }
+      margin: 3px;
+    .glyphicon.glyphicon-remove{
+      padding: 5px;
+      color: #F55D3E;
+    }
+    .glyphicon.glyphicon-plus{
+      margin-left: 5px;
+      padding: 5px;
+      color: #17A6B6;
+    }
+  }
 }
 
+input{
+ box-shadow: none;
+ outline: none;
+}
 .postDescription {
   vertical-align: middle;
 }
 
-textarea {
-  width: 400px;
-  height: 100px;
-  outline: none;
-  resize: none;
-}
-
 .clear-top {
-  // position:absolute;
   margin-top: 8%;
 }
 

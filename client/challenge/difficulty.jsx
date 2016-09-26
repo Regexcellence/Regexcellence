@@ -20,16 +20,16 @@ class Difficulty extends React.Component {
 		if (this.props.editable) {
 			return (
 				<div>
-					<label>Select Difficulty:</label>
+					<h4>Select Difficulty:</h4>
 					<select 
 						className="form-control"
 						onChange={this.updateDifficulty} 
 						name="difficulty">;
-						<option value="1">1:very easy</option>
-						<option value="2">2:easy</option>
-						<option value="3">3:medium</option>
-						<option value="4">4:hard</option>
-						<option value="5">5:very hard</option>
+						<option value="1">1 : very easy</option>
+						<option value="2">2 : easy</option>
+						<option value="3">3 : medium</option>
+						<option value="4">4 : hard</option>
+						<option value="5">5 : very hard</option>
 					</select>
 				</div>
 			)

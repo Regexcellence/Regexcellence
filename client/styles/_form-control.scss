@@ -12,17 +12,33 @@
   }
 }
 
-.post-form{
+.post-form{ 
+  color: #4F4F4F;
   form{
     input{
      box-shadow: none;
      outline: none;
+     min-height: 40px;
+     padding-left: 5px;
+     &:focus{
+      border: 1px solid #17A6B6;
+     }
     }
     select{
       font-size: 15px;
+      min-width: 200px;
+      &:focus{
+      border-color: #17A6B6;
+     }
     }
     textarea{
       font-size: 15px;
+      min-height: 80px;
+      min-width: 200px;
+      resize: none;
+      &:focus{
+      border-color: #17A6B6;
+     }
     }
   }
 }
