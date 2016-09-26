@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { postChallengeInputUpdate } from '../actions/index';
 import Difficulty from './difficulty';
 
-class ChallengeDescription extends Component {constructor(props) {
+class ChallengeDescription extends Component {
+  constructor(props) {
     super(props);
     this.updateInput = this.updateInput.bind(this);
   }
