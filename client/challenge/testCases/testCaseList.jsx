@@ -12,14 +12,22 @@ export default class TestCaseList extends React.Component {
   fitlerTestCases(filterCondition) {
     return this.props.testCases.filter(testCase => testCase.task === filterCondition)
       .map(testCase => {
+        console.log('logging testcasse ', testCase)
         if (testCase.editing) {
-          return <TestCaseEdit matchType={filterCondition} />
+          return <TestCaseEdit 
+          matchType={filterCondition} 
+          newTestCase={testCase.case}
+          editing={true}
+          key={testCase._id}
+          _id={testCase._id}
+          />
         } else {
           return (
             <tr key={testCase._id}>
               <td>
                 <TestCaseText 
-                  testCase={testCase.innerMatches || testCase.case} 
+                  testCase={testCase.case} 
+                  innerMatches={testCase.innerMatches}
                   testCaseInfo={testCase} 
                   editable={this.props.editable} 
                 /> 

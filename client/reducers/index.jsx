@@ -21,9 +21,8 @@ const initialState = {
     testPassed: false,
     challengeType: 'new-challenge',
   },
-  newTestCase: {
+  newMatchTestCase: {
     case: '',
-    
   }
 };
 

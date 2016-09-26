@@ -23,6 +23,11 @@ function tagCaseList(caseList) {
 	return caseList.map((caseObject) => {
 		caseObject.result = null;
 		caseObject.task = caseObject.expectation ? 'Match' : 'Skip';
+		caseObject.innerMatches = {
+			start: caseObject.case,
+			match: '',
+			end: '',
+		};
 		return caseObject; 
 	});
 }
