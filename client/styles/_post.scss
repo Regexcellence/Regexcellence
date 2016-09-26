@@ -1,0 +1,39 @@
+.post {
+  background-color: white;
+  border: 5px solid #F55D3E;
+  width: 80%;
+  margin: auto;
+  font-size: 16px;
+  padding: 15px;
+  font-family: Helvetica;
+  vertical-align: text-top;
+  table{
+    .glyphicon.glyphicon-ok{
+      margin-left: 5px;
+      padding: 5px;
+      color: #17A6B6;
+    }
+      margin: 3px;
+    .glyphicon.glyphicon-remove{
+      padding: 5px;
+      color: #F55D3E;
+    }
+    .glyphicon.glyphicon-plus{
+      margin-left: 5px;
+      padding: 5px;
+      color: #17A6B6;
+    }
+    .glyphicon.glyphicon-pencil{
+      margin-left: 5px;
+      padding: 5px;
+      color: #17A6B6; 
+    }
+    input:focus{
+      border: 1px solid #17A6B6;
+    }
+  }
+}
+
+.postDescription {
+  vertical-align: middle;
+}
