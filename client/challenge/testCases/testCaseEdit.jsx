@@ -7,12 +7,13 @@ class TestCaseEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editing: false,
-      newTestCase: ''
+      editing: this.props.editing || false,
+      newTestCase: this.props.newTestCase || '',
     }
     this.switchEditMode = this.switchEditMode.bind(this);
     this.addTestCase = this.addTestCase.bind(this);
     this.updateInput = this.updateInput.bind(this);
+    this.deleteTestCase = this.deleteTestCase.bind(this);
   }
   switchEditMode() {
     this.setState({ editing: !this.state.editing });
@@ -21,8 +22,17 @@ class TestCaseEdit extends React.Component {
     this.props.postEditTestCase('ADD', {
       task: this.props.matchType,
       case: this.state.newTestCase,
-      _id: uuid.v4(),
+      _id: this.props._id || uuid.v4(),
       editing: false
+    });
+    this.setState({
+      newTestCase: '',
+      editing: false
+    });
+  }
+  deleteTestCase() {
+    this.props.postEditTestCase('DELETE', {
+      _id: this.props._id
     });
     this.setState({
       newTestCase: '',
@@ -41,7 +51,7 @@ class TestCaseEdit extends React.Component {
           <td>
           <input onChange={this.updateInput} value={this.state.newTestCase} />
           <span onClick={this.addTestCase} className="glyphicon glyphicon-ok">Save</span>
-          <span onClick={this.switchEditMode} className="glyphicon glyphicon-remove">Remove</span>
+          <span onClick={this.deleteTestCase} className="glyphicon glyphicon-remove">Remove</span>
           </td>
         </tr>
       )
@@ -56,10 +66,6 @@ class TestCaseEdit extends React.Component {
       )
     }
   }
-}
-
-const mapStateToProps = (state) => {
-  return { testCases: newUserPost.testCases }
 }
 
 export default connect(null, { postEditTestCase })(TestCaseEdit)
