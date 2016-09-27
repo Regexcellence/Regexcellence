@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 export default class Login extends Component {
-  // getInititalState(){
-  //   return { showModal: false};
-  // }
+
   constructor(props){
     super(props);
-    this.state = { showModal: false };
+    this.state = { showModal: false, loggedIn: false };
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
@@ -23,22 +22,27 @@ export default class Login extends Component {
   }
 
   render(){
-    return(
-    <div>
-        <span onClick={this.open}>SIGN IN</span>
-        <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
-            <Modal.Title>Sign In with Github</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>some text</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-    </div>
-    );
+    if(!this.state.loggedIn){     
+      return(
+      <div>
+          <span onClick={this.open}>SIGN IN</span>
+          <Modal show={this.state.showModal} onHide={this.close}>
+            <Modal.Header closeButton>
+              <Modal.Title>Sign In with Github</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              
+              <button>Sign in with Github account</button>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={this.close}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+      </div>
+      );
+    } else {
+      return <div>hey username!</div>;
+    }
   }
 }
 
