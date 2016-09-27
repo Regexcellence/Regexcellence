@@ -13,10 +13,12 @@ module.exports = () => {
         if (err) {
           console.log(err);  // handle errors!
         } else if (!user) {
+          console.log(profile);
           user = new User({
             accessToken,
             refreshToken,
             _id: mongoose.Types.ObjectId(),
+            gitHandle: profile.login,
             githubId: profile.id,
             name: profile.displayName,
             created: Date.now(),
