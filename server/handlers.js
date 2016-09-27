@@ -28,4 +28,9 @@ module.exports = (app) => {
       res.end('challenge created');
     });
   });
+  app.get('/regex/user-info?*', (req, res) => {
+    handlers.getUserInfo(13708462 , (info) => {
+      res.send(info);
+    });
+  });
 };
