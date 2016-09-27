@@ -1,23 +1,26 @@
 import { cleanChallenge } from './helpers';
 
 export function userLogin() {
-  window.location.href = 'http://'+ window.location.host + '/regex/auth/github';
+  // window.location.href = 'http://'+ window.location.host + '/regex/auth/github';
   return (dispatch) => {
     $.ajax({
       method: 'GET',
       url: '/regex/auth/github',
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Methods': 'POST, GET',
         'Access-Control-Max-Age': 1728000,
       },
     }).then((response) => {
       if (response.status === 200) {
+        console.log('**RESPONSE**', response);
         dispatch({
           type: 'LOGIN_USER_SUCCESS',
           response,
         });
       } else {
+        console.log('**ERROR**', response);
         dispatch({
           type: 'LOGIN_USER_ERROR',
           response,
