@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from '../controls/navbar';
 import Controls from '../controls/controls';
-import Login from '../login/login';
+import Login from '../login/logIn';
 
 class Home extends Component {
   render() {
