@@ -28,4 +28,17 @@
 	  { "case": "heckno/gi", "expectation": false }
 	],
 },
+{
+	"name": "Find The Kitty",
+	"description": "Match the correct meows to catch Jazzy the cat =^.^= !",
+	"author": "Dana Li",
+	"difficulty": "2",
+	"testCases": [
+	  { "case": "meow", "expectation": true },
+	  { "case": "meooow", "expectation": true },
+	  { "case": "MEOWING Jazzy!", "expectation": true },
+	  { "case": "who meowed?", "expectation": false },
+	  { "case": "It's Jazzy!": false }
+	],
+}
 ]
