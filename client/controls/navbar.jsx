@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
+import Login from '../login/logIn';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -15,11 +16,7 @@ export default class Navbar extends Component {
   showCheatSheet() {
     this.setState({ showCheatSheet: !this.state.showCheatSheet });
   }
-            // <li className="pull-right">
-            //   <button onClick={() => this.showCheatSheet()}>
-            //   Cheatsheet
-            //   </button>
-            // </li>
+  
   render() {
     return (
       <div>
@@ -31,8 +28,9 @@ export default class Navbar extends Component {
           <ul className="nav nav-pills pull-right">
             <li><Link to="tutorial">TUTORIAL</Link></li>
             <li><Link to="user-challenges">CHALLENGES</Link></li>
-            <li><Link to="about">ABOUT</Link></li>
             <li><Link to="post">POST</Link></li>
+            <li><Link><Login /></Link></li>
+
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </div>
