@@ -28,8 +28,7 @@ export function userLogin() {
       }
     });
   };
-} 
-
+}
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
   return (dispatch) => {
@@ -84,4 +83,3 @@ export function postNewChallengeAnswer(answer, challengeId) {
     })
   }
 }
-

@@ -4,7 +4,7 @@ const dbHandlers = require('./db/dbQueryHandler');
 const checkAuth = require('./utils').checkAuth;
 
 module.exports = (app) => {
-  app.get('/regex/challenges', (req, res) => {
+  app.get('/regex/challenges', checkAuth, (req, res) => {
     console.log('SESSION:', req.session);
   // Review if async issues become a problem!
     dbHandlers.getChallenges((challenges) => {
