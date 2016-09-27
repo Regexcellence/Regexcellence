@@ -40,3 +40,9 @@ export function toggleAnswer(challengeId, challengeType) {
     challengeType,
   }
 }
+
+export function resetWellFormedInput() {
+  return {
+    type: 'RESET-WELLFORMED-INPUT'
+  }
+}

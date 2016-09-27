@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import InputRegexValidation from './regexInput/inputRegexValidation';
 import TestCaseList from './testCases/testCaseList';
 import ChallengeDescription from './challenge-description';
 import Cheatsheet from '../pages/cheatsheet';
 import RevealAnswer from './revealAnswer';
 
-export default class Challenge extends Component {
+import { inputActionCreator, resetWellFormedInput } from '../actions/index';
+
+class Challenge extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +19,10 @@ export default class Challenge extends Component {
   showCheatSheet() {
     this.setState({ showCheatSheet: !this.state.showCheatSheet });
   }
-
+  componentWillMount() {
+    this.props.inputActionCreator('');
+    this.props.resetWellFormedInput();
+  }
   render() {
     const challengeInfo = this.props.challengeInfo;
     const nextUrl = this.props.nextUrl;
@@ -74,3 +80,5 @@ Challenge.propTypes = {
     challengeType: React.PropTypes.string,
   }),
 };
+
+export default connect(null, { inputActionCreator, resetWellFormedInput })(Challenge);

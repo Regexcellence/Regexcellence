@@ -10,6 +10,10 @@ export function inputValidator(previousState, action) {
   return Object.assign({}, previousState, { userInput, wellFormedInput });
 }
 
+export function resetWellFormedInput(previousState, action) {
+  return Object.assign({}, previousState, { wellFormedInput: true })
+}
+
 function regexErrorHandler(input) {
 	const parsedInput = regexParser(input);
 	try {
