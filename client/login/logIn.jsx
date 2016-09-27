@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+
+import { userLogin } from '../actions/api';
 import { connect } from 'react-redux';
 
-export default class Login extends Component {
+class Login extends Component {
 
   constructor(props){
     super(props);
@@ -20,6 +22,10 @@ export default class Login extends Component {
   open(){
     this.setState({ showModal: true});
   }
+
+  // componentWillMount() {
+  //   this.props.userLogin();
+  // }
 
   render(){
     if(!this.state.loggedIn){     
@@ -46,4 +52,4 @@ export default class Login extends Component {
   }
 }
 
-
+export default connect(null, { userLogin })(Login);
