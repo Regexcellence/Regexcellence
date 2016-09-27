@@ -5,7 +5,6 @@ const checkAuth = require('./utils').checkAuth;
 
 module.exports = (app) => {
   app.get('/regex/challenges', (req, res) => {
-    console.log('SESSION:', req.session);
   // Review if async issues become a problem!
     dbHandlers.getChallenges((challenges) => {
       res.send(challenges);
@@ -18,9 +17,8 @@ module.exports = (app) => {
   });
   app.post('/regex/challenges?*', (req, res) => {
     const query = url.parse(req.url).query;
-    console.log(query, req.body);
     dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
-      res.end('Successfully updated answer!');
+      res.end('Successftully updated answer!');
     });
   });
   app.post('/regex/challenges', (req, res) => {
@@ -28,10 +26,12 @@ module.exports = (app) => {
       res.end('challenge created');
     });
   });
-  app.get('/regex/user-info?*', (req, res) => {
-    const query = url.parse(req.url).query;
-    dbHandlers.getUserInfo(query, (info) => {
-      res.send(info);
-    });
+  app.get('/regex/user-info', (req, res) => {
+    if (req.user) {
+      console.log('requested user info is ', req.user._id);
+      res.send(req.user);
+    } else {
+      res.send('Not logged in!')
+    }
   });
 };
