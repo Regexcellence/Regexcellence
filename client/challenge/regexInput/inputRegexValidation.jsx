@@ -29,6 +29,8 @@ class InputRegexValidation extends React.Component {
               nextUrl={this.props.nextUrl}
               editable={this.props.editable}
               testPassed={this.props.testPassed}
+              challengeType={this.props.challengeType}
+              challengeId={this.props.challengeId}
             />
           </form>
           <InputValidationFlag wellFormedInput={this.props.wellFormedInput} />

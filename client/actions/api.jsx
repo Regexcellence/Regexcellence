@@ -59,3 +59,17 @@ export function getAllChallenges() {
     });
   };
 }
+
+export function postNewChallengeAnswer(answer, challengeId) {
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: `/regex/challenges?${challengeId}`,
+      contentType: 'application/json',
+      data: JSON.stringify({ answer })
+    }).then(() => {
+      console.log('success in posting answer!!')
+    })
+  }
+}
+

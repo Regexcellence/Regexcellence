@@ -25,6 +25,13 @@ module.exports = {
       callback(newData);
     });
   },
+  postChallengeAnswer: (data, query, callback) => {
+    console.log('in post challenge answer')
+    models.Challenges.findOneAndUpdate({ _id: query }, { $push: { answers: { answer: data.answer, user: data.user || 'Anonymous' }}}, { new: true }, (err, model) => {
+      if (err) throw err;
+      callback(model);
+    });
+  },
   getTutorial: (callback) => {
     models.Tutorial.find({}, (err, tutorial) => {
       if (err) throw err;
