@@ -82,4 +82,18 @@ export function postNewChallengeAnswer(answer, challengeId) {
       console.log('success in posting answer!!')
     })
   }
-}
+// export function getUserInfo(gitId) {
+//   return (dispatch) => {
+//     $.ajax({
+//       url: '/regex/user-info?{gitId}',
+//       methods: 'POST',
+//       contentType: 'application/json',
+//       data: 13708462,
+//     }).then((data) => {
+//       dispatch({
+//         type: 'GET-USER-INFO',
+//         payload: data,
+//       });
+//     });
+//   };
+// }
