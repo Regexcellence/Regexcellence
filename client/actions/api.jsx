@@ -28,8 +28,7 @@ export function userLogin() {
       }
     });
   };
-} 
-
+}
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
   return (dispatch) => {
@@ -78,10 +77,20 @@ export function postNewChallengeAnswer(answer, challengeId) {
       method: 'POST',
       url: `/regex/challenges?${challengeId}`,
       contentType: 'application/json',
-      data: JSON.stringify({ answer })
+      data: JSON.stringify({ answer }),
     }).then(() => {
-      console.log('success in posting answer!!')
-    })
-  }
+      console.log('success in posting answer!!');
+    });
+  };
 }
 
+export function getUserInfo(gitId) {
+  return (dispatch) => {
+    $.ajax('/regex/user-info?{gitId}').then((data) => {
+      dispatch({
+        type: 'GET-USER-INFO',
+        payload: data,
+      });
+    });
+  };
+}
