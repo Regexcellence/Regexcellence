@@ -29,7 +29,8 @@ module.exports = (app) => {
     });
   });
   app.get('/regex/user-info?*', (req, res) => {
-    handlers.getUserInfo(13708462 , (info) => {
+    const query = url.parse(req.url).query;
+    dbHandlers.getUserInfo(query, (info) => {
       res.send(info);
     });
   });

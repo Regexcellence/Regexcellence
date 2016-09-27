@@ -77,23 +77,20 @@ export function postNewChallengeAnswer(answer, challengeId) {
       method: 'POST',
       url: `/regex/challenges?${challengeId}`,
       contentType: 'application/json',
-      data: JSON.stringify({ answer })
+      data: JSON.stringify({ answer }),
     }).then(() => {
-      console.log('success in posting answer!!')
-    })
-  }
-// export function getUserInfo(gitId) {
-//   return (dispatch) => {
-//     $.ajax({
-//       url: '/regex/user-info?{gitId}',
-//       methods: 'POST',
-//       contentType: 'application/json',
-//       data: 13708462,
-//     }).then((data) => {
-//       dispatch({
-//         type: 'GET-USER-INFO',
-//         payload: data,
-//       });
-//     });
-//   };
-// }
+      console.log('success in posting answer!!');
+    });
+  };
+}
+
+export function getUserInfo(gitId) {
+  return (dispatch) => {
+    $.ajax('/regex/user-info?{gitId}').then((data) => {
+      dispatch({
+        type: 'GET-USER-INFO',
+        payload: data,
+      });
+    });
+  };
+}
