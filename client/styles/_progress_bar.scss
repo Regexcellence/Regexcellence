@@ -1,0 +1,21 @@
+.outerProgress {
+  position: relative;
+  width: 30%;
+  height: 30px;
+  background-color: #eee;
+  margin: auto auto 10px auto;
+}
+
+.innerProgress {
+  position: absolute;
+  height: 100%;
+  background-color: #17A6B6;
+}
+
+.text {
+	position: absolute;
+	margin: 1.5% 0 0 47%;
+	size: 30px;
+	color: #595959;
+	z-index: +1;
+}

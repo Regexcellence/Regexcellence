@@ -1,13 +1,15 @@
-TODO: Use eslint-plugin-react
-TODO: Use webpack --watch => watches for changes?
-
 # Regexcellence
-Regexcellence is an thorough educational tool for learning about and implementing
-Regular Expressions.
+Regexcellence is a community driven educational tool for learning about regular expressions.
 
-# Version 0.0.0
+# Version 1.0.0
 
-An application that provides the user with a variety of Regular Expression toy problems, provided in sequential difficulty. 
+Let's face it, learning the wacky syntax of regular expressions is tough. One good tutorial may give you enough to get started with being fluent in this subset of programming languages, but it sure won't make you an expert in it. Regular expressions aren't used that often in code, so when a use case does come about, most of us are left googling for a pre-packaged regex that does the job for us, without a good notion of what the heck it's doing. 
+
+Now enter Regexcellence. 
+
+Regexcellence is similar to many other coding challenge websites, like Codewars, Coderbyte, etc., except it purely focuses on regular expressions. It also takes inspiration from the excellent tutorial *[Regexone.com](https://regexone.com/), where user input is immediately interpreted and matched against the provided test cases. In this way, Regexcellence cuts itself into a niche of the programming community, one where you can really test your steel in the land of regular expressions. 
+
+Regexcellence currently consists of a regex tutorial that walks the user through the basics of regular expressions, and a community platform for both attempting regular expression problems and contributing original problems. 
 
 # Install
 For developing: 
@@ -16,8 +18,8 @@ $ npm i -g eslint
 Webpack for deploying and linting: 
 $ npm install webpack -g
 
-# Technology
-* Frontend: React & Redux
+# Stack
+* Frontend: React, Redux, Bootstrap
 * Backend: Express, Node, MongoDB, & Mongoose
 * Testing: Mocha, Chai, & Enzyme
 * Build Tools: Webpack
@@ -27,75 +29,4 @@ $ npm install webpack -g
 * [Dana Li](https://github.com/hellodanali)
 * [Benjamin Tran](https://github.com/bbtran)
 * [Lucy Wonsower](https://github.com/lwonsower)
-
-# Style Guide
-
-Uses Airbnb Style Guide
-
-If you want to escape the linter: 
-  // For everything:
-  /* eslint-disable */
-  ...
-  /* eslint-enable */
-  // For specific rule:
-  /* eslint-disable no-unused-vars */
-  ...
-  /* eslint-enable no-unused-vars */
-  // For tweaking a rule:
-  /* eslint no-comma-dangle:1 */
-  // To disable rule per line:
-  alert('foo'); // eslint-disable-line no-alert
-  //For the entire file: 
-  /*eslint-env node, mocha */
-
-React (ES6)
-Component flow eslint: ???
-e.g.
-
-```sh
-export default class Comp extends React.Component({
-  constructor() {
-
-  }
-  render() {
-
-  }
-  //...helper functions
-})
-```
-
-# Greenfield Notes
-* Standards
-  * style guide/linting before commits
-  * readme - constant updates
-  * standard JSON
-* standups - peer review
-* comments - why you did it
-* mobile - React/CSS from beginning
-* moment.js
-
-# File Structure
-+--client/
-| +--components/
-|   +--dummyComponents/
-|   +--smartComponents/
-| +--containers/
-| +--reducers/
-| +--app.jsx
-| +--styles/
-|   +--main.css
-| +--index.html
-+--build/
-+--libs/
-| +--parts.js
-+--server/
-+--tests/
-+--bower.json
-+--node_modules/*
-+--index.js
-+--.eslintrc
-+--package.json
-+--README.md
-+--CONTRIBUTING.md
-+--LICENSE
 

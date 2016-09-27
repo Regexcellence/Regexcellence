@@ -1,15 +1,31 @@
 [
 {
-	"order": 0,
-	"name": "User submit",
-	"description": "A user will explain their tite regex challenge",
-	"author": "user123",
-	"difficulty": "superXhard",
+	"name": "Spaces at the beginning and end of strings",
+	"description": "Write a regex that matches whitespace at the beginning and end of strings",
+	"author": "Troy",
+	"difficulty": "2",
 	"testCases": [
-	  { "case": "123", "result": null, "task": "Match", "expectation": true },
-	  { "case": "567", "result": null, "task": "Skip", "expectation": false },
-	  { "case": "hi there", "result": null, "task": "Match", "expectation": true }
+	  { "case": " I have whitespace! ", "expectation": true },
+	  { "case": "I have more whitespace!   ", "expectation": true },
+	  { "case": "   I have some whitespace too!", "expectation": true },
+	  { "case": "Did you say whitespace?", "expectation": false },
+	  { "case": "Naw", "expectation": false },
+	  { "case": "Remember me?", "expectation": false }
 	],
-	"testPassed": false
+},
+{
+	"name": "Use regex to validate regex!",
+	"description": "Ever wonder how that flag pops up at the bottom of the screen when you type in a badly formed regex? Yes, you guessed it, there's a regex testing your regex! How about trying to do one yourself?\n All you need to do is to make sure that the regular expression contains two forward slashes, and uses any or none at all of the appropriate flags at the end of the expression ('gimuy').",
+	"author": "Troy",
+	"difficulty": "2",
+	"testCases": [
+	  { "case": "/i'm a regex!/", "expectation": true },
+	  { "case": "/^whoop$/gim", "expectation": true },
+	  { "case": "/\/tryME\!/gimuy", "expectation": true },
+	  { "case": " /whitespace?/ ", "expectation": false },
+	  { "case": "/whatisthis\?/gg", "expectation": false },
+	  { "case": "/heckno", "expectation": false },
+	  { "case": "heckno/gi", "expectation": false }
+	],
 },
 ]

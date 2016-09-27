@@ -5,7 +5,13 @@ class ListView extends Component {
   render() {
     if(this.props.userChallenges.length){
       const list = this.props.userChallenges.map((challenge) => {
-        return <ListItem key={challenge._id} name={challenge.name} order={challenge.order+1} author={challenge.author}/>;
+        return <ListItem 
+        key={challenge._id} 
+        challengeId={challenge._id}
+        name={challenge.name} 
+        order={challenge.order+1} 
+        author={challenge.author}
+        testCases={challenge.testCases}/>;
       });
 
       return (

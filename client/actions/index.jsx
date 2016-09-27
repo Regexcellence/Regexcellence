@@ -1,8 +1,11 @@
-export function flagActionCreator(challengeId, input) {
+export function testRegexInput(challengeId, input, challengeType) {
   return {
-    type: 'UPDATE-RESULT',
-    challengeId,
-    input,
+    type: 'TEST-REGEX',
+    regexObject: {
+      challengeId,
+      input,
+      challengeType,
+    },
   };
 }
 
@@ -13,26 +16,33 @@ export function inputActionCreator(newInput) {
   };
 }
 
-export function getAllChallenges() {
-  return (dispatch) => {
-    $.ajax('/regex/challenges').then((data) => {
-      console.log('User Challenge DATAAA', data);
-      dispatch({
-        type: 'GET-CHALLENGES',
-        payload: data,
-      });
-    });
+export function postChallengeInputUpdate(inputObject) {
+  return {
+    type: 'UPDATE-POST-INPUT',
+    inputObject,
   };
 }
 
-export function getAllTutorial() {
-  return (dispatch) => {
-    $.ajax('/regex/tutorial').then((data) => {
-      console.log('TUTORIAL DATA', data);
-      dispatch({
-        type: 'GET-CHALLENGES',
-        payload: data,
-      });
-    });
+export function postEditTestCase(action, data) {
+  return {
+    type: 'POST-EDIT-TESTCASE',
+    testCaseObject: {
+      action,
+      data,
+    },
   };
+}
+
+export function toggleAnswer(challengeId, challengeType) {
+  return {
+    type: 'TOGGLE-REVEAL-ANSWER',
+    challengeId,
+    challengeType,
+  }
+}
+
+export function resetWellFormedInput() {
+  return {
+    type: 'RESET-WELLFORMED-INPUT'
+  }
 }

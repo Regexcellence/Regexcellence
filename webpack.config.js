@@ -9,7 +9,7 @@ const pkg = require('./package.json');
 const PATHS = {
 	app: path.join(__dirname, 'client'), 
   style: [
-    path.join(__dirname, 'client/styles', 'main.css')
+    path.join(__dirname, 'client/styles', 'main.scss')
   ],
 	build: path.join(__dirname, 'build'),
   fonts: path.join(__dirname, 'client/styles/fonts')
@@ -51,6 +51,11 @@ const common = {
         test: /\.woff$/,  
         loader: 'url?limit=50000',
         include: PATHS.fonts
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass'],
+        include: PATHS.style
       }
     ],
   },

@@ -10,12 +10,15 @@ import createHistory from 'history/lib/createHashHistory';
 
 import reducer from './reducers/index';
 import Navbar from './controls/navbar';
+import Footer from './controls/footer';
 
 import Tutorial from './pages/tutorial';
 import About from './pages/about';
 import Home from './pages/home';
+import Post from './pages/post';
 import UserChallenges from './pages/userChallenges';
 import TutorialMain from './tutorials/tutorialMain';
+import UserChallengeMain from './userChallenges/userChallengeMain';
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
@@ -25,13 +28,16 @@ const store = finalStore(reducer);
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="everything">
         <Provider store={store}>
           <Router history={history}>
             <Route path="/" component={Navbar}>
               <IndexRoute component={Home}/>
               <Route path="/about" component={About} />
-              <Route path="/user-challenges" component={UserChallenges}/>
+              <Route path="/post" component={Post} />
+              <Route path="/user-challenges" component={UserChallenges}>
+                <Route path="/user-challenges/:challengeid" component={UserChallengeMain} />
+              </Route>
               <Route path="/tutorial" component={Tutorial}>
                 <Route path="/tutorial/:nameurl" component={TutorialMain} />
               </Route>

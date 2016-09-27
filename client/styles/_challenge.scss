@@ -1,0 +1,46 @@
+.challenge-header {
+	h3 {
+		font-size:35px;
+		font-weight: bold;
+	}
+}
+
+.pass-flag {
+	color: green;
+	font-size: 30px; 
+}
+.fail-flag {
+	color: red;
+	font-size: 30px;
+}
+
+.case-text {
+	font-size: 30px;
+	display: inline;
+	color: gray;
+}
+.text-match {
+  color: green;
+  font-weight: bold;
+  display: inline;
+}
+.malformed {
+  background-color: #FF4C4D;
+  height: 50px;
+  color: #FFF;
+  padding-top: 15px;
+  padding-left: 15px;
+  border-radius: 0;
+  border: none;
+}
+#input-pattern {
+  width: 100%;
+  input {
+  	font-weight: 600;
+  }
+}
+.table {
+	th {
+		font-size: 20px;
+	}
+}
