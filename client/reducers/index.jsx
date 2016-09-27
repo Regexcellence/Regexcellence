@@ -20,10 +20,8 @@ const initialState = {
     testCases: [],
     testPassed: false,
     challengeType: 'new-challenge',
+    authenticatedInput: false,
   },
-  newMatchTestCase: {
-    case: '',
-  }
 };
 
 const actionHandler = {

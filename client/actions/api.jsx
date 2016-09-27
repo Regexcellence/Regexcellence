@@ -41,7 +41,6 @@ export function postChallengeActionCreator(postInput) {
 export function getAllTutorials() {
   return (dispatch) => {
     $.ajax('/regex/tutorial').then((data) => {
-      console.log('TUTORIAL DATA', data);
       dispatch({
         type: 'GET-TUTORIALS',
         payload: data,
@@ -53,7 +52,6 @@ export function getAllTutorials() {
 export function getAllChallenges() {
   return (dispatch) => {
     $.ajax('/regex/challenges').then((data) => {
-      console.log('User Challenge DATAAA', data);
       dispatch({
         type: 'GET-CHALLENGES',
         payload: data,
