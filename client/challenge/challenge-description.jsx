@@ -41,7 +41,7 @@ class ChallengeDescription extends Component {
       );
     } else {
       return (
-        <div>
+        <div className="challenge-header">
           <h3>{this.props.name}</h3>
           <Difficulty difficulty={this.props.difficulty} />
           <p>{this.props.description}</p>

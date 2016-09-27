@@ -20,7 +20,7 @@ class TestCaseText extends React.Component {
   render() {
     const { start, match, end } = this.props.innerMatches;
     return (
-      <div>
+      <div className="case-text">
         {start}
         <span className="text-match">{match}</span>
         {end}

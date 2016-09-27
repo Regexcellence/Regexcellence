@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
-import Login from '../login/login';
+import Login from '../login/logIn';
 
 export default class Navbar extends Component {
   constructor(props) {
