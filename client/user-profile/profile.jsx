@@ -1,10 +1,24 @@
-import React, { Component, Proptypes } from 'react';
-import connect from 'react-redux';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class UserProfile extends Component {
+import { getUserInfo } from '../actions/api';
+
+class UserProfile extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentWillMount() {
+  	this.props.getUserInfo();
+  }
+  render() {
+  	return <div>{this.props.userInfo._id}</div>;
+  }
 }
 
-export default connect(mapStateToProps)(UserProfile);
+const mapStateToProps = (state) => {
+	return { userInfo: state.userInfo }
+}
+
+export default connect(mapStateToProps, { getUserInfo })(UserProfile);
+
+

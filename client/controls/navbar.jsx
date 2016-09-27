@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
@@ -30,6 +31,7 @@ export default class Navbar extends Component {
             <li><Link to="user-challenges">CHALLENGES</Link></li>
             <li><Link to="post">POST</Link></li>
             <li><Link><Login /></Link></li>
+            <li><Link to="profile">PROFILE</Link></li>
 
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
@@ -42,3 +44,4 @@ export default class Navbar extends Component {
     );
   }
 }
+

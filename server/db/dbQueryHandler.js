@@ -38,9 +38,8 @@ module.exports = {
       callback(tutorial);
     });
   },
-  getUserInfo: (id, callback) => {
-    models.Users.findOne({ githubId: 13708462 }, (err, data) => {
-      console.log('DATA', data);
+  getUserInfo: (_id, callback) => {
+    models.Users.findOne({ _id }, (err, data) => {
       if (err) throw err;
       callback(data);
     });

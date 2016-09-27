@@ -55,12 +55,13 @@ export function postNewChallengeAnswer(answer, challengeId) {
   };
 }
 
-export function getUserInfo(gitId) {
+export function getUserInfo() {
   return (dispatch) => {
-    $.ajax('/regex/user-info?{gitId}').then((data) => {
+    $.ajax('/regex/user-info').then((userInfo) => {
+      console.log(userInfo);
       dispatch({
-        type: 'GET-USER-INFO',
-        payload: data,
+        type: 'LOG-USER-INFO',
+        userInfo,
       });
     });
   };

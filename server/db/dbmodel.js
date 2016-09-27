@@ -45,6 +45,7 @@ const challengeSchema = new Schema({
 });
 
 const userSchema = new Schema({
+  _id: ObjectId,
   githubId: Number,
   accessToken: String,
   refreshToken: String,

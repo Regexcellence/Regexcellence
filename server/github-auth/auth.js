@@ -1,4 +1,5 @@
 const GithubStrategy = require('passport-github2').Strategy;
+const mongoose = require('mongoose');
 const passport = require('passport');
 const User = require('../../server/db/dbmodel').Users;
 
@@ -15,6 +16,7 @@ module.exports = () => {
           user = new User({
             accessToken,
             refreshToken,
+            _id: mongoose.Types.ObjectId(),
             githubId: profile.id,
             name: profile.displayName,
             created: Date.now(),
@@ -32,12 +34,12 @@ module.exports = () => {
             if (err) {
               console.log(err);  // handle errors!
             } else {
-              console.log('INSIDE USER SAVE!', user);
+              //console.log('INSIDE USER SAVE!', user);
               cb(null, user);
             }
           });
         } else {
-          console.log('CCCCBBBB', cb, 'USER:', user);
+          //console.log('CCCCBBBB', cb, 'USER:', user);
           cb(null, user);
         }
       });

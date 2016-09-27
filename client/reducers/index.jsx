@@ -5,6 +5,7 @@ import { updatePostInput } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 import { toggleReveal } from './toggleReveal';
+import { logUserInfo } from './userHandler';
 
 const initialState = {
   challenges: [],
@@ -35,6 +36,7 @@ const actionHandler = {
   'POST-CHALLENGE': postNewChallenge,
   'TOGGLE-REVEAL-ANSWER': toggleReveal,
   'RESET-WELLFORMED-INPUT': resetWellFormedInput,
+  'LOG-USER-INFO': logUserInfo,
 };
 
 const reducer = (state = initialState, action) => {
