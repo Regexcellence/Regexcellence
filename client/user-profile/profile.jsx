@@ -8,10 +8,14 @@ class UserProfile extends React.Component {
     super(props);
   }
   componentWillMount() {
+    console.log(this.props.getUserInfo);
   	this.props.getUserInfo();
   }
   render() {
-  	return <div>{this.props.userInfo._id}</div>;
+  	return (
+      <div className="container">
+        <h1 className="jumbotron">Hello User</h1>
+      </div>);
   }
 }
 
