@@ -1,7 +1,10 @@
+import { authenticatePost } from './authenticatePost';
+
 export function updatePostInput(previousState, action) {
 	const inputObject = action.inputObject;
 	const newInput = {};
 	newInput[inputObject.name] = inputObject.value;
-	const newUserPost = Object.assign({}, previousState.newUserPost, newInput);
+	let newUserPost = Object.assign({}, previousState.newUserPost, newInput);
+	newUserPost = authenticatePost(newUserPost);
 	return Object.assign({}, previousState, { newUserPost })
 }

@@ -6,6 +6,7 @@ export default class PostAuthentication extends React.Component {
     super(props);
   }
   render() {
-    return <div>YO!</div>
+    return <div>NOT VALID NEW POST</div>
   }
 }
+

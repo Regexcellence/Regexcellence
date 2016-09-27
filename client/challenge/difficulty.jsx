@@ -16,7 +16,6 @@ class Difficulty extends React.Component {
 		this.props.postChallengeInputUpdate(inputObject);
 	}
 	render() {
-		console.log(this.props.difficulty)
 		if (this.props.editable) {
 			return (
 				<div>

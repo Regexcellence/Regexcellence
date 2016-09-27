@@ -20,7 +20,7 @@ const initialState = {
     testCases: [],
     testPassed: false,
     challengeType: 'new-challenge',
-    validInput: false,
+    authenticatedInput: false,
   },
 };
 

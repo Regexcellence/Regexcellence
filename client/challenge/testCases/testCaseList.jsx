@@ -12,7 +12,6 @@ export default class TestCaseList extends React.Component {
   fitlerTestCases(filterCondition) {
     return this.props.testCases.filter(testCase => testCase.task === filterCondition)
       .map(testCase => {
-        console.log('logging testcasse ', testCase)
         if (testCase.editing) {
           return <TestCaseEdit 
           matchType={filterCondition} 

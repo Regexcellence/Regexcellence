@@ -1,14 +1,16 @@
+import { authenticatePost } from './authenticatePost';
+
 const testCaseActions = {
 	'ADD': addTestCase,
 	'EDIT-MODE': toggleEditMode,
 	'DELETE': deleteTestCase,
 }
 
-
 export function updatePostTestCases(previousState, action) {
 	const testCaseObject = action.testCaseObject;
 	let oldTestCases = previousState.newUserPost.testCases.slice();
-	const newUserPost = testCaseActions[testCaseObject.action](previousState, testCaseObject, oldTestCases);
+	let newUserPost = testCaseActions[testCaseObject.action](previousState, testCaseObject, oldTestCases);
+	newUserPost = authenticatePost(newUserPost);
 	return Object.assign({}, previousState, { newUserPost })
 }
 
@@ -38,7 +40,6 @@ function addTestCase(previousState, testCaseObject, oldTestCases) {
 	// Check to see if the entry already exisits. 
 	for (let i = 0; i < oldTestCases.length; i++) {
 		if (oldTestCases[i]._id === newTestCase._id) {
-			console.log(newTestCase)
 			oldTestCases[i] = newTestCase;
 			return Object.assign({},  previousState.newUserPost, { testCases: oldTestCases })
 		}

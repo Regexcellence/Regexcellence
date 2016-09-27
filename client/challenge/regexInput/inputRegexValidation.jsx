@@ -13,8 +13,8 @@ class InputRegexValidation extends React.Component {
   }
   render() {
     const { editable } = this.props;
-    const { validInput } = this.props.newUserPost;
-    if (!editable || validInput) {
+    const { authenticatedInput } = this.props.newUserPost;
+    if (!editable || authenticatedInput) {
       return (
         <div>
           <form id="input-pattern" className="input-group">
