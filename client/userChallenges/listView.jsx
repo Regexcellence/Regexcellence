@@ -11,7 +11,8 @@ class ListView extends Component {
         name={challenge.name} 
         order={challenge.order+1} 
         author={challenge.author}
-        testCases={challenge.testCases}/>;
+        testCases={challenge.testCases}
+        difficulty={challenge.difficulty}/>;
       });
 
       return (
