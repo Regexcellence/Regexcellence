@@ -40,5 +40,19 @@
 	  { "case": "who meowed?", "expectation": false },
 	  { "case": "It's Jazzy!": false }
 	],
-}
+},
+	"name": "Is it a letter?",
+	"description": "If the string contains an ASCII letter, then match it!",
+	"author": Troy Gibb,
+	"difficulty": 1,
+	"testCases": [
+		{ "case": "knock-knock?", "expectation": true },
+		{ "case": "who's there?", "expectation": true },
+		{ "case": "Annoying digits", "expectation": true },
+		{ "case": "Annoying digits who?", "expectation": true },
+		{ "case": "123214124122": false },
+		{ "case": "23423423098423": false },
+		{ "case": "45983498534": false },
+		{ "case": "34544": false }
+	]
 ]
