@@ -38,7 +38,7 @@ class Login extends Component {
             </Modal.Header>
             <Modal.Body>
               
-              <button onClick={this.props.userLogin}>Sign in with Github account</button>
+              <a href="/regex/auth/github"><button>Sign in with Github account</button></a>
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.close}>Close</Button>
