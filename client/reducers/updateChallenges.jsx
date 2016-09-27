@@ -27,6 +27,7 @@ function tagCaseList(caseList) {
 			start: caseObject.case,
 			match: '',
 			end: '',
+			globalMatch: []
 		};
 		return caseObject; 
 	});

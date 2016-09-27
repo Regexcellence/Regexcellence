@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import uuid from 'uuid';
+
 import { postEditTestCase } from '../../actions/index';
 
 import TestCaseEdit from './testCaseEdit';
@@ -18,15 +20,43 @@ class TestCaseText extends React.Component {
     })
   }
   render() {
-    const { start, match, end } = this.props.innerMatches;
-    return (
-      <div className="case-text">
-        {start}
-        <span className="text-match">{match}</span>
-        {end}
-        {this.props.editable ? <span onClick={this.enterEditMode} className="glyphicon glyphicon-pencil" aria-hidden="true" /> : false }
-      </div>
-    )
+    let { start, match, end, globalMatch } = this.props.innerMatches;
+    if (!globalMatch.length) {
+      return (
+        <div className="case-text">
+          {start}
+          <span className="text-match">{match}</span>
+          {end}
+          {this.props.editable ? <span onClick={this.enterEditMode} className="glyphicon glyphicon-pencil" aria-hidden="true" /> : false }
+        </div>
+      )
+    } else {
+      const matches = globalMatch.map((matchObject) => {
+        let { start, match } = matchObject;
+        if (matchObject.end) {
+          return (
+            <div key={uuid.v4()} className="case-text">
+              {start}
+              <span className="text-match">{match}</span>
+              {matchObject.end}
+              {this.props.editable ? <span onClick={this.enterEditMode} className="glyphicon glyphicon-pencil" aria-hidden="true" /> : false }
+            </div>
+          )
+        } else {
+          return (
+            <div key={uuid.v4()} className="case-text">
+              {start}
+              <span className="text-match">{match}</span>
+            </div>
+          )
+        }
+      });
+      return (
+        <div className="case-text">
+          {matches}
+        </div>
+      )
+    }
   }
 }
 

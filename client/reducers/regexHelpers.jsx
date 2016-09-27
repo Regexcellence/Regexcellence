@@ -53,19 +53,36 @@ function innerTextMatching(parsedInput, testCase) {
   let start = testCase.case;
   let match = '';
   let end = '';
-  if (!parsedInput.flags) {
-    // Match pattern e.g. 'hello world'.match(/o/) => [ 'o', index: 4, input: 'hello world' ]
-    const matchPattern = testCase.case.match(regex);
-    if (matchPattern !== null) {
+  let globalMatch = [];
+  // Match pattern e.g. 'hello world'.match(/o/) => [ 'o', index: 4, input: 'hello world' ]
+  const matchPattern = testCase.case.match(regex);
+  if (matchPattern !== null) {
+    if (!/g/.test(parsedInput.flags)) {
       const caseCopy = testCase.case.split('');
       start = caseCopy.slice(0, matchPattern.index).join('');
       end = caseCopy.slice(matchPattern.index + matchPattern[0].length).join('');
       match = caseCopy.splice(matchPattern.index, matchPattern[0].length).join('');
+    } else {
+    //   let caseCopy = testCase.case.split('');
+    //   for (let i = 0; i < matchPattern.length; i++) {
+    //     let matchRegex = new RegExp(matchPattern[i]);
+    //     let globalIteration = caseCopy.join('').match(matchRegex);
+    //     start = caseCopy.splice(0, globalIteration.index).join('');
+    //     match = caseCopy.splice(0, globalIteration[0].length).join('');
+    //     if (i === globalIteration.length - 1) {
+    //       end = caseCopy.slice().join('');
+    //       globalMatch.push({ start, match, end });
+    //     } else {
+    //       globalMatch.push({ start, match });
+    //       caseCopy = caseCopy.slice().join('');
+    //     }
+    //   }
     }
   }
   return {
     start,
     match,
     end,
+    globalMatch,
   };
 }
