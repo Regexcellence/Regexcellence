@@ -23,10 +23,6 @@ class Login extends Component {
     this.setState({ showModal: true});
   }
 
-  componentWillMount() {
-    this.props.userLogin();
-  }
-
   render(){
     if(!this.state.loggedIn){     
       return(
