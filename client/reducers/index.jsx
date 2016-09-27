@@ -22,6 +22,7 @@ const initialState = {
     challengeType: 'new-challenge',
     authenticatedInput: false,
   },
+  userInfo: {},
 };
 
 const actionHandler = {
