@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
+import Login from '../login/logIn';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -33,6 +34,8 @@ export default class Navbar extends Component {
             <li><Link to="user-challenges">CHALLENGES</Link></li>
             <li><Link to="about">ABOUT</Link></li>
             <li><Link to="post">POST</Link></li>
+            <li><Link><Login /></Link></li>
+
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </div>
