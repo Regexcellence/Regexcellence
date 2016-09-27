@@ -1,4 +1,4 @@
-import { inputValidator } from './inputValidation';
+import { inputValidator, resetWellFormedInput } from './inputValidation';
 import { updateChallenges, updateTutorials } from './updateChallenges';
 import { regexValidator } from './regexValidation';
 import { updatePostInput } from './postChallengeInputUpdate';
@@ -33,6 +33,7 @@ const actionHandler = {
   'POST-EDIT-TESTCASE': updatePostTestCases,
   'POST-CHALLENGE': postNewChallenge,
   'TOGGLE-REVEAL-ANSWER': toggleReveal,
+  'RESET-WELLFORMED-INPUT': resetWellFormedInput,
 };
 
 const reducer = (state = initialState, action) => {
