@@ -1,8 +1,17 @@
 import { cleanChallenge } from './helpers';
 
 export function userLogin() {
+  window.location.href = 'http://'+ window.location.host + '/regex/auth/github';
   return (dispatch) => {
-    $.ajax('/regex/auth/github').then((response) => {
+    $.ajax({
+      method: 'GET',
+      url: '/regex/auth/github',
+      headers: {
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Methods': 'POST, GET',
+        'Access-Control-Max-Age': 1728000,
+      },
+    }).then((response) => {
       if (response.status === 200) {
         dispatch({
           type: 'LOGIN_USER_SUCCESS',
@@ -16,7 +25,7 @@ export function userLogin() {
       }
     });
   };
-}
+} 
 
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
