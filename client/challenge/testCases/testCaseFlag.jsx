@@ -6,23 +6,18 @@ import React, { Component } from 'react';
 export default class TestCaseFlag extends Component {
   render() {
     const flag = this.props.flag;
-    const inline = { display: 'inline-block'}
     if (flag === true) {
-      const divStyle = { color: 'green', display: 'inline-block' };
-      return (
-        <div style={divStyle}>
-          <span className="glyphicon glyphicon-ok" aria-hidden="true" />
-        </div>
-      );
+      return <span 
+        className="pass-flag pull-right glyphicon glyphicon-ok" 
+        aria-hidden="true" 
+        />
     } else if (flag === false) {
-      const divStyle = { color: 'red', display: 'inline-block' };
-      return (
-        <div style={divStyle}>
-          <span className="glyphicon glyphicon-remove" aria-hidden="true" />
-        </div>
-      );
+      return <span 
+        className="fail-flag pull-right glyphicon glyphicon-remove" 
+        aria-hidden="true" 
+        />
     } else {
-      return <div> </div>;
+      return false;
     }
   }
 }

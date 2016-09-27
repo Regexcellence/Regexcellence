@@ -35,11 +35,7 @@ class InputRegexValidation extends React.Component {
         </div>
       );
     } else {
-      return <PostAuthentication 
-        newUserPost={this.props.newUserPost} 
-        id="input-pattern" 
-        className="input-group"
-        />
+      return <PostAuthentication newUserPost={this.props.newUserPost} />
     }
   }
   addSlashes(event) {
