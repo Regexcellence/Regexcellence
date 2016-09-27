@@ -3,7 +3,7 @@
 	"name": "Spaces at the beginning and end of strings",
 	"description": "Write a regex that matches whitespace at the beginning and end of strings",
 	"author": "Troy",
-	"difficulty": "2",
+	"difficulty": 2,
 	"testCases": [
 	  { "case": " I have whitespace! ", "expectation": true },
 	  { "case": "I have more whitespace!   ", "expectation": true },
@@ -17,7 +17,7 @@
 	"name": "Use regex to validate regex!",
 	"description": "Ever wonder how that flag pops up at the bottom of the screen when you type in a badly formed regex? Yes, you guessed it, there's a regex testing your regex! How about trying to do one yourself?\n All you need to do is to make sure that the regular expression contains two forward slashes, and uses any or none at all of the appropriate flags at the end of the expression ('gimuy').",
 	"author": "Troy",
-	"difficulty": "2",
+	"difficulty": 2,
 	"testCases": [
 	  { "case": "/i'm a regex!/", "expectation": true },
 	  { "case": "/^whoop$/gim", "expectation": true },
@@ -32,7 +32,7 @@
 	"name": "Find The Kitty",
 	"description": "Match the correct meows to catch Jazzy the cat =^.^= !",
 	"author": "Dana Li",
-	"difficulty": "2",
+	"difficulty": 2,
 	"testCases": [
 	  { "case": "meow", "expectation": true },
 	  { "case": "meooow", "expectation": true },
@@ -50,9 +50,23 @@
 		{ "case": "who's there?", "expectation": true },
 		{ "case": "Annoying digits", "expectation": true },
 		{ "case": "Annoying digits who?", "expectation": true },
-		{ "case": "123214124122": false },
-		{ "case": "23423423098423": false },
-		{ "case": "45983498534": false },
-		{ "case": "34544": false }
+		{ "case": "123214124122", "expectation": false },
+		{ "case": "23423423098423", "expectation": false },
+		{ "case": "45983498534", "expectation": false },
+		{ "case": "34544", "expectation": false }
 	]
+},
+	"name": "Are there duplicates?",
+	"description": "Match strings that contain duplicate letters.",
+	"author": "Troy Gibb",
+	"difficulty": 3,
+	"testCases": [
+	  { "case": "The cat goes meow", "expectation": true },
+	  { "case": "The dog barks", "expectation": false },
+	  { "case": "The cow goes moo", "expectation": true },
+	  { "case": "Supercalifragilisticexpialidocious", "expectation": true },
+	  { "case": "uncopyrightable", "expectation": false },
+	  { "case": "subdermatoglyphic", "expectation": false }
+	],
+}
 ]
