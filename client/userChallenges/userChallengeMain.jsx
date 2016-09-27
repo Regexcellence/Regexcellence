@@ -17,7 +17,7 @@ class UserChallengeMain extends React.Component {
   }
   render() {
     const currentChallenge = this.findChallengeId(this.props.params.challengeid);
-    const nextUrl = { url: 'user-challenges', nextText: 'Back to Challenges' };
+    const nextUrl = { url: 'user-challenges', nextText: 'Submit answer!' };
     if (this.props.challenges.length) {
       return (
         <Challenge
