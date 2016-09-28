@@ -19,7 +19,7 @@ export function testCasesExtractor(parsedInput, challenge) {
       testPassed = false;
     }
   }
-  console.log('test result: ', testPassed);
+  //console.log('test result: ', testPassed);
   return Object.assign(
     {},
     challenge,

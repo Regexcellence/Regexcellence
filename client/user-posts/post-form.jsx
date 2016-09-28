@@ -15,7 +15,6 @@ class UserChallengePost extends Component {
     }
   }
   render() {
-    console.log(this.props.newUserPost);
     return (
       <Challenge
         challengeInfo={this.props.newUserPost}
