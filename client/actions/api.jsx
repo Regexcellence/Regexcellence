@@ -83,6 +83,8 @@ export function getUserInfo() {
 export function logOut() {
   return (dispatch) => {
     $.ajax('/regex/logout').then(() => {
+      window.location = '/';
+      //This redirect when logout solution may be temporary
       dispatch({
         type: 'LOGOUT',
       });

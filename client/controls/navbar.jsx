@@ -23,7 +23,6 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log("inside navbar", this.props.userInfo)
 
     return (
       <div>
