@@ -30,15 +30,15 @@ class Login extends Component {
           <span onClick={this.open}>SIGN IN</span>
           <Modal show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
-              <Modal.Title>Sign In with Github</Modal.Title>
+            <div className="logo">R</div>
             </Modal.Header>
             <Modal.Body>
-              
-              <a href="/regex/auth/github"><button>Sign in with Github account</button></a>
+              <a href="/regex/auth/github">
+              <span className="fa fa-github"></span> Sign in with Github</a>
+              <div>
+              Or continue as a guest
+              </div>
             </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.close}>Close</Button>
-            </Modal.Footer>
           </Modal>
       </div>
       );

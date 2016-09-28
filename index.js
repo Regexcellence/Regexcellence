@@ -21,13 +21,6 @@ if (TARGET !== 'devStart') {
   app.use(express.static(path.join(process.env.PWD, 'build')));
 }
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:8080");
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
-  next();
-}); 
-
 const gitAuth = require('./server/github-auth/git-auth-handlers');
 
 gitAuth(app);
