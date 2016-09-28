@@ -13,7 +13,10 @@ class UserProfile extends React.Component {
     // console.log('userinfo:', this.props.userInfo);
   }
   getUserChallenges() {
-    const userChallenges = this.props.userInfo.completed_challenges;
+    const userChallenges = this.props.userInfo.completed_challenges.map((item) => {
+      console.log('ITEM:', item);
+      return item;
+    });
   }
   render() {
     if(!Object.keys(this.props.userInfo).length) {
@@ -48,7 +51,8 @@ class UserProfile extends React.Component {
             </div>
             <div className="row" id="complete-challenge">
               <h4>Complete Challenges</h4>
-              {console.log(this.props.userInfo.completed_challenge)}
+              {console.log('CHALLENGES', this.props.userInfo.completed_challenges)}
+              {this.getUserChallenges()}
             </div>
             <div className="row" id="tutorial-progress">
               <h4>Tutorial Progress</h4>
