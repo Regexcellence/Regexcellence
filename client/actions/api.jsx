@@ -69,7 +69,7 @@ export function getUserInfo() {
 
 export function logOut() {
   return (dispatch) => {
-    console.log("logging out");
+    console.log('logging out');
     $.ajax('/regex/logout').then(() => {
       dispatch({
         type: 'LOGOUT',
