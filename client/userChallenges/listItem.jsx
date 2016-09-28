@@ -22,11 +22,10 @@ class ListItem extends Component {
     if(!this.props.testCases){
       return (
       <li className="list-group-item">  
-          <p>{this.props.name.toUpperCase()}
+          {this.props.name.toUpperCase()}
           <DifficultyBar
             difficultyStyle={difficultyStyle}
             difficulty={this.props.difficulty} />        
-          </p>
       </li> 
       );
     }

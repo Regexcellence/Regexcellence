@@ -1,3 +1,15 @@
+.user-profile{
+  #difficulty-bar-outer.pull-right{
+    height: 1.5em;
+  }
+  #difficulty-bar-inner{
+    height: 1.5em;
+  }
+  #bar-text{
+    margin: 1% 0 0 35%;
+  }
+}
+
 .profile-hr{
   border-color: #9ad2cb;
 }
@@ -23,6 +35,11 @@ table{
 #complete-challenge{
   background-color: #d3ecb0;
   color: #565A5C;
+  li.list-group-item{
+    padding-left: 5em;
+    padding-right: 5em;
+    text-align: left;
+  }
 }
 
 #tutorial-progress{

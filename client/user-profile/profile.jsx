@@ -30,7 +30,7 @@ class UserProfile extends React.Component {
           testCases={null}/>
       );
     });
-    if(!Object.keys(this.props.userInfo).length) {
+    if (!Object.keys(this.props.userInfo).length) {
       return <div>loading</div>;
     } else if (this.props.userInfo === 'Not logged in!') {
       return (
@@ -43,7 +43,7 @@ class UserProfile extends React.Component {
     } else {
       // console.log('loaded:', this.props.userInfo);
       return (
-        <div>
+        <div className="user-profile">
           <div className="text-center">
           <hr className="profile-hr"></hr>
           <div className="container">
@@ -66,9 +66,13 @@ class UserProfile extends React.Component {
             {completeLists}
           </div>
 
-            <div className="row" id="contributions">
-              <h4>Contributions</h4>
-            </div>
+          <div className="row" id="tutorial-progress">
+            <h4>Tutorial Progress</h4>
+          </div>
+
+          <div className="row" id="contributions">
+            <h4>Contributions</h4>
+          </div>
 
           </div>
         </div>
