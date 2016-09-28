@@ -4,7 +4,10 @@ export function regexParser(input) {
     // To take off first forward slash.
     inputArr.shift();
     // To take off second forward slash plus any flags that may exist.
-    const pattern = inputArr.join('').replace(/\/.*$/, '');
+    let pattern = inputArr.join('').replace(/[a-z]*$/, '').split('');
+    pattern.pop();
+    pattern = pattern.join('');
+    console.log('new pattern ', pattern)
     const flags = snagRegexFlags(input);
     return { pattern, flags };
 }

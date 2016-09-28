@@ -19,7 +19,7 @@ class Difficulty extends React.Component {
 		if (this.props.editable) {
 			return (
 				<div>
-					<h4>Select Difficulty:</h4>
+					<h4>Select Difficulty: <span id="post-requirements">*Required</span></h4>
 					<select 
 						className="form-control"
 						onChange={this.updateDifficulty} 
