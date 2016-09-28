@@ -8,14 +8,49 @@ class UserProfile extends React.Component {
     super(props);
   }
   componentWillMount() {
-    console.log(this.props.getUserInfo);
-  	this.props.getUserInfo();
+    this.props.getUserInfo();
+    console.log('userinfo:', this.props.userInfo);
   }
+
   render() {
-  	return (
-      <div className="container">
-        <h1 className="jumbotron">Hello User</h1>
-      </div>);
+    if(!Object.keys(this.props.userInfo).length){
+      return <div>loading</div>
+    } else {
+      console.log('loaded', this.props.userInfo)
+      return (
+        <div>
+          <div className="text-center">
+          <hr className="profile-hr"></hr>
+          <div className="container">
+          <table className="table-responsive">
+          <tbody>
+            <tr>
+              <td> 
+                <img className="about-img" src={this.props.userInfo.avatar_url}/>
+              </td>
+              <td>
+                <h1>{this.props.userInfo.name}</h1>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+          <div className="row" id="complete-challenge">
+            <h4>Complete Challenges</h4>
+          </div>
+
+          <div className="row" id="tutorial-progress">
+            <h4>Tutorial Progress</h4>
+          </div>
+
+          <div className="row" id="contributions">
+            <h4>Contributions</h4>
+          </div>
+
+          </div>
+        </div>
+      );
+    }
   }
 }
 
