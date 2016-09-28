@@ -36,7 +36,7 @@ class UserProfile extends React.Component {
           </table>
           </div>
           <div className="row" id="complete-challenge">
-            <h4>Complete Challenges</h4>
+            <h4>Completed Challenges</h4>
           </div>
 
           <div className="row" id="tutorial-progress">
