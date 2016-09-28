@@ -72,7 +72,7 @@
 	]
 },
 {
-	"name": "Match the kitties",
+  "name": "Match the kitties",
 	"description": "Match da cats, not the puppers",
 	"author": "Lucy",
 	"difficulty": 1,
@@ -94,9 +94,9 @@
     {"case": "// San Francisco Makersquare!", "expectation": true},
     {"case": "/* San Francisco Makersquare! */", "expectation": true},
     {"case": "// Do it for the kitties!!", "expectation": true},
-    {"case": "/ / function getRegexcellence\(cat\) \{return cat\}", "expectation": false},
+    {"case": "/ / function getRegexcellence(cat) {return cat}", "expectation": false},
     {"case": "/Hi*/Team*/Regexcellence*/", "expectation": false},
-    {"case": "supercalifragilisticexpialidocious", "expectation": false},
+    {"case": "supercalifragilisticexpialidocious", "expectation": false}
   ]
 }
 ]
