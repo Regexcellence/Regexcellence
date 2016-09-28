@@ -14,9 +14,8 @@ class UserProfile extends React.Component {
 
   render() {
     if(!Object.keys(this.props.userInfo).length) {
-      console.log('hi', this.props.userInfo)
-      return <div>loading</div>
-    } else if (this.props.userInfo === 'Not logged in!'){
+      return <div>loading</div>;
+    } else if (this.props.userInfo === 'Not logged in!') {
       return (
         <div>
           <div className="container text-center not-logged-in">
@@ -25,7 +24,7 @@ class UserProfile extends React.Component {
         </div>
       );
     } else {
-      console.log('loaded:', this.props.userInfo)
+      console.log('loaded:', this.props.userInfo);
       return (
         <div>
           <div className="text-center">
@@ -64,9 +63,7 @@ class UserProfile extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-	return { userInfo: state.userInfo }
-}
+	return { userInfo: state.userInfo };
+};
 
 export default connect(mapStateToProps, { getUserInfo })(UserProfile);
-
-
