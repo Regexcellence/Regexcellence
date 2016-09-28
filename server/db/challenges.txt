@@ -84,5 +84,19 @@
 		{ "case": "Pug", "expectation": false },
 		{ "case": "Corgi", "expectation": false }
 	]
+},
+{
+  "name": "",
+  "description": ,
+  "author": ,
+  "difficulty": ,
+  "testCases": [
+    {"case": "// San Francisco Makersquare!", "expectation": true},
+    {"case": "/* San Francisco Makersquare! */", "expectation": true},
+    {"case": "// Do it for the kitties!!", "expectation": true},
+    {"case": "/ / function getRegexcellence\(cat\) \{return cat\}", "expectation": false},
+    {"case": "/Hi*/Team*/Regexcellence*/", "expectation": false},
+    {"case": "supercalifragilisticexpialidocious", "expectation": false},
+  ]
 }
 ]
