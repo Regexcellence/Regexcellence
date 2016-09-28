@@ -15,15 +15,15 @@ module.exports = (app) => {
       res.send(tutorial);
     });
   });
-  app.post('/regex/challenges?*', (req, res) => {
+  app.post('/regex/challenges/new-challenge', (req, res) => {
+    dbHandlers.postChallenge(req.body, () => {
+      res.end('challenge created');
+    });
+  });
+  app.post('/regex/challenges/new-answer?', (req, res) => {
     const query = url.parse(req.url).query;
     dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
       res.end('Successftully updated answer!');
-    });
-  });
-  app.post('/regex/challenges', (req, res) => {
-    dbHandlers.postChallenge(req.body, () => {
-      res.end('challenge created');
     });
   });
   app.get('/regex/user-info', (req, res) => {

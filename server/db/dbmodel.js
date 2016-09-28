@@ -10,7 +10,7 @@ const tutorialSchema = new Schema({
   nameurl: String,
   description: String,
   author: String,
-  difficulty: String,
+  difficulty: Number,
   testCases: [
     {
       case: String,
@@ -29,7 +29,7 @@ const challengeSchema = new Schema({
   nameurl: String,
   description: String,
   author: String,
-  difficulty: String,
+  difficulty: Number,
   testCases: [
     {
       case: String,

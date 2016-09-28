@@ -11,7 +11,7 @@
 	  { "case": "Did you say whitespace?", "expectation": false },
 	  { "case": "Naw", "expectation": false },
 	  { "case": "Remember me?", "expectation": false }
-	],
+	]
 },
 {
 	"name": "Use regex to validate regex!",
@@ -21,12 +21,12 @@
 	"testCases": [
 	  { "case": "/i'm a regex!/", "expectation": true },
 	  { "case": "/^whoop$/gim", "expectation": true },
-	  { "case": "/\/tryME\!/gimuy", "expectation": true },
+	  { "case": "/\\/tryME\\!/gimuy", "expectation": true },
 	  { "case": " /whitespace?/ ", "expectation": false },
-	  { "case": "/whatisthis\?/gg", "expectation": false },
+	  { "case": "/whatisthis\\?/gg", "expectation": false },
 	  { "case": "/heckno", "expectation": false },
 	  { "case": "heckno/gi", "expectation": false }
-	],
+	]
 },
 {
 	"name": "Find The Kitty",
@@ -38,12 +38,13 @@
 	  { "case": "meooow", "expectation": true },
 	  { "case": "MEOWING Jazzy!", "expectation": true },
 	  { "case": "who meowed?", "expectation": false },
-	  { "case": "It's Jazzy!": false }
-	],
+	  { "case": "It's Jazzy!", "expectation": false }
+	]
 },
+{
 	"name": "Is it a letter?",
 	"description": "If the string contains an ASCII letter, then match it!",
-	"author": Troy Gibb,
+	"author": "Troy Gibb",
 	"difficulty": 1,
 	"testCases": [
 		{ "case": "knock-knock?", "expectation": true },
@@ -56,6 +57,7 @@
 		{ "case": "34544", "expectation": false }
 	]
 },
+{
 	"name": "Are there duplicates?",
 	"description": "Match strings that contain duplicate letters.",
 	"author": "Troy Gibb",
@@ -67,6 +69,20 @@
 	  { "case": "Supercalifragilisticexpialidocious", "expectation": true },
 	  { "case": "uncopyrightable", "expectation": false },
 	  { "case": "subdermatoglyphic", "expectation": false }
-	],
+	]
+},
+{
+	"name": "Match the kitties",
+	"description": "Match da cats, not the puppers",
+	"author": "Lucy",
+	"difficulty": 1,
+	"testCases": [
+		{ "case": "Maine Coon", "expectation": true },
+		{ "case": "Munchkin", "expectation": true },
+		{ "case": "American Shorthair", "expectation": true },
+		{ "case": "Bulldog", "expectation": false },
+		{ "case": "Pug", "expectation": false },
+		{ "case": "Corgi", "expectation": false }
+	]
 }
 ]
