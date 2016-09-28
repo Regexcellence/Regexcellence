@@ -19,7 +19,17 @@ class ListItem extends Component {
       'backgroundColor': colors[`${this.props.difficulty}`],
       'width': (`${this.props.difficulty}` * 20)+"%",
     };
-
+    if(!this.props.testCases){
+      return (
+      <li className="list-group-item">  
+          <p>{this.props.name.toUpperCase()}
+          <DifficultyBar
+            difficultyStyle={difficultyStyle}
+            difficulty={this.props.difficulty} />        
+          </p>
+      </li> 
+      );
+    }
     return(
       <li className="list-group-item">  
         <Link to={linkToChallenge}>

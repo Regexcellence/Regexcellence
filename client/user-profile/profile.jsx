@@ -2,22 +2,34 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getUserInfo } from '../actions/api';
-
+import ListItem from '../userChallenges/listItem';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.getUserChallenges = this.getUserChallenges.bind(this);
   }
   componentWillMount() {
     this.props.getUserInfo();
   }
-  getUserChallenges() {
-    const userChallenges = this.props.userInfo.completed_challenges.map((item) => {
-      console.log('ITEM:', item);
-      return item;
-    });
-  }
+
   render() {
+    const complete = [
+    {
+      "name": "Spaces at the beginning and end of strings",
+      "difficulty": 2,
+    },
+    {
+      "name": "Use regex to validate regex!",
+      "difficulty": 2,
+    }
+    ];
+    const completeLists = complete.map((each)=>{
+      return (
+        <ListItem 
+          key={each.name} name={each.name} 
+          difficulty={each.difficulty} 
+          testCases={null}/>
+      );
+    });
     if(!Object.keys(this.props.userInfo).length) {
       return <div>loading</div>;
     } else if (this.props.userInfo === 'Not logged in!') {
@@ -29,33 +41,30 @@ class UserProfile extends React.Component {
         </div>
       );
     } else {
-      console.log('loaded:', this.props.userInfo);
+      // console.log('loaded:', this.props.userInfo);
       return (
         <div>
           <div className="text-center">
-            <hr className="profile-hr"></hr>
-            <div className="container">
-              <table className="table-responsive">
-                <tbody>
-                  <tr>
-                    <td>
-                      <img className="about-img" src={this.props.userInfo.avatar_url}/>
-                    </td>
-                    <td>
-                      <h1>{this.props.userInfo.name}</h1>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="row" id="complete-challenge">
-              <h4>Complete Challenges</h4>
-              {console.log('CHALLENGES', this.props.userInfo.completed_challenges)}
-              {this.getUserChallenges()}
-            </div>
-            <div className="row" id="tutorial-progress">
-              <h4>Tutorial Progress</h4>
-            </div>
+          <hr className="profile-hr"></hr>
+          <div className="container">
+          <table className="table-responsive">
+          <tbody>
+            <tr>
+              <td> 
+                <img className="about-img" src={this.props.userInfo.avatar_url}/>
+              </td>
+              <td>
+                <h1>{this.props.userInfo.name}</h1>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+
+          <div className="row" id="complete-challenge">
+            <h4>Completed Challenges</h4>
+            {completeLists}
+          </div>
 
             <div className="row" id="contributions">
               <h4>Contributions</h4>
