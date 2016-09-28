@@ -8,7 +8,6 @@ class Home extends React.Component {
     this.props.getUserInfo();
   }
   render() {
-    console.log(this.props.userInfo)
     return (
       <div>
         <div className="jumbotron clear-top">

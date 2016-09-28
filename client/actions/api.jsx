@@ -42,6 +42,17 @@ export function getAllChallenges() {
   };
 }
 
+export function getUserCompletedChallenges(userId) {
+  return (dispatch) => {
+    $.ajax(`/regex/challenges/user-completed?${userId}`).then((data) => {
+      dispatch({
+        type: 'STORE-USER-COMPLETED-CHALLENGES',
+        payload: data,
+      })
+    })
+  }
+}
+
 export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   return (dispatch) => {
     $.ajax({

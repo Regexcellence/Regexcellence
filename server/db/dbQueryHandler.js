@@ -45,9 +45,12 @@ module.exports = {
   },
   findUserCompletedChallenges: (userId, callback) => {
     models.Users.find({ _id: userId }, (err, userData) => {
-      console.log('completed challenges ', mongoose.Types.ObjectId(userData[0].completed_challenges[0]));
-      const { completed_challenges } = userData[0];
-      models.Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
+      const completed_challenges = userData[0].completed_challenges.map((challengeId) => {
+        return mongoose.Types.ObjectId(challengeId);
+      });
+      console.log(completed_challenges)
+      Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
+        if (err) throw err;
         callback(challenges);
       });
     });
@@ -66,13 +69,3 @@ module.exports = {
   },
 };
 
-// TODO: Helper function for retrieving challenge info. 
-// function getChallengesById(idArray, callback) {
-//   idArray.forEach((id) => {
-//     models.Challenges.find({}, (err, challenge) => {
-//       if (err) throw err;
-
-//     })
-//   })
-  
-// }
