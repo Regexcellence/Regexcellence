@@ -20,11 +20,23 @@ module.exports = (app) => {
       res.end('challenge created');
     });
   });
+  app.post('/regex/challenges/completed-challenge?', (req, res) => {
+    const userId = url.parse(req.url).query;
+    dbHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
+      res.end('challenge created');
+    });
+  });
   app.post('/regex/challenges/new-answer?', (req, res) => {
     const query = url.parse(req.url).query;
     dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
       res.end('Successftully updated answer!');
     });
+  });
+  // TODO: Save more.
+  app.get('/regex/challenges/user-completed?', (req, res) => {
+    dbHandlers.findUserCompletedChallenges(userId, () => {
+      res.end('Got the challenges!')
+    })
   });
   app.get('/regex/user-info', (req, res) => {
     if (req.user) {

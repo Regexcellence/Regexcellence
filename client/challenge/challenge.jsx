@@ -62,6 +62,7 @@ class Challenge extends Component {
           challengeType={this.props.challengeInfo.challengeType}
           answers={this.props.challengeInfo.answers}
           revealAnswer={this.props.challengeInfo.revealAnswer}
+          challengeInfo={challengeInfo}
         />}
       </div>
     );
