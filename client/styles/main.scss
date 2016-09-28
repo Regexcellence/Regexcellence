@@ -72,6 +72,44 @@ a:hover {
   }
 }
 
+.drop-down {
+  background-image: none;
+  background-color: #F5F5F5;
+  width: 150px;
+  border: none;
+  border-bottom: 1px solid #000;
+  box-shadow: none;
+  border-radius: 0px;
+  margin: 15px;
+  &:hover {
+    background-color: transparent;
+    border-bottom: 1px solid #17A6B6;
+    box-shadow: none;
+    color: #17A6B6;
+  }
+  :active {
+    background-color: transparent;
+  }
+}
+
+.drop-down-menu {
+  background-image: none;
+  background-color: #FFF;
+  color: #000;
+  border:0px;
+  outline:0px;
+  a {
+    background-color: #FFF;
+    background-image: none;
+    color: #000; 
+  }
+  :hover {
+    background-color: #FFF;
+    background-image: none;
+    color: #17A6B6;
+  }
+}
+
 .jumbotron {
   min-margin-top: 90px;
   border: 1px solid #E3E3E3;

@@ -26,8 +26,10 @@ class ChallengeDescription extends Component {
               onChange={this.updateInput} name="name"
               value={this.props.name}
             />
-
-            <Difficulty difficulty={this.props.difficulty} editable={this.props.editable} />
+            <div>
+              { this.props.editable ? <Difficulty editable={this.props.editable} difficulty={this.props.difficulty}/> : null }
+            </div>
+            
 
             <h4>Description:</h4>
             <textarea
