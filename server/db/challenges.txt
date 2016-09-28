@@ -86,10 +86,10 @@
 	]
 },
 {
-  "name": "",
-  "description": ,
-  "author": ,
-  "difficulty": ,
+  "name": "No Comments",
+  "description": "Math the valid javascript comments",
+  "author": "Ben" ,
+  "difficulty": 2,
   "testCases": [
     {"case": "// San Francisco Makersquare!", "expectation": true},
     {"case": "/* San Francisco Makersquare! */", "expectation": true},
