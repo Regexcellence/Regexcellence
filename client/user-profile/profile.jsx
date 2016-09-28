@@ -83,7 +83,7 @@ class UserProfile extends React.Component {
 UserProfile.propTypes = {
   getUserCompletedChallenges: React.PropTypes.func,
   userInfo: React.PropTypes.shape({
-    _id: React.PropTypes.number,
+    _id: React.PropTypes.string,
     completed_challenges: React.PropTypes.array,
     avatar_url: React.PropTypes.string,
     name: React.PropTypes.string,

@@ -49,9 +49,9 @@ class ListItem extends Component {
 }
 
 ListItem.propTypes = {
-  challengeId: React.PropTypes.number,
+  challengeId: React.PropTypes.string,
   difficulty: React.PropTypes.number,
-  testCases: React.PropTypes.arrayOf(React.PropTypes.string),
+  testCases: React.PropTypes.arrayOf(React.PropTypes.object),
   name: React.PropTypes.string,
   author: React.PropTypes.string,
 };
