@@ -45,9 +45,12 @@ module.exports = {
   },
   findUserCompletedChallenges: (userId, callback) => {
     models.Users.find({ _id: userId }, (err, userData) => {
-      const { completed_challenges } = userData;
-
-    })
+      console.log('completed challenges ', mongoose.Types.ObjectId(userData[0].completed_challenges[0]));
+      const { completed_challenges } = userData[0];
+      models.Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
+        callback(challenges);
+      });
+    });
   },
   getTutorial: (callback) => {
     models.Tutorial.find({}, (err, tutorial) => {

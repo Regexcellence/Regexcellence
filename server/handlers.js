@@ -34,8 +34,9 @@ module.exports = (app) => {
   });
   // TODO: Save more.
   app.get('/regex/challenges/user-completed?', (req, res) => {
-    dbHandlers.findUserCompletedChallenges(userId, () => {
-      res.end('Got the challenges!')
+    const userId = url.parse(req.url).query;
+    dbHandlers.findUserCompletedChallenges(userId, (completedChallenges) => {
+      res.send(completedChallenges)
     })
   });
   app.get('/regex/user-info', (req, res) => {
