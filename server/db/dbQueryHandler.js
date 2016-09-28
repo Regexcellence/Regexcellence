@@ -27,9 +27,29 @@ module.exports = {
   },
   postChallengeAnswer: (data, query, callback) => {
     console.log('in post challenge answer')
-    models.Challenges.findOneAndUpdate({ _id: query }, { $push: { answers: { answer: data.answer, user: data.user || 'Anonymous' }}}, { new: true }, (err, model) => {
+    const answer = { 
+      answer: data.answer, 
+      user: data.username || 'Anonymous',
+      userId: data.userId || null
+    }
+    models.Challenges.findOneAndUpdate({ _id: query }, { $push: { answers: answer }}, { new: true }, (err, model) => {
       if (err) throw err;
       callback(model);
+    });
+  },
+  postCompletedChallenge: (challengeId, userId, callback) => {
+    models.Users.findOneAndUpdate({ _id: userId }, { $push: { completed_challenges: challengeId }}, { new: true }, (err, model) => {
+      if (err) throw err;
+      callback(model);
+    });
+  },
+  findUserCompletedChallenges: (userId, callback) => {
+    models.Users.find({ _id: userId }, (err, userData) => {
+      console.log('completed challenges ', mongoose.Types.ObjectId(userData[0].completed_challenges[0]));
+      const { completed_challenges } = userData[0];
+      models.Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
+        callback(challenges);
+      });
     });
   },
   getTutorial: (callback) => {
@@ -45,3 +65,14 @@ module.exports = {
     });
   },
 };
+
+// TODO: Helper function for retrieving challenge info. 
+// function getChallengesById(idArray, callback) {
+//   idArray.forEach((id) => {
+//     models.Challenges.find({}, (err, challenge) => {
+//       if (err) throw err;
+
+//     })
+//   })
+  
+// }

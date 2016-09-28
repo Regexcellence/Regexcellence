@@ -40,6 +40,7 @@ const challengeSchema = new Schema({
     {
       answer: String,
       user: String,
+      userId: String
     }
   ]
 });
@@ -59,7 +60,11 @@ const userSchema = new Schema({
   html_url: String,
   avatar_url: String,
   authored_challenges: [],
-  completed_challenges: [],
+  completed_challenges: [
+    {
+      challengeId: String,
+    }
+  ],
   tutorial_progress: '',
 });
 

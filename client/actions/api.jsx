@@ -42,17 +42,30 @@ export function getAllChallenges() {
   };
 }
 
-export function postNewChallengeAnswer(answer, challengeId) {
+export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   return (dispatch) => {
     $.ajax({
       method: 'POST',
       url: `/regex/challenges/new-answer?${challengeId}`,
       contentType: 'application/json',
-      data: JSON.stringify({ answer }),
+      data: JSON.stringify({ answer, userId, username }),
     }).then(() => {
       console.log('success in posting answer!!');
     });
   };
+}
+
+export function postCompletedChallenge(challengeId, userId) {
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: `/regex/challenges/completed-challenge?${userId}`,
+      contentType: 'application/json',
+      data: JSON.stringify({ challengeId }),
+    }).then(() => {
+      console.log('Posted to user db!')
+    })
+  }
 }
 
 export function getUserInfo() {

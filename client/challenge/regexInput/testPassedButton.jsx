@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Router, Link } from 'react-router';
 
 import { inputActionCreator } from '../../actions/index';
-import { postChallengeActionCreator, postNewChallengeAnswer } from '../../actions/api';
+import { postChallengeActionCreator, postNewChallengeAnswer, postCompletedChallenge } from '../../actions/api';
 
 class TestPassedButton extends React.Component {
   constructor(props) {
@@ -20,12 +20,13 @@ class TestPassedButton extends React.Component {
     this.props.postChallengeActionCreator(this.props.newUserPost);
   }
   postNewChallengeAnswer() {
-    this.props.postNewChallengeAnswer(this.props.text, this.props.challengeId);
+    const { text, challengeId, userInfo } = this.props;
+    this.props.postNewChallengeAnswer(text, challengeId, userInfo._id, userInfo.gitHandle);
+    this.props.postCompletedChallenge(challengeId, userInfo._id)
   }
   render() {
     if (this.props.testPassed) {
       if (this.props.challengeType !== 'challenge') {
-        console.log(this.props.challengeType)
         return (
           <span className="input-group-btn">
             <Link to={`/${this.props.nextUrl.url}`}>
@@ -38,7 +39,6 @@ class TestPassedButton extends React.Component {
           </span>
         );
       } else {
-        console.log(this.props.challengeType)
         return (
           <span className="input-group-btn">
             <Link to={`/${this.props.nextUrl.url}`}>
@@ -57,7 +57,11 @@ class TestPassedButton extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-	return { text: state.userInput, newUserPost: state.newUserPost }
+	return { 
+    text: state.userInput, 
+    newUserPost: state.newUserPost, 
+    userInfo: state.userInfo 
+  }
 };
 
-export default connect(mapStateToProps, { inputActionCreator, postChallengeActionCreator, postNewChallengeAnswer })(TestPassedButton);
+export default connect(mapStateToProps, { inputActionCreator, postChallengeActionCreator, postNewChallengeAnswer, postCompletedChallenge })(TestPassedButton);
