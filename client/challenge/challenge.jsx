@@ -30,7 +30,7 @@ class Challenge extends Component {
       <div className="challenge">
         <div>
           <span
-            onClick={() => this.showCheatSheet()}
+            onClick={this.showCheatSheet}
             className="cheat-glyph glyphicon glyphicon-th-list"
             title="Cheat Sheet!"
           />

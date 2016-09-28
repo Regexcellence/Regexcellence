@@ -10,7 +10,6 @@ class UserProfile extends React.Component {
   }
   componentWillMount() {
     this.props.getUserInfo();
-    // console.log('userinfo:', this.props.userInfo);
   }
   getUserChallenges() {
     const userChallenges = this.props.userInfo.completed_challenges.map((item) => {

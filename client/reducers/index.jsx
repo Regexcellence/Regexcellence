@@ -1,7 +1,7 @@
 import { inputValidator, resetWellFormedInput } from './inputValidation';
 import { updateChallenges, updateTutorials } from './updateChallenges';
 import { regexValidator } from './regexValidation';
-import { updatePostInput } from './postChallengeInputUpdate';
+import { updatePostInput, updatePostAuthor } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 import { toggleReveal } from './toggleReveal';
@@ -16,6 +16,7 @@ const initialState = {
   newUserPost: {
     name: '',
     author: 'User',
+    authorId: '',
     difficulty: '1',
     description: '',
     testCases: [],
@@ -39,6 +40,7 @@ const actionHandler = {
   'LOG-USER-INFO': logUserInfo,
   'LOGOUT': userLogout,
   'STORE-USER-COMPLETED-CHALLENGES': storeCompletedChallenges,
+  'USERINFO-TO-POST': updatePostAuthor,
 };
 
 const reducer = (state = initialState, action) => {

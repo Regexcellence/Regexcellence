@@ -55,7 +55,14 @@
 #invalid-post {
   width: 100%;
   background-color: #F55D3E;
+  height: 50px;
+  font-style: italic;
   text-align: center; 
+  vertical-align: middle;
+  line-height: 50px;
+  span {
+    color: white;
+  }
 }
 
 

@@ -7,7 +7,6 @@ export function regexParser(input) {
     let pattern = inputArr.join('').replace(/[a-z]*$/, '').split('');
     pattern.pop();
     pattern = pattern.join('');
-    console.log('new pattern ', pattern)
     const flags = snagRegexFlags(input);
     return { pattern, flags };
 }

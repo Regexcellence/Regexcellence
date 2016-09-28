@@ -29,6 +29,7 @@ const challengeSchema = new Schema({
   nameurl: String,
   description: String,
   author: String,
+  authorId: String,
   difficulty: Number,
   testCases: [
     {
