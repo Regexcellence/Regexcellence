@@ -62,7 +62,7 @@ const userSchema = new Schema({
   avatar_url: String,
   authored_challenges: [],
   completed_challenges: [],
-  tutorial_progress: '',
+  tutorial_progress: String,
 });
 
 const Users = mongoose.model('Users', userSchema);
