@@ -8,7 +8,7 @@ export function postChallengeActionCreator(postInput) {
     postInput = cleanChallenge(postInput);
     $.ajax({
       method: 'POST',
-      url: '/regex/challenges',
+      url: '/regex/challenges/new-challenge',
       contentType: 'application/json',
       data: JSON.stringify(postInput),
     }).then((data) => {
@@ -46,7 +46,7 @@ export function postNewChallengeAnswer(answer, challengeId) {
   return (dispatch) => {
     $.ajax({
       method: 'POST',
-      url: `/regex/challenges?${challengeId}`,
+      url: `/regex/challenges/new-answer?${challengeId}`,
       contentType: 'application/json',
       data: JSON.stringify({ answer }),
     }).then(() => {

@@ -57,7 +57,7 @@ function tagTestCaseData(dataObject) {
 			start: dataObject.case,
 			match: '',
 			end: '',
-			globalMatch,
+			globalMatch: [],
 		}
 	})
 }

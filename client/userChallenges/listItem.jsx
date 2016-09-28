@@ -7,7 +7,6 @@ class ListItem extends Component {
 
   render() {
     const linkToChallenge = `user-challenges/${this.props.challengeId}`;
-    const testCase = `match case : ${this.props.testCases[0]===undefined? " " : this.props.testCases[0].case}`;
     const difficulty = { width: (`${this.props.difficulty}` * 20)+"%" };
     const colors = {
       "1": "#9ad2cb",
@@ -24,12 +23,12 @@ class ListItem extends Component {
     return(
       <li className="list-group-item">  
         <Link to={linkToChallenge}>
-        <h3>{this.props.name.toUpperCase()}</h3>
-        <DifficultyBar
-          difficultyStyle={difficultyStyle}
-          difficulty={this.props.difficulty} />
-        <span>author: </span>
-        <p>{testCase}</p>
+          <h3>{this.props.name.toUpperCase()}</h3>
+          <DifficultyBar
+            difficultyStyle={difficultyStyle}
+            difficulty={this.props.difficulty} />
+          <span>by {this.props.author}</span>
+          <p>Match: {this.props.testCases[0] === undefined ? "" : this.props.testCases[0].case}</p>
         </Link>
       </li>
     );

@@ -16,7 +16,7 @@ const initialState = {
   newUserPost: {
     name: '',
     author: 'User',
-    difficulty: '',
+    difficulty: '1',
     description: '',
     testCases: [],
     testPassed: false,
