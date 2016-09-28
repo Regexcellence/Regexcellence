@@ -1,0 +1,22 @@
+.modal {
+  .logo{
+    color: #17A6B6;
+    font-size: 3em;
+  }
+  button.btn{
+    min-height: 3em;
+    min-width: 13em;
+    color: white;
+    border-radius: 0;
+    font-size: 15px;
+    background-color: #17A6B6;
+  }
+  img{
+    height: 30%;
+    width: 30%;
+    margin: 1em;
+  }
+  .text-muted{
+    margin: 1em;
+  }
+}

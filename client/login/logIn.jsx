@@ -26,16 +26,21 @@ class Login extends Component {
   render(){
     if(!this.state.loggedIn){     
       return(
-      <div>
+      <div >
           <span onClick={this.open}>SIGN IN</span>
-          <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal className="modal text-center" show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
-            <div className="logo">R</div>
+            <div className="logo">Regexcellence</div>
             </Modal.Header>
             <Modal.Body>
-              <a href="/regex/auth/github">
-              <span className="fa fa-github"></span> Sign in with Github</a>
               <div>
+              <img src="http://i.imgur.com/ZBlFRRX.jpg"/>
+              </div>
+              <a href="/regex/auth/github">
+              <button className="btn">
+              <span className="fa fa-github"></span> Sign in with GitHub</button>
+              </a>
+              <div className="text-muted">
               Or continue as a guest
               </div>
             </Modal.Body>
