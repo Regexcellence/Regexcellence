@@ -23,6 +23,22 @@ table{
 #complete-challenge{
   background-color: #d3ecb0;
   color: #565A5C;
+  li.list-group-item.container{
+    width:100%;
+    padding-left: 5em;
+    padding-right: 5em;
+    text-align: left;
+  #difficulty-bar-outer.pull-right{
+    height: 1.5em;
+    margin-button: 1%;
+  }
+  #difficulty-bar-inner{
+    height: 1.5em;
+  }
+  #bar-text{
+    margin: 1% 0 0 35%;
+  }
+  }
 }
 
 #tutorial-progress{

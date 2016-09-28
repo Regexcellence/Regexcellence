@@ -19,19 +19,29 @@ class ListItem extends Component {
       'backgroundColor': colors[`${this.props.difficulty}`],
       'width': (`${this.props.difficulty}` * 20)+"%",
     };
-
-    return(
-      <li className="list-group-item">  
-        <Link to={linkToChallenge}>
-          <h3>{this.props.name.toUpperCase()}</h3>
+    if(!this.props.testCases){
+      return (
+      <li className="list-group-item container"><div>
+          {this.props.name.toUpperCase()}
           <DifficultyBar
             difficultyStyle={difficultyStyle}
-            difficulty={this.props.difficulty} />
-          <span>by {this.props.author}</span>
-          <p>Match: {this.props.testCases[0] === undefined ? "" : this.props.testCases[0].case}</p>
-        </Link>
-      </li>
-    );
+            difficulty={this.props.difficulty} /></div>
+      </li> 
+      );
+    } else {
+      return(
+        <li className="list-group-item">  
+          <Link to={linkToChallenge}>
+            <h3>{this.props.name.toUpperCase()}</h3>
+            <DifficultyBar
+              difficultyStyle={difficultyStyle}
+              difficulty={this.props.difficulty} />
+            <span>by {this.props.author}</span>
+            <p>Match: {this.props.testCases[0] === undefined ? "" : this.props.testCases[0].case}</p>
+          </Link>
+        </li>
+      );
+    }
   }
 }
 
