@@ -21,11 +21,14 @@ class ListItem extends Component {
     };
     if(!this.props.testCases){
       return (
-      <li className="list-group-item container"><div>
+      <li className="list-group-item container">
+        <Link to={linkToChallenge}>
           {this.props.name.toUpperCase()}
           <DifficultyBar
             difficultyStyle={difficultyStyle}
-            difficulty={this.props.difficulty} /></div>
+            difficulty={this.props.difficulty}
+           />
+        </Link>
       </li> 
       );
     } else {
