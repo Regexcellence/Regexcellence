@@ -35,10 +35,8 @@ module.exports = (app) => {
     }
   });
   app.get('/regex/logout', (req, res) => {
-    console.log("session destroyed");
     req.session.destroy((err) => {
       if (err) throw err;
-      console.log("in da callback")
       res.redirect('/');
     });
   })

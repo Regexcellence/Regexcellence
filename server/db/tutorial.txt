@@ -1,7 +1,7 @@
 [
   {
   	"order": 0,
-  	"name": "Tutorial Test",
+  	"name": "Learn Your ABCs",
   	"description": "Let’s start with the basics! You are writing patterns with the pure intent of matching certain characters in strings. Simple letters and digits easily match to themselves. /a/ will match to anything containing an 'a', /1/ will match to anything with a '1'. A word, /meow/ for example, will match to the word ‘meow’ if it appears in that order. However, when wrapping characters inside of square brackets you can match specific characters. For example, /[meow]/ will match to one of the characters ‘m’, ‘e’, ‘o’, or ‘w’, in any order, and will be case sensitive unless specified otherwise. Fun fact! The DOT! The /./ character is actually a wild card that will match to any character, although if you throw in some brackets /[.]/ it matches only to itself. Use with caution. To check for only one dot be sure to escape the dot using a backslash! /\\./ Got it? Give it a try! Remember to start and end your expression with forward slashes.",
   	"author": "Troy",
   	"difficulty": 1,
