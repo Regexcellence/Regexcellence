@@ -82,7 +82,6 @@ export function postCompletedChallenge(challengeId, userId) {
 export function getUserInfo() {
   return (dispatch) => {
     $.ajax('/regex/user-info').then((userInfo) => {
-      console.log(userInfo);
       dispatch({
         type: 'LOG-USER-INFO',
         userInfo,

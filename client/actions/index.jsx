@@ -46,3 +46,11 @@ export function resetWellFormedInput() {
     type: 'RESET-WELLFORMED-INPUT'
   }
 }
+
+export function addUserInfoToPost(gitHandle, _id) {
+  return {
+    type: 'USERINFO-TO-POST',
+    gitHandle,
+    _id,
+  }
+}
