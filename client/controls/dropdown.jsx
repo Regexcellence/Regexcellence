@@ -7,21 +7,14 @@ import Login from '../login/logIn';
 import { logOut } from '../actions/api';
 
 class Dropdown extends Component {
-	constructor(props){
-		super(props);
-		this.clickHandle = this.clickHandle.bind(this);
-	}
-	clickHandle() {
-		this.props.logOut();
-	}
   render() {
     if (this.props.condition.name){
     	return (
         <li>
-          <DropdownButton className="nav-pills" title={this.props.userInfo.name} id="bg-nested-dropdown">
-            <MenuItem><Link to="profile">PROFILE</Link></MenuItem>
-            <MenuItem onClick={this.props.logOut}>Log Out</MenuItem>
-          </DropdownButton>
+        <DropdownButton className="drop-down" title={this.props.userInfo.name} id="bg-nested-dropdown">
+          <Link className="drop-down-menu" to="profile">PROFILE</Link>
+          <MenuItem className="drop-down-menu" onClick={this.props.logOut}>LOG OUT</MenuItem>
+        </DropdownButton>
        </li>
     		);
     } else {
