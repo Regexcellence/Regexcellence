@@ -18,10 +18,10 @@ class Dropdown extends Component {
     if (this.props.condition.name){
     	return (
         <li>
-        <DropdownButton className="nav-pills" title={this.props.userInfo.name} id="bg-nested-dropdown">
-          <MenuItem><Link to="profile">PROFILE</Link></MenuItem>
-          <MenuItem onClick={this.props.logOut}>Log Out</MenuItem>
-        </DropdownButton>
+          <DropdownButton className="nav-pills" title={this.props.userInfo.name} id="bg-nested-dropdown">
+            <MenuItem><Link to="profile">PROFILE</Link></MenuItem>
+            <MenuItem onClick={this.props.logOut}>Log Out</MenuItem>
+          </DropdownButton>
        </li>
     		);
     } else {
