@@ -21,26 +21,27 @@ class ListItem extends Component {
     };
     if(!this.props.testCases){
       return (
-      <li className="list-group-item">  
+      <li className="list-group-item container"><div>
           {this.props.name.toUpperCase()}
           <DifficultyBar
             difficultyStyle={difficultyStyle}
-            difficulty={this.props.difficulty} />        
+            difficulty={this.props.difficulty} /></div>
       </li> 
       );
+    } else {
+      return(
+        <li className="list-group-item">  
+          <Link to={linkToChallenge}>
+            <h3>{this.props.name.toUpperCase()}</h3>
+            <DifficultyBar
+              difficultyStyle={difficultyStyle}
+              difficulty={this.props.difficulty} />
+            <span>by {this.props.author}</span>
+            <p>Match: {this.props.testCases[0] === undefined ? "" : this.props.testCases[0].case}</p>
+          </Link>
+        </li>
+      );
     }
-    return(
-      <li className="list-group-item">  
-        <Link to={linkToChallenge}>
-          <h3>{this.props.name.toUpperCase()}</h3>
-          <DifficultyBar
-            difficultyStyle={difficultyStyle}
-            difficulty={this.props.difficulty} />
-          <span>by {this.props.author}</span>
-          <p>Match: {this.props.testCases[0] === undefined ? "" : this.props.testCases[0].case}</p>
-        </Link>
-      </li>
-    );
   }
 }
 

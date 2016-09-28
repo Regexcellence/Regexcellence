@@ -1,38 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getUserInfo } from '../actions/api';
+import { getUserCompletedChallenges } from '../actions/api';
 import ListItem from '../userChallenges/listItem';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
   }
+
   componentWillMount() {
-    this.props.getUserInfo();
+    this.props.getUserCompletedChallenges(this.props.userInfo._id);
   }
 
   render() {
-    const complete = [
-    {
-      "name": "Spaces at the beginning and end of strings",
-      "difficulty": 2,
-    },
-    {
-      "name": "Use regex to validate regex!",
-      "difficulty": 2,
-    }
-    ];
-    const completeLists = complete.map((each)=>{
-      return (
-        <ListItem 
-          key={each.name} name={each.name} 
-          difficulty={each.difficulty} 
-          testCases={null}/>
-      );
-    });
-    if (!Object.keys(this.props.userInfo).length) {
-      return <div>loading</div>;
-    } else if (this.props.userInfo === 'Not logged in!') {
+    if (this.props.userInfo === 'Not logged in!') {
       return (
         <div>
           <div className="container text-center not-logged-in">
@@ -40,8 +21,19 @@ class UserProfile extends React.Component {
           </div>
         </div>
       );
-    } else {
-      // console.log('loaded:', this.props.userInfo);
+    } else if (this.props.userInfo.completed_challenges[0].name) {
+
+      const complete = this.props.userInfo.completed_challenges;
+      const completeLists = this.props.userInfo.completed_challenges.map((each)=>{
+        return (
+          <ListItem 
+            key={each._id} 
+            name={each.name} 
+            difficulty={each.difficulty} 
+            testCases={null} />
+        );
+      });
+
       return (
         <div className="user-profile">
           <div className="text-center">
@@ -63,7 +55,7 @@ class UserProfile extends React.Component {
 
           <div className="row" id="complete-challenge">
             <h4>Completed Challenges</h4>
-            {completeLists}
+            { completeLists }
           </div>
 
           <div className="row" id="tutorial-progress">
@@ -77,12 +69,14 @@ class UserProfile extends React.Component {
           </div>
         </div>
       );
+    } else {
+      return <div>waiting</div>
     }
   }
 }
 
 const mapStateToProps = (state) => {
-	return { userInfo: state.userInfo };
+  return { userInfo: state.userInfo };
 };
 
-export default connect(mapStateToProps, { getUserInfo })(UserProfile);
+export default connect(mapStateToProps, { getUserCompletedChallenges })(UserProfile);
