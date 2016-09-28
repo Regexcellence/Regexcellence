@@ -53,6 +53,17 @@ export function getUserCompletedChallenges(userId) {
   }
 }
 
+export function getUserAuthoredChallenges(userId) {
+  return (dispatch) => {
+    $.ajax(`/regex/user-info/authored-challenges?${userId}`).then((data) => {
+      dispatch({
+        type: 'STORE-USER-AUTHORED-CHALLENGES',
+        payload: data,
+      })
+    })
+  }
+}
+
 export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   return (dispatch) => {
     $.ajax({

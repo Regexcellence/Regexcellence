@@ -5,7 +5,7 @@ import { updatePostInput, updatePostAuthor } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 import { toggleReveal } from './toggleReveal';
-import { logUserInfo, userLogout, storeCompletedChallenges } from './userHandler';
+import { logUserInfo, userLogout, storeCompletedChallenges, storeAuthoredChallenges } from './userHandler';
 
 const initialState = {
   challenges: [],
@@ -40,6 +40,7 @@ const actionHandler = {
   'LOG-USER-INFO': logUserInfo,
   'LOGOUT': userLogout,
   'STORE-USER-COMPLETED-CHALLENGES': storeCompletedChallenges,
+  'STORE-USER-AUTHORED-CHALLENGES': storeAuthoredChallenges,
   'USERINFO-TO-POST': updatePostAuthor,
 };
 

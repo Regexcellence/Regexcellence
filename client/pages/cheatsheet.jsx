@@ -21,6 +21,7 @@ export default class CheatSheet extends React.Component {
 				<li>?	Optional preceding character</li>
 				<li>\s	Any Whitespace</li>
 				<li>\S	Any Non-whitespace character</li>
+				<li>\b Matches at the beginning or end of a word.</li>
 				<li>^ Starts</li>
 				<li>$ Ends</li>
 				<li>(…)	Capture Group</li>

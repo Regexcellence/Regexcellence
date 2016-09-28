@@ -17,7 +17,7 @@ export function authenticatePost(newUserPost, action) {
 			authenticatedInput = false;
 		}
 	});
-	if (matchCount < 3 || skipCount < 3) {
+	if (matchCount < 1 || skipCount < 1) {
 		authenticatedInput = false;
 	}
 	return Object.assign({}, newUserPost, { authenticatedInput });
