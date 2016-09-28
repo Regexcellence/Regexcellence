@@ -1,6 +1,15 @@
 .profile-hr{
   border-color: #9ad2cb;
 }
+
+.not-logged-in{
+  h2{   
+    border: 5px solid #FF4C4D;
+    padding: 1em;
+    color: #FF4C4D;
+  }
+}
+
 .table-responsive{
   border: none;
 }

@@ -9,14 +9,23 @@ class UserProfile extends React.Component {
   }
   componentWillMount() {
     this.props.getUserInfo();
-    console.log('userinfo:', this.props.userInfo);
+    // console.log('userinfo:', this.props.userInfo);
   }
 
   render() {
-    if(!Object.keys(this.props.userInfo).length){
+    if(!Object.keys(this.props.userInfo).length) {
+      console.log('hi', this.props.userInfo)
       return <div>loading</div>
+    } else if (this.props.userInfo === 'Not logged in!'){
+      return (
+        <div>
+          <div className="container text-center not-logged-in">
+            <h2>Please sign in to see your profile page.</h2>
+          </div>
+        </div>
+      );
     } else {
-      console.log('loaded', this.props.userInfo)
+      console.log('loaded:', this.props.userInfo)
       return (
         <div>
           <div className="text-center">
