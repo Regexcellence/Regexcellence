@@ -9,14 +9,22 @@ class UserProfile extends React.Component {
   }
   componentWillMount() {
     this.props.getUserInfo();
-    console.log('userinfo:', this.props.userInfo);
+    // console.log('userinfo:', this.props.userInfo);
   }
 
   render() {
-    if(!Object.keys(this.props.userInfo).length){
-      return <div>loading</div>
+    if(!Object.keys(this.props.userInfo).length) {
+      return <div>loading</div>;
+    } else if (this.props.userInfo === 'Not logged in!') {
+      return (
+        <div>
+          <div className="container text-center not-logged-in">
+            <h2>Please sign in to see your profile page.</h2>
+          </div>
+        </div>
+      );
     } else {
-      console.log('loaded', this.props.userInfo)
+      console.log('loaded:', this.props.userInfo);
       return (
         <div>
           <div className="text-center">
@@ -36,7 +44,7 @@ class UserProfile extends React.Component {
           </table>
           </div>
           <div className="row" id="complete-challenge">
-            <h4>Complete Challenges</h4>
+            <h4>Completed Challenges</h4>
           </div>
 
           <div className="row" id="tutorial-progress">
@@ -55,9 +63,7 @@ class UserProfile extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-	return { userInfo: state.userInfo }
-}
+	return { userInfo: state.userInfo };
+};
 
 export default connect(mapStateToProps, { getUserInfo })(UserProfile);
-
-

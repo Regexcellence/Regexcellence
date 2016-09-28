@@ -1,6 +1,15 @@
 .profile-hr{
   border-color: #9ad2cb;
 }
+
+.not-logged-in{
+  h2{   
+    border: 5px solid #FF4C4D;
+    padding: 1em;
+    color: #FF4C4D;
+  }
+}
+
 .table-responsive{
   border: none;
 }
@@ -13,11 +22,14 @@ table{
 }
 #complete-challenge{
   background-color: #d3ecb0;
+  color: #565A5C;
 }
 
 #tutorial-progress{
+  color: #565A5C;
   background-color: #f7f9be;
 }
 #contributions{
+  color: #565A5C;
   background-color: #9ad2cb;
 }

@@ -8,7 +8,8 @@
 'about',
 'challenge',
 'post',
-'user-profile';
+'user-profile',
+'sign-in-modal';
 
 
 @font-face {
@@ -130,12 +131,6 @@ input{
 
 .clear-top {
   margin-top: 8%;
-}
-
-@media all and (max-width: 960px){
-  .clear-top {
-    margin-top: 45%;
-  }
 }
 
 .tutorial-start {
