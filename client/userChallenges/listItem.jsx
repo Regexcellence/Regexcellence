@@ -20,29 +20,29 @@ class ListItem extends Component {
     };
     if (!this.props.testCases) {
       return (
-        <li className="list-group-item container">
-          <Link to={linkToChallenge}>
-            {this.props.name.toUpperCase()}
-            <DifficultyBar
-              difficultyStyle={difficultyStyle}
-              difficulty={this.props.difficulty}
-            />
-          </Link>
-        </li>
+        <Link to={linkToChallenge}>
+          <li className="list-group-item container">
+              {this.props.name.toUpperCase()}
+              <DifficultyBar
+                difficultyStyle={difficultyStyle}
+                difficulty={this.props.difficulty}
+              />
+          </li>
+        </Link>
       );
     } else {
       return (
-        <li className="list-group-item">
-          <Link to={linkToChallenge}>
-            <h3>{this.props.name.toUpperCase()}</h3>
-            <DifficultyBar
-              difficultyStyle={difficultyStyle}
-              difficulty={this.props.difficulty}
-            />
-            <span>by {this.props.author}</span>
-            <p>Match: {this.props.testCases[0] === undefined ? '' : this.props.testCases[0].case}</p>
-          </Link>
-        </li>
+        <Link to={linkToChallenge}>
+          <li className="list-group-item">
+              <h3>{this.props.name.toUpperCase()}</h3>
+              <DifficultyBar
+                difficultyStyle={difficultyStyle}
+                difficulty={this.props.difficulty}
+              />
+              <span>by {this.props.author}</span>
+              <p>Match: {this.props.testCases[0] === undefined ? '' : this.props.testCases[0].case}</p>
+          </li>
+        </Link>
       );
     }
   }
