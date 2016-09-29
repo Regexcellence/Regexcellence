@@ -6,6 +6,7 @@ import ChallengeDescription from './challenge-description';
 import Cheatsheet from '../pages/cheatsheet';
 import RevealAnswer from './revealAnswer';
 
+
 import { inputActionCreator, resetWellFormedInput } from '../actions/index';
 
 class Challenge extends Component {
