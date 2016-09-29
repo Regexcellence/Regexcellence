@@ -10,14 +10,16 @@ class UserProfile extends React.Component {
   }
 
   componentWillMount() {
-    this.props.getUserCompletedChallenges(this.props.userInfo._id);
+    if(this.props.userInfo._id){
+      this.props.getUserCompletedChallenges(this.props.userInfo._id);
+    }
   }
 
   render() {
     const { userInfo } = this.props;
     const { completed_challenges } = userInfo;
     console.log('USERINFO', userInfo);
-    if (userInfo === 'Not logged in!') {
+    if (!Object.keys(userInfo).length) {
       return (
         <div>
           <div className="container text-center not-logged-in">
