@@ -126,10 +126,29 @@ a:hover {
   }
 }
 
+.dropdown-menu{
+  border-radius: 0px;
+  box-shadow: none;
+  &>.active>a{
+    background-color: white;
+    color: #FF4C4D;
+      &:hover{
+        background-color: transparent;
+        color: #17A6B6;
+      }
+  }
+  &>li>a{
+    &:hover{
+      color: #17A6B6;
+      background: transparent;
+    }
+  }
+}
+
 .jumbotron {
   margin-top: 2em;
   border: 1px solid #E3E3E3;
-  padding-right: 10%;
+  padding-right: 1%;
   h1 {
     font-size: 40px;
     font-weight: bold;
@@ -182,10 +201,6 @@ input{
  box-shadow: none;
  outline: none;
 }
-
-// .clear-top {
-//   margin-top: 8%;
-// }
 
 .tutorial-start {
   padding-bottom: 40px;
