@@ -54,13 +54,14 @@ dbQueryHandlers.postCompletedChallenge = (challengeId, userId, callback) => {
 dbQueryHandlers.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
   models.Users.find({ _id: userId }, (err, userData) => {
     if (desiredProperty === 'completed_challenges') {
-      const completed_challenges = userData[0].completed_challenges.map((challengeId) => {
-        return mongoose.Types.ObjectId(challengeId);
-      });
-      if (!completed_challenges) {
+      console.log('USER', userData);
+      if (userData[0].completed_challenges === undefined) {
         callback('No challenges!');
         return;
       }
+      const completed_challenges = userData[0].completed_challenges.map((challengeId) => {
+        return mongoose.Types.ObjectId(challengeId);
+      });
       Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
         if (err) throw err;
         callback(challenges);
