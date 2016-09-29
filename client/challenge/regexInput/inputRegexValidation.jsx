@@ -11,6 +11,17 @@ class InputRegexValidation extends React.Component {
     this.changeInputState = this.changeInputState.bind(this);
     this.addSlashes = this.addSlashes.bind(this);
   }
+  addSlashes(event) {
+    if (!event.target.value.length) {
+      this.props.inputActionCreator('//');
+    }
+  }
+  changeInputState(event) {
+    event.preventDefault();
+    const newInput = event.target.value;
+    this.props.inputActionCreator(newInput);
+    this.props.testRegexInput(this.props.challengeId, newInput, this.props.challengeType);
+  }
   render() {
     const { editable } = this.props;
     const { authenticatedInput } = this.props.newUserPost;
@@ -29,6 +40,8 @@ class InputRegexValidation extends React.Component {
               nextUrl={this.props.nextUrl}
               editable={this.props.editable}
               testPassed={this.props.testPassed}
+              challengeType={this.props.challengeType}
+              challengeId={this.props.challengeId}
             />
           </form>
           <InputValidationFlag wellFormedInput={this.props.wellFormedInput} />
@@ -37,17 +50,6 @@ class InputRegexValidation extends React.Component {
     } else {
       return <PostAuthentication newUserPost={this.props.newUserPost} />
     }
-  }
-  addSlashes(event) {
-    if (!event.target.value.length) {
-      this.props.inputActionCreator('//');
-    }
-  }
-  changeInputState(event) {
-    event.preventDefault();
-    const newInput = event.target.value;
-    this.props.inputActionCreator(newInput);
-    this.props.testRegexInput(this.props.challengeId, newInput, this.props.challengeType);
   }
 }
 

@@ -3,6 +3,7 @@ export function cleanChallenge(challengeObject) {
     name: challengeObject.name,
     description: challengeObject.description,
     author: challengeObject.author,
+    authorId: challengeObject.authorId,
     difficulty: challengeObject.difficulty,
     testCases: cleanTestCases(challengeObject.testCases),
   }

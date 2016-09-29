@@ -38,16 +38,17 @@ export default class TestCaseList extends React.Component {
     })
   }
   render() {
+    const { editable } = this.props; 
     return (
       <table className="table">
         <tbody>
           <tr>
-            <th>Match</th>
+            <th>Match { editable ? <span id="post-requirements">*Three match cases required for submission</span> : false }</th>
           </tr>
           {this.fitlerTestCases('Match')}
           {this.props.editable ? <TestCaseEdit matchType="Match" /> : false}
           <tr>
-            <th>Skip</th>
+            <th>Skip { editable ? <span id="post-requirements">*Three skip cases required for submission</span> : false } </th>
           </tr>
           {this.fitlerTestCases('Skip')}
           {this.props.editable ? <TestCaseEdit matchType="Skip" /> : false}

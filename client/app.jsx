@@ -19,6 +19,7 @@ import Post from './pages/post';
 import UserChallenges from './pages/userChallenges';
 import TutorialMain from './tutorials/tutorialMain';
 import UserChallengeMain from './userChallenges/userChallengeMain';
+import UserProfile from './user-profile/profile';
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
@@ -41,6 +42,7 @@ class App extends React.Component {
               <Route path="/tutorial" component={Tutorial}>
                 <Route path="/tutorial/:nameurl" component={TutorialMain} />
               </Route>
+              <Route path="/profile" component={UserProfile} />
             </Route>
           </Router>
         </Provider>

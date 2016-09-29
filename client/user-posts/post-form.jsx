@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addUserInfoToPost } from '../actions/index';
 
 import Challenge from '../challenge/challenge';
 
 class UserChallengePost extends Component {
   constructor(props) {
     super(props);
+  }
+  componentWillMount() {
+    const { gitHandle, _id } = this.props.userInfo;
+    if (gitHandle) {
+      this.props.addUserInfoToPost(gitHandle, _id);
+    }
   }
   render() {
     return (
@@ -24,7 +31,8 @@ UserChallengePost.propTypes = {
 const mapStateToProps = (state) => {
   return {
     newUserPost: state.newUserPost,
+    userInfo: state.userInfo,
   };
 };
 
-export default connect(mapStateToProps)(UserChallengePost);
+export default connect(mapStateToProps, { addUserInfoToPost })(UserChallengePost);

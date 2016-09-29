@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
-import Login from '../login/logIn';
+import Dropdown from './dropdown';
+import { getUserInfo } from '../actions/api';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,11 +18,15 @@ export default class Navbar extends Component {
   showCheatSheet() {
     this.setState({ showCheatSheet: !this.state.showCheatSheet });
   }
-  
+  componentWillMount() {
+    this.props.getUserInfo();
+  }
+
   render() {
+
     return (
       <div>
-        <nav className="navbar-fixed-top navbar navbar-light bg-faded">
+        <nav className="navbar navbar-light bg-faded">
         <div className="container">
 
         <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
@@ -29,8 +35,9 @@ export default class Navbar extends Component {
             <li><Link to="tutorial">TUTORIAL</Link></li>
             <li><Link to="user-challenges">CHALLENGES</Link></li>
             <li><Link to="post">POST</Link></li>
-            <li><Link><Login /></Link></li>
-
+            <Dropdown 
+              condition={this.props.userInfo}
+              userInfo={this.props.userInfo} />
           </ul>
           { this.state.showCheatSheet ? <Cheatsheet /> : null }
         </div>
@@ -42,3 +49,9 @@ export default class Navbar extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { userInfo: state.userInfo };
+};
+
+export default connect(mapStateToProps, { getUserInfo })(Navbar);

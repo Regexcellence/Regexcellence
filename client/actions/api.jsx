@@ -1,23 +1,5 @@
 import { cleanChallenge } from './helpers';
 
-export function userLogin() {
-  return (dispatch) => {
-    $.ajax('/regex/auth/github').then((response) => {
-      if (response.status === 200) {
-        dispatch({
-          type: 'LOGIN_USER_SUCCESS',
-          response,
-        });
-      } else {
-        dispatch({
-          type: 'LOGIN_USER_ERROR',
-          response,
-        });
-      }
-    });
-  };
-}
-
 export function postChallengeActionCreator(postInput) {
   console.log('Post Input: ', postInput);
   return (dispatch) => {
@@ -26,7 +8,7 @@ export function postChallengeActionCreator(postInput) {
     postInput = cleanChallenge(postInput);
     $.ajax({
       method: 'POST',
-      url: '/regex/challenges',
+      url: '/regex/challenges/new-challenge',
       contentType: 'application/json',
       data: JSON.stringify(postInput),
     }).then((data) => {
@@ -55,6 +37,77 @@ export function getAllChallenges() {
       dispatch({
         type: 'GET-CHALLENGES',
         payload: data,
+      });
+    });
+  };
+}
+
+export function getUserCompletedChallenges(userId) {
+  return (dispatch) => {
+    $.ajax(`/regex/challenges/user-completed?${userId}`).then((data) => {
+      dispatch({
+        type: 'STORE-USER-COMPLETED-CHALLENGES',
+        payload: data,
+      })
+    })
+  }
+}
+
+export function getUserAuthoredChallenges(userId) {
+  return (dispatch) => {
+    $.ajax(`/regex/user-info/authored-challenges?${userId}`).then((data) => {
+      dispatch({
+        type: 'STORE-USER-AUTHORED-CHALLENGES',
+        payload: data,
+      })
+    })
+  }
+}
+
+export function postNewChallengeAnswer(answer, challengeId, userId, username) {
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: `/regex/challenges/new-answer?${challengeId}`,
+      contentType: 'application/json',
+      data: JSON.stringify({ answer, userId, username }),
+    }).then(() => {
+      console.log('success in posting answer!!');
+    });
+  };
+}
+
+export function postCompletedChallenge(challengeId, userId) {
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: `/regex/challenges/completed-challenge?${userId}`,
+      contentType: 'application/json',
+      data: JSON.stringify({ challengeId }),
+    }).then(() => {
+      console.log('Posted to user db!')
+    })
+  }
+}
+
+export function getUserInfo() {
+  return (dispatch) => {
+    $.ajax('/regex/user-info').then((userInfo) => {
+      dispatch({
+        type: 'LOG-USER-INFO',
+        userInfo,
+      });
+    });
+  };
+}
+
+export function logOut() {
+  return (dispatch) => {
+    $.ajax('/regex/logout').then(() => {
+      window.location = '/';
+      //This redirect when logout solution may be temporary
+      dispatch({
+        type: 'LOGOUT',
       });
     });
   };

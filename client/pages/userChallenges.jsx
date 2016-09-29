@@ -10,7 +10,6 @@ class UserChallenges extends Component {
   }
   render() {
     if (this.props.challenges.length) {
-      console.log('***user challenges: ', this.props.challenges);
       return (
         <div>
           <div className="jumbotron clear-top">
@@ -25,7 +24,7 @@ class UserChallenges extends Component {
       );
     }
     else {
-      return <div>Loading</div>
+      return false;
     }
   }
 }

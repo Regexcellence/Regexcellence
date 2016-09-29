@@ -17,19 +17,22 @@ class ChallengeDescription extends Component {
     this.props.postChallengeInputUpdate(inputObject);
   }
   render() {
-    if (this.props.editable) {
+    const { editable } = this.props;
+    if (editable) {
       return (
         <div className="form-group post-form">
           <form>
-            <h3>Challenge Name</h3>
+            <h3>Challenge Name { editable ? <span id="post-requirements">*Required</span> : false }</h3>
             <input
               onChange={this.updateInput} name="name"
               value={this.props.name}
             />
+            <div>
+              { editable ? <Difficulty editable={editable} difficulty={this.props.difficulty}/> : null }
+            </div>
+            
 
-            <Difficulty difficulty={this.props.difficulty} editable={this.props.editable} />
-
-            <h4>Description:</h4>
+            <h4>Description: { editable ? <span id="post-requirements">*Required</span> : false }</h4>
             <textarea
               className="form-control"
               onChange={this.updateInput}

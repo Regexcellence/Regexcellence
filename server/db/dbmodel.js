@@ -10,7 +10,7 @@ const tutorialSchema = new Schema({
   nameurl: String,
   description: String,
   author: String,
-  difficulty: String,
+  difficulty: Number,
   testCases: [
     {
       case: String,
@@ -29,7 +29,8 @@ const challengeSchema = new Schema({
   nameurl: String,
   description: String,
   author: String,
-  difficulty: String,
+  authorId: String,
+  difficulty: Number,
   testCases: [
     {
       case: String,
@@ -40,11 +41,14 @@ const challengeSchema = new Schema({
     {
       answer: String,
       user: String,
+      userId: String
     }
   ]
 });
 
 const userSchema = new Schema({
+  _id: ObjectId,
+  gitHandle: String,
   githubId: Number,
   accessToken: String,
   refreshToken: String,
@@ -56,6 +60,9 @@ const userSchema = new Schema({
   bio: String,
   html_url: String,
   avatar_url: String,
+  authored_challenges: [],
+  completed_challenges: [],
+  tutorial_progress: String,
 });
 
 const Users = mongoose.model('Users', userSchema);

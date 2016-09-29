@@ -13,14 +13,12 @@ class Tutorial extends Component {
   }
   render() {
     if (this.props.tutorials.length) {
-      console.log('tutorials array', this.props.tutorials);
       let firstTutorial;
       this.props.tutorials.forEach((item) => {
         if (item.order === 0) {
           firstTutorial = item.nameurl;
         }
       });
-      console.log('pathname in tutorial ', this.props.location.pathname);
       if (this.props.location.pathname === '/tutorial') {
         return (
           <div className="clear-top">
@@ -42,7 +40,7 @@ class Tutorial extends Component {
         )
       }
     } else {
-      return <div>Loading...</div>;
+      return false;
     }
   }
 }

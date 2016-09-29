@@ -4,7 +4,9 @@ export function regexParser(input) {
     // To take off first forward slash.
     inputArr.shift();
     // To take off second forward slash plus any flags that may exist.
-    const pattern = inputArr.join('').replace(/\/.*$/, '');
+    let pattern = inputArr.join('').replace(/[a-z]*$/, '').split('');
+    pattern.pop();
+    pattern = pattern.join('');
     const flags = snagRegexFlags(input);
     return { pattern, flags };
 }
@@ -17,7 +19,7 @@ export function testCasesExtractor(parsedInput, challenge) {
       testPassed = false;
     }
   }
-  console.log('test result: ', testPassed);
+  //console.log('test result: ', testPassed);
   return Object.assign(
     {},
     challenge,

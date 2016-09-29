@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const handlers = require('./dbQueryHandler');
-const Tutorial = require('./dbmodel').Tutorial;
-const MONGO_URI = require('../../config').MONGO_URI;
-const parseChallengeName = require('../utils').parseChallengeName;
+const handlers = require('../dbQueryHandler');
+const Tutorial = require('../dbmodel').Tutorial;
+const MONGO_URI = require('../../../config').MONGO_URI;
+const parseChallengeName = require('../../utils').parseChallengeName;
 
 // Below is to fix deprecated mongoose promise.
 mongoose.Promise = global.Promise;
@@ -22,7 +22,7 @@ const addEntries = (data) => {
   });
 };
 
-fs.readFile(path.join(__dirname, 'tutorial.txt'), 'utf8', (err, data) => {
+fs.readFile(path.join(__dirname, '../tutorial.txt'), 'utf8', (err, data) => {
   if (err) throw err;
   const parsedData = JSON.parse(data);
   console.log(parsedData);

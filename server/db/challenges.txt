@@ -3,7 +3,7 @@
 	"name": "Spaces at the beginning and end of strings",
 	"description": "Write a regex that matches whitespace at the beginning and end of strings",
 	"author": "Troy",
-	"difficulty": "2",
+	"difficulty": 2,
 	"testCases": [
 	  { "case": " I have whitespace! ", "expectation": true },
 	  { "case": "I have more whitespace!   ", "expectation": true },
@@ -11,21 +11,92 @@
 	  { "case": "Did you say whitespace?", "expectation": false },
 	  { "case": "Naw", "expectation": false },
 	  { "case": "Remember me?", "expectation": false }
-	],
+	]
 },
 {
 	"name": "Use regex to validate regex!",
 	"description": "Ever wonder how that flag pops up at the bottom of the screen when you type in a badly formed regex? Yes, you guessed it, there's a regex testing your regex! How about trying to do one yourself?\n All you need to do is to make sure that the regular expression contains two forward slashes, and uses any or none at all of the appropriate flags at the end of the expression ('gimuy').",
 	"author": "Troy",
-	"difficulty": "2",
+	"difficulty": 2,
 	"testCases": [
 	  { "case": "/i'm a regex!/", "expectation": true },
 	  { "case": "/^whoop$/gim", "expectation": true },
-	  { "case": "/\/tryME\!/gimuy", "expectation": true },
+	  { "case": "/\\/tryME\\!/gimuy", "expectation": true },
 	  { "case": " /whitespace?/ ", "expectation": false },
-	  { "case": "/whatisthis\?/gg", "expectation": false },
+	  { "case": "/whatisthis\\?/gg", "expectation": false },
 	  { "case": "/heckno", "expectation": false },
 	  { "case": "heckno/gi", "expectation": false }
-	],
+	]
 },
+{
+	"name": "Find The Kitty",
+	"description": "Match the correct meows to catch Jazzy the cat =^.^= !",
+	"author": "Dana Li",
+	"difficulty": 2,
+	"testCases": [
+	  { "case": "meow", "expectation": true },
+	  { "case": "meooow", "expectation": true },
+	  { "case": "MEOWING Jazzy!", "expectation": true },
+	  { "case": "who meowed?", "expectation": false },
+	  { "case": "It's Jazzy!", "expectation": false }
+	]
+},
+{
+	"name": "Is it a letter?",
+	"description": "If the string contains an ASCII letter, then match it!",
+	"author": "Troy Gibb",
+	"difficulty": 1,
+	"testCases": [
+		{ "case": "knock-knock?", "expectation": true },
+		{ "case": "who's there?", "expectation": true },
+		{ "case": "Annoying digits", "expectation": true },
+		{ "case": "Annoying digits who?", "expectation": true },
+		{ "case": "123214124122", "expectation": false },
+		{ "case": "23423423098423", "expectation": false },
+		{ "case": "45983498534", "expectation": false },
+		{ "case": "34544", "expectation": false }
+	]
+},
+{
+	"name": "Are there duplicates?",
+	"description": "Match strings that contain duplicate letters.",
+	"author": "Troy Gibb",
+	"difficulty": 3,
+	"testCases": [
+	  { "case": "The cat goes meow", "expectation": true },
+	  { "case": "The dog barks", "expectation": false },
+	  { "case": "The cow goes moo", "expectation": true },
+	  { "case": "Supercalifragilisticexpialidocious", "expectation": true },
+	  { "case": "uncopyrightable", "expectation": false },
+	  { "case": "subdermatoglyphic", "expectation": false }
+	]
+},
+{
+  "name": "Match the kitties",
+	"description": "Match da cats, not the puppers",
+	"author": "Lucy",
+	"difficulty": 1,
+	"testCases": [
+		{ "case": "Maine Coon", "expectation": true },
+		{ "case": "Munchkin", "expectation": true },
+		{ "case": "American Shorthair", "expectation": true },
+		{ "case": "Bulldog", "expectation": false },
+		{ "case": "Pug", "expectation": false },
+		{ "case": "Corgi", "expectation": false }
+	]
+},
+{
+  "name": "No Comments",
+  "description": "Math the valid javascript comments",
+  "author": "Ben" ,
+  "difficulty": 2,
+  "testCases": [
+    {"case": "// San Francisco Makersquare!", "expectation": true},
+    {"case": "/* San Francisco Makersquare! */", "expectation": true},
+    {"case": "// Do it for the kitties!!", "expectation": true},
+    {"case": "/ / function getRegexcellence(cat) {return cat}", "expectation": false},
+    {"case": "/Hi*/Team*/Regexcellence*/", "expectation": false},
+    {"case": "supercalifragilisticexpialidocious", "expectation": false}
+  ]
+}
 ]

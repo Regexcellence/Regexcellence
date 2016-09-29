@@ -7,28 +7,84 @@ const Challenges = models.Challenges;
 
 const parseChallengeName = require('../utils').parseChallengeName;
 
-module.exports = {
-  getChallenges: (callback) => {
-    models.Challenges.find({}, (err, challenges) => {
-      if (err) throw err;
-      callback(challenges);
-    });
-  },
-  postChallenge: (challengeObject, callback) => {
-    challengeObject._id = mongoose.Types.ObjectId();
-    challengeObject.nameurl = parseChallengeName(challengeObject.name);
-    challengeObject.testPassed = false;
-    console.log(challengeObject);
-    const NewChallenge = new Challenges(challengeObject);
-    NewChallenge.save((err, newData) => {
-      if (err) throw err;
-      callback(newData);
-    });
-  },
-  getTutorial: (callback) => {
-    models.Tutorial.find({}, (err, tutorial) => {
-      if (err) throw err;
-      callback(tutorial);
-    });
-  },
+const dbQueryHandlers = {};
+
+dbQueryHandlers.getChallenges = (callback) => {
+  models.Challenges.find({}, (err, challenges) => {
+    if (err) throw err;
+    callback(challenges);
+  });
 };
+dbQueryHandlers.addToAuthoredChallenge = (challengeId, userId, callback) => {
+  models.Users.findOneAndUpdate({ _id: userId }, { $push: { authored_challenges: challengeId }}, { new: true }, (err, model) => { 
+    if (err) throw err;
+    callback(model);
+  });
+};
+dbQueryHandlers.postChallenge = (challengeObject, callback) => {
+  challengeObject._id = mongoose.Types.ObjectId();
+  challengeObject.nameurl = parseChallengeName(challengeObject.name);
+  const NewChallenge = new Challenges(challengeObject);
+  NewChallenge.save((err, newData) => {
+    if (err) throw err;
+    const userId = challengeObject.authorId;
+    dbQueryHandlers.addToAuthoredChallenge(newData._id, userId, () => {
+      callback(newData);
+    })
+  });
+};
+dbQueryHandlers.postChallengeAnswer = (data, query, callback) => {
+  console.log('in post challenge answer')
+  const answer = { 
+    answer: data.answer, 
+    user: data.username || 'Anonymous',
+    userId: data.userId || null
+  }
+  models.Challenges.findOneAndUpdate({ _id: query }, { $push: { answers: answer }}, { new: true }, (err, model) => {
+    if (err) throw err;
+    callback(model);
+  });
+};
+dbQueryHandlers.postCompletedChallenge = (challengeId, userId, callback) => {
+  models.Users.findOneAndUpdate({ _id: userId }, { $push: { completed_challenges: challengeId }}, { new: true }, (err, model) => {
+    if (err) throw err;
+    callback(model);
+  });
+};
+dbQueryHandlers.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
+  models.Users.find({ _id: userId }, (err, userData) => {
+    if (desiredProperty === 'completed_challenges') {
+      const completed_challenges = userData[0].completed_challenges.map((challengeId) => {
+        return mongoose.Types.ObjectId(challengeId);
+      });
+      Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
+        if (err) throw err;
+        callback(challenges);
+      });
+    } else if (desiredProperty === 'authored_challenges') {
+      const authored_challenges = userData[0].authored_challenges.map((challengeId) => {
+        return mongoose.Types.ObjectId(challengeId);
+      });
+      Challenges.find({ _id: { $in: authored_challenges }}, (err, challenges) => {
+        if (err) throw err;
+        callback(challenges);
+      });
+    }
+  });
+};
+dbQueryHandlers.getTutorial = (callback) => {
+  models.Tutorial.find({}, (err, tutorial) => {
+    if (err) throw err;
+    callback(tutorial);
+  });
+};
+dbQueryHandlers.getUserInfo = (_id, callback) => {
+  models.Users.findOne({ _id }, (err, data) => {
+    if (err) throw err;
+    callback(data);
+  });
+};
+
+
+module.exports = dbQueryHandlers;
+

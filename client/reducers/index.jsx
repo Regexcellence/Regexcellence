@@ -1,10 +1,11 @@
 import { inputValidator, resetWellFormedInput } from './inputValidation';
 import { updateChallenges, updateTutorials } from './updateChallenges';
 import { regexValidator } from './regexValidation';
-import { updatePostInput } from './postChallengeInputUpdate';
+import { updatePostInput, updatePostAuthor } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 import { toggleReveal } from './toggleReveal';
+import { logUserInfo, userLogout, storeCompletedChallenges, storeAuthoredChallenges } from './userHandler';
 
 const initialState = {
   challenges: [],
@@ -15,13 +16,15 @@ const initialState = {
   newUserPost: {
     name: '',
     author: 'User',
-    difficulty: '',
+    authorId: '',
+    difficulty: '1',
     description: '',
     testCases: [],
     testPassed: false,
     challengeType: 'new-challenge',
     authenticatedInput: false,
   },
+  userInfo: {},
 };
 
 const actionHandler = {
@@ -34,6 +37,11 @@ const actionHandler = {
   'POST-CHALLENGE': postNewChallenge,
   'TOGGLE-REVEAL-ANSWER': toggleReveal,
   'RESET-WELLFORMED-INPUT': resetWellFormedInput,
+  'LOG-USER-INFO': logUserInfo,
+  'LOGOUT': userLogout,
+  'STORE-USER-COMPLETED-CHALLENGES': storeCompletedChallenges,
+  'STORE-USER-AUTHORED-CHALLENGES': storeAuthoredChallenges,
+  'USERINFO-TO-POST': updatePostAuthor,
 };
 
 const reducer = (state = initialState, action) => {

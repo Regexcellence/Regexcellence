@@ -18,3 +18,23 @@
     border-radius: 0px;
   }
 }
+
+#difficulty-bar-outer {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  text-align: center;
+  float: right;
+}
+
+#difficulty-bar-inner {
+  height: 100%;
+  position: absolute;
+}
+
+#bar-text {
+  position: absolute;
+  margin: 7% 0 0 35%;
+  z-index: +2;
+}
