@@ -50,6 +50,10 @@ dbQueryHandlers.postCompletedChallenge = (challengeId, userId, callback) => {
 dbQueryHandlers.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
   models.Users.findOne({ _id: userId }, (err, userData) => {
     if (desiredProperty === 'completed_challenges') {
+      if (!userData.completed_challenges.length) {
+        callback(null);
+        return; 
+      }
       const completed_challenges = userData.completed_challenges.map((challengeId) => {
         return mongoose.Types.ObjectId(challengeId);
       });
@@ -58,6 +62,10 @@ dbQueryHandlers.findUserRelatedChallenges = (userId, desiredProperty, callback) 
         callback(challenges);
       });
     } else if (desiredProperty === 'authored_challenges') {
+      if (!userData.authored_challenges.length) {
+        callback(null);
+        return; 
+      }
       const authored_challenges = userData.authored_challenges.map((challengeId) => {
         return mongoose.Types.ObjectId(challengeId);
       });
