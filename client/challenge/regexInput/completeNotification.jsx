@@ -8,10 +8,14 @@ export default class Notification extends Component {
       isShown: true,
     }
     this.fadeOut = this.fadeOut.bind(this);
+    this.resetShown = this.resetShown.bind(this);
     this.slideBox = this.slideBox.bind(this);
   }
   fadeOut() {
     setTimeout(() => this.setState({ isShown: !this.state.isShown }), 4000)
+  }
+  resetShown() {
+    setTimeout(() => this.setState({ isShown: !this.state.isShown }), 1000)
   }
   slideBox() {
   	this.fadeOut();
