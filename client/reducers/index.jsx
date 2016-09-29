@@ -27,6 +27,11 @@ const initialState = {
   userInfo: {},
 };
 
+function test(prevState, action) {
+  console.log('in test!')
+  return Object.assign({}, prevState);
+}
+
 const actionHandler = {
   'INPUT-PATTERN-UPDATE': inputValidator,
   'TEST-REGEX': regexValidator,
@@ -42,6 +47,7 @@ const actionHandler = {
   'STORE-USER-COMPLETED-CHALLENGES': storeCompletedChallenges,
   'STORE-USER-AUTHORED-CHALLENGES': storeAuthoredChallenges,
   'USERINFO-TO-POST': updatePostAuthor,
+  'TEST': test,
 };
 
 const reducer = (state = initialState, action) => {
