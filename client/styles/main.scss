@@ -49,6 +49,22 @@ a:hover {
     margin-top: 1%;
     margin-left: 5px;
   }
+  .btn-group{
+    &.open .dropdown-toggle {
+    box-shadow: none;
+    background-color:  #F5F5F5;
+    }
+    .dropdown-toggle{
+      &:active{
+        background-color: #F5F5F5;
+      }
+      &:focus{
+        background-color: #F5F5F5;
+        color: #FF4C4D;
+        border-bottom: 1px solid #FF4C4D;
+      }
+    }
+  }
 }
 
 .nav-pills>li>a {
