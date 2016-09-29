@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import DifficultyBar from './difficultyBar';
 
 class ListItem extends Component {
-
   render() {
     const linkToChallenge = `user-challenges/${this.props.challengeId}`;
     const colors = {
@@ -22,11 +21,12 @@ class ListItem extends Component {
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item container">
-              {this.props.name.toUpperCase()}
-              <DifficultyBar
-                difficultyStyle={difficultyStyle}
-                difficulty={this.props.difficulty}
-              />
+            {console.log('LIST ITEM PROPS', this.props)}
+            {this.props.name.toUpperCase()}
+            <DifficultyBar
+              difficultyStyle={difficultyStyle}
+              difficulty={this.props.difficulty}
+            />
           </li>
         </Link>
       );
@@ -34,13 +34,13 @@ class ListItem extends Component {
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item">
-              <h3>{this.props.name.toUpperCase()}</h3>
-              <DifficultyBar
-                difficultyStyle={difficultyStyle}
-                difficulty={this.props.difficulty}
-              />
-              <span>by {this.props.author}</span>
-              <p>Match: {this.props.testCases[0] === undefined ? '' : this.props.testCases[0].case}</p>
+            <h3>{this.props.name.toUpperCase()}</h3>
+            <DifficultyBar
+              difficultyStyle={difficultyStyle}
+              difficulty={this.props.difficulty}
+            />
+            <span>by {this.props.author}</span>
+            <p>Match: {this.props.testCases[0] === undefined ? '' : this.props.testCases[0].case}</p>
           </li>
         </Link>
       );

@@ -16,7 +16,8 @@ class UserProfile extends React.Component {
   render() {
     const { userInfo } = this.props;
     const { completed_challenges } = userInfo;
-    if (this.props.userInfo === 'Not logged in!') {
+    console.log('USERINFO', userInfo);
+    if (userInfo === 'Not logged in!') {
       return (
         <div>
           <div className="container text-center not-logged-in">
@@ -24,19 +25,22 @@ class UserProfile extends React.Component {
           </div>
         </div>
       );
-    } else if (completed_challenges !== undefined) {
-      const completeLists = this.props.userInfo.completed_challenges.map((each) => {
-        return (
-          <ListItem
-            key={each._id}
-            challengeId={each._id}
-            name={each.name}
-            difficulty={each.difficulty}
-            testCases={null}
-          />
-        );
-      });
-
+    } else {
+      let completeLists = [];
+      if(typeof completed_challenges[0] === "object") {
+        console.log('CHALLENGES USERINFO', userInfo);
+        completeLists = completed_challenges.map((each, i) => {
+          return (
+            <ListItem
+              key={i}
+              challengeId={each._id}
+              name={each.name}
+              difficulty={each.difficulty}
+              testCases={null}
+            />
+          );
+        });
+      }
       return (
         <div className="user-profile">
           <div className="text-center">
@@ -76,8 +80,6 @@ class UserProfile extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return <div>waiting</div>;
     }
   }
 }
