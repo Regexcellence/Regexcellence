@@ -4,6 +4,7 @@ import { testRegexInput, inputActionCreator } from '../../actions/index';
 import InputValidationFlag from './inputValidationFlag';
 import TestPassedButton from './testPassedButton';
 import PostAuthentication from './postAuthentication';
+import Notification from './completeNotification.jsx';
 
 class InputRegexValidation extends React.Component {
   constructor(props) {
@@ -45,6 +46,11 @@ class InputRegexValidation extends React.Component {
             />
           </form>
           <InputValidationFlag wellFormedInput={this.props.wellFormedInput} />
+        <div>
+          <Notification 
+            testPassed={this.props.testPassed}
+          />
+        </div>
         </div>
       );
     } else {
