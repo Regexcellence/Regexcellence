@@ -49,6 +49,22 @@ a:hover {
     margin-top: 1%;
     margin-left: 5px;
   }
+  .btn-group{
+    &.open .dropdown-toggle {
+    box-shadow: none;
+    background-color:  #F5F5F5;
+    }
+    .dropdown-toggle{
+      &:active{
+        background-color: #F5F5F5;
+      }
+      &:focus{
+        background-color: #F5F5F5;
+        color: #FF4C4D;
+        border-bottom: 1px solid #FF4C4D;
+      }
+    }
+  }
 }
 
 .nav-pills>li>a {
@@ -111,7 +127,7 @@ a:hover {
 }
 
 .jumbotron {
-  min-margin-top: 90px;
+  margin-top: 2em;
   border: 1px solid #E3E3E3;
   padding-right: 10%;
   h1 {
@@ -167,9 +183,9 @@ input{
  outline: none;
 }
 
-.clear-top {
-  margin-top: 8%;
-}
+// .clear-top {
+//   margin-top: 8%;
+// }
 
 .tutorial-start {
   padding-bottom: 40px;
