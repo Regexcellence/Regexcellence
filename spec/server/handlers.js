@@ -1,4 +1,5 @@
 const assert = require('assert');
+const should = require('should');
 const http = require('http');
 const utils = require('../../server/utils');
 
