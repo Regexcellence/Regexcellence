@@ -12,7 +12,7 @@ class UserChallenges extends Component {
     if (this.props.challenges.length) {
       return (
         <div>
-          <div className="jumbotron clear-top">
+          <div className="jumbotron">
             <img className="banner-img" src="http://static1.squarespace.com/static/51a9aa9fe4b02f35a70e4fb5/52edec83e4b03137dd9c38c3/52f5763ee4b0021595ac9139/1391818331083/icon-illus-v2.png?format=300w" />
             <h1>
             Challenge Yourself !
