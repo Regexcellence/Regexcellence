@@ -14,6 +14,8 @@ class UserProfile extends React.Component {
   }
 
   render() {
+    const { userInfo } = this.props;
+    const { completed_challenges } = userInfo;
     if (this.props.userInfo === 'Not logged in!') {
       return (
         <div>
@@ -22,7 +24,7 @@ class UserProfile extends React.Component {
           </div>
         </div>
       );
-    } else if (this.props.userInfo.completed_challenges[0].name) {
+    } else if (completed_challenges !== undefined) {
       const completeLists = this.props.userInfo.completed_challenges.map((each) => {
         return (
           <ListItem
@@ -60,7 +62,7 @@ class UserProfile extends React.Component {
 
             <div className="row" id="complete-challenge">
               <h4>Completed Challenges</h4>
-              { completeLists }
+              { completed_challenges !== undefined ? completeLists : false }
             </div>
 
             <div className="row" id="tutorial-progress">

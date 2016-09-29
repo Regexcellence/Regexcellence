@@ -16,7 +16,7 @@ dbQueryHandlers.getChallenges = (callback) => {
   });
 };
 dbQueryHandlers.addToAuthoredChallenge = (challengeId, userId, callback) => {
-  models.Users.findOneAndUpdate({ _id: userId }, { $push: { authored_challenges: challengeId }}, { new: true }, (err, model) => { 
+  models.Users.findOneAndUpdate({ _id: userId }, { $push: { authored_challenges: challengeId }}, { new: true }, (err, model) => {
     if (err) throw err;
     callback(model);
   });
@@ -35,8 +35,8 @@ dbQueryHandlers.postChallenge = (challengeObject, callback) => {
 };
 dbQueryHandlers.postChallengeAnswer = (data, query, callback) => {
   console.log('in post challenge answer')
-  const answer = { 
-    answer: data.answer, 
+  const answer = {
+    answer: data.answer,
     user: data.username || 'Anonymous',
     userId: data.userId || null
   }
@@ -57,6 +57,10 @@ dbQueryHandlers.findUserRelatedChallenges = (userId, desiredProperty, callback) 
       const completed_challenges = userData[0].completed_challenges.map((challengeId) => {
         return mongoose.Types.ObjectId(challengeId);
       });
+      if (!completed_challenges) {
+        callback('No challenges!');
+        return;
+      }
       Challenges.find({ _id: { $in: completed_challenges }}, (err, challenges) => {
         if (err) throw err;
         callback(challenges);
@@ -87,4 +91,3 @@ dbQueryHandlers.getUserInfo = (_id, callback) => {
 
 
 module.exports = dbQueryHandlers;
-
