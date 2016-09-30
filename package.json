@@ -4,7 +4,7 @@
   "description": "Version 0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "env; mocha spec/server/*.js",
+    "test": "mocha spec/server/*.js",
     "start": "node index.js",
     "postinstall": "webpack",
     "production": "node index.js",
