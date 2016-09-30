@@ -1,3 +1,8 @@
 machine:
   node:
     version: node
+deployment:
+  staging:
+    branch: dev
+    heroku:
+      appname: regexcellence-dev
