@@ -1,7 +1,7 @@
 const should = require('should');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const MONGO_URI = process.env.MONGO_URL || require('../../config').MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI || require('../../config').MONGO_URI;
 mongoose.connect(MONGO_URI);
 
 const model = require('../../server/db/dbmodel');
