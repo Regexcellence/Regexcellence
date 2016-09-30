@@ -13,9 +13,9 @@ const addToAuthoredChallenge = require('../userHandlers').addToAuthoredChallenge
 // Below is to fix deprecated mongoose promise.
 mongoose.Promise = global.Promise;
 const db = mongoose.connect(MONGO_URI);
+const team = ['bbtran', 'troygibb', 'hellodanali', 'lwonsower'];  
 
 const findTeamMembers = (callback) => {
-  const team = ['bbtran', 'troygibb', 'hellodanali', 'lwonsower'];  
   Users.find({}, (err, userArray) => {
     console.log(userArray);
     const teamMembers = userArray.filter(user => team.indexOf(user.gitHandle) > -1);
@@ -32,7 +32,12 @@ const addEntries = (data) => {
     data.forEach((challenge) => {
       challenge._id = mongoose.Types.ObjectId();
       challenge.nameurl = parseChallengeName(challenge.name);
-      const currentTeamMember = teamMemberArray[teamIndex];
+      const currentTeamMember = teamMemberArray.reduce((prev, curr) => {
+        if (curr.author === challenge.author) {
+          return curr; 
+        }
+        return prev; 
+      }, {});
       challenge.author = currentTeamMember.author;
       challenge.authorId = currentTeamMember.authorId;
       const NewChallenge = new Challenges(challenge);
