@@ -14,8 +14,11 @@ class InputRegexValidation extends React.Component {
   }
 
   componentDidMount(){
-    ReactDOM.findDOMNode(this.refs.regexInput).focus();
-    this.refs.regexInput.setSelectionRange(1,1);
+    const { authenticatedInput, editable } = this.props;
+    if (authenticatedInput || !editable) {
+      ReactDOM.findDOMNode(this.refs.regexInput).focus();
+      this.refs.regexInput.setSelectionRange(1,1);
+    }
   }
 
   changeInputState(event) {
@@ -43,7 +46,6 @@ class InputRegexValidation extends React.Component {
               placeholder="enter your pattern here..."
               value={this.props.input ? this.props.input : '//'}
               onChange={this.changeInputState} 
-              
             />
             <TestPassedButton
               nextUrl={this.props.nextUrl}

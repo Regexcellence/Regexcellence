@@ -28,7 +28,7 @@ class ChallengeDescription extends Component {
               value={this.props.name}
             />
             <div>
-              { editable ? <Difficulty editable={editable} difficulty={this.props.difficulty}/> : null }
+              { editable ? <Difficulty editable={editable} difficulty={this.props.difficulty}/> : false }
             </div>
 
             <h4>Description: { editable ? <span id="post-requirements">*Required</span> : false }</h4>

@@ -1,8 +1,29 @@
 const should = require('should');
-const request = require('request');
+
+// describe('Circle CI environment variables should be set up', () => {
+// 	it('Should have env variable CIRCLECI', () => {
+// 		process.env.CIRCLECI.should.be.ok;
+// 		process.env.CI.should.be.ok;
+// 	})
+// })
+
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const MONGO_URI = process.env.MONGO_URL || require('../../config').MONGO_URI;
+//const MONGO_URI = process.env.MONGO_URI || require('../../config').MONGO_URI;
+let MONGO_URI = '';
+try {
+	MONGO_URI = require('../../config').MONGO_URI;
+} 
+catch(err) {
+	if (process.env.CIRCLECI) {
+		console.log("I'm in circle!")
+	}
+	MONGO_URI = process.env.MONGO_URI;
+	console.log('No config file, new mongo_uri is ', MONGO_URI);
+}
+
+
 mongoose.connect(MONGO_URI);
 
 const model = require('../../server/db/dbmodel');
@@ -222,3 +243,5 @@ describe('Database Handlers', () => {
 //   	callback(newUser);
 //   });
 // };
+
+
