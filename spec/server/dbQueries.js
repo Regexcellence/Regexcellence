@@ -12,6 +12,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //const MONGO_URI = process.env.MONGO_URI || require('../../config').MONGO_URI;
 let MONGO_URI = '';
+
 try {
 	MONGO_URI = require('../../config').MONGO_URI;
 } 
