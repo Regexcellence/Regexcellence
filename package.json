@@ -4,14 +4,14 @@
   "description": "Version 0.0.0",
   "main": "index.js",
   "scripts": {
-    "devStart": "webpack-dev-server --content-base build/",
-    "test": "mocha -w spec/helpers/browser.js spec/*.test.js",
+    "test": "mocha spec/server/*.js",
     "start": "node index.js",
     "postinstall": "webpack",
     "production": "node index.js",
     "build": "webpack",
     "test:lint": "eslint . --ext .js --ext .jsx --cache",
     "test:server": "mocha spec/server/*.js",
+    "devStart": "webpack-dev-server --content-base build/",
     "db": "mongo ds147975.mlab.com:47975/db_reg -u teamUser -p regOrDie"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.16.3",
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.10",
     "css-loader": "^0.25.0",
