@@ -16,9 +16,10 @@ try {
 	MONGO_URI = require('../../config').MONGO_URI;
 } 
 catch(err) {
-	console.log('No config file')
 	MONGO_URI = process.env.MONGO_URI;
+	console.log('No config file, new mongo_uri is ', MONGO_URI);
 }
+
 
 mongoose.connect(MONGO_URI);
 
