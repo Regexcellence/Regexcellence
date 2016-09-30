@@ -88,7 +88,7 @@
 	background-color: #d3ecb0;
 	height: 8%;
 	width: 100%;
-	margin-top: 1%;
+	margin-top: 2%;
 	color: #FFF;
 	font-weight: bold;
 	font-size: 40px;
@@ -98,19 +98,22 @@
 }
 
 .reveal-btn {
-  background-color: #FFF;
+  background-color: #17A6B6;
+  color: #FFF;
   margin-left: 40%;
   margin-right: 40%;
   padding: 0.5em;
-  margin-top: 1em;
-  border: 1px solid #d3ecb0;
+  margin-top: 0.8em;
+  // border: 1px solid #d3ecb0;
+  border: none;
   font-size: 14px;
 }
 
 
-// .reveal{
-//   margin-top: 0.5em;
-//   color: grey;
-//   background-color: #d3ecb0
-// }
+.reveal{
+  margin-top: 0.5em;
+  padding: 0.5em;
+  color: grey;
+  background-color: #f7f9be;
+}
 
