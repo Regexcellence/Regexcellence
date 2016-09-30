@@ -11,6 +11,7 @@
     "production": "node index.js",
     "build": "webpack",
     "test:lint": "eslint . --ext .js --ext .jsx --cache",
+    "test:server": "mocha spec/server/*.js",
     "db": "mongo ds147975.mlab.com:47975/db_reg -u teamUser -p regOrDie"
   },
   "repository": {
