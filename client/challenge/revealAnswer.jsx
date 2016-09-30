@@ -29,13 +29,13 @@ class RevealAnswer extends React.Component {
         if (this.props.revealAnswer) {
             const { explanation, answer } = this.props.answers;
             return (
-                <div>
+                <div className="reveal">
                     <span>{answer}</span>
                     <span>{explanation}</span>
                 </div>
             )
         } else {
-            return <button onClick={this.revealTutorialAnswer}>Reveal Answer</button>
+            return <button className="reveal-btn" onClick={this.revealTutorialAnswer}>Reveal Answer</button>
         }
     }
     return false; 

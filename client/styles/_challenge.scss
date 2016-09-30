@@ -85,17 +85,32 @@
 }
 
 #congrats-box {
-	background-color: #E27A78;
+	background-color: #d3ecb0;
 	height: 8%;
-	width: 57.5%;
-	margin-top: .1%;
+	width: 100%;
+	margin-top: 1%;
 	color: #FFF;
 	font-weight: bold;
 	font-size: 40px;
 	text-align: center;
-	position: absolute;
+	position: relative;
 	z-index: +10;
 }
 
+.reveal-btn {
+  background-color: #FFF;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 0.5em;
+  margin-top: 1em;
+  border: 1px solid #d3ecb0;
+  font-size: 14px;
+}
 
+
+// .reveal{
+//   margin-top: 0.5em;
+//   color: grey;
+//   background-color: #d3ecb0
+// }
 
