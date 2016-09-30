@@ -68,7 +68,7 @@ exports.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
     if (desiredProperty === 'completed_challenges') {
       if (!userData.completed_challenges.length) {
         callback(null);
-        return; 
+        return;
       }
       const completed_challenges = userData.completed_challenges.map((challengeId) => {
         return mongoose.Types.ObjectId(challengeId);
@@ -80,7 +80,7 @@ exports.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
     } else if (desiredProperty === 'authored_challenges') {
       if (!userData.authored_challenges.length) {
         callback(null);
-        return; 
+        return;
       }
       const authored_challenges = userData.authored_challenges.map((challengeId) => {
         return mongoose.Types.ObjectId(challengeId);
@@ -92,3 +92,9 @@ exports.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
     }
   });
 };
+
+// exports.findUserRelatedChallenges = (userId, callback) => {
+//   models.Users.findOne({ _id: userId }, (error, userData) => {
+//
+//   });
+// };
