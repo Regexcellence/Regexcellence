@@ -1,5 +1,4 @@
 const should = require('should');
-const request = require('request');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const MONGO_URI = process.env.MONGO_URL || require('../../config').MONGO_URI;
