@@ -17,8 +17,8 @@ class RevealAnswer extends React.Component {
       const { answers, testPassed } = this.props.challengeInfo; 
       if (testPassed) {
         return (
-            <div>
-              Previous Answers: 
+            <div className="reveal">
+              <p className="lead">Previous Answers:</p>
               {answers.map((answer) => {
                 return <span key={uuid.v4()}>{answer.answer} </span>
               })}
@@ -29,13 +29,13 @@ class RevealAnswer extends React.Component {
         if (this.props.revealAnswer) {
             const { explanation, answer } = this.props.answers;
             return (
-                <div>
-                    <span>{answer}</span>
-                    <span>{explanation}</span>
+                <div className="reveal">
+                    <p className="lead">One possible answer: {answer}</p>
+                    <p>{explanation}</p>
                 </div>
             )
         } else {
-            return <button onClick={this.revealTutorialAnswer}>Reveal Answer</button>
+            return <button className="reveal-btn" onClick={this.revealTutorialAnswer}>Reveal Answer</button>
         }
     }
     return false; 

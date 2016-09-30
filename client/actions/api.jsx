@@ -67,18 +67,6 @@ export function getUserCompletedChallenges(userId) {
   };
 }
 
-// export function getUserCompletedChallenges(userId) {
-//   return (dispatch) => {
-//     $.ajax(`/regex/challenges/user-completed?${userId}`).then((data) => {
-//       dispatch({
-//         type: 'STORE-USER-COMPLETED-CHALLENGES',
-//         payload: data,
-//       });
-//     });
-//   };
-// }
-//
-
 export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   return (dispatch) => {
     $.ajax({
@@ -101,8 +89,8 @@ export function postCompletedChallenge(challengeId, userId) {
       data: JSON.stringify({ challengeId }),
     }).then(() => {
       console.log('Posted to user db!')
-    })
-  }
+    });
+  };
 }
 
 export function getUserInfo() {

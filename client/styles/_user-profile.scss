@@ -3,7 +3,7 @@
 }
 
 .not-logged-in{
-  h2{   
+  h2{
     border: 5px solid #FF4C4D;
     padding: 1em;
     color: #FF4C4D;
@@ -48,4 +48,20 @@ table{
 #contributions{
   color: #565A5C;
   background-color: #9ad2cb;
+  li.list-group-item.container{
+    width:100%;
+    padding-left: 5em;
+    padding-right: 5em;
+    text-align: left;
+  #difficulty-bar-outer.pull-right{
+    height: 1.5em;
+    margin-button: 1%;
+  }
+  #difficulty-bar-inner{
+    height: 1.5em;
+  }
+  #bar-text{
+    margin: 1% 0 0 35%;
+  }
+  }
 }
