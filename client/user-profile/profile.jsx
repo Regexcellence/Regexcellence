@@ -8,13 +8,16 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props);
   }
-
   componentWillMount() {
-    this.props.getUserCompletedChallenges(this.props.userInfo._id);
+    if (this.props.userInfo._id) {
+      this.props.getUserCompletedChallenges(this.props.userInfo._id);
+    }
   }
-
   render() {
-    if (this.props.userInfo === 'Not logged in!') {
+    const { userInfo } = this.props;
+    const { completed_challenges, authored_challenges } = userInfo;
+    console.log('USERINFO', userInfo);
+    if (!Object.keys(userInfo).length) {
       return (
         <div>
           <div className="container text-center not-logged-in">
@@ -22,19 +25,39 @@ class UserProfile extends React.Component {
           </div>
         </div>
       );
-    } else if (this.props.userInfo.completed_challenges[0].name) {
-      const completeLists = this.props.userInfo.completed_challenges.map((each) => {
-        return (
-          <ListItem
-            key={each._id}
-            challengeId={each._id}
-            name={each.name}
-            difficulty={each.difficulty}
-            testCases={null}
-          />
-        );
-      });
-
+    } else {
+      let completeLists = [];
+      let authoredList = [];
+      console.log('CHALLENGES USERINFO BEFORE', completed_challenges);
+      if (typeof completed_challenges[0] === 'object') {
+        completeLists = completed_challenges.map((each, i) => {
+          console.log('CHALLENGES USERINFO', completed_challenges);
+          return (
+            <ListItem
+              key={i}
+              challengeId={each._id}
+              name={each.name}
+              difficulty={each.difficulty}
+              testCases={null}
+            />
+          );
+        });
+      }
+      console.log('AUTHORED USERINFO BEFORE', authored_challenges);
+      if (typeof authored_challenges[0] === 'object') {
+        authoredList = authored_challenges.map((item, indx) => {
+          console.log('AUTHORED USERINFO', authored_challenges);
+          return (
+            <ListItem
+              key={indx}
+              challengeId={item._id}
+              name={item.name}
+              difficulty={item.difficulty}
+              testCases={null}
+            />
+          );
+        });
+      }
       return (
         <div className="user-profile">
           <div className="text-center">
@@ -60,7 +83,7 @@ class UserProfile extends React.Component {
 
             <div className="row" id="complete-challenge">
               <h4>Completed Challenges</h4>
-              { completeLists }
+              { completed_challenges !== undefined ? completeLists : false }
             </div>
 
             <div className="row" id="tutorial-progress">
@@ -69,13 +92,12 @@ class UserProfile extends React.Component {
 
             <div className="row" id="contributions">
               <h4>Contributions</h4>
+              { authored_challenges !== undefined ? authoredList : false }
             </div>
 
           </div>
         </div>
       );
-    } else {
-      return <div>waiting</div>;
     }
   }
 }
@@ -84,7 +106,7 @@ UserProfile.propTypes = {
   getUserCompletedChallenges: React.PropTypes.func,
   userInfo: React.PropTypes.shape({
     _id: React.PropTypes.string,
-    completed_challenges: React.PropTypes.array,
+    completed_challenges: React.PropTypes.array || React.PropTypes.string,
     avatar_url: React.PropTypes.string,
     name: React.PropTypes.string,
   }),

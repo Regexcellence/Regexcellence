@@ -30,8 +30,8 @@ body {
   cursor: pointer;
   font-weight: bold;
   padding: 20px 20px 20px 10px;
-  :hover {
-    color: #000;
+  &:hover {
+    color: #17A6B6;
   }
   &:visited {
     color: #000;
@@ -43,11 +43,28 @@ a:hover {
 }
 
 .navbar {
+  cursor: pointer;
   background-color: rgba(245,245,245,.8);
   min-height: 13%;
   .navbar-brand {
     margin-top: 1%;
     margin-left: 5px;
+  }
+  .btn-group{
+    &.open .dropdown-toggle {
+    box-shadow: none;
+    background-color:  #F5F5F5;
+    }
+    .dropdown-toggle{
+      &:active{
+        background-color: #F5F5F5;
+      }
+      &:focus{
+        background-color: #F5F5F5;
+        color: #FF4C4D;
+        border-bottom: 1px solid #FF4C4D;
+      }
+    }
   }
 }
 
@@ -106,14 +123,44 @@ a:hover {
   :hover {
     background-color: #FFF;
     background-image: none;
+    background: transparent;
     color: #17A6B6;
   }
 }
 
+.dropdown-menu{
+  border-radius: 0px;
+  box-shadow: none;
+  &>.active>a{
+    background-color: white;
+    background-image: none;
+    color: #FF4C4D;
+      &:hover{
+        background-color: transparent;
+        background-image: none;
+        background: transparent;
+        // color: #17A6B6;
+        color: #17A6B6;
+      }
+      &:focus{
+        background-color: transparent;
+        background-image: none;
+        background: transparent;
+        color: #FF4C4D;
+      }
+  }
+  &>li>a{
+    &:hover{
+      color: #17A6B6;
+      background: transparent;
+    }
+  }
+}
+
 .jumbotron {
-  min-margin-top: 90px;
+  margin-top: 2em;
   border: 1px solid #E3E3E3;
-  padding-right: 10%;
+  padding-right: 1%;
   h1 {
     font-size: 40px;
     font-weight: bold;
@@ -151,7 +198,7 @@ a:hover {
 
 .challenge {
   background-color: #FFF;
-  width: 60%;
+  width: 80%;
   margin: auto;
   padding: 15px;
 }
@@ -165,10 +212,6 @@ a:hover {
 input{
  box-shadow: none;
  outline: none;
-}
-
-.clear-top {
-  margin-top: 8%;
 }
 
 .tutorial-start {
@@ -194,6 +237,37 @@ input{
     float: left;
     z-index: +3;
   }
+}
+
+
+// 初期マウント時のtransition
+.slide-appear {
+  opacity    : 0;
+  transition : opacity .7s ease-in;
+}
+
+.slide-appear.slide-appear-active {
+  opacity : 1;
+}
+
+// componentがCSSTransitionGroup Component以下に新たに追加されたとき
+.slide-enter {
+  max-height : 0;
+  transition : all .3s ease-in;
+}
+
+.slide-enter.slide-enter-active {
+  max-height : 1000px;
+}
+
+// componentがCSSTransitionGroup Component以下から削除されたとき
+.slide-leave {
+  max-height : 1000px;
+  transition : all .3s ease-out;
+}
+
+.slide-leave.slide-leave-active {
+  max-height : 0;
 }
 
 

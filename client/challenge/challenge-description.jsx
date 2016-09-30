@@ -30,7 +30,6 @@ class ChallengeDescription extends Component {
             <div>
               { editable ? <Difficulty editable={editable} difficulty={this.props.difficulty}/> : null }
             </div>
-            
 
             <h4>Description: { editable ? <span id="post-requirements">*Required</span> : false }</h4>
             <textarea
@@ -46,7 +45,10 @@ class ChallengeDescription extends Component {
       return (
         <div className="challenge-header">
           <h3>{this.props.name}</h3>
-          <Difficulty difficulty={this.props.difficulty} />
+          <Difficulty 
+            difficulty={this.props.difficulty}
+            challengeType ={this.props.challengeType}
+          />
           <p>{this.props.description}</p>
         </div>
       );

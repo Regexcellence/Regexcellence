@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Link } from 'react-router';
-import { Popover, OverlayTrigger } from 'react-bootstrap';
 
 import { inputActionCreator } from '../../actions/index';
 import { postChallengeActionCreator, postNewChallengeAnswer, postCompletedChallenge } from '../../actions/api';

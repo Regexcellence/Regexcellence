@@ -48,17 +48,15 @@ const challengeSchema = new Schema({
 
 const userSchema = new Schema({
   _id: ObjectId,
-  gitHandle: String,
+  gitHandle: {
+    type: String,
+    required: true
+  },
   githubId: Number,
   accessToken: String,
   refreshToken: String,
   name: String,
   created: Date,
-  company: String,
-  blog: String,
-  location: String,
-  bio: String,
-  html_url: String,
   avatar_url: String,
   authored_challenges: [],
   completed_challenges: [],

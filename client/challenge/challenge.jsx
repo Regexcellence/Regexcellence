@@ -6,6 +6,7 @@ import ChallengeDescription from './challenge-description';
 import Cheatsheet from '../pages/cheatsheet';
 import RevealAnswer from './revealAnswer';
 
+
 import { inputActionCreator, resetWellFormedInput } from '../actions/index';
 
 class Challenge extends Component {
@@ -27,7 +28,7 @@ class Challenge extends Component {
     const challengeInfo = this.props.challengeInfo;
     const nextUrl = this.props.nextUrl;
     return (
-      <div className="challenge">
+      <div className="challenge container">
         <div>
           <span
             onClick={this.showCheatSheet}
@@ -42,6 +43,7 @@ class Challenge extends Component {
           name={this.props.challengeInfo.name}
           description={this.props.challengeInfo.description}
           difficulty={this.props.challengeInfo.difficulty}
+          challengeType={this.props.challengeInfo.challengeType}
           editable={this.props.editable}
         />
         <TestCaseList

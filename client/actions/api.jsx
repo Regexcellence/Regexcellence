@@ -20,14 +20,15 @@ export function postChallengeActionCreator(postInput) {
   };
 }
 
-export function getAllTutorials() {
+export function getAllTutorials(dispatch) {
   return (dispatch) => {
     $.ajax('/regex/tutorial').then((data) => {
+      console.log(data);
       dispatch({
         type: 'GET-TUTORIALS',
         payload: data,
       });
-    });
+    })
   };
 }
 
@@ -37,9 +38,16 @@ export function getAllChallenges() {
       dispatch({
         type: 'GET-CHALLENGES',
         payload: data,
-      });
+      })
+    }).then(() => {
+      console.log('getting tutorials...')
+      getAllTutorials(dispatch)
     });
   };
+}
+
+function getUserAuthoredChallenges(userId) {
+  return $.ajax(`/regex/user-info/authored-challenges?${userId}`);
 }
 
 export function getUserCompletedChallenges(userId) {
@@ -48,21 +56,28 @@ export function getUserCompletedChallenges(userId) {
       dispatch({
         type: 'STORE-USER-COMPLETED-CHALLENGES',
         payload: data,
-      })
-    })
-  }
-}
-
-export function getUserAuthoredChallenges(userId) {
-  return (dispatch) => {
-    $.ajax(`/regex/user-info/authored-challenges?${userId}`).then((data) => {
+      });
+      return getUserAuthoredChallenges(userId);
+    }).then((data) => {
       dispatch({
         type: 'STORE-USER-AUTHORED-CHALLENGES',
         payload: data,
-      })
-    })
-  }
+      });
+    });
+  };
 }
+
+// export function getUserCompletedChallenges(userId) {
+//   return (dispatch) => {
+//     $.ajax(`/regex/challenges/user-completed?${userId}`).then((data) => {
+//       dispatch({
+//         type: 'STORE-USER-COMPLETED-CHALLENGES',
+//         payload: data,
+//       });
+//     });
+//   };
+// }
+//
 
 export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   return (dispatch) => {

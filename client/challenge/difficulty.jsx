@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { postChallengeInputUpdate } from '../actions/index';
+import DifficultyBar from '../userChallenges/difficultyBar';
 
 class Difficulty extends React.Component {
 	constructor(props) {
@@ -16,6 +17,18 @@ class Difficulty extends React.Component {
 		this.props.postChallengeInputUpdate(inputObject);
 	}
 	render() {
+		  const colors = {
+      1: '#9ad2cb',
+      2: '#d3ecb0',
+      3: '#f7f9be',
+      4: '#ebd494',
+      5: '#E27A78',
+    };
+    const difficultyStyle = {
+      backgroundColor: colors[`${this.props.difficulty}`],
+      width: (`${this.props.difficulty}` * 20) + '%',
+    };
+    console.log(this.props.challengeType)
 		if (this.props.editable) {
 			return (
 				<div>
@@ -34,7 +47,12 @@ class Difficulty extends React.Component {
 				</div>
 			);
 		} else {
-			return <h3>{this.props.difficulty}</h3>;
+			return this.props.challengeType === "challenge" ? (
+				<div className="challenge-view-difficulty-bar" id="difficulty-bar-outer" title="Level">
+          <div id="bar-text"><b>LEVEL {this.props.difficulty}</b></div>
+          <div id="difficulty-bar-inner" style={difficultyStyle} />
+        </div>
+        ) : null;
 		}
 	}
 }
