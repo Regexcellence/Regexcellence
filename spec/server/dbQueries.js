@@ -7,6 +7,7 @@ describe('Circle CI environment variables should be set up', () => {
 	})
 })
 
+/*
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const MONGO_URI = process.env.MONGO_URI || require('../../config').MONGO_URI;
@@ -229,3 +230,5 @@ describe('Database Handlers', () => {
 //   	callback(newUser);
 //   });
 // };
+
+*/
