@@ -15,7 +15,7 @@
 }
 
 .case-text {
-	font-size: 30px;
+	font-size: 1.8em;//30px
 	display: inline;
 	color: gray;
 }
@@ -41,9 +41,11 @@
   }
 }
 .table {
-	th {
-		font-size: 20px;
-	}
+  th {
+    font-size: 1.8em;
+  }
+
+
 }
 
 .challenge-view-difficulty-bar {
