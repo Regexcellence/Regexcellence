@@ -28,7 +28,7 @@ class Challenge extends Component {
     const challengeInfo = this.props.challengeInfo;
     const nextUrl = this.props.nextUrl;
     return (
-      <div className="challenge">
+      <div className="challenge container">
         <div>
           <span
             onClick={this.showCheatSheet}

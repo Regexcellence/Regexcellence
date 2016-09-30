@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { testRegexInput, inputActionCreator } from '../../actions/index';
 import InputValidationFlag from './inputValidationFlag';
@@ -10,32 +11,39 @@ class InputRegexValidation extends React.Component {
   constructor(props) {
     super(props);
     this.changeInputState = this.changeInputState.bind(this);
-    this.addSlashes = this.addSlashes.bind(this);
   }
-  addSlashes(event) {
-    if (!event.target.value.length) {
-      this.props.inputActionCreator('//');
-    }
+
+  componentDidMount(){
+    ReactDOM.findDOMNode(this.refs.regexInput).focus();
+    this.refs.regexInput.setSelectionRange(1,1);
   }
+
   changeInputState(event) {
     event.preventDefault();
     const newInput = event.target.value;
+    if(this.refs.regexInput.value==='//'){
+      ReactDOM.findDOMNode(this.refs.regexInput).focus();
+      this.refs.regexInput.setSelectionRange(1,1);
+    }
     this.props.inputActionCreator(newInput);
     this.props.testRegexInput(this.props.challengeId, newInput, this.props.challengeType);
   }
+
   render() {
     const { editable } = this.props;
     const { authenticatedInput } = this.props.newUserPost;
     if (!editable || authenticatedInput) {
       return (
         <div>
+          <h3>Regex Pattern:</h3>
           <form id="input-pattern" className="input-group">
             <input
+              ref="regexInput"
               className="form-control"
               placeholder="enter your pattern here..."
-              value={this.props.input}
-              onChange={this.changeInputState}
-              onFocus={this.addSlashes}
+              value={this.props.input ? this.props.input : '//'}
+              onChange={this.changeInputState} 
+              
             />
             <TestPassedButton
               nextUrl={this.props.nextUrl}
