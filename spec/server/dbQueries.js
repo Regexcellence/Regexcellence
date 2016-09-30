@@ -16,6 +16,9 @@ try {
 	MONGO_URI = require('../../config').MONGO_URI;
 } 
 catch(err) {
+	if (process.env.CIRCLECI) {
+		console.log("I'm in circle!")
+	}
 	MONGO_URI = process.env.MONGO_URI;
 	console.log('No config file, new mongo_uri is ', MONGO_URI);
 }
