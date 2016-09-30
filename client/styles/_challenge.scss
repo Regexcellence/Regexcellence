@@ -24,6 +24,7 @@
   font-weight: bold;
   display: inline;
 }
+
 .malformed {
   background-color: #FF4C4D;
   height: 50px;
@@ -33,6 +34,7 @@
   border-radius: 0;
   border: none;
 }
+
 #input-pattern {
 	position: relative;
   width: 100%;
@@ -40,12 +42,12 @@
   	font-weight: 600;
   }
 }
-.table {
+.table{
   th {
     font-size: 1.8em;
   }
-
-
+  td{
+  }
 }
 
 .challenge-view-difficulty-bar {

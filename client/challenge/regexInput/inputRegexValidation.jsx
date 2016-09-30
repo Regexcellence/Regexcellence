@@ -36,8 +36,7 @@ class InputRegexValidation extends React.Component {
       return (
         <div>
           <form id="input-pattern" className="input-group">
-            <hr></hr>
-            <h3>Regex Pattern:</h3>
+            <label><h3>Regex Pattern:</h3></label>
             <input
               ref="regexInput"
               className="form-control"
