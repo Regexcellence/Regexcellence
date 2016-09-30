@@ -47,7 +47,7 @@ export function getAllChallenges() {
 }
 
 function getUserAuthoredChallenges(userId) {
-  $.ajax(`/regex/user-info/authored-challenges?${userId}`);
+  return $.ajax(`/regex/user-info/authored-challenges?${userId}`);
 }
 
 export function getUserCompletedChallenges(userId) {
