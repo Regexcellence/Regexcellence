@@ -1,7 +1,7 @@
 const should = require('should');
 const request = require('request');
 
-xdescribe('Requesting Challenge and Tutorial Data', () => {
+describe('Requesting Challenge and Tutorial Data', () => {
 	describe('Challenges', () => {
 		it('Should respond with a Challenges Array', (done) => {
 			request('http://localhost:3000/regex/challenges', (err, response, body) => {

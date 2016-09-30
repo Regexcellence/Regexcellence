@@ -23,7 +23,10 @@ dbQueryHandler.postChallenge = (challengeObject, callback) => {
   challengeObject.nameurl = parseChallengeName(challengeObject.name);
   const NewChallenge = new Challenges(challengeObject);
   NewChallenge.save((err, newData) => {
-    if (err) throw err;
+    if (err){
+      callback(null, err);
+      return; 
+    } 
     const userId = challengeObject.authorId;
     userHandlers.addToAuthoredChallenge(newData._id, userId, () => {
       callback(newData);

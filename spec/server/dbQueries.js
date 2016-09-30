@@ -68,9 +68,11 @@ describe('Database Handlers', () => {
 	}); 
 
 	describe('Challenge Handlers', () => {
+		const postChallenge = dbQueryHandler.postChallenge;
+		const getChallenges = dbQueryHandler.getChallenges;
+		const postChallengeAnswer = dbQueryHandler.postChallengeAnswer;
 		describe('Getting Challenge Data', () => {
 			it('getChallenges: Should return all the challenges currently in db', (done) => {
-				const getChallenges = dbQueryHandler.getChallenges;
 				should.exist(getChallenges);
 				getChallenges((challenges) => {
 					challenges.should.be.instanceOf(Array);
@@ -91,7 +93,6 @@ describe('Database Handlers', () => {
 				});
 			});
 			it('postChallenge: Should be able to post challenges', (done) => {
-				const postChallenge = dbQueryHandler.postChallenge;
 				should.exist(postChallenge);
 				postChallenge(abc_challenge, (newChallenge) => {
 					newChallenge.should.be.instanceOf(Object);
@@ -102,8 +103,17 @@ describe('Database Handlers', () => {
 					done();
 				});
 			});
+			xit("postChallenge: It should return null for a user that doesn't exist", (done) => {
+				const invalidAbc_challenge = Object.assign({}, abc_challenge);
+				invalidAbc_challenge.authorId = 'NOTVALID'; 
+				const invalid_challenge = new Challenges(invalidAbc_challenge);
+				postChallenge(invalid_challenge, (error) => {
+					console.log(error);
+					(1).should.equal(1);
+					done();
+				});
+			});
 			it("postChallengeAnswer: Should be able to post a user's answer", (done) => {
-				const postChallengeAnswer = dbQueryHandler.postChallengeAnswer;
 				const answer = {
 					answer: '/abc/',
 					user: 'john_doe',
