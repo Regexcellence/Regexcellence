@@ -25,36 +25,36 @@ class About extends Component {
           <tr>
             <td>
               <div className="about-table">TROY GIBB</div>
-              <div><a href="https://github.com/troygibb">
+              <div><a target="_blank" href="https://github.com/troygibb">
                 <img className="about-links" src="http://i.imgur.com/HO44BWW.png"/></a>
-              <a href="https://www.linkedin.com/in/troygibb">
+              <a target="_blank" href="https://www.linkedin.com/in/troygibb">
                 <img className="about-links" src="http://files.site-fusion.co.uk/webfusion161987/image/linkedin_icon_square.png" />
               </a>
               </div>
             </td>
             <td>
               <div className="about-table">DANA LI</div>
-              <div><a href="https://github.com/hellodanali">
+              <div><a target="_blank" href="https://github.com/hellodanali">
                 <img className="about-links" src="http://i.imgur.com/HO44BWW.png"/></a>
-              <a href="https://www.linkedin.com/in/dana-li-76850320">
+              <a target="_blank" href="https://www.linkedin.com/in/dana-li-76850320">
                 <img className="about-links" src="http://files.site-fusion.co.uk/webfusion161987/image/linkedin_icon_square.png" />
               </a>
               </div>
             </td>
             <td>
               <div className="about-table">BENJAMIN TRAN</div>
-              <div><a href="https://github.com/bbtran">
+              <div><a target="_blank" href="https://github.com/bbtran">
                 <img className="about-links" src="http://i.imgur.com/HO44BWW.png"/></a>
-              <a href="https://www.linkedin.com/in/bbtran">
+              <a target="_blank" href="https://www.linkedin.com/in/bbtran">
                 <img className="about-links" src="http://files.site-fusion.co.uk/webfusion161987/image/linkedin_icon_square.png" />
               </a>
               </div>
             </td>
             <td>
               <div className="about-table">LUCY WONSOWER</div>
-              <div><a href="https://github.com/lwonsower">
+              <div><a target="_blank" href="https://github.com/lwonsower">
                 <img className="about-links" src="http://i.imgur.com/HO44BWW.png"/></a>
-              <a href="https://www.linkedin.com/in/lwonsower">
+              <a target="_blank" href="https://www.linkedin.com/in/lwonsower">
                 <img className="about-links" src="http://files.site-fusion.co.uk/webfusion161987/image/linkedin_icon_square.png" />
               </a>
               </div>

@@ -30,12 +30,15 @@ body {
   cursor: pointer;
   font-weight: bold;
   padding: 20px 20px 20px 10px;
-  &:hover {
-    color: #17A6B6;
-  }
   &:visited {
     color: #000;
   }
+  &:active{
+    color: #000;
+  }
+  // &:hover {
+  //   color: #17A6B6;
+  // }
 }
 
 a:hover {
@@ -270,4 +273,7 @@ input{
   max-height : 0;
 }
 
+p.lead{
+  margin-bottom: 0.2em;
+}
 
