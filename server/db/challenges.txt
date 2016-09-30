@@ -114,17 +114,21 @@
 	]
 },
 {
-	"name": "Is it a number?",
-	"description": "Is a description really necessary?",
+	"name": "Email validation",
+	"description": "The local-part of the e-mail address may use any of these ASCII characters: Uppercase and lowercase English letters (a-z, A-Z), Digits 0 to 9, Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~, Character . (dot, period, full stop), provided that it is not the first or last character, and provided also that it does not appear two or more times consecutively. Additionally, the domain can only take only the ASCII letters a through z (in a case-insensitive manner), the digits 0 through 9, and the hyphen (-).",
 	"author": "Troy Gibb",
-	"difficulty": 1,
+	"difficulty": 3,
 	"testCases": [
-	  {"case": "123456789", "expectation": true},
-	  {"case": "987543321", "expectation": true},
-	  {"case": "1010000010101010", "expectation": true},
-	  {"case": "NOT A NUMBER", "expectation": false},
-	  {"case": "I'M A NUMBER!", "expectation": false},
-	  {"case": "NOOOOOOOT", "expectation": false}
+	  {"case": "troy@regexcellence.com", "expectation": true},
+	  {"case": "steve.jobs@apple.lala", "expectation": true},
+	  {"case": "jerry_seinfeld@nbc.co", "expectation": true},
+	  {"case": "&$^#*!!!!@WTF.world", "expectation": true},
+	  {"case": "soylent_sucks@thro-a-straw", "expectation": true},
+	  {"case": "hacker(in)residence@anonymous.com", "expectation": false},
+	  {"case": "ILOVEYOU@", "expectation": false},
+	  {"case": "...ellipses@co.co", "expectation": false},
+	  {"case": "ILOVEYOU@", "expectation": false},
+	  {"case": "a_whole_lot_of_NOPE@LOL!.COM", "expectation": false}
 	]
 }
 ]
