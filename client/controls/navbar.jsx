@@ -6,6 +6,7 @@ import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
 import Dropdown from './dropdown';
 import { getUserInfo } from '../actions/api';
+import hound from '../styles/dog.png';
 
 class Navbar extends Component {
   constructor(props) {
@@ -23,12 +24,16 @@ class Navbar extends Component {
   }
 
   render() {
-
+    let sizing = {
+      width: "100px",
+      height: "100px",
+      float: "left",
+    }
     return (
       <div>
         <nav className="navbar navbar-light bg-faded">
+        <img src={hound} style={sizing} />
         <div className="container">
-
         <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
         <div>
           <ul className="nav nav-pills pull-right">

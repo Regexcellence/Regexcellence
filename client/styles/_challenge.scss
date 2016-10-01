@@ -100,8 +100,10 @@
 #congrats-box {
 	background-color: #d3ecb0;
 	height: 8%;
-	width: 100%;
-	margin-top: 2%;
+	// width: 100%;
+	// margin-top: 2%;
+	width: 77.5%;
+	margin-top: .1%;
 	color: #FFF;
 	font-weight: bold;
 	font-size: 40px;
@@ -109,6 +111,7 @@
 	position: relative;
 	z-index: +10;
 }
+
 
 .reveal-btn {
   background-color: #17A6B6;
@@ -122,8 +125,22 @@
   font-size: 14px;
 }
 
+.reveal-answer {
+  margin-top: 1%;
+  color: #151515;
+}
 
-.reveal{
+.reveal-answer-button {
+  margin-top: 1%;
+	background-color: #17A6B6;
+	color: #FFF;
+  box-shadow: none;
+  border: none;
+  outline: none;			
+}
+
+
+.reveal {
   margin-top: 0.5em;
   padding: 0.5em;
   color: grey;

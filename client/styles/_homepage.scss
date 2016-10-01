@@ -1,7 +1,7 @@
 .home-page {
-  margin: auto;
-  width: 75%;
+  width: 80%;
   align-content: center;
+  margin-left: 4%;
 }
 
 .home-list {
@@ -9,9 +9,35 @@
   text-align: center;
   display: inline-block;
   list-style: none;
+  padding: 0 2% 0 1.5%;
 }
 
 .table-style {
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin: 0 0 0 17%;
+}
+
+.book-logo {
+	position: relative;
+}
+.list-img {
+  height: 220px;
+  width: 220px;
+}
+
+.book-r {
+	background-color: #F5F5F5;
+	padding: 10px 40px 20px 10px;
+	margin: 21% 0 0 31.5%;
+	font-family: Lavanderia-Sturdy;
+	font-size: 50px;
+	color: #000;
+	position: absolute;
+}
+
+.home-page-text {
+  margin: 0 15% 0 15%;
+}
+
+.lower-home {
+	padding-left: 5%;
 }
