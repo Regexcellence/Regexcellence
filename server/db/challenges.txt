@@ -132,17 +132,19 @@
 	]
 },
 {
-  "name": "Match the valid IPs",
-  "author": "bbtran",
-  "description": "Internet protocol addressses are represented by four sets of numbers delimited by decimal periods after every third digit",
-  "difficulty": 3,
+  "name": "State Name",
+  "author": "hellodanali",
+  "description": "Make sure you match every single letter of the state names.",
+  "difficulty": 4,
   "testCases": [
-    {"case": "134.201.250.155", "expectation": true},
-    {"case": "173.247.204.106", "expectation": true},
-    {"case": "127.0.0.1", "expectation": true},
-    {"case": "818.555.1234", "expectation": false},
-    {"case": "192.168.0.0000.1", "expectation": false},
-    {"case": "34.A.120.300", "expectation": false}
+    {"case": "California", "expectation": true},
+    {"case": "Hawaii", "expectation": true},
+    {"case": "New York": true},
+    {"case": "Texas", "expectation": true},
+    {"case": "Californian", "expectation": false},
+    {"case": "Hawaiian", "expectation": false},
+    {"case": "New Yorker", "expectation": false}
+    {"case": "Texasian", "expectation": false}
   ]
 },
 {

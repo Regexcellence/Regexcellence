@@ -134,7 +134,7 @@
 	color: #FFF;
   box-shadow: none;
   border: none;
-  outline: none;			
+  outline: none;
 }
 
 
@@ -145,3 +145,13 @@
   background-color: #f7f9be;
 }
 
+.tutorial-start{
+  a {
+    margin-left: 40%;
+    font-size: 1.5em;
+    font-weight: 100;
+    background-color: #17A6B6;
+    padding: 0.8em 1.2em 0.8em 1.2em;
+    color: #FFF;
+  }
+}
