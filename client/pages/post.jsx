@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserChallengePost from '../user-posts/post-form';
 
-import quill from '../styles/quill.png';
+import quill from '../styles/images/quill.png';
 
 class Post extends Component {
   render() {

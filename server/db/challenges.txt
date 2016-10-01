@@ -144,5 +144,19 @@
     {"case": "192.168.0.0000.1", "expectation": false},
     {"case": "34.A.120.300", "expectation": false}
   ]
+},
+{
+  "name": "Match the correct Hexadecimal colors",
+  "author": "lwonsower",
+  "description": "The Hexadecimal format has been used in mathematics and computing for decades, and the hex triplet is a six-digit, three-byte hexadecimal number used in html and css to make a color scale with 16,777,216 possible colors. Hexadecimal colors are represented by digits 0-9 and A,B,C,D,E, and F.",
+  "difficulty": 2,
+  "testCases": [
+    {"case": "#F5F5F5", "expectation": true},
+    {"case": "#FF4500", "expectation": true},
+    {"case": "#B0C4DE", "expectation": true},
+    {"case": "#H5H5H5", "expectation": false},
+    {"case": "A52A2A", "expectation": false},
+    {"case": "225 221 0", "expectation": false}
+  ]
 }
 ]
