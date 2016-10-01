@@ -23,12 +23,16 @@ class Navbar extends Component {
   }
 
   render() {
-
+    let sizing = {
+      width: "100px",
+      height: "100px",
+      float: "left",
+    }
     return (
       <div>
         <nav className="navbar navbar-light bg-faded">
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/noun-svg/384216.svg?Expires=1475194837&Signature=ZqoVjMsoIGEYP9dyGBWbzjnRTwc7dvprh7E7gxD~VcMrSj3i77-JK8NgciSueDCPdraCRfTjJ0aiCUdvHJox3ZyyylN-T6wh9ghhekSTI8g2PbRcyuX3YJilZwkyrL2WBKiKaMT4nDEqQeolud7BESRQiwKpUmOrsytij07QhVA_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q" style={sizing} />
         <div className="container">
-
         <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
         <div>
           <ul className="nav nav-pills pull-right">

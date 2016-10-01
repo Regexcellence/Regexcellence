@@ -97,6 +97,7 @@
 	z-index: +10;
 }
 
+
 .reveal-btn {
   background-color: #17A6B6;
   color: #FFF;
@@ -107,6 +108,20 @@
   // border: 1px solid #d3ecb0;
   border: none;
   font-size: 14px;
+}
+
+.reveal-answer {
+  margin-top: 1%;
+  color: #151515;
+}
+
+.reveal-answer-button {
+  margin-top: 1%;
+	background-color: #17A6B6;
+	color: #FFF;
+  box-shadow: none;
+  border: none;
+  outline: none;			
 }
 
 

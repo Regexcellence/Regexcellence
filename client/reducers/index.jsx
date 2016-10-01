@@ -13,6 +13,7 @@ const initialState = {
   userInput: '',
   progress: { width: 0 },
   wellFormedInput: true,
+  showCongradulations: true,
   newUserPost: {
     name: '',
     author: 'User',

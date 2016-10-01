@@ -28,7 +28,6 @@ class Difficulty extends React.Component {
       backgroundColor: colors[`${this.props.difficulty}`],
       width: (`${this.props.difficulty}` * 20) + '%',
     };
-    console.log(this.props.challengeType)
 		if (this.props.editable) {
 			return (
 				<div>
