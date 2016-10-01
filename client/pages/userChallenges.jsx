@@ -13,12 +13,10 @@ class UserChallenges extends Component {
     if (this.props.challenges.length) {
       return (
         <div>
-          <div className="jumbotron">
+          <div className="jumbotron challenge-header">
             <img className="banner-img" src={arrows} />
-            <h1>
-            Challenge Yourself !
-            </h1>
-            <p className="lead">Pratice your Regex skills at our challenges page!</p>
+            <h2>Take your Regex skills to battle</h2>
+            <p className="lead">Practice your Regex skills at our challenges page</p>
           </div>
           { this.props.children || <ListView userChallenges={this.props.challenges} />}
         </div>

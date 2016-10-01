@@ -161,22 +161,32 @@ a:hover {
 }
 
 .jumbotron {
+  background-color: transparent;
   margin-top: 2em;
-  border: 1px solid #E3E3E3;
-  padding-right: 1%;
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
+  padding-right: 3%;
+  padding-bottom: 6%;
+  h2, p {
+    margin-left: 3em;
+    margin-right: 3em;
   }
-  p {
-    color: #17A6B6;
+  &.post-header{
+    background-color: #ff9e9e;
   }
-
+  &.challenge-header{
+    background-color: #CEEAED;
+  }
+  &.tutorial-start{
+    background-color: #F7F9BE;
+    h2, p{
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+    }
+  }
   .banner-img {
     height: 150px;
     width: 150px;
     float: left;
-    margin-left: 50px;
+    margin-left: 10em;
     margin-right: 50px;
     margin-top: -20px;
   }
@@ -205,31 +215,6 @@ a:hover {
 input{
  box-shadow: none;
  outline: none;
-}
-
-.tutorial-start {
-  padding-bottom: 40px;
-  p {
-    width: 70%;
-    color: #17A6B6;
-    font-size: 18px;
-    text-align: left;
-    margin: 0% 0 0 5%;
-  }
-  h1 {
-    text-align: left;
-    margin-top: -3%;
-  }
-  span {
-    background-color: #17A6B6;
-    color: #FFF;
-    text-align: center;
-    font-size: 20px;
-    margin: -2% 0% 0 22%;
-    padding: 10px; 
-    float: left;
-    z-index: +3;
-  }
 }
 
 

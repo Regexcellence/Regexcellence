@@ -10,7 +10,10 @@ class Post extends Component {
       <div>
         <div className="jumbotron post-header">
           <img className="banner-img" src={quill} />
-          <h1 className="text-center title">This is the post page</h1>
+          <h2>
+            Thank you for your contribution. 
+          </h2>
+          <p> - Regi, the Regexcellence dog</p>
         </div>
         <br />
         <div className='post'>
