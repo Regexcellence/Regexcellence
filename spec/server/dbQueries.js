@@ -4,20 +4,13 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //const MONGO_URI = process.env.MONGO_URI || require('../../config').MONGO_URI;
 let MONGO_URI = '';
-
 try {
 	MONGO_URI = require('../../config').MONGO_URI;
-} 
-catch(err) {
-	if (process.env.CIRCLECI) {
-		console.log("I'm in circle!")
-	}
+} catch(err) {
 	MONGO_URI = process.env.MONGO_URI;
-	console.log('No config file, new mongo_uri is ', MONGO_URI);
 }
 
-
-mongoose.connect(MONGO_URI);
+//mongoose.connect(MONGO_URI);
 
 const model = require('../../server/db/dbmodel');
 const Challenges = model.Challenges;

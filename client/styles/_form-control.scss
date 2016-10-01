@@ -19,6 +19,7 @@
      outline: none;
      min-height: 40px;
      padding-left: 5px;
+     width: 100%;
      &:focus{
       border: 1px solid #17A6B6;
      }
@@ -26,6 +27,7 @@
     select{
       font-size: 15px;
       min-width: 200px;
+      max-width: 25%;
       &:focus{
       border-color: #17A6B6;
      }
@@ -50,6 +52,7 @@
   color: #FFF;
 }
 #post-requirements {
+  font-weight: normal;
   font-style: italic;
   font-size: 13px;
   color: gray;
@@ -66,5 +69,6 @@
     color: white;
   }
 }
+
 
 
