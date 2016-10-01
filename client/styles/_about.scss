@@ -3,7 +3,7 @@
   width: 200px;
   border-radius: 100%;
 }
-// #9AD2C7 #17A6B6;
+// #9AD2C7 #17A6B6 #067C96 #F55D3E;
 .about-table {
   margin: auto;
   text-align: center;
@@ -13,19 +13,33 @@
     color: #17A6B6;
     margin: 0 2px 0 2px;
     &:hover{
-      color: #F55D3E;
+      color: #067C96;
     }
   }
   p {
     font-weight: 100;
-    padding: 1em;
+    padding: 0em 1em 0.5em 1em;
     &.lead{
-    // color: #F55D3E;
-      border-bottom: 1px solid #9AD2C7;
       padding: 0.5em;
     }
   }
   img{
     margin: 1.5em;
   }
+  hr{
+    border-top: 1px solid #9AD2C7;
+  }
+}
+
+.text-center.about-table-title {
+  font-weight: 100;
+  // border-bottom: 1px solid  #9AD2C7;
+  span{
+    padding: 0.2em 1em 0.2em 1em;
+    border: 2.5px solid #9AD2C7;
+    border-left: none;
+    border-right: none;
+  }
+  padding: 0.3em;
+  margin: 1em auto 1em auto;
 }
