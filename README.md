@@ -12,21 +12,23 @@ Regexcellence is similar to many other coding challenge websites, like Codewars,
 
 Regexcellence currently consists of a regex tutorial that walks the user through the basics of regular expressions, and a community platform for both attempting regular expression problems and contributing original problems.
 
-## Install
-For developing:
-Make sure you have Eslint installed to run linter.
-```
-$ npm i -g eslint
-```
-Webpack for deploying and linting:
-```
-$ npm install webpack -g
-```
+## Team
+* [Troy Gibb](https://github.com/troygibb)
+![alt text](https://avatars0.githubusercontent.com/u/18633748?v=3&s=75)
+* [Dana Li](https://github.com/hellodanali)
+![alt text](https://avatars3.githubusercontent.com/u/17036705?v=3&s=75)
+* [Benjamin Tran](https://github.com/bbtran) ![alt text](https://avatars2.githubusercontent.com/u/13708462?v=3&s=75)
+* [Lucy Wonsower](https://github.com/lwonsower) ![alt text](https://avatars0.githubusercontent.com/u/16870016?v=3&s=75)
 
+
+##
+##
 # Our Tech Stack
+
 ## Frontend
 * [React](https://facebook.github.io/react/)-[Redux](https://github.com/reactjs/redux) for rendering page views and maintaining state
-* [Bootstrap](http://getbootstrap.com/)- a mobile first styling framework
+* [Bootstrap](http://getbootstrap.com/) - a mobile first styling framework
+* [XRegexP](http://xregexp.com/) - a Javascript Regular Expressio  
 
 ## Backend
 * [Node.js](https://nodejs.org/en/) with [Express](http://expressjs.com/) for serving pages and handling api requests
@@ -40,28 +42,19 @@ $ npm install webpack -g
 ## Dev/Build Tools
 * [Webpack](https://webpack.github.io/) for scaffolding and [Babel](https://babeljs.io/) for transpiling
 
-
-#Team
-* [Troy Gibb](https://github.com/troygibb)
-![alt text](https://avatars0.githubusercontent.com/u/18633748?v=3&s=75)
-* [Dana Li](https://github.com/hellodanali)
-![alt text](https://avatars3.githubusercontent.com/u/17036705?v=3&s=75)
-* [Benjamin Tran](https://github.com/bbtran) ![alt text](https://avatars2.githubusercontent.com/u/13708462?v=3&s=75)
-* [Lucy Wonsower](https://github.com/lwonsower) ![alt text](https://avatars0.githubusercontent.com/u/16870016?v=3&s=75)
-
 ##Folder and File Structure
     Regexcellence/
     |
     |--client/
     |   |--actions/
     |   |--challenge/
-    |   |--login
-    |   |--pages
-    |   |--reducers
-    |   |--tutorials
-    |   |--user-posts
-    |   |--user-profile
-    |   |--user-challeges
+    |   |--login/
+    |   |--pages/
+    |   |--reducers/
+    |   |--tutorials/
+    |   |--user-posts/
+    |   |--user-profile/
+    |   |--user-challeges/
     |   |--styles/
     |       |--SASS/SCSS
     |--server/
@@ -69,3 +62,39 @@ $ npm install webpack -g
     |   |--auth/
     |   |--handlers
     |--Node/Express server
+
+
+## Install
+
+#### Global Installs
+For developing: Eslint installed to run linter
+
+```
+$ npm install eslint -g
+```
+
+For testing: Mocha
+
+```
+$ npm install mocha -g
+```
+
+For building and deploying: Webpack
+
+```
+$ npm install webpack -g
+```
+
+For database access: Mongo
+
+```
+$ npm install mongodb -g
+```
+
+#### Local Install
+
+Download all dependencies listed under package.json
+
+```
+$ npm install
+```

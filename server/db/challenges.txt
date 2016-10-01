@@ -146,6 +146,50 @@
   ]
 },
 {
+  "name": "State Name",
+  "author": "hellodanali",
+  "description": "Make sure you match every single letter of the state names.",
+  "difficulty": 3,
+  "testCases": [
+    {"case": "California", "expectation": true},
+    {"case": "Hawaii", "expectation": true},
+    {"case": "New York", "expectation": true},
+    {"case": "Texas", "expectation": true},
+    {"case": "Californian", "expectation": false},
+    {"case": "Hawaiian", "expectation": false},
+    {"case": "New Yorker", "expectation": false},
+    {"case": "Texasian", "expectation": false}
+  ]
+},
+{
+  "name": "Before it all ends...",
+  "author": "hellodanali",
+  "description": "Internet protocol addressses are represented by four sets of numbers delimited by decimal periods after every third digit",
+  "difficulty": 3,
+  "testCases": [
+    {"case": "My phone ran out of battery.", "expectation": true},
+    {"case": "The train broke down.", "expectation": true},
+    {"case": "But I'm bringing pizza.", "expectation": true},
+    {"case": "My phone ran out of battery?", "expectation": false},
+    {"case": "The train broke down?", "expectation": false},
+    {"case": "Pizza is on the way ?", "expectation": false}
+  ]
+},
+{
+  "name": "Self Closing Tags",
+  "author": "hellodanali",
+  "description": "Some HTML tags are self closing, let's get the self closing ones only.",
+  "difficulty": 4,
+  "testCases": [
+    {"case": "<hr />", "expectation": true},
+    {"case": "<input />", "expectation": true},
+    {"case": "<img />", "expectation": true},
+    {"case": "hr", "expectation": false},
+    {"case": "<input></input>", "expectation": false},
+    {"case": "<img>", "expectation": false}
+  ]
+},
+{
   "name": "Match the correct Hexadecimal colors",
   "author": "lwonsower",
   "description": "The Hexadecimal format has been used in mathematics and computing for decades, and the hex triplet is a six-digit, three-byte hexadecimal number used in html and css to make a color scale with 16,777,216 possible colors. Hexadecimal colors are represented by digits 0-9 and A,B,C,D,E, and F.",
@@ -157,6 +201,108 @@
     {"case": "#H5H5H5", "expectation": false},
     {"case": "A52A2A", "expectation": false},
     {"case": "225 221 0", "expectation": false}
+  ]
+},
+{
+  "name": "Alphabetical Order",
+  "author": "lwonsower",
+  "description": "Write a pattern to match to strings of letters in alphabetical order. Do not match to strings out of order.",
+  "difficulty": 3,
+  "testCases": [
+    {"case": "EffOrt", "expectation": true},
+    {"case": "AbhoRs", "expectation": true},
+    {"case": "biJouX", "expectation": true},
+    {"case": "lovelYY", "expectation": false},
+    {"case": "oranGES", "expectation": false},
+    {"case": "TUESDAY", "expectation": false}
+  ]
+},
+{
+  "name": "Buy a quality calcium supplement",
+  "author": "lwonsower",
+  "description": "You are in the supplement department at Whole Foods looking for a quality calcium product. There are six bottles of pills, all of them different qualities and sources of calcium. Write a regular expression that matches to the high quality calcium and avoid the crappy forms.",
+  "difficulty": 1,
+  "testCases": [
+    {"case": "Algae Lithothamnion Calcareum", "expectation": true},
+    {"case": "Calcium Hydroxyapatite", "expectation": true},
+    {"case": "Calcium Orotate", "expectation": true},
+    {"case": "Calcium Carbonate", "expectation": false},
+    {"case": "Calcium Citrate", "expectation": false},
+    {"case": "Calcium Gluconate", "expectation": false}
+  ]
+},
+{
+  "name": "Match the proper domain names",
+  "author": "lwonsower",
+  "description": "Match to actual domains, avoid the nonsense.",
+  "difficulty": 5,
+  "testCases": [
+    {"case": "http://www.groogle.com", "expectation": true},
+    {"case": "http://www.greatdomain.test.gov", "expectation": true},
+    {"case": "http://wasabi-pea-addicts-anonymous.com", "expectation": true},
+    {"case": "http://--hiMom--.com", "expectation": false},
+    {"case": "http://io", "expectation": false},
+    {"case": "http://mks444life,biz", "expectation": false}
+  ]
+},
+{
+  "name": "Roman Numeral Validator",
+  "author": "lwonsower",
+  "description": "Validate the following test cases to ensure you are only matching to proper Roman Numerals.",
+  "difficulty": 2,
+  "testCases": [
+    {"case": "MMMCDLVI", "expectation": true},
+    {"case": "MMCCXXII", "expectation": true},
+    {"case": "DLXVII", "expectation": true},
+    {"case": "IL", "expectation": false},
+    {"case": "XMVI", "expectation": false},
+    {"case": "IIHHIII", "expectation": false}
+  ]
+},
+{
+  "name": "PalindromemordnilaP",
+  "author": "bbtran",
+  "description": "Match the 3-5 character palindromes by grouping and using back-references!",
+  "difficulty": 3,
+  "testCases": [
+    {"case": "dad", "expectation": true},
+    {"case": "haah", "expectation": true},
+    {"case": "kayak", "expectation": true},
+    {"case": "madam", "expectation": true},
+    {"case": "noon", "expectation": true},
+    {"case": "haha", "expectation": false},
+    {"case": "papa", "expectation": false},
+    {"case": "kayaks", "expectation": false},
+    {"case": "wasabi", "expectation": false}
+  ]
+},
+{
+  "name": "Match the integers and decimals",
+  "author": "bbtran",
+  "description": "Match the lines that contain decimals and integers.",
+  "difficulty": 2,
+  "testCases": [
+    {"case": "0.25 dollar + 25 cents = 2 quarters", "expectation": true},
+    {"case": "3.14159265358979323846264338327950288", "expectation": true},
+    {"case": "the golden ratio is 1.61803398", "expectation": true},
+    {"case": "Regexcellence is the future", "expectation": false},
+    {"case": "Regexcellence is now", "expectation": false},
+    {"case": "Wasabi peas are lyfe", "expectation": false}
+  ]
+},
+{
+  "name": "Darn timestamps",
+  "author": "bbtran",
+  "description": "You're having an amazing chat conversation with your s/o. You want to save the conversation but copy and pasting captures the time stamps! Write a regex pattern that matches the following timestamps. Also skip the boring messages.",
+  "difficulty": 3,
+  "testCases": [
+    {"case": "[22:25:16] Me: Hey sweetie why are you such a cutie?", "expectation": true},
+    {"case": "[22:27:35] Baby: You think I'm cute?", "expectation": true},
+    {"case": "[22:29:49] Me: Yea, why else would I still get nervous everytime I see you?", "expectation": true},
+    {"case": "[22:35:04] Baby: Haha aww... <3", "expectation": true},
+    {"case": "12:45PM: Hey what are you doing?", "expectation": false},
+    {"case": "12:50PM: Nothing", "expectation": false},
+    {"case": "12:55PM: Okay bye", "expectation": false}
   ]
 }
 ]
