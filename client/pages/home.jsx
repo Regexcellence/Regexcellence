@@ -45,8 +45,9 @@ class Home extends React.Component {
             </div>
         </div>
         <div className="lower-home">
-          <p>Regular Expressions have been around since the 50s, but it wasn’t until the 80s that the regex we know and love today really started to develop. A lot of the patterns and syntax was designed specifically to work with Perl, and you will still sometimes hear the term Perl-style thrown around. Luckily regex works well with a myriad of languages today, and honing your skills will help you become an all-around phenomenal programer!</p><br /><span className="glyphicon glyphicon-grain" /><br /><br />
-          <p>Regex is used to locate, match, and manage text. Learning how to use it has the potential to save you thousands of hours of work. Regexcellence was developed to teach you the basic formation of these fantastic patterns and provide a platform for you to practice writing them.
+          <p>Regex is used to locate, match, and manage text. Learning how to use it has the potential to save you thousands of hours of work. Regexcellence was developed to teach you the basic formation of these fantastic patterns and provide a platform for you to practice writing them. Our team is passionate about coding and excited to share our knowledge with the world.</p><br /><span className="glyphicon glyphicon-grain" /><br /><br />
+          <p>
+            Regular Expressions have been around since the 50s, but it wasn’t until the 80s that the regex we know and love today really started to develop. A lot of the patterns and syntax was designed specifically to work with Perl, and you will still sometimes hear the term Perl-style thrown around. Luckily regex works well with a myriad of languages today, and honing your skills will help you become an all-around phenomenal programer!
           </p>
         </div>
       </div>
