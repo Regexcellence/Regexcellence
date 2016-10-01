@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import ListView from '../userChallenges/listView';
 import { getAllChallenges } from '../actions/api';
-import arrows from '../styles/arrows.png';
+import arrows from '../styles/images/arrows.png';
 
 class UserChallenges extends Component {
   componentWillMount() {

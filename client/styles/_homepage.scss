@@ -1,43 +1,59 @@
-.home-page {
-  width: 80%;
-  align-content: center;
-  margin-left: 4%;
+.home-banner {
+  background-color: #d3ecb0;
+  padding: 10% 0 12% 0;
+  margin: 0 0 5% 0;
+  .banner-img {
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin: -20px 5% 0 13%;
+  }
 }
 
-.home-list {
-  width: 250px;
-  text-align: center;
-  display: inline-block;
-  list-style: none;
-  padding: 0 2% 0 1.5%;
-}
-
-.table-style {
-  margin: 0 0 0 17%;
+.homepage-row {
+  margin: 2% 2% 2% 5%;
 }
 
 .book-logo {
 	position: relative;
 }
+
 .list-img {
   height: 220px;
   width: 220px;
 }
 
+.quill {
+  margin-top: -12%;
+  height: 250px;
+  width: 250px;
+}
+
+.home-images {
+  width: 25%;
+  margin: 0 4% 0 3%;
+  text-align: center;
+}
+
+.image-text {
+  align: center;
+}
+
 .book-r {
 	background-color: #F5F5F5;
 	padding: 10px 40px 20px 10px;
-	margin: 21% 0 0 31.5%;
+	margin: 20% 0 0 31.5%;
 	font-family: Lavanderia-Sturdy;
 	font-size: 50px;
 	color: #000;
 	position: absolute;
 }
 
-.home-page-text {
-  margin: 0 15% 0 15%;
+.lower-home {
+	padding: 5% 4% 5% 5%;
+  margin: 5% 0 0 0;
+  background-color: #696969;
+  font-size: 20px;
+  color: #F5F5F5;
 }
 
-.lower-home {
-	padding-left: 5%;
-}

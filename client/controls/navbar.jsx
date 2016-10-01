@@ -6,7 +6,7 @@ import Cheatsheet from '../pages/cheatsheet';
 import Footer from '../controls/footer';
 import Dropdown from './dropdown';
 import { getUserInfo } from '../actions/api';
-import hound from '../styles/dog.png';
+import hound from '../styles/images/dog.png';
 
 class Navbar extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Navbar extends Component {
     return (
       <div>
         <nav className="navbar navbar-light bg-faded">
-        <img src={hound} style={sizing} />
+        <Link to="" ><img src={hound} style={sizing} /></Link>
         <div className="container">
         <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
         <div>
