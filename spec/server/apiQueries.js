@@ -2,9 +2,14 @@ const should = require('should');
 var request = require('supertest');
 
 const app = require('../../index');
+
 var agent = request.agent(app);
 
 describe('Requesting Challenge and Tutorial Data', () => {
+	beforeEach((done) => {
+		
+		done();
+	})
 	describe('Challenges', () => {
 		it('Should respond with a Challenges Array', (done) => {
 			agent
