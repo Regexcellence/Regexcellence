@@ -2,6 +2,7 @@
 {
 	"name": "Spaces at the beginning and end of strings",
 	"description": "Write a regex that matches whitespace at the beginning and end of strings",
+	"author": "troygibb",
 	"difficulty": 2,
 	"testCases": [
 	  { "case": " I have whitespace! ", "expectation": true },
@@ -15,6 +16,7 @@
 {
 	"name": "Use regex to validate regex!",
 	"description": "Ever wonder how that flag pops up at the bottom of the screen when you type in a badly formed regex? Yes, you guessed it, there's a regex testing your regex! How about trying to do one yourself?\n All you need to do is to make sure that the regular expression contains two forward slashes, and uses any or none at all of the appropriate flags at the end of the expression ('gimuy').",
+	"author": "troygibb",
 	"difficulty": 2,
 	"testCases": [
 	  { "case": "/i'm a regex!/", "expectation": true },
@@ -28,6 +30,7 @@
 },
 {
 	"name": "Find The Kitty",
+	"author": "hellodanali",
 	"description": "Match the correct meows to catch Jazzy the cat =^.^= !",
 	"difficulty": 2,
 	"testCases": [
@@ -40,6 +43,7 @@
 },
 {
 	"name": "Is it a letter?",
+	"author": "troygibb",
 	"description": "If the string contains an ASCII letter, then match it!",
 	"difficulty": 1,
 	"testCases": [
@@ -56,6 +60,7 @@
 {
 	"name": "Are there duplicates?",
 	"description": "Match strings that contain duplicate letters.",
+	"author": "troygibb",
 	"difficulty": 3,
 	"testCases": [
 	  { "case": "The cat goes meow", "expectation": true },
@@ -69,6 +74,7 @@
 {
   "name": "Match the kitties",
 	"description": "Match da cats, not the puppers",
+	"author": "lwonsower",
 	"difficulty": 1,
 	"testCases": [
 		{ "case": "Maine Coon", "expectation": true },
@@ -81,6 +87,7 @@
 },
 {
   "name": "No Comments",
+  "author": "bbtran",
   "description": "Math the valid javascript comments",
   "difficulty": 2,
   "testCases": [
@@ -94,6 +101,7 @@
 },
 {
 	"name": "Is it a number?",
+	"author": "troygibb",
 	"description": "Is a description really necessary?",
 	"difficulty": 1,
 	"testCases": [
@@ -107,10 +115,11 @@
 },
 {
 	"name": "Email validation",
+	"author": "troygibb",
 	"description": "The local-part of the e-mail address may use any of these ASCII characters: Uppercase and lowercase English letters (a-z, A-Z), Digits 0 to 9, Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~, Character . (dot, period, full stop), provided that it is not the first or last character, and provided also that it does not appear two or more times consecutively. Additionally, the domain can only take only the ASCII letters a through z (in a case-insensitive manner), the digits 0 through 9, and the hyphen (-).",
 	"difficulty": 3,
 	"testCases": [
-	  {"case": "troy@regexcellence.com", "expectation": true},
+	  {"case": "troygibb@regexcellence.com", "expectation": true},
 	  {"case": "steve.jobs@apple.lala", "expectation": true},
 	  {"case": "jerry_seinfeld@nbc.co", "expectation": true},
 	  {"case": "&$^#*!!!!@WTF.world", "expectation": true},
@@ -124,6 +133,7 @@
 },
 {
   "name": "Match the valid IPs",
+  "author": "bbtran",
   "description": "Internet protocol addressses are represented by four sets of numbers delimited by decimal periods after every third digit",
   "difficulty": 3,
   "testCases": [

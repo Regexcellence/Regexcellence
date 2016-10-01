@@ -1,21 +1,32 @@
 const should = require('should');
-const request = require('request');
+var request = require('supertest');
+
+const app = require('../../index');
+var agent = request.agent(app);
 
 describe('Requesting Challenge and Tutorial Data', () => {
 	describe('Challenges', () => {
 		it('Should respond with a Challenges Array', (done) => {
-			request('http://localhost:3000/regex/challenges', (err, response, body) => {
-				(response.statusCode).should.be.exactly(200);
-				(JSON.parse(body)).should.be.instanceOf(Array);
+			agent
+			.get('/regex/challenges')
+			.expect(200)
+			.expect('Content-Type', /json/)
+			.end((err, res) => {
+				if (err) return done(err);
+				res.body.should.be.instanceOf(Array);
 				done();
 			});
 		});
 	});
 	describe('Tutorials', () => {
 		it('Should respond with a Tutorials Array', (done) => {
-			request('http://localhost:3000/regex/tutorial', (err, response, body) => {
-				(response.statusCode).should.be.exactly(200);
-				(JSON.parse(body)).should.be.instanceOf(Array);
+			agent
+			.get('/regex/tutorial')
+			.expect(200)
+			.expect('Content-Type', /json/)
+			.end((err, res) => {
+				if (err) return done(err);
+				res.body.should.be.instanceOf(Array);
 				done();
 			});
 		});

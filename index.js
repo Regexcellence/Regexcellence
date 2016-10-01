@@ -31,3 +31,5 @@ handleRequest(app);
 
 mongoose.connect(MONGO_URI);
 app.listen(port, () => { console.log(`Listening on http://localhost:${port}/`); });
+
+exports = module.exports = app;

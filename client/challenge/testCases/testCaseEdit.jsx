@@ -48,7 +48,7 @@ class TestCaseEdit extends React.Component {
     if (this.state.editing) {
       return (
         <tr>
-          <td>
+          <td className="edit-case-text case-text">
           <input onChange={this.updateInput} value={this.state.newTestCase} />
           <span onClick={this.addTestCase} >
             <span className="glyphicon glyphicon-ok"></span>
@@ -64,7 +64,7 @@ class TestCaseEdit extends React.Component {
     } else {
       return (
         <tr>
-          <td>
+          <td className="edit-case-text case-text">
           <span>Add a {this.props.matchType} test case</span>
           <span onClick={this.switchEditMode} className="glyphicon glyphicon-plus" aria-hidden="true" />
           </td>

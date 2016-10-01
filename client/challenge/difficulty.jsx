@@ -28,7 +28,6 @@ class Difficulty extends React.Component {
       backgroundColor: colors[`${this.props.difficulty}`],
       width: (`${this.props.difficulty}` * 20) + '%',
     };
-    console.log(this.props.challengeType)
 		if (this.props.editable) {
 			return (
 				<div>
@@ -37,7 +36,7 @@ class Difficulty extends React.Component {
 						className="form-control"
 						onChange={this.updateDifficulty} 
 						name="difficulty"
-						value="1">;
+					>;
 						<option value="1">1 : very easy</option>
 						<option value="2">2 : easy</option>
 						<option value="3">3 : medium</option>
