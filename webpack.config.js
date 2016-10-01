@@ -56,7 +56,11 @@ const common = {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass'],
         include: PATHS.style
-      }
+      },
+      { 
+        test: /\.png$/, 
+        loader: "url-loader?limit=8192",
+      },
     ],
   },
   externals: {
