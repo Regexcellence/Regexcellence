@@ -19,9 +19,9 @@ class Home extends React.Component {
           <p className="lead">Or this competitive</p>
         </div>
         <div>
-          <p className="home-page">
+          {/*<p className="home-page">
             This is where we talk about the history of Regex. Pour-over XOXO poutine slow-carb. Forage retro raw denim umami, live-edge thundercats humblebrag godard green juice photo booth food truck man braid. Stumptown lyft slow-carb, chillwave raclette waistcoat williamsburg narwhal. Mlkshk next level tattooed kogi health goth. Microdosing chia semiotics pour-over, austin street art bitters. Mixtape direct trade everyday carry four dollar toast food truck, viral unicorn kale chips austin. You probably haven't heard of them microdosing 90's portland semiotics.
-          </p>
+          </p>*/}
           <div className="home-page">
             <table className="table-style">
             <tbody>
