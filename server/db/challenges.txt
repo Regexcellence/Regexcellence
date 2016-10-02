@@ -132,19 +132,17 @@
 	]
 },
 {
-  "name": "State Name",
-  "author": "hellodanali",
-  "description": "Make sure you match every single letter of the state names.",
-  "difficulty": 4,
+  "name": "Match the valid IPs",
+  "author": "bbtran",
+  "description": "Internet protocol addressses are represented by four sets of numbers delimited by decimal periods after every third digit",
+  "difficulty": 3,
   "testCases": [
-    {"case": "California", "expectation": true},
-    {"case": "Hawaii", "expectation": true},
-    {"case": "New York": true},
-    {"case": "Texas", "expectation": true},
-    {"case": "Californian", "expectation": false},
-    {"case": "Hawaiian", "expectation": false},
-    {"case": "New Yorker", "expectation": false}
-    {"case": "Texasian", "expectation": false}
+    {"case": "134.201.250.155", "expectation": true},
+    {"case": "173.247.204.106", "expectation": true},
+    {"case": "127.0.0.1", "expectation": true},
+    {"case": "818.555.1234", "expectation": false},
+    {"case": "192.168.0.0000.1", "expectation": false},
+    {"case": "34.A.120.300", "expectation": false}
   ]
 },
 {
@@ -305,6 +303,22 @@
     {"case": "12:45PM: Hey what are you doing?", "expectation": false},
     {"case": "12:50PM: Nothing", "expectation": false},
     {"case": "12:55PM: Okay bye", "expectation": false}
+  ]
+},
+{
+  "name": "Four Letter S & P Words",
+  "author": "bbtran",
+  "description": "Match the words that are 4 letters long and start with S and end with P!",
+  "difficulty": 1,
+  "testCases": [
+    {"case": "Stop", "expectation": true},
+    {"case": "Shop", "expectation": true},
+    {"case": "SWAP", "expectation": true},
+    {"case": "soup", "expectation": true},
+    {"case": "shape", "expectation": false},
+    {"case": "SWAPP", "expectation": false},
+    {"case": "SIP", "expectation": false},
+    {"case": "HELP", "expectation": false}
   ]
 }
 ]
