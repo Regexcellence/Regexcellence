@@ -1,114 +1,327 @@
-[
-  {
-  	"order": 0,
-  	"name": "Learn Your ABCs",
-  	"description": "Let’s start with the basics! You are writing patterns with the pure intent of matching certain characters in strings. Simple letters and digits easily match to themselves. /a/ will match to anything containing an 'a', /1/ will match to anything with a '1'. A word, /meow/ for example, will match to the word ‘meow’ if it appears in that order. However, when wrapping characters inside of square brackets you can match specific characters. For example, /[meow]/ will match to one of the characters ‘m’, ‘e’, ‘o’, or ‘w’, in any order, and will be case sensitive unless specified otherwise. Fun fact! The DOT! The /./ character is actually a wild card that will match to any character, although if you throw in some brackets /[.]/ it matches only to itself. Use with caution. To check for only one dot be sure to escape the dot using a backslash! /\\./ Got it? Give it a try! Remember to start and end your expression with forward slashes.",
-  	"author": "Troy",
-  	"difficulty": 1,
-  	"testCases": [
-  	  { "case": "abcd", "expectation": true },
-  	  { "case": "acd", "expectation": false },
-  	  { "case": "abcde", "expectation": true }
-  	],
-    "answers": {
-      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
-      "answer": "/abc/"
-    }
-  },
-  {
-  	"order": 1,
-  	"name": "Excluding Characters",
-  	"description": "Let’s review! In our previous challenge we used square brackets to match single characters. Conversely, we can simply use the caret character '^' inside of square brackets to exclude characters. Here’s an example! The regex /[^xyx]/ will exclude ‘x’, ‘y’, or ‘z’. Try it out. Using the caret, write a pattern that skips the verbs in the list.",
-  	"author": "Ben",
-  	"difficulty": 2,
-  	"testCases":[
-  		{ "case": "mall", "expectation": true },
-  		{ "case": "fall", "expectation": false },
-  		{ "case": "tall", "expectation": true },
-  		{ "case": "stall", "expectation": false },
-  		{ "case": "ball", "expectation": true },
-  		{ "case": "call", "expectation": false },
-  		{ "case": "wall", "expectation": true }
-  	],
-    "answers": {
-      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
-      "answer": "/abc/"
-    }
-  },
-  {
-  	"order": 2,
-  	"name": "Matching Zip Codes",
-  	"description": "Well done! Now that you’re getting used to the basics we can get a little fancier. The hyphen is a wonderful tool for creating a concise way of matching to many different characters. Instead of writing /[abcdefg]/, we can simply write /[a-g]/. This also works for digits, for example writing /[0-9]/ is a great way to match to any number. But wait! There’s an even better way to match numbers. You can use metacharacters to match specific classes of characters. The \\d metacharacter is used to match only numbers and is equivalent to /[0-9]/. Matching to a certain number of character repetitions is as easy as following the character with some curly braces. /a{1}/ will match to a string containing one ‘a’, while /a{1,}/ will match a string as long as it has at least one ‘a’, but could contain one hundred ‘a’s. If you would like to match various strings that range in 'a'-length, create a limit. /a{2,5}/ will match strings with two to five continuous ‘a’s. Try to use curly brackets and the metacharacter to validate and match the 5-digit zip codes!",
-  	"author": "Lucy",
-  	"difficulty": 1,
-  	"testCases": [
-  		{ "case": "94549", "expectation": true },
-  		{ "case": "94105", "expectation": true },
-  		{ "case": "666", "expectation": false },
-  		{ "case": "9999999", "expectation": false }
-  	],
-    "answers": {
-      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
-      "answer": "/abc/"
-    }
-  },
-  {
-    "order": 3,
-    "name": "Words that end with 'en'",
-    "description": "Sweet! Now let’s increase the specificity of our matches. Sometimes we want to make sure a line starts or ends with a specific word. Using the caret character without square brackets will guarantee that the regular expression only matches to lines that begin with the given string. For example we want to validate that a url is on a secured protocol. To do so we want to make sure that the url starts with 'https://' by using the pattern /^https:\\/\\// Additionally it is also possible to match lines that end with specific characters or words. You can do that using the dollar sign ($). Give it a whirl! Try to match only the words that end with 'en'.",
-    "author": "Dana",
-    "difficulty": 2,
-    "testCases": [
-      { "case": "glenn",  "expectation": false },
-      { "case": "glen", "expectation": true },
-      { "case": "turkmen", "expectation": true },
-      { "case": "cayenne", "expectation": false },
-      { "case": "big ben", "expectation": true },
-      { "case": "opium den", "expectation": true },
-      { "case": "wise men", "expectation": true },
-      { "case": "never again", "expectation": false}
-    ],
-    "answers": {
-      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
-      "answer": "/abc/"
-    }
-  },
-  {
-  	"order": 4,
-  	"name": "Removing Spaces",
-  	"description": "Great job! Let’s move on to yet another metacharacter! Often when you build a website, like Regexcellence.co, you may run into scenarios where you do not want to have any whitespaces in your URL. Good news! There’s a metacharacter for that! You can use \\s to match any whitespace in a given line. Write a pattern that matches each sentence and be sure to include the spaces!",
-  	"author": "Ben",
-  	"difficulty": 1,
-  	"testCases":[
-  		{ "case": "Regexcellence is a great site!", "expectation": true },
-  		{ "case": "Regex is the only source truth", "expectation": true },
-  		{ "case": "Lucy and Dana are awesome!", "expectation": true },
-  		{ "case": "Troy is a beast!", "expectation": true },
-  		{ "case": "Remove all of the whitespaces.", "expectation": true }
-  	],
-    "answers": {
-      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
-      "answer": "/abc/"
-    }
-  },
-  {
-  	"order": 5,
-  	"name": "Matching Phone Numbers",
-  	"description": "Write a pattern that matches a variety of phone number formats",
-  	"author": "Ben",
-  	"difficulty": 3,
-  	"testCases":[
-  		{ "case": "(925) 145-5555", "expectation": true },
-  		{ "case": "(925) 1455555", "expectation": false },
-  		{ "case": "925-145-5555", "expectation": true },
-  		{ "case": "(925) 145-55555", "expectation": false },
-  		{ "case": "925 145-5555", "expectation": false },
-  		{ "case": "925 145 5555", "expectation": false },
-  		{ "case": "(925)hello145-5555", "expectation": false }
-  	],
-    "answers": {
-      "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the answer.",
-      "answer": "/abc/"
-    }
+[{
+  "name": "Learn Your ABCs",
+  "order": 0,
+  "Description": "Let’s start with the basics! You are writing patterns with the pure intent of matching certain characters in strings. Letter literals and digits easily match to themselves. The pattern /a/ will match to anything containing an ‘a'. A word, /meow/ for example, will match to the word ‘meow’ if it appears in that order. Try to see if you can do the below exercise with this new knowledge! Remember to start and end your expression with forward slashes!",
+  "testCases": [{
+    "case": "abcd",
+    "expectation": true
+  }, {
+    "case": "abc",
+    "expectation": true
+  }, {
+    "case": "acd",
+    "expectation": false
+  }, {
+    "case": "123",
+    "expectation": false
+  }, {
+    "case": "hello",
+    "expectation": false
+  }, {
+    "case": "abcde",
+    "expectation": true
+  }],
+  "answers": {
+    "explanation": "As you can see, the common pattern that binds the match cases versus the skip cases is the string ‘abc’.",
+    "answer": "/abc/"
   }
-]
+}, {
+  "name": "Count to 1",
+  "order": 1,
+  "Description": "Great job on the first exercise! Digits work pretty similar in regular expressions. You can match digit literals as well right into your pattern. See if you can complete the challenge below.",
+  "testCases": [{
+    "case": "1234",
+    "expectation": true
+  }, {
+    "case": "1",
+    "expectation": true
+  }, {
+    "case": "156",
+    "expectation ": true
+  }, {
+    "case": "abc",
+    "expectation": false
+  }, {
+    "case": "digits",
+    "expectation": false
+  }, {
+    "case": "character",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "Similar to the last exercise, the common pattern between all of the match cases is the digit ‘1’. So by putting that pattern in-between your forward slashes, you can successfully match the digit cases.",
+    "answer": "/1/"
+  }
+}, {
+  "name": "The DOT!",
+  "order": 2,
+  "Description": "Now you’re getting the hang of it! Now let’s see how far the rabbit hole goes. Pattern literal matching isn’t much different than just matching of strings to your the patterns you’ve written already. In this sense, regex isn’t that interesting. Here’s where the magic happens. Regex has this concept of metacharacters, where certain characters will match large swaths of other characters. Case and point, the infamous dot, i.e. ‘.’ (pun intended). Or as Regexcellence team member Lucy puts it, the DOT! The dot character is essentially a wild card, and will match anything. Armed with this knowledge, see if you can pass the next exercise! In most implementations of Regular Expressions, this holds true, but Javascript’ s regex engine does not match the dot character to line breaks.Fortunately, on Regexcellence, we use an excellent regex transpiler called XRegExp, that supports line break matching.See more about this feature HERE.",
+  "testCases": [{
+    "case": "hello world!",
+    "expectation": true
+  }, {
+    "case": "fizzbuzz",
+    "expectation": true
+  }, {
+    "case": "777",
+    "expectation": true
+  }, {
+    "case": "&^%#$@#",
+    "expectation": true
+  }],
+  "answers": {
+    "explanation": "Above we’ve included digits, numbers, and punctuation. Spectacularly, the DOT matches all of them!",
+    "answer": "/./"
+  }
+}, {
+  "name": "Let’s get meta ",
+  "order": 3,
+  "Description": "Ok, we’ve gone from pattern literals to matching whatever indiscriminately, where’s the middle ground in regex? Luckily the DOT is not the only metacharacter on the block. Among the many metacharacters we’ll deal with here, ‘\\w’ is among the most important. The pattern ‘\\w’ will match any word character. Although ‘word character’ is a description from the regex authorities, not ours. In the regex sense, ‘word character’ here means a-z, A-Z, 0-9, and underscores, i.e. ‘_’. Try to use it in your next pattern! You may have to combine your knowledge from the past exercises to pass this one hehe.",
+  "testCases": [{
+    "case": "hello world!",
+    "expectation": true
+  }, {
+    "case": "fizzbuzz",
+    "expectation": true
+  }, {
+    "case": "777",
+    "expectation": true
+  }, {
+    "case": "_&^%#$@#",
+    "expectation": true
+  }, {
+    "case": "yuuuup",
+    "expectation": false
+  }, {
+    "case": "noooope",
+    "expectation": false
+  }, {
+    "case": "/yellow/",
+    "expectation": false
+  }, {
+    "case": "<submarine>",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "Looks like you can’t just use the DOT here! But you do need for that tricky match case with the underscore. As you can see from the syntax highlighting in green, the \\w will match the first character, but you somehow need to take into account the second character as well, for which the DOT will work wonderfully.",
+    "answer": "/\\w./"
+  }
+}, {
+  "name": "Escape the DOT!",
+  "order": 4,
+  "Description": "As you could see from the last exercise,  the backslash ‘\\’ gave the letter ‘w’ this whole new meaning of being any word character out there. In fact, the whole world of regex has a great dependency on this backslash character. If it were otherwise, we would be pretty limited in terms of the characters we could use to match patterns. So the sooner you get used to the function of the backslash the better! Typically the use of the backslash is either used to escape a metacharacter to represent it literally, or to escape an otherwise literal character to make it meta. You may have been wondering about how to match period characters if the DOT by itself matches anything on this green earth. So without giving too much away, let’s see if you can apply this know-how of backslashes in the below exercise!",
+  "testCases": [{
+    "case": "Is but a dream within a dream.",
+    "expectation": true
+  }, {
+    "case": "Whose woods these are I think I know.",
+    "expectation": true
+  }, {
+    "case": "And miles to go before I sleep.",
+    "expectation": true
+  }, {
+    "case": "I am not a sentence",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "Instead of using the DOT by itself, we used a backslash to escape it, so now it can be read literally.",
+    "answer": "/\\./"
+  }
+}, {
+  "name": "Baby Back Brackets",
+  "order": 5,
+  "Description": "Now that we got backslashes out of the way, let’s go onto an incredibly powerful tool in regex, brackets (‘[ ]’). The word character \\w was cool, but it may have struck you as not that customizable to matching a subsection of characters you care about. Enter brackets. Brackets are a nice, short way of saying, match this, or this, or this, or this, or this... ok you get it. For example, /[meow]/ will match any one of the characters ‘m’, ‘e’, ‘o’, or ‘w’ at any point of the string you’re matching the pattern against. Try out this concept below! HINT: Try to only match the first letter of the match cases.",
+  "testCases": [{
+    "case": "bat",
+    "expectation": true
+  }, {
+    "case": "cat",
+    "expectation": true
+  }, {
+    "case": "mat",
+    "expectation": true
+  }, {
+    "case": "lack",
+    "expectation": false
+  }, {
+    "case": "rack",
+    "expectation": false
+  }, {
+    "case": "stack",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "As you can see from the above cases, the three unique characters are ‘b’, ‘c’, and ‘m’. But you only want to match either of those characters, so the best way to achieve this result is to throw those three letters into a bracket expression, and ta-da! You’ve got matches.",
+    "answer": "/[bcm]/"
+  }
+}, {
+  "name": "Characters NOT ALLOWED",
+  "order": 6,
+  "Description": "Brackets by default have an inclusive OR function, but they also can exclude certain characters if you know the right trick. And that trick is the caret, ‘^’. If placed right after the opening bracket, the caret has the magical ability to kick characters out of club match. For instance, the pattern /[^xyz]/ will exclude ‘x’, ‘y’, or ‘z’ from the matching pattern. Also it’s worth mentioning that the caret has this special meaning of exclusion only within brackets. Later in this tutorial, we’ll go over how it functions outside of brackets. But enough of that, let’s see who can get into club match below. ",
+  "testCases": [{
+    "case": "Fabio",
+    "expectation": true
+  }, {
+    "case": "Monica",
+    "expectation ": true }, 
+    {
+    "case": "Tech Talent",
+    "expectation": true
+  }, {
+    "case": "IE11",
+    "expectation": false
+  }, {
+    "case": "Vader",
+    "expectation": false
+  }, {
+    "case": "Worldcom",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "Yes, we’re sorry to say that the latest version of Internet Explorer did not make the cut. And yes, Monica from Silicon Valley, and yes, Fabio. There’s only one Fabio out there right?",
+    "answer": "/[^1VW]/"
+  }
+}, {
+  "name": "Blend it",
+  "order": 7,
+  "Description": "Ok, less reading and more regexing. See if you can combine some of these concepts in the below exercise.",
+  "testCases": [{
+    "case": "m@ll",
+    "expectation": true
+  }, {
+    "case": "fall",
+    "expectation": false
+  }, {
+    "case": "tall",
+    "expectation": true
+  }, {
+    "case": "baller",
+    "expectation": true
+  }, {
+    "case": "call",
+    "expectation": false
+  }, {
+    "case": "wall",
+    "expectation": true
+  }],
+  "answers": {
+    "explanation": "You had to combine a few interesting concepts here, both using exclusion and the wildcard to snag the @ symbol. ",
+    "answer": "/[^fc]./"
+  }
+}, {
+  "order": 8,
+  "name": "Matching Zip Codes",
+  "description": "Well done! Now that you’re getting used to the basics we can get a little fancier. The hyphen is a wonderful tool for creating a concise way of matching to many different characters. Instead of writing /[abcdefg]/, we can simply write /[a-g]/. This also works for digits, for example writing /[0-9]/ is a great way to match to any number. But wait! There’s an even better way to match numbers. You can use metacharacters to match specific classes of characters. The \\d metacharacter is used to match only numbers and is equivalent to /[0-9]/. Matching to a certain number of character repetitions is as easy as following the character with some curly braces. /a{1}/ will match to a string containing one ‘a’, while /a{1,}/ will match a string as long as it has at least one ‘a’, but could contain one hundred ‘a’s. If you would like to match various strings that range in 'a'-length, create a limit. /a{2,5}/ will match strings with two to five continuous ‘a’s. Try to use curly brackets and the metacharacter to validate and match the 5-digit zip codes!",
+  "author": "Lucy",
+  "difficulty": 1,
+  "testCases": [{
+    "case": "94549",
+    "expectation": true
+  }, {
+    "case": "94105",
+    "expectation": true
+  }, {
+    "case": "666",
+    "expectation": false
+  }, {
+    "case": "9999999",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the",
+    "answer": "/abc/"
+  }
+}, {
+  "order": 9,
+  "name": "Words that end with 'en'",
+  "description": "Sweet! Now let’s increase the specificity of our matches. Sometimes we want to make sure a line starts or ends with a specific word. Using the caret character without square brackets will guarantee that the regular expression only matches to lines that begin with the given string. For example we want to validate that a url is on a secured protocol. To do so we want to make sure that the url starts with 'https://' by using the pattern /^https:\\/\\// Additionally it is also possible to match lines that end with specific characters or words. You can do that using the dollar sign ($). Give it a whirl! Try to match only the words that end with 'en'.",
+  "author": "Dana",
+  "difficulty": 2,
+  "testCases": [{
+    "case": "glenn",
+    "expectation": false
+  }, {
+    "case": "glen",
+    "expectation": true
+  }, {
+    "case": "turkmen",
+    "expectation": true
+  }, {
+    "case": "cayenne",
+    "expectation": false
+  }, {
+    "case": "big ben",
+    "expectation": true
+  }, {
+    "case": "opium den",
+    "expectation": true
+  }, {
+    "case": "wise men",
+    "expectation": true
+  }, {
+    "case": "never again",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the",
+    "answer: "\/abc\/"
+  }
+}, {
+  "order": 4,
+  "name": "Removing Spaces",
+  "description": "Great job! Let’s move on to yet another metacharacter! Often when you build a website, like Regexcellence.co, you may run into scenarios where you do not want to have any whitespaces in your URL. Good news! There’s a metacharacter for that! You can use \\s to match any whitespace in a given line. Write a pattern that matches each sentence and be sure to include the spaces!",
+  "author": "Ben",
+  "difficulty": 1,
+  "testCases": [{
+    "case": "Regexcellence is a great site!",
+    "expectation": true
+  }, {
+    "case": "Regex is the only source truth",
+    "expectation": true
+  }, {
+    "case": "Lucy and Dana are awesome!",
+    "expectation": true
+  }, {
+    "case": "Troy is a beast!",
+    "expectation": true
+  }, {
+    "case": "Remove all of the whitespaces.",
+    "expectation": true
+  }],
+  "answers": {
+    "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the ",
+    "answer": "\/abc\/"
+  }
+}, {
+  "order": 5,
+  "name": "Matching Phone Numbers",
+  "description": "Write a pattern that matches a variety of phone number formats",
+  "author": "Ben",
+  "difficulty": 3,
+  "testCases": [{
+    "case": "(925) 145-5555",
+    "expectation": true
+  }, {
+    "case": "(925) 1455555",
+    "expectation": false
+  }, {
+    "case": "925-145-5555",
+    "expectation": true
+  }, {
+    "case": "(925) 145-55555",
+    "expectation": false
+  }, {
+    "case": "925 145-5555",
+    "expectation": false
+  }, {
+    "case": "925 145 5555",
+    "expectation": false
+  }, {
+    "case": "(925)hello145-5555",
+    "expectation": false
+  }],
+  "answers": {
+    "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the",
+    "answer": "\/abc\/"
+  }
+}]
