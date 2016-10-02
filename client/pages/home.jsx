@@ -28,17 +28,17 @@ class Home extends React.Component {
           <div className="container">
             <div className="row homepage-row">
               <div className="col-md-4 home-images">
-                <div className="book-logo"><span className="book-r">R</span><img className="list-img" src={book} /></div><br />
+                <div className="book-logo"><span className="book-r">R</span><img className="list-img" src={book} /></div>
                 <h3 className="learn-h3"><Link to="tutorial">LEARN</Link></h3>
                 <div className="image-text">Take our comprehensive tutorial to learn the basics of Regex!</div>
               </div>
                 <div className="col-md-4 home-images">
-                  <img className="list-img" src={arrows} /><br /><br />
+                  <img className="list-img" src={arrows} /><br />
                   <h3 className="challenge-h3"><Link to="user-challenges">CHALLENGE</Link></h3>
                   <div className="image-text">Practice your new skills at our user submitted Regex challenges.</div>
                 </div>
               <div className="col-md-4 home-images">
-                <img className="quill" src={quill} /><br /><br />
+                <img className="quill" src={quill} /><br />
                 <h3 className="contribute-h3"><Link to="post">CONTRIBUTE</Link></h3>
                 <div className="image-text">Become part of the community by submitting your own Regex challenges.</div>
               </div>
