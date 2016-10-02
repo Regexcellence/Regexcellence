@@ -13,6 +13,7 @@
     "test:server": "mocha spec/server/*.js",
     "devStart": "webpack-dev-server --content-base build/",
     "insertChallenges": "node server/db/dbScripts/insertChallenges.js",
+    "insertTutorials": "node server/db/dbScripts/insertTutorials.js",
     "db": "mongo ds147975.mlab.com:47975/db_reg -u teamUser -p regOrDie"
   },
   "repository": {
@@ -86,6 +87,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "request": "^2.75.0",
-    "uuid": "^2.0.3"
+    "uuid": "^2.0.3",
+    "xregexp": "^3.1.1"
   }
 }
