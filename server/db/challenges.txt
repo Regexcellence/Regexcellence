@@ -306,5 +306,21 @@
     {"case": "12:50PM: Nothing", "expectation": false},
     {"case": "12:55PM: Okay bye", "expectation": false}
   ]
+},
+{
+  "name": "Four Letter S & P Words",
+  "author": "bbtran",
+  "description": "Match the words that are 4 letters long and start with S and end with P!",
+  "difficulty": 1,
+  "testCases": [
+    {"case": "Stop", "expectation": true},
+    {"case": "Shop", "expectation": true},
+    {"case": "SWAP", "expectation": true},
+    {"case": "soup", "expectation": true},
+    {"case": "shape", "expectation": false},
+    {"case": "SWAPP", "expectation": false},
+    {"case": "SIP", "expectation": false},
+    {"case": "HELP", "expectation": false}
+  ]
 }
 ]
