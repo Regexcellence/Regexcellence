@@ -6,7 +6,7 @@ import Navigation from '../controls/navbar';
 import Controls from '../controls/controls';
 import { getAllTutorials } from '../actions/api';
 import Challenge from '../challenge/challenge';
-import book from '../styles/images/book.png';
+import book from '../styles/images/book_R.png';
 
 class Tutorial extends Component {
   componentWillMount() {
