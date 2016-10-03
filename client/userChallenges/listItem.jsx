@@ -32,10 +32,12 @@ class ListItem extends Component {
         </Link>
       );
     } else {
+      const { challengeView, userCompleted } = this.props;
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item">
             <h3>{this.props.name.toUpperCase()}</h3>
+            { challengeView && userCompleted ? <div className="pull-right">COMPLETED</div> : false }
             <DifficultyBar
               difficultyStyle={difficultyStyle}
               difficulty={this.props.difficulty}
