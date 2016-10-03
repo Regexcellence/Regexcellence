@@ -5,6 +5,7 @@ const Users = models.Users;
 // Below is to fix deprecated mongoose promise.
 mongoose.Promise = global.Promise;
 const Challenges = models.Challenges;
+const Tutorial = models.Tutorial;
 
 exports = module.exports = {};
 
@@ -20,7 +21,10 @@ exports.addUser = (githubProfile, callback) => {
     avatar_url: githubProfile._json.avatar_url,
     authored_challenges: [],
     completed_challenges: [],
-    tutorial_progress: '',
+    tutorial_progress: {
+      order: -1,
+      tutorialUrl: ''
+    },
   });
   user.save((err, newUser) => {
     if (err) throw err;
@@ -89,6 +93,26 @@ exports.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
         if (err) throw err;
         callback(challenges);
       });
+    }
+  });
+};
+
+exports.postTutorialProgress = (userId, tutorialNumber, callback) => {
+  Users.findOne({ _id: userId }, (err, user) => {
+    if (user.tutorial_progress.order < tutorialNumber) {
+      Tutorial.findOne({ order: tutorialNumber}, (err, tutorial) => {
+        if (err) throw err;
+        const tutorial_progress = {
+          order: tutorialNumber,
+          tutorialUrl: tutorial.nameurl
+        };
+        Users.findOneAndUpdate({ _id: userId }, { tutorial_progress }, { new: true }, (err, updatedUser) => {
+          if (err) throw err;
+          callback(updatedUser);
+        });
+      })
+    } else {
+      callback(user);
     }
   });
 };

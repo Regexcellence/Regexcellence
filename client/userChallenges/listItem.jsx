@@ -21,7 +21,6 @@ class ListItem extends Component {
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item container">
-            {console.log('LIST ITEM PROPS', this.props)}
             {this.props.name.toUpperCase()}
             <br />
             <DifficultyBar

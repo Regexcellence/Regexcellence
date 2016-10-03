@@ -30,11 +30,25 @@ module.exports = (app) => {
       res.end('challenge created');
     });
   });
+  app.post('/regex/tutorial-progress?', (req, res) => {
+    const tutorialNumber = url.parse(req.url).query;
+    if (req.user) {
+      userHandlers.postTutorialProgress(req.user._id, parseInt(tutorialNumber), (updatedUser) => {
+        res.end('Updated User');
+      });
+    } else {
+      res.end('Not logged in');
+    }
+  });
   app.post('/regex/challenges/completed-challenge?', (req, res) => {
     const userId = url.parse(req.url).query;
-    userHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
-      res.end('challenge created');
-    });
+    if (userId === 'undefined') {
+      res.end()
+    } else {
+      userHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
+        res.end('challenge created');
+      });
+    }
   });
   app.post('/regex/challenges/new-answer?', (req, res) => {
     const query = url.parse(req.url).query;
@@ -45,15 +59,23 @@ module.exports = (app) => {
   // TODO: Save more.
   app.get('/regex/challenges/user-completed?', (req, res) => {
     const userId = url.parse(req.url).query;
-    userHandlers.findUserRelatedChallenges(userId, 'completed_challenges', (completedChallenges) => {
-      res.send(completedChallenges)
-    })
+    if (userId === 'undefined') {
+      res.end()
+    } else {
+      userHandlers.findUserRelatedChallenges(userId, 'completed_challenges', (completedChallenges) => {
+        res.send(completedChallenges)
+      });
+    }
   });
   app.get('/regex/user-info/authored-challenges?', (req, res) => {
     const userId = url.parse(req.url).query;
-    userHandlers.findUserRelatedChallenges(userId, 'authored_challenges', (authoredChallenges) => {
-      res.send(authoredChallenges);
-    });
+    if (userId === 'undefined') {
+      res.end()
+    } else {
+      userHandlers.findUserRelatedChallenges(userId, 'authored_challenges', (authoredChallenges) => {
+        res.send(authoredChallenges);
+      });
+    }
   });
   app.get('/regex/user-info', (req, res) => {
     if (req.user) {
