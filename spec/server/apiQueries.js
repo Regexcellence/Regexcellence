@@ -18,7 +18,7 @@ describe('Requesting Challenge and Tutorial Data', () => {
 			.expect('Content-Type', /json/)
 			.end((err, res) => {
 				if (err) return done(err);
-				res.body.should.be.instanceOf(Array);
+				res.body.challenges.should.be.instanceOf(Array);
 				done();
 			});
 		});

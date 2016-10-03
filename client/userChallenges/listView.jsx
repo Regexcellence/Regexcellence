@@ -12,7 +12,10 @@ class ListView extends Component {
           order={challenge.order+1}
           author={challenge.author}
           testCases={challenge.testCases}
-          difficulty={challenge.difficulty}/>;
+          difficulty={challenge.difficulty}
+          userCompleted={challenge.userCompleted}
+          challengeView={true}
+          />;
       });
       return (
         <div className="challenge-list">
