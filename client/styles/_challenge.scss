@@ -15,22 +15,10 @@
 }
 
 .case-text {
-	font-size: 1.8em;//30px
+	font-size: 1.5em;//30px
 	display: inline;
 	color: gray;
-  .glyphicon {
-    &:hover {
-      border-radius: 100%;
-      padding: 6px;
-      cursor: pointer;
-      &.glyphicon-remove {
-        background-color: #f4c2b8;
-      }
-      &.glyphicon-ok, &.glyphicon-pencil, &.glyphicon-plus {
-        background-color: #c5eef4;
-      }
-    }
-  }
+  margin: 0.5em;
 }
 .text-match {
   color: green;
@@ -60,6 +48,7 @@
     font-size: 1.8em;
   }
   td{
+    white-space: nowrap;
   }
 }
 
