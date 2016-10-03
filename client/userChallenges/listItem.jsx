@@ -23,6 +23,7 @@ class ListItem extends Component {
           <li className="list-group-item container">
             {console.log('LIST ITEM PROPS', this.props)}
             {this.props.name.toUpperCase()}
+            <div className="pull-right">COMPLETE</div> <br />
             <DifficultyBar
               difficultyStyle={difficultyStyle}
               difficulty={this.props.difficulty}

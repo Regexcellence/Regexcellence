@@ -14,9 +14,8 @@ class UserProfile extends React.Component {
       this.props.getUserCompletedChallenges(this.props.userInfo._id);
     }
   }
-  mapChallenges(array) {
+  mapChallenges(listContent) {
     return listContent.map((each, i) => {
-      console.log('CONTENTS!!!!', listContent);
       return (
         <ListItem
           key={i}
