@@ -1,4 +1,4 @@
-import XRegExp from 'XRegExp';
+import XRegExp from 'xregexp';
 
 // Strips input pattern of both forward slashes, and separates flags if any.
 export function regexParser(input) {
