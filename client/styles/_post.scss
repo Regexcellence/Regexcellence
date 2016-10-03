@@ -7,7 +7,33 @@
   padding: 15px;
   font-family: Helvetica;
   vertical-align: text-top;
+
   table{
+    td.edit-case-text.case-text{
+      border-top: none;
+    }
+    .edit-case-text.case-text{
+      span{
+        font-size: 20px;
+        margin-bottom: 3%;
+      }
+      input{
+        margin: 1% auto 2% auto;
+      }
+    }
+    .glyphicon {
+      &:hover {
+        border-radius: 100%;
+        padding: 6px;
+        cursor: pointer;
+        &.glyphicon-remove {
+          background-color: #f4c2b8;
+        }
+        &.glyphicon-ok, &.glyphicon-pencil, &.glyphicon-plus {
+          background-color: #c5eef4;
+        }
+      }
+    }
     .glyphicon.glyphicon-ok{
       margin-left: 5px;
       padding: 5px;
