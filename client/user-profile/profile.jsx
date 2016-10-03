@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { getUserCompletedChallenges, getUserInfo } from '../actions/api';
+import { Link } from 'react-router';
+import { getUserCompletedChallenges, getUserInfo, getAllTutorials } from '../actions/api';
 import ListItem from '../userChallenges/listItem';
-
+import ProgressBar from '../tutorials/progressBar';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -13,6 +13,10 @@ class UserProfile extends React.Component {
     if (this.props.userInfo._id) {
       this.props.getUserCompletedChallenges(this.props.userInfo._id);
       this.props.getUserInfo();
+    }
+    if(!this.props.tutorials.length){
+      console.log('***');
+      this.props.getAllTutorials();
     }
   }
   mapChallenges(listContent) {
@@ -29,11 +33,19 @@ class UserProfile extends React.Component {
     });
   }
   render() {
-    const { userInfo } = this.props;
+    const { userInfo, tutorials } = this.props;
     console.log('tutorial progres is ', userInfo.tutorial_progress);
+    console.log('tutorial is ', tutorials);
+
     const { completed_challenges, authored_challenges } = userInfo;
     let completeLists = [];
     let authoredList = [];
+    let percent = "";
+    let tutorialUrl = "";
+    if(userInfo.tutorial_progress){
+      percent = { width: (Math.floor(userInfo.tutorial_progress.order/tutorials.length*100)).toString()+"%" };
+      tutorialUrl = userInfo.tutorial_progress.tutorialUrl;
+    }
     if (!Object.keys(userInfo).length) {
       return (
         <div>
@@ -74,6 +86,7 @@ class UserProfile extends React.Component {
 
             <div className="row" id="tutorial-progress">
               <h4>Tutorial Progress</h4>
+              <Link to={"tutorial/"+ tutorialUrl}><ProgressBar progress={percent} /></Link>
             </div>
             <div className="row" id="complete-challenge">
               <h4>Completed Challenges</h4>
@@ -101,7 +114,7 @@ UserProfile.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  return { userInfo: state.userInfo };
+  return { userInfo: state.userInfo, tutorials: state.tutorials};
 };
 
-export default connect(mapStateToProps, { getUserCompletedChallenges, getUserInfo })(UserProfile);
+export default connect(mapStateToProps, { getUserCompletedChallenges, getUserInfo, getAllTutorials })(UserProfile);
