@@ -37,7 +37,7 @@
     "expectation": true
   }, {
     "case": "156",
-    "expectation ": true
+    "expectation": true
   }, {
     "case": "abc",
     "expectation": false
@@ -74,9 +74,9 @@
     "answer": "/./"
   }
 }, {
-  "name": "Let’s get meta ",
+  "name": "Let’s get meta",
   "order": 3,
-  "Description": "Ok, we’ve gone from pattern literals to matching whatever indiscriminately, where’s the middle ground in regex? Luckily the DOT is not the only metacharacter on the block. Among the many metacharacters we’ll deal with here, ‘\\w’ is among the most important. The pattern ‘\\w’ will match any word character. Although ‘word character’ is a description from the regex authorities, not ours. In the regex sense, ‘word character’ here means a-z, A-Z, 0-9, and underscores, i.e. ‘_’. Try to use it in your next pattern! You may have to combine your knowledge from the past exercises to pass this one hehe.",
+  "Description": "Ok, we’ve gone from pattern literals to matching whatever indiscriminately, where’s the middle ground in regex? Luckily the DOT is not the only metacharacter on the block. Among the many metacharacters we’ll deal with here, ‘\\w’ is among the most important. The pattern ‘\\w’ will match any word character. Although ‘word character’ is a description from the regex authorities, not ours. In the regex sense, ‘word character’ here means a-z, A-Z, 0-9, and underscores, i.e. ‘_’. Try to use it in your next pattern!",
   "testCases": [{
     "case": "hello world!",
     "expectation": true
@@ -90,21 +90,21 @@
     "case": "_&^%#$@#",
     "expectation": true
   }, {
-    "case": "yuuuup",
+    "case": "@#$%^%&%()+",
     "expectation": false
   }, {
-    "case": "noooope",
+    "case": "&*%^$()",
     "expectation": false
   }, {
-    "case": "/yellow/",
+    "case": "///////",
     "expectation": false
   }, {
-    "case": "<submarine>",
+    "case": "<<><><>>",
     "expectation": false
   }],
   "answers": {
-    "explanation": "Looks like you can’t just use the DOT here! But you do need for that tricky match case with the underscore. As you can see from the syntax highlighting in green, the \\w will match the first character, but you somehow need to take into account the second character as well, for which the DOT will work wonderfully.",
-    "answer": "/\\w./"
+    "explanation": "Looks like you can’t just use the DOT here! But you do need for that tricky match case with the underscore. As you can see from the syntax highlighting in green, the \\w will match the first character.",
+    "answer": "/\\w/"
   }
 }, {
   "name": "Escape the DOT!",
@@ -135,7 +135,7 @@
     "case": "bat",
     "expectation": true
   }, {
-    "case": "cat",
+    "case": "rat",
     "expectation": true
   }, {
     "case": "mat",
@@ -144,7 +144,7 @@
     "case": "lack",
     "expectation": false
   }, {
-    "case": "rack",
+    "case": "pack",
     "expectation": false
   }, {
     "case": "stack",
@@ -152,7 +152,7 @@
   }],
   "answers": {
     "explanation": "As you can see from the above cases, the three unique characters are ‘b’, ‘c’, and ‘m’. But you only want to match either of those characters, so the best way to achieve this result is to throw those three letters into a bracket expression, and ta-da! You’ve got matches.",
-    "answer": "/[bcm]/"
+    "answer": "/[brm]/"
   }
 }, {
   "name": "Characters NOT ALLOWED",
@@ -163,33 +163,27 @@
     "expectation": true
   }, {
     "case": "Monica",
-    "expectation ": true }, 
+    "expectation": true }, 
     {
     "case": "Tech Talent",
     "expectation": true
   }, {
     "case": "IE11",
     "expectation": false
-  }, {
-    "case": "Vader",
-    "expectation": false
-  }, {
-    "case": "Worldcom",
-    "expectation": false
   }],
   "answers": {
     "explanation": "Yes, we’re sorry to say that the latest version of Internet Explorer did not make the cut. And yes, Monica from Silicon Valley, and yes, Fabio. There’s only one Fabio out there right?",
-    "answer": "/[^1VW]/"
+    "answer": "/[^IE1]/"
   }
 }, {
   "name": "Blend it",
   "order": 7,
   "Description": "Ok, less reading and more regexing. See if you can combine some of these concepts in the below exercise.",
   "testCases": [{
-    "case": "m@ll",
+    "case": "mall",
     "expectation": true
   }, {
-    "case": "fall",
+    "case": "fat",
     "expectation": false
   }, {
     "case": "tall",
@@ -198,15 +192,15 @@
     "case": "baller",
     "expectation": true
   }, {
-    "case": "call",
+    "case": "cat",
     "expectation": false
   }, {
     "case": "wall",
     "expectation": true
   }],
   "answers": {
-    "explanation": "You had to combine a few interesting concepts here, both using exclusion and the wildcard to snag the @ symbol. ",
-    "answer": "/[^fc]./"
+    "explanation": "You had to combine a few interesting concepts here, both using exclusion and letter literals to complete the pattern.",
+    "answer": "/[^fc]all/"
   }
 }, {
   "order": 8,
@@ -229,7 +223,7 @@
   }],
   "answers": {
     "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the",
-    "answer": "/abc/"
+    "answer": ""
   }
 }, {
   "order": 9,
@@ -264,10 +258,10 @@
   }],
   "answers": {
     "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the",
-    "answer: "\/abc\/"
+    "answer": ""
   }
 }, {
-  "order": 4,
+  "order": 10,
   "name": "Removing Spaces",
   "description": "Great job! Let’s move on to yet another metacharacter! Often when you build a website, like Regexcellence.co, you may run into scenarios where you do not want to have any whitespaces in your URL. Good news! There’s a metacharacter for that! You can use \\s to match any whitespace in a given line. Write a pattern that matches each sentence and be sure to include the spaces!",
   "author": "Ben",
@@ -290,10 +284,10 @@
   }],
   "answers": {
     "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the ",
-    "answer": "\/abc\/"
+    "answer": ""
   }
 }, {
-  "order": 5,
+  "order": 11,
   "name": "Matching Phone Numbers",
   "description": "Write a pattern that matches a variety of phone number formats",
   "author": "Ben",
@@ -322,6 +316,6 @@
   }],
   "answers": {
     "explanation": "We are looking for a pattern literal here. So it makes sense that we can just type in abc for the",
-    "answer": "\/abc\/"
+    "answer": ""
   }
 }]

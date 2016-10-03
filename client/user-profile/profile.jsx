@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import mapChallenges from './profile-challenge-lists';
 
 import { getUserCompletedChallenges } from '../actions/api';
+import ListItem from '../userChallenges/listItem';
+
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -12,6 +13,20 @@ class UserProfile extends React.Component {
     if (this.props.userInfo._id) {
       this.props.getUserCompletedChallenges(this.props.userInfo._id);
     }
+  }
+  mapChallenges(array) {
+    return listContent.map((each, i) => {
+      console.log('CONTENTS!!!!', listContent);
+      return (
+        <ListItem
+          key={i}
+          challengeId={each._id}
+          name={each.name}
+          difficulty={each.difficulty}
+          testCases={null}
+        />
+      );
+    });
   }
   render() {
     const { userInfo } = this.props;
@@ -28,10 +43,10 @@ class UserProfile extends React.Component {
       );
     } else {
       if (typeof completed_challenges[0] === 'object') {
-        completeLists = mapChallenges(completed_challenges);
+        completeLists = this.mapChallenges(completed_challenges);
       }
       if (typeof authored_challenges[0] === 'object') {
-        authoredList = mapChallenges(authored_challenges);
+        authoredList = this.mapChallenges(authored_challenges);
       }
       return (
         <div className="user-profile">
