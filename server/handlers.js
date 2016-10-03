@@ -7,8 +7,17 @@ const checkAuth = require('./utils').checkAuth;
 module.exports = (app) => {
   app.get('/regex/challenges', (req, res) => {
   // Review if async issues become a problem!
+  const user = req.user;
     dbHandlers.getChallenges((challenges) => {
-      res.send(challenges);
+      const payload = {
+        challenges
+      };
+      if (user) {
+        payload.user_completed = user.completed_challenges;
+      } else {
+        payload.user_completed = null;
+      }
+      res.send(payload);
     });
   });
   app.get('/regex/tutorial', (req, res) => {
