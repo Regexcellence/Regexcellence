@@ -71,6 +71,10 @@ class UserProfile extends React.Component {
                 </tbody>
               </table>
             </div>
+
+            <div className="row" id="tutorial-progress">
+              <h4>Tutorial Progress</h4>
+            </div>
             <div className="row" id="complete-challenge">
               <h4>Completed Challenges</h4>
               { completeLists }
