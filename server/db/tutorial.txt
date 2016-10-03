@@ -1,7 +1,7 @@
 [{
   "name": "Learn Your ABCs",
   "order": 0,
-  "Description": "Let’s start with the basics! You are writing patterns with the pure intent of matching certain characters in strings. Letter literals and digits easily match to themselves. The pattern /a/ will match to anything containing an ‘a'. A word, /meow/ for example, will match to the word ‘meow’ if it appears in that order. Try to see if you can do the below exercise with this new knowledge! Remember to start and end your expression with forward slashes!",
+  "description": "Let’s start with the basics! You are writing patterns with the pure intent of matching certain characters in strings. Letter literals and digits easily match to themselves. The pattern /a/ will match to anything containing an ‘a'. A word, /meow/ for example, will match to the word ‘meow’ if it appears in that order. Try to see if you can do the below exercise with this new knowledge! Remember to start and end your expression with forward slashes!",
   "testCases": [{
     "case": "abcd",
     "expectation": true
@@ -28,7 +28,7 @@
 }, {
   "name": "Count to 1",
   "order": 1,
-  "Description": "Great job on the first exercise! Digits work pretty similar in regular expressions. You can match digit literals as well right into your pattern. See if you can complete the challenge below.",
+  "description": "Great job on the first exercise! Digits work pretty similar in regular expressions. You can match digit literals as well right into your pattern. See if you can complete the challenge below.",
   "testCases": [{
     "case": "1234",
     "expectation": true
@@ -55,7 +55,7 @@
 }, {
   "name": "The DOT!",
   "order": 2,
-  "Description": "Now you’re getting the hang of it! Now let’s see how far the rabbit hole goes. Pattern literal matching isn’t much different than just matching of strings to your the patterns you’ve written already. In this sense, regex isn’t that interesting. Here’s where the magic happens. Regex has this concept of metacharacters, where certain characters will match large swaths of other characters. Case and point, the infamous dot, i.e. ‘.’ (pun intended). Or as Regexcellence team member Lucy puts it, the DOT! The dot character is essentially a wild card, and will match anything. Armed with this knowledge, see if you can pass the next exercise! In most implementations of Regular Expressions, this holds true, but Javascript’ s regex engine does not match the dot character to line breaks.Fortunately, on Regexcellence, we use an excellent regex transpiler called XRegExp, that supports line break matching.See more about this feature HERE.",
+  "description": "Now you’re getting the hang of it! Now let’s see how far the rabbit hole goes. Pattern literal matching isn’t much different than just matching of strings to your the patterns you’ve written already. In this sense, regex isn’t that interesting. Here’s where the magic happens. Regex has this concept of metacharacters, where certain characters will match large swaths of other characters. Case and point, the infamous dot, i.e. ‘.’ (pun intended). Or as Regexcellence team member Lucy puts it, the DOT! The dot character is essentially a wild card, and will match anything. Armed with this knowledge, see if you can pass the next exercise! In most implementations of Regular Expressions, this holds true, but Javascript’ s regex engine does not match the dot character to line breaks.Fortunately, on Regexcellence, we use an excellent regex transpiler called XRegExp, that supports line break matching.See more about this feature HERE.",
   "testCases": [{
     "case": "hello world!",
     "expectation": true
@@ -76,7 +76,7 @@
 }, {
   "name": "Let’s get meta",
   "order": 3,
-  "Description": "Ok, we’ve gone from pattern literals to matching whatever indiscriminately, where’s the middle ground in regex? Luckily the DOT is not the only metacharacter on the block. Among the many metacharacters we’ll deal with here, ‘\\w’ is among the most important. The pattern ‘\\w’ will match any word character. Although ‘word character’ is a description from the regex authorities, not ours. In the regex sense, ‘word character’ here means a-z, A-Z, 0-9, and underscores, i.e. ‘_’. Try to use it in your next pattern!",
+  "description": "Ok, we’ve gone from pattern literals to matching whatever indiscriminately, where’s the middle ground in regex? Luckily the DOT is not the only metacharacter on the block. Among the many metacharacters we’ll deal with here, ‘\\w’ is among the most important. The pattern ‘\\w’ will match any word character. Although ‘word character’ is a description from the regex authorities, not ours. In the regex sense, ‘word character’ here means a-z, A-Z, 0-9, and underscores, i.e. ‘_’. Try to use it in your next pattern!",
   "testCases": [{
     "case": "hello world!",
     "expectation": true
@@ -109,7 +109,7 @@
 }, {
   "name": "Escape the DOT!",
   "order": 4,
-  "Description": "As you could see from the last exercise,  the backslash ‘\\’ gave the letter ‘w’ this whole new meaning of being any word character out there. In fact, the whole world of regex has a great dependency on this backslash character. If it were otherwise, we would be pretty limited in terms of the characters we could use to match patterns. So the sooner you get used to the function of the backslash the better! Typically the use of the backslash is either used to escape a metacharacter to represent it literally, or to escape an otherwise literal character to make it meta. You may have been wondering about how to match period characters if the DOT by itself matches anything on this green earth. So without giving too much away, let’s see if you can apply this know-how of backslashes in the below exercise!",
+  "description": "As you could see from the last exercise,  the backslash ‘\\’ gave the letter ‘w’ this whole new meaning of being any word character out there. In fact, the whole world of regex has a great dependency on this backslash character. If it were otherwise, we would be pretty limited in terms of the characters we could use to match patterns. So the sooner you get used to the function of the backslash the better! Typically the use of the backslash is either used to escape a metacharacter to represent it literally, or to escape an otherwise literal character to make it meta. You may have been wondering about how to match period characters if the DOT by itself matches anything on this green earth. So without giving too much away, let’s see if you can apply this know-how of backslashes in the below exercise!",
   "testCases": [{
     "case": "Is but a dream within a dream.",
     "expectation": true
@@ -130,7 +130,7 @@
 }, {
   "name": "Baby Back Brackets",
   "order": 5,
-  "Description": "Now that we got backslashes out of the way, let’s go onto an incredibly powerful tool in regex, brackets (‘[ ]’). The word character \\w was cool, but it may have struck you as not that customizable to matching a subsection of characters you care about. Enter brackets. Brackets are a nice, short way of saying, match this, or this, or this, or this, or this... ok you get it. For example, /[meow]/ will match any one of the characters ‘m’, ‘e’, ‘o’, or ‘w’ at any point of the string you’re matching the pattern against. Try out this concept below! HINT: Try to only match the first letter of the match cases.",
+  "description": "Now that we got backslashes out of the way, let’s go onto an incredibly powerful tool in regex, brackets (‘[ ]’). The word character \\w was cool, but it may have struck you as not that customizable to matching a subsection of characters you care about. Enter brackets. Brackets are a nice, short way of saying, match this, or this, or this, or this, or this... ok you get it. For example, /[meow]/ will match any one of the characters ‘m’, ‘e’, ‘o’, or ‘w’ at any point of the string you’re matching the pattern against. Try out this concept below! HINT: Try to only match the first letter of the match cases.",
   "testCases": [{
     "case": "bat",
     "expectation": true
@@ -157,7 +157,7 @@
 }, {
   "name": "Characters NOT ALLOWED",
   "order": 6,
-  "Description": "Brackets by default have an inclusive OR function, but they also can exclude certain characters if you know the right trick. And that trick is the caret, ‘^’. If placed right after the opening bracket, the caret has the magical ability to kick characters out of club match. For instance, the pattern /[^xyz]/ will exclude ‘x’, ‘y’, or ‘z’ from the matching pattern. Also it’s worth mentioning that the caret has this special meaning of exclusion only within brackets. Later in this tutorial, we’ll go over how it functions outside of brackets. But enough of that, let’s see who can get into club match below. ",
+  "description": "Brackets by default have an inclusive OR function, but they also can exclude certain characters if you know the right trick. And that trick is the caret, ‘^’. If placed right after the opening bracket, the caret has the magical ability to kick characters out of club match. For instance, the pattern /[^xyz]/ will exclude ‘x’, ‘y’, or ‘z’ from the matching pattern. Also it’s worth mentioning that the caret has this special meaning of exclusion only within brackets. Later in this tutorial, we’ll go over how it functions outside of brackets. But enough of that, let’s see who can get into club match below. ",
   "testCases": [{
     "case": "Fabio",
     "expectation": true
@@ -178,7 +178,7 @@
 }, {
   "name": "Blend it",
   "order": 7,
-  "Description": "Ok, less reading and more regexing. See if you can combine some of these concepts in the below exercise.",
+  "description": "Ok, less reading and more regexing. See if you can combine some of these concepts in the below exercise.",
   "testCases": [{
     "case": "mall",
     "expectation": true
