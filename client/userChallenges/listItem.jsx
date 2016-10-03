@@ -23,7 +23,7 @@ class ListItem extends Component {
           <li className="list-group-item container">
             {console.log('LIST ITEM PROPS', this.props)}
             {this.props.name.toUpperCase()}
-            <div className="pull-right">COMPLETE</div> <br />
+            <br />
             <DifficultyBar
               difficultyStyle={difficultyStyle}
               difficulty={this.props.difficulty}
@@ -36,8 +36,9 @@ class ListItem extends Component {
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item">
-            <h3>{this.props.name.toUpperCase()}</h3>
-            { challengeView && userCompleted ? <div className="pull-right">COMPLETED</div> : false }
+            <h3>{this.props.name.toUpperCase()} &nbsp;
+            { challengeView && userCompleted ? <span title="completed" className="completed-check glyphicon glyphicon-check" /> : false }
+            </h3>
             <DifficultyBar
               difficultyStyle={difficultyStyle}
               difficulty={this.props.difficulty}
