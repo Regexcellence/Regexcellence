@@ -86,7 +86,9 @@ class UserProfile extends React.Component {
 
             <div className="row" id="tutorial-progress">
               <h4>Tutorial Progress</h4>
-              <Link to={"tutorial/"+ tutorialUrl}><ProgressBar progress={percent} /></Link>
+              <div className="user-profile-progress">
+                <Link to={"tutorial/"+ tutorialUrl}><ProgressBar progress={percent} /></Link>
+              </div>
             </div>
             <div className="row" id="complete-challenge">
               <h4>Completed Challenges</h4>
