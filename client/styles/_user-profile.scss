@@ -44,6 +44,17 @@ table{
 #tutorial-progress{
   color: #565A5C;
   background-color: #f7f9be;
+  .user-profile-progress{
+    background-color: #F5F5F5;
+    padding: 1%;
+    &:hover{
+      background-color: #CEEAED;
+    }
+  }
+  .outerProgress{
+    margin: auto;
+    border: 1px solid #17A6B6;
+  }
 }
 #contributions{
   color: #565A5C;
