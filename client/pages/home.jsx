@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { getUserInfo } from '../actions/api';
 import trumpet from '../styles/images/trumpet.png';
 import quill from '../styles/images/quill.png';
-import book from '../styles/images/book.png';
+import book from '../styles/images/book_R.png';
 import arrows from '../styles/images/arrows.png';
 
 class Home extends React.Component {
@@ -28,7 +28,7 @@ class Home extends React.Component {
           <div className="container">
             <div className="row homepage-row">
               <div className="col-md-4 home-images">
-                <div className="book-logo"><span className="book-r">R</span><img className="list-img" src={book} /></div>
+                <div className="book-logo"><img className="list-img" src={book} /></div><br />
                 <h3 className="learn-h3"><Link to="tutorial">LEARN</Link></h3>
                 <div className="image-text">Take our comprehensive tutorial to learn the basics of Regex!</div>
               </div>
