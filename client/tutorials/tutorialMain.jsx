@@ -45,7 +45,7 @@ class TutorialMain extends Component {
 
       return (
         <div className="clear-top">
-          <ProgressBar 
+          <ProgressBar
             progress={percent}
           />
           <Challenge

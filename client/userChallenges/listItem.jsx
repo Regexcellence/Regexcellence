@@ -36,7 +36,7 @@ class ListItem extends Component {
         <Link to={linkToChallenge}>
           <li className="list-group-item">
             <h3>{this.props.name.toUpperCase()} &nbsp;
-            { challengeView && userCompleted ? <span title="completed" className="completed-check glyphicon glyphicon-check" /> : false }
+              { challengeView && userCompleted ? <span title="completed" className="completed-check glyphicon glyphicon-check" /> : false }
             </h3>
             <DifficultyBar
               difficultyStyle={difficultyStyle}
@@ -54,6 +54,8 @@ class ListItem extends Component {
 ListItem.propTypes = {
   challengeId: React.PropTypes.string,
   difficulty: React.PropTypes.number,
+  challengeView: React.PropTypes.bool,
+  userCompleted: React.PropTypes.bool,
   testCases: React.PropTypes.arrayOf(React.PropTypes.object),
   name: React.PropTypes.string,
   author: React.PropTypes.string,
