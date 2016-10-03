@@ -40,11 +40,17 @@ class UserProfile extends React.Component {
     const { completed_challenges, authored_challenges } = userInfo;
     let completeLists = [];
     let authoredList = [];
-    let percent = "";
-    let tutorialUrl = "";
-    if(userInfo.tutorial_progress){
-      percent = { width: (Math.floor(userInfo.tutorial_progress.order/tutorials.length*100)).toString()+"%" };
-      tutorialUrl = userInfo.tutorial_progress.tutorialUrl;
+    let percent = '';
+    let tutorialUrl = '';
+    if (userInfo.tutorial_progress) {
+      if (userInfo.tutorial_progress.order === -1) {
+        percent = { width: '0%' };
+        // tutorialUrl = tutorials[0].nameurl;
+        tutorialUrl = 'learn-your-abcs';
+      } else {
+        percent = { width: (Math.floor(userInfo.tutorial_progress.order / (tutorials.length * 100))).toString() + '%' };
+        tutorialUrl = userInfo.tutorial_progress.tutorialUrl;
+      }
     }
     if (!Object.keys(userInfo).length) {
       return (
@@ -107,16 +113,16 @@ class UserProfile extends React.Component {
 
 UserProfile.propTypes = {
   getUserCompletedChallenges: React.PropTypes.func,
+  tutorials: React.PropTypes.arrayOf(React.PropTypes.object),
   userInfo: React.PropTypes.shape({
     _id: React.PropTypes.string,
-    completed_challenges: React.PropTypes.array || React.PropTypes.string,
     avatar_url: React.PropTypes.string,
     name: React.PropTypes.string,
   }),
 };
 
 const mapStateToProps = (state) => {
-  return { userInfo: state.userInfo, tutorials: state.tutorials};
+  return { userInfo: state.userInfo, tutorials: state.tutorials };
 };
 
 export default connect(mapStateToProps, { getUserCompletedChallenges, getUserInfo, getAllTutorials })(UserProfile);
