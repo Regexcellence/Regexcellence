@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getUserCompletedChallenges } from '../actions/api';
+import { getUserCompletedChallenges, getUserInfo } from '../actions/api';
 import ListItem from '../userChallenges/listItem';
 
 
@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
   componentWillMount() {
     if (this.props.userInfo._id) {
       this.props.getUserCompletedChallenges(this.props.userInfo._id);
+      this.props.getUserInfo();
     }
   }
   mapChallenges(listContent) {
@@ -29,6 +30,7 @@ class UserProfile extends React.Component {
   }
   render() {
     const { userInfo } = this.props;
+    console.log('tutorial progres is ', userInfo.tutorial_progress);
     const { completed_challenges, authored_challenges } = userInfo;
     let completeLists = [];
     let authoredList = [];
@@ -98,4 +100,4 @@ const mapStateToProps = (state) => {
   return { userInfo: state.userInfo };
 };
 
-export default connect(mapStateToProps, { getUserCompletedChallenges })(UserProfile);
+export default connect(mapStateToProps, { getUserCompletedChallenges, getUserInfo })(UserProfile);

@@ -60,7 +60,10 @@ const userSchema = new Schema({
   avatar_url: String,
   authored_challenges: [],
   completed_challenges: [],
-  tutorial_progress: String,
+  tutorial_progress: {
+    order: Number,
+    tutorialUrl: String
+  },
 });
 
 const Users = mongoose.model('Users', userSchema);

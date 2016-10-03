@@ -78,6 +78,17 @@ export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   };
 }
 
+export function postTutorialProgress(tutorialNumber, userId) {
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: `/regex/tutorial-progress?${tutorialNumber}`,
+    }).then((data) => {
+      console.log("You made tutorial progress! Data: ", data);
+    });
+  }
+}
+
 export function postCompletedChallenge(challengeId, userId) {
   return (dispatch) => {
     $.ajax({

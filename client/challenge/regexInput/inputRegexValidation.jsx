@@ -33,7 +33,7 @@ class InputRegexValidation extends React.Component {
   }
 
   render() {
-    const { editable } = this.props;
+    const { editable, tutorialOrder } = this.props;
     const { authenticatedInput } = this.props.newUserPost;
     if (!editable || authenticatedInput) {
       return (
@@ -52,6 +52,7 @@ class InputRegexValidation extends React.Component {
               editable={this.props.editable}
               testPassed={this.props.testPassed}
               challengeType={this.props.challengeType}
+              tutorialOrder={tutorialOrder}
               challengeId={this.props.challengeId}
             />
           </form>

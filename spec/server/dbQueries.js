@@ -22,7 +22,11 @@ const dbQueryHandler = require('../../server/db/dbQueryHandler');
 
 const john_doe = new Users({
 	gitHandle: 'john_doe',
-	_id: mongoose.Types.ObjectId()
+	_id: mongoose.Types.ObjectId(),
+	tutorial_progress: {
+      order: -1,
+      tutorialUrl: ''
+  },
 });
 
 let abc_challenge = {
@@ -200,10 +204,53 @@ describe('Database Handlers', () => {
 					done();
 				});
 			});
+			it('postTutorialProgress: Should be able to post new user tutorial progress', (done) => {
+				const postTutorialProgress = userHandlers.postTutorialProgress;
+				should.exist(postTutorialProgress);
+				postTutorialProgress(userId, 2, (updatedUser) => {
+					updatedUser.gitHandle.should.equal('john_doe');
+					updatedUser.tutorial_progress.should.be.instanceOf(Object);
+					updatedUser.tutorial_progress.order.should.equal(2);
+					done();
+				});
+			});
+			it('postTutorialProgress: Should not update the tutorial if the order is less than what has already been completed', (done) => {
+				const postTutorialProgress = userHandlers.postTutorialProgress;
+				postTutorialProgress(userId, 1, (user) => {
+					user.tutorial_progress.order.should.equal(2);
+					done();
+				});
+			});
+			xit('postTutorialProgress: Should not try to update tutorial numbers that are beyond the scope of the tutorials', () => {
+
+			});
 		});
 	});
 
 });
+
+/*
+
+exports.postTutorialProgress = (userId, tutorialNumber, callback) => {
+  Users.findOne({ _id: userId }, (err, user) => {
+    if (user.tutorial_progress.order < tutorialNumber) {
+      Tutorial.findOne({ order: tutorialNumber}, (err, tutorial) => {
+        if (err) throw err;
+        const tutorial_progress = {
+          tutorialNumber,
+          tutorialUrl: tutorial.nameurl
+        };
+        Users.findOneAndUpdate({ _id: userId }, { tutorial_progress }, (err, updatedUser) => {
+          if (err) throw err;
+          callback(updatedUser);
+        });
+      })
+    } else {
+      callback(user);
+    }
+  });
+};
+*/
 
 // TODO: Test below functions 
 
