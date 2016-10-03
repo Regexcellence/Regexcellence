@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import mapChallenges from './profile-challenge-lists';
 
 import { getUserCompletedChallenges } from '../actions/api';
 import ListItem from '../userChallenges/listItem';
