@@ -28,7 +28,7 @@ class TestPassedButton extends React.Component {
   postTutorialProgress() {
     const { tutorialOrder, userInfo } = this.props;
     this.clearText();
-    this.props.postTutorialProgress(tutorialOrder, userInfo._id);
+    this.props.postTutorialProgress(tutorialOrder);
   }
   render() {
     if (this.props.testPassed) {
