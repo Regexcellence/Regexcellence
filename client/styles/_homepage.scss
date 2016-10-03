@@ -11,7 +11,7 @@
 }
 
 .homepage-row {
-  margin: 2% 2% 2% 5%;
+  margin: 2% 3% 2% 5%;
 }
 
 .book-logo {
@@ -30,13 +30,15 @@
 }
 
 .home-images {
-  width: 25%;
-  margin: 0 4% 0 3%;
   text-align: center;
+  margin: 0 2.5% 0 2.5%;
+  width: 28%;
+  min-width: 280px;
 }
 
 .image-text {
   align: center;
+  font-size: 18px;
 }
 
 .book-r {
@@ -50,10 +52,10 @@
 }
 
 .lower-home {
-	padding: 5% 4% 5% 5%;
+	padding: 4% 4% 3% 5%;
   margin: 5% 0 0 0;
   background-color: #ebb594;
-  font-size: 20px;
+  font-size: 18px;
   color: #000;
   text-align: center;
 }
@@ -77,6 +79,7 @@
 }
 
 .contribute-h3 {
+  margin-top: 8.5%;
   padding: 3% 0 3% 0;
   font-weight: 100;
   background-color: #ff9e9e;
