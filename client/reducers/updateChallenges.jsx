@@ -35,7 +35,8 @@ function tagPayload(payload, challengeType) {
 			testPassed: false,
 			testCases: tagCaseList(object.testCases),
 			revealAnswer: false,
-			userCompleted: verifyUserCompleted(object._id, payload.user_completed)
+			userCompleted: verifyUserCompleted(object._id, payload.user_completed),
+			userAuthored: verifyUserAuthored(object._id, payload.authored_challenges)
 		}));
 	} else {
 		return payload.map(object => Object.assign({}, object, { 
@@ -52,6 +53,16 @@ function verifyUserCompleted(challengeId, completed_challenges) {
 		return false; 
 	}
 	if (completed_challenges.indexOf(challengeId) > -1) {
+		return true; 
+	}
+	return false; 
+}
+
+function verifyUserAuthored(challengeId, authored_challenges) {
+	if (!authored_challenges || !authored_challenges.length) {
+		return false; 
+	}
+	if (authored_challenges.indexOf(challengeId) > -1) {
 		return true; 
 	}
 	return false; 

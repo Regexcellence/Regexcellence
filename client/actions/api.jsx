@@ -102,6 +102,10 @@ export function postCompletedChallenge(challengeId, userId) {
         type: 'POST-COMPLETED-CHALLENGE',
         challengeId,
       });
+      dispatch({
+        type: 'ADD-NEW-COMPLETED-CHALLENGE',
+        challengeId
+      })
     });
   };
 }
