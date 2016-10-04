@@ -72,6 +72,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
+    "d3": "^4.2.6",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
     "mocha": "^3.0.2",
@@ -84,7 +85,6 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "react-router-bootstrap": "^0.23.1",
-    "react-simple-pie-chart": "^0.4.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "request": "^2.75.0",
