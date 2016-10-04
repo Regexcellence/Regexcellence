@@ -1,6 +1,7 @@
 export function updateChallenges(previousState, action) {
   const challenges = tagPayload(action.payload, 'challenge');
-  return Object.assign({}, previousState, { challenges });
+  const filtered_challenges = [...challenges];
+  return Object.assign({}, previousState, { challenges, filtered_challenges });
 }
 
 export function updateTutorials(previousState, action) {

@@ -78,7 +78,7 @@ export function postNewChallengeAnswer(answer, challengeId, userId, username) {
   };
 }
 
-export function postTutorialProgress(tutorialNumber, userId) {
+export function postTutorialProgress(tutorialNumber) {
   return (dispatch) => {
     $.ajax({
       method: 'POST',

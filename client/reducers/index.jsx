@@ -6,9 +6,11 @@ import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 import { toggleReveal } from './toggleReveal';
 import { logUserInfo, userLogout, storeCompletedChallenges, storeAuthoredChallenges } from './userHandler';
+import { filterChallenges } from './filterChallenges';
 
 const initialState = {
   challenges: [],
+  filtered_challenges: [],
   tutorials: [],
   userInput: '',
   progress: { width: 0 },
@@ -28,11 +30,6 @@ const initialState = {
   userInfo: {},
 };
 
-function test(prevState, action) {
-  console.log('in test!')
-  return Object.assign({}, prevState);
-}
-
 const actionHandler = {
   'INPUT-PATTERN-UPDATE': inputValidator,
   'TEST-REGEX': regexValidator,
@@ -48,7 +45,7 @@ const actionHandler = {
   'STORE-USER-COMPLETED-CHALLENGES': storeCompletedChallenges,
   'STORE-USER-AUTHORED-CHALLENGES': storeAuthoredChallenges,
   'USERINFO-TO-POST': updatePostAuthor,
-  'TEST': test,
+  'FILTER-CHALLENGES': filterChallenges
 };
 
 const reducer = (state = initialState, action) => {

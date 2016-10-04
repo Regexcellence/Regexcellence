@@ -7,3 +7,4 @@ import ReactDOM from 'react-dom';
 import ReduxThunk from 'redux-thunk';
 import uuid from 'uuid';
 import XRegExp from 'xregexp';
+import _ from 'lodash';
