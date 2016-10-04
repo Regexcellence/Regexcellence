@@ -14,6 +14,7 @@ class ListView extends Component {
           testCases={challenge.testCases}
           difficulty={challenge.difficulty}
           userCompleted={challenge.userCompleted}
+          userAuthored={challenge.userAuthored}
           challengeView={true}
           />;
       });

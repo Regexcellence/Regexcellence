@@ -5,7 +5,7 @@ import { updatePostInput, updatePostAuthor } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
 import { postNewChallenge } from './postNewChallenge';
 import { toggleReveal } from './toggleReveal';
-import { logUserInfo, userLogout, storeCompletedChallenges, storeAuthoredChallenges } from './userHandler';
+import { addCompletedChallenge, logUserInfo, userLogout, storeCompletedChallenges, storeAuthoredChallenges } from './userHandler';
 import { filterChallenges } from './filterChallenges';
 
 const initialState = {
@@ -46,7 +46,8 @@ const actionHandler = {
   'STORE-USER-AUTHORED-CHALLENGES': storeAuthoredChallenges,
   'USERINFO-TO-POST': updatePostAuthor,
   'FILTER-CHALLENGES': filterChallenges,
-  'POST-COMPLETED-CHALLENGE': postCompletedChallenge
+  'POST-COMPLETED-CHALLENGE': postCompletedChallenge,
+  'ADD-NEW-COMPLETED-CHALLENGE': addCompletedChallenge
 };
 
 const reducer = (state = initialState, action) => {

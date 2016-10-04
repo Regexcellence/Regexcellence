@@ -14,8 +14,10 @@ module.exports = (app) => {
       };
       if (user) {
         payload.user_completed = user.completed_challenges;
+        payload.authored_challenges = user.authored_challenges;
       } else {
         payload.user_completed = null;
+        payload.authored_challenges = null;
       }
       res.send(payload);
     });
