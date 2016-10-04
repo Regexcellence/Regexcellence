@@ -54,3 +54,10 @@ export function addUserInfoToPost(gitHandle, _id) {
     _id,
   }
 }
+
+export function filterChallenges(filterParams) {
+  return {
+    type: 'FILTER-CHALLENGES', 
+    filterParams
+  }
+}

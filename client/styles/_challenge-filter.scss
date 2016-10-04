@@ -1,0 +1,40 @@
+#challenge-filter {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	font-size: 18px;
+	border-color: #17A6B6;
+	border-width: 0px 0px 3px 0px;
+	margin-bottom: 20px;
+	span {
+		margin: 0 10px 0 5px
+	}
+	input[type='text'] {
+		width: 75%;
+		height: 40px;
+		text-align: center;
+	}
+	input[type='checkbox'] {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+	}
+	#toggle-filter{
+		margin: auto;
+	}
+	#difficulty-checkbox{
+		margin-top: 10px;
+	}
+}
+
+#toggle-filter {
+	margin-left: 45%;
+	margin-right: 45%;
+	font-size: 15px;
+	cursor: pointer;
+	&.glphyicon {
+		&:hover {
+			background-color: #cdfaf4;
+		}
+	}
+}
