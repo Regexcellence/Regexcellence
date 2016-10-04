@@ -10,6 +10,7 @@ class TestCaseText extends React.Component {
   constructor(props) {
     super(props);
     this.enterEditMode = this.enterEditMode.bind(this);
+    this.convertSpaces = this.convertSpaces.bind(this);
   }
   enterEditMode() {
     const { task, _id } = this.props.testCaseInfo;
@@ -19,14 +20,18 @@ class TestCaseText extends React.Component {
       case: this.props.testCaseInfo.case
     })
   }
+  convertSpaces(string) {
+    string = string.replace(/\s/g, '\u2022');
+    return string; 
+  }
   render() {
     let { start, match, end, globalMatch } = this.props.innerMatches;
     if (!globalMatch.length) {
       return (
         <div className="case-text">
-          {start}
-          <span className="text-match">{match}</span>
-          {end}
+          {this.convertSpaces(start)}
+          <span className="text-match">{this.convertSpaces(match)}</span>
+          {this.convertSpaces(end)}
           {this.props.editable ? <span onClick={this.enterEditMode} className="glyphicon glyphicon-pencil" aria-hidden="true" /> : false }
         </div>
       )
