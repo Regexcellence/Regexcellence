@@ -100,7 +100,7 @@ exports.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
 exports.postTutorialProgress = (userId, tutorialNumber, callback) => {
   Users.findOne({ _id: userId }, (err, user) => {
     if (user.tutorial_progress.order < tutorialNumber) {
-      Tutorial.findOne({ order: tutorialNumber}, (err, tutorial) => {
+      Tutorial.findOne({ order: tutorialNumber +1 }, (err, tutorial) => {
         if (err) throw err;
         const tutorial_progress = {
           order: tutorialNumber,
@@ -110,7 +110,7 @@ exports.postTutorialProgress = (userId, tutorialNumber, callback) => {
           if (err) throw err;
           callback(updatedUser);
         });
-      })
+      });
     } else {
       callback(user);
     }
