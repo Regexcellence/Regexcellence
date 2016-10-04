@@ -18,9 +18,11 @@ class RevealAnswer extends React.Component {
       if (testPassed) {
         return (
             <div className="reveal">
-              <p className="lead">Previous Answers:</p>
+              <p className="lead">Previous Answers<hr/></p>
               {answers.map((answer) => {
-                return <span key={uuid.v4()}>{answer.answer} </span>
+                return (
+                  <div key={uuid.v4()}>{answer.answer}<span className="pull-right">by: { answer.user }</span><hr/></div>
+                  );
               })}
             </div>
         )

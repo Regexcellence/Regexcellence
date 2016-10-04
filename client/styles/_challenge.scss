@@ -11,18 +11,18 @@
   color: gray;
 }
 .pass-flag {
-	color: #17A6B6;
-	font-size: 30px; 
+  color: #17A6B6;
+  font-size: 1.8em;
 }
 .fail-flag {
-	color: #FF4C4D;
-	font-size: 30px;
+	color:  #FF4C4D;
+	font-size: 1.8em;
 }
 
 .case-text {
-	font-size: 1.5em;//30px
-	display: inline;
-	color: gray;
+  font-size: 1.5em;//30px
+  display: inline;
+  color: gray;
   margin: 0.5em;
 }
 .text-match {
@@ -134,9 +134,12 @@
 
 .reveal {
   margin-top: 0.5em;
-  padding: 0.5em;
-  color: grey;
+  padding: 0.8em;
+  color: black;
   background-color: #f7f9be;
+  hr{
+    border-top: 1px solid #83CCD6;
+  }
 }
 
 .tutorial-start{

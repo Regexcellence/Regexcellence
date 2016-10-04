@@ -85,7 +85,7 @@ class UserProfile extends React.Component {
                       />
                     </td>
                     <td>
-                      <h1>{this.props.userInfo.name}</h1>
+                      <h1><span>{this.props.userInfo.name}</span></h1>
                       <div>
                       <ChallengePieChart 
                         completed_challenges={ completeLists }

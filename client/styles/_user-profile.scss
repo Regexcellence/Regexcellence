@@ -1,5 +1,5 @@
 .profile-hr{
-  border-color: #9ad2cb;
+  border-color: #ceeaed;
 }
 
 .not-logged-in{
@@ -40,7 +40,14 @@ table{
   }
   }
 }
-
+.user-profile{
+  h1{
+    padding: 0.2em 1em 0.2em 1em;
+    border: 2.5px solid #9AD2C7;
+    border-left: none;
+    border-right: none;
+  }
+}
 #tutorial-progress{
   color: #565A5C;
   background-color: #f7f9be;
