@@ -5,6 +5,9 @@ import { getUserCompletedChallenges, getUserInfo, getAllTutorials } from '../act
 import ListItem from '../userChallenges/listItem';
 import ProgressBar from '../tutorials/progressBar';
 
+import ChallengePieChart from './pieChart';
+
+
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -83,6 +86,11 @@ class UserProfile extends React.Component {
                     </td>
                     <td>
                       <h1>{this.props.userInfo.name}</h1>
+                      <div>
+                      <ChallengePieChart 
+                        completed_challenges={ completeLists }
+                      />
+                      </div>
                     </td>
                   </tr>
                 </tbody>

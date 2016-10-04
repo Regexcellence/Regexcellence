@@ -97,7 +97,11 @@ export function postCompletedChallenge(challengeId, userId) {
       contentType: 'application/json',
       data: JSON.stringify({ challengeId }),
     }).then(() => {
-      console.log('Posted to user db!')
+      console.log('Posted to user db!');
+      dispatch({
+        type: 'POST-COMPLETED-CHALLENGE',
+        challengeId,
+      });
     });
   };
 }

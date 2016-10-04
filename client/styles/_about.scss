@@ -29,11 +29,13 @@
   hr{
     border-top: 1px solid #9AD2C7;
   }
+  .self-description{
+    min-height: 11.5em;
+  }
 }
 
 .text-center.about-table-title {
   font-weight: 100;
-  // border-bottom: 1px solid  #9AD2C7;
   span{
     padding: 0.2em 1em 0.2em 1em;
     border: 2.5px solid #9AD2C7;

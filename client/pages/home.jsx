@@ -7,6 +7,7 @@ import trumpet from '../styles/images/trumpet.png';
 import quill from '../styles/images/quill.png';
 import book from '../styles/images/book_R.png';
 import arrows from '../styles/images/arrows.png';
+import About from './about';
 
 class Home extends React.Component {
   componentWillMount() {
@@ -49,6 +50,10 @@ class Home extends React.Component {
           <p>
             Regular Expressions have been around since the 50s, but it wasn’t until the 80s that the regex we know and love today really started to develop. A lot of the patterns and syntax was designed specifically to work with Perl, and you will still sometimes hear the term Perl-style thrown around. Luckily regex works well with a myriad of languages today, and honing your skills will help you become an all-around phenomenal programer!
           </p>
+        </div>
+
+        <div>
+          <About />
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 import { inputValidator, resetWellFormedInput } from './inputValidation';
-import { updateChallenges, updateTutorials } from './updateChallenges';
+import { updateChallenges, updateTutorials, postCompletedChallenge } from './updateChallenges';
 import { regexValidator } from './regexValidation';
 import { updatePostInput, updatePostAuthor } from './postChallengeInputUpdate';
 import { updatePostTestCases } from './postTestCase';
@@ -45,7 +45,8 @@ const actionHandler = {
   'STORE-USER-COMPLETED-CHALLENGES': storeCompletedChallenges,
   'STORE-USER-AUTHORED-CHALLENGES': storeAuthoredChallenges,
   'USERINFO-TO-POST': updatePostAuthor,
-  'FILTER-CHALLENGES': filterChallenges
+  'FILTER-CHALLENGES': filterChallenges,
+  'POST-COMPLETED-CHALLENGE': postCompletedChallenge
 };
 
 const reducer = (state = initialState, action) => {
