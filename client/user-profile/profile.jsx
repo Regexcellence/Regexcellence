@@ -43,12 +43,11 @@ class UserProfile extends React.Component {
     let percent = '';
     let tutorialUrl = '';
     if (userInfo.tutorial_progress) {
-      if (userInfo.tutorial_progress.order === -1) {
-        percent = { width: '0%' };
-        // tutorialUrl = tutorials[0].nameurl;
+      if (userInfo.tutorial_progress.order === -1){
+        percent = { width: '0%'};
         tutorialUrl = 'learn-your-abcs';
       } else {
-        percent = { width: (Math.floor(userInfo.tutorial_progress.order / (tutorials.length * 100))).toString() + '%' };
+        percent = { width: (Math.floor((userInfo.tutorial_progress.order+1) / tutorials.length * 100)).toString() + '%' };
         tutorialUrl = userInfo.tutorial_progress.tutorialUrl;
       }
     }
@@ -115,6 +114,7 @@ UserProfile.propTypes = {
   getUserCompletedChallenges: React.PropTypes.func,
   tutorials: React.PropTypes.arrayOf(React.PropTypes.object),
   userInfo: React.PropTypes.shape({
+    completed_challenges: React.PropTypes.array || React.PropTypes.string,
     _id: React.PropTypes.string,
     avatar_url: React.PropTypes.string,
     name: React.PropTypes.string,
