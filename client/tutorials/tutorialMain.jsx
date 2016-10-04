@@ -41,11 +41,11 @@ class TutorialMain extends Component {
       } else {
         nextTutorial.url = `tutorial/${orderedList[currentTutorial.order + 1].nameurl}`;
       }
-    const percent = { width: (currentTutorial.order*10).toString()+"%" };
+    const percent = { width: (Math.floor(currentTutorial.order/this.props.tutorials.length*100)).toString()+"%" };
 
       return (
         <div className="clear-top">
-          <ProgressBar 
+          <ProgressBar
             progress={percent}
           />
           <Challenge

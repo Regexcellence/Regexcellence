@@ -23,7 +23,6 @@ export function postChallengeActionCreator(postInput) {
 export function getAllTutorials(dispatch) {
   return (dispatch) => {
     $.ajax('/regex/tutorial').then((data) => {
-      console.log(data);
       dispatch({
         type: 'GET-TUTORIALS',
         payload: data,
@@ -40,7 +39,6 @@ export function getAllChallenges() {
         payload: data,
       })
     }).then(() => {
-      console.log('getting tutorials...')
       getAllTutorials(dispatch)
     });
   };
@@ -78,6 +76,17 @@ export function postNewChallengeAnswer(answer, challengeId, userId, username) {
       console.log('success in posting answer!!');
     });
   };
+}
+
+export function postTutorialProgress(tutorialNumber) {
+  return (dispatch) => {
+    $.ajax({
+      method: 'POST',
+      url: `/regex/tutorial-progress?${tutorialNumber}`,
+    }).then((data) => {
+      console.log("You made tutorial progress! Data: ", data);
+    });
+  }
 }
 
 export function postCompletedChallenge(challengeId, userId) {

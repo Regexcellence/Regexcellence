@@ -1,3 +1,5 @@
+import XRegExp from 'xregexp';
+
 // Strips input pattern of both forward slashes, and separates flags if any.
 export function regexParser(input) {
     const inputArr = input.split('');
@@ -35,8 +37,8 @@ function checkRegex(parsedInput, testCases) {
   // To check to see if there are flags in the pattern,
   // as the RegExp instantiator doesn't allow a null/false value for flags.
   const regex = parsedInput.flags
-    ? new RegExp(parsedInput.pattern, parsedInput.flags)
-    : new RegExp(parsedInput.pattern);
+    ? XRegExp(parsedInput.pattern, parsedInput.flags)
+    : XRegExp(parsedInput.pattern);
   return testCases.map((test) => {
     if (!parsedInput.pattern.length) {
       test.result = null;
@@ -50,8 +52,8 @@ function checkRegex(parsedInput, testCases) {
 }
 function innerTextMatching(parsedInput, testCase) {
   const regex = parsedInput.flags
-    ? new RegExp(parsedInput.pattern, parsedInput.flags)
-    : new RegExp(parsedInput.pattern);
+    ? XRegExp(parsedInput.pattern, parsedInput.flags)
+    : XRegExp(parsedInput.pattern);
   let start = testCase.case;
   let match = '';
   let end = '';

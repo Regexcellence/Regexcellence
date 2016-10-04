@@ -21,8 +21,8 @@ class ListItem extends Component {
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item container">
-            {console.log('LIST ITEM PROPS', this.props)}
             {this.props.name.toUpperCase()}
+            <br />
             <DifficultyBar
               difficultyStyle={difficultyStyle}
               difficulty={this.props.difficulty}
@@ -31,10 +31,13 @@ class ListItem extends Component {
         </Link>
       );
     } else {
+      const { challengeView, userCompleted } = this.props;
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item">
-            <h3>{this.props.name.toUpperCase()}</h3>
+            <h3>{this.props.name.toUpperCase()} &nbsp;
+              { challengeView && userCompleted ? <span title="completed" className="completed-check glyphicon glyphicon-check" /> : false }
+            </h3>
             <DifficultyBar
               difficultyStyle={difficultyStyle}
               difficulty={this.props.difficulty}
@@ -51,6 +54,8 @@ class ListItem extends Component {
 ListItem.propTypes = {
   challengeId: React.PropTypes.string,
   difficulty: React.PropTypes.number,
+  challengeView: React.PropTypes.bool,
+  userCompleted: React.PropTypes.bool,
   testCases: React.PropTypes.arrayOf(React.PropTypes.object),
   name: React.PropTypes.string,
   author: React.PropTypes.string,

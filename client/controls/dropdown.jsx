@@ -10,14 +10,14 @@ import { logOut } from '../actions/api';
 class Dropdown extends Component {
   render() {
     if (this.props.condition.name){
-    	return (
+      return (
         <li>
         <DropdownButton className="drop-down" title={this.props.userInfo.name} id="bg-nested-dropdown">
           <LinkContainer to="profile"><MenuItem className="drop-down-menu">PROFILE</MenuItem></LinkContainer>
             <MenuItem className="drop-down-menu" onClick={this.props.logOut}>LOG OUT</MenuItem>
         </DropdownButton>
        </li>
-    		);
+      );
     } else {
       return <li><Link><Login /></Link></li>;
     }

@@ -10,14 +10,7 @@
     cursor: pointer;
     color: #4F4F4F;
     }
-
-  img {
-    border:none;
-    height: 1-px;
-    width: 15px;
-    margin: 0px 5px 0px 0px;
-  }
-
+    
   a {
     text-decoration: none;
     color: #949494;
@@ -25,4 +18,11 @@
       color: #17A6B6;
     }
   }
+  .fa-github{
+    margin-right: 0.2em;
+  }
+}
+
+div.navbar.navbar-static-bottom{
+  
 }

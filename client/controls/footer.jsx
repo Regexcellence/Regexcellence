@@ -10,8 +10,9 @@ class Footer extends Component {
         <ul className="footer">
           <li><Link to="about">ABOUT US</Link></li>
           <li>
+
             <a target="_blank" href="https://github.com/Regexcellence/Regexcellence">
-            <img src="http://i.imgur.com/HO44BWW.png"/>
+            <i className="fa fa-github"></i>
               GitHub
             </a>
           </li>

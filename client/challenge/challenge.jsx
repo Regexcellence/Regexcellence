@@ -42,6 +42,7 @@ class Challenge extends Component {
         <ChallengeDescription
           name={this.props.challengeInfo.name}
           description={this.props.challengeInfo.description}
+          author={this.props.challengeInfo.author}
           difficulty={this.props.challengeInfo.difficulty}
           challengeType={this.props.challengeInfo.challengeType}
           editable={this.props.editable}
@@ -55,6 +56,7 @@ class Challenge extends Component {
           testCases={this.props.challengeInfo.testCases}
           testPassed={this.props.challengeInfo.testPassed}
           challengeType={this.props.challengeInfo.challengeType}
+          tutorialOrder={challengeInfo.challengeType === 'tutorial' ? challengeInfo.order : null }
           editable={this.props.editable}
           nextUrl={nextUrl}
         />

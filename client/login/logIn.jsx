@@ -26,7 +26,7 @@ class Login extends Component {
     if (!this.state.loggedIn) {
       return (
       <div >
-          <span onClick={this.open}>SIGN IN</span>
+          <span onClick={this.open}>SIGN IN <i className="fa fa-github"></i></span>
           <Modal className="modal text-center" show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
               <div className="logo">Regexcellence</div>

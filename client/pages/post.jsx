@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import UserChallengePost from '../user-posts/post-form';
+
+import quill from '../styles/images/quill.png';
 
 class Post extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron">
-          <h1 className="text-center title">This is the post page</h1>
+        <div className="jumbotron post-header">
+          <img className="banner-img" src={quill} />
+          <h2>
+            Thank you for your contribution. 
+          </h2>
+          <p> - Regi, the Regexcellence dog</p>
         </div>
         <br />
-        <div className="post">
+        <div className='post'>
           <UserChallengePost />
         </div>
       </div>
@@ -17,4 +24,10 @@ class Post extends Component {
   }
 }
 
-export default Post;
+const mapStateToProps = (state) => {
+  return {
+    testPassed: state.newUserPost.testPassed
+  }
+}
+
+export default connect(mapStateToProps)(Post);
