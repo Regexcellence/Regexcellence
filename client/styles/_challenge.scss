@@ -134,9 +134,12 @@
 
 .reveal {
   margin-top: 0.5em;
-  padding: 0.5em;
-  color: grey;
+  padding: 0.8em;
+  color: black;
   background-color: #f7f9be;
+  hr{
+    border-top: 1px solid #83CCD6;
+  }
 }
 
 .tutorial-start{
