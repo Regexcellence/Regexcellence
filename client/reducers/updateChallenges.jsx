@@ -9,6 +9,24 @@ export function updateTutorials(previousState, action) {
   return Object.assign({}, previousState, { tutorials });
 }
 
+export function postCompletedChallenge(previousState, action) {
+	const { challengeId } = action;
+	let { challenges, filtered_challenges }  = previousState;
+	challenges = challenges.map((challenge) => {
+		if (challenge._id === challengeId) {
+			challenge.userCompleted = true; 
+		}
+		return challenge;
+	});
+	filtered_challenges = filtered_challenges.map((challenge) => {
+		if (challenge._id === challengeId) {
+			challenge.userCompleted = true; 
+		}
+		return challenge;
+	});
+	return Object.assign({}, previousState, { challenges, filtered_challenges });
+}
+
 // For adding validation type, e.g. 'tutorial' or 'challenge'
 function tagPayload(payload, challengeType) {
 	if (challengeType === 'challenge') {
