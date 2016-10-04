@@ -17,7 +17,7 @@ class ChallengeDescription extends Component {
     this.props.postChallengeInputUpdate(inputObject);
   }
   render() {
-    const { editable } = this.props;
+    const { editable, challengeType } = this.props;
     if (editable) {
       return (
         <div className="form-group post-form">
@@ -45,6 +45,7 @@ class ChallengeDescription extends Component {
       return (
         <div className="challenge-header">
           <h3>{this.props.name}</h3>
+          <p id="challenge-author">{challengeType === 'challenge' ? 'by '+ this.props.author : false}</p>
           <Difficulty 
             difficulty={this.props.difficulty}
             challengeType ={this.props.challengeType}

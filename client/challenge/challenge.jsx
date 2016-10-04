@@ -42,6 +42,7 @@ class Challenge extends Component {
         <ChallengeDescription
           name={this.props.challengeInfo.name}
           description={this.props.challengeInfo.description}
+          author={this.props.challengeInfo.author}
           difficulty={this.props.challengeInfo.difficulty}
           challengeType={this.props.challengeInfo.challengeType}
           editable={this.props.editable}
