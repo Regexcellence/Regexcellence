@@ -115,6 +115,7 @@ UserProfile.propTypes = {
   getUserCompletedChallenges: React.PropTypes.func,
   tutorials: React.PropTypes.arrayOf(React.PropTypes.object),
   userInfo: React.PropTypes.shape({
+    completed_challenges: React.PropTypes.array || React.PropTypes.string,
     _id: React.PropTypes.string,
     avatar_url: React.PropTypes.string,
     name: React.PropTypes.string,
