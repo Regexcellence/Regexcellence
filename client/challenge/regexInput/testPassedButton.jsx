@@ -23,7 +23,7 @@ class TestPassedButton extends React.Component {
   postNewChallengeAnswer() {
     const { text, challengeId, userInfo } = this.props;
     this.props.postNewChallengeAnswer(text, challengeId, userInfo._id, userInfo.gitHandle);
-    this.props.postCompletedChallenge(challengeId, userInfo._id)
+    this.props.postCompletedChallenge(challengeId, userInfo._id);
   }
   postTutorialProgress() {
     const { tutorialOrder, userInfo } = this.props;
