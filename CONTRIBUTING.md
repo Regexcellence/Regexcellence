@@ -4,8 +4,8 @@
 Hello team! Please heed the following guidelines when contributing to the repo!
 
 Our app will be deployed on the following 2 websites.
-  * https://regexcellence.[hostingSite].com
-  * https://regexcellencetest.[hostingSite].com
+  * http://www.regexcellence.co
+  * https://regexcellence-dev.herokuapp.com
 
 All changes will initially be deployed to our test domain before merging to the master.
 
@@ -20,26 +20,26 @@ Make sure that you have properly forked the repo before cloning the repo into yo
 
 1) Clone repository onto your local workstation
 2) Upon cloning make sure to add the remote for your upstream repository.
-```sh
+```
 $ git clone https://github.com/[insert_username]/Regexcellence.git
 $ git remote add upstream https://github.com/Regexcellence/Regexellence.git
 ```
 3) Checkout to the "dev" branch. This is where most of your edits will be made.
-```sh
+```
 $ git checkout -b dev
 ```
 ### Pulling from upstream
 1) Before pulling down from upstream, make sure that your edits have been staged by using ```git add``` or ```git stash``` (you can always return to your stashed changes).
 
 2) Pull down using rebase
-```sh
+```
 $ git pull upstream dev --rebase
 ```
 
 ### Pushing Code
 
 1) Push to your "dev" branch. Thats all.
-```sh
+```
 $ git push origin dev
 ```
 
@@ -67,7 +67,7 @@ Pull Requests will be made from your feature branch and will be compared with th
 ### Multiline Commits
 When implementing complex features make sure to provide a thorough descriptions of the feature within your commit message. Provide 2-3 sentences describing the feature, how to use it, and any outstanding issues on your feature.
 
-```sh
+```
 $ git add .
 $ git commit
 i
