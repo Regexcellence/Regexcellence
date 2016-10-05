@@ -31,12 +31,13 @@ class ListItem extends Component {
         </Link>
       );
     } else {
-      const { challengeView, userCompleted } = this.props;
+      const { challengeView, userCompleted, userAuthored } = this.props;
       return (
         <Link to={linkToChallenge}>
           <li className="list-group-item">
             <h3>{this.props.name.toUpperCase()} &nbsp;
-              { challengeView && userCompleted ? <span title="completed" className="completed-check glyphicon glyphicon-check" /> : false }
+              { challengeView && userAuthored ? <span title="Authored by YOU!" className="completed-check glyphicon glyphicon-pencil" /> : false }
+              { challengeView && userCompleted ? <span title="Completed!" className="completed-check glyphicon glyphicon-check" /> : false }
             </h3>
             <DifficultyBar
               difficultyStyle={difficultyStyle}

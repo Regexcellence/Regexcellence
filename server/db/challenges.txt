@@ -61,7 +61,7 @@
 	"name": "Are there duplicates?",
 	"description": "Match strings that contain duplicate letters.",
 	"author": "troygibb",
-	"difficulty": 3,
+	"difficulty": 4,
 	"testCases": [
 	  { "case": "The cat goes meow", "expectation": true },
 	  { "case": "The dog barks", "expectation": false },
@@ -117,7 +117,7 @@
 	"name": "Email validation",
 	"author": "troygibb",
 	"description": "The local-part of the e-mail address may use any of these ASCII characters: Uppercase and lowercase English letters (a-z, A-Z), Digits 0 to 9, Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~, Character . (dot, period, full stop), provided that it is not the first or last character, and provided also that it does not appear two or more times consecutively. Additionally, the domain can only take only the ASCII letters a through z (in a case-insensitive manner), the digits 0 through 9, and the hyphen (-).",
-	"difficulty": 3,
+	"difficulty": 5,
 	"testCases": [
 	  {"case": "troygibb@regexcellence.com", "expectation": true},
 	  {"case": "steve.jobs@apple.lala", "expectation": true},
