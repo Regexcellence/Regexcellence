@@ -13,12 +13,10 @@ Regexcellence is similar to many other coding challenge websites, like Codewars,
 Regexcellence currently consists of a regex tutorial that walks the user through the basics of regular expressions, and a community platform for both attempting regular expression problems and contributing original problems.
 
 ## Team
-* [Troy Gibb](https://github.com/troygibb)
-![alt text](https://avatars0.githubusercontent.com/u/18633748?v=3&s=75)
-* [Dana Li](https://github.com/hellodanali)
-![alt text](https://avatars3.githubusercontent.com/u/17036705?v=3&s=75)
-* [Benjamin Tran](https://github.com/bbtran) ![alt text](https://avatars2.githubusercontent.com/u/13708462?v=3&s=75)
-* [Lucy Wonsower](https://github.com/lwonsower) ![alt text](https://avatars0.githubusercontent.com/u/16870016?v=3&s=75)
+* ![alt text](https://avatars0.githubusercontent.com/u/18633748?v=3&s=75) [Troy Gibb](https://github.com/troygibb)
+* ![alt text](https://avatars3.githubusercontent.com/u/17036705?v=3&s=75) [Dana Li](https://github.com/hellodanali)
+* ![alt text](https://avatars2.githubusercontent.com/u/13708462?v=3&s=75) [Benjamin Tran](https://github.com/bbtran)
+* ![alt text](https://avatars0.githubusercontent.com/u/16870016?v=3&s=75) [Lucy Wonsower](https://github.com/lwonsower)
 
 
 ##
