@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 
-import ReactD3, { PieChart } from 'react-d3-components';
-import d3 from 'd3';
-
 export default class ChallengePieChart extends Component {
-	constructor() {
-		super();
-	}
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+  	const data = {};
   	let sections = this.props.completed_challenges.reduce((acc, item) => {
-  		let increment = Math.floor(1/this.props.completed_challenges.length * 100);
-      acc[item.props.difficulty] ? acc[item.props.difficulty] += increment : acc[item.props.difficulty] = increment;
+  		// let increment = Math.floor(1/this.props.completed_challenges.length * 100);
+      acc[item.props.difficulty] ? acc[item.props.difficulty] += 1 : acc[item.props.difficulty] = 1;
       return acc;
   	}, {});
-    let pieData = {
+    data.dataset = {
       label: "Completed Challenge Stats",
       values: [
-        {x: 'Level 1', y: (sections[1] || 0), colorScale: '#E27A78' },
-        {x: 'Level 2', y: (sections[2] || 0), colorScale: '#d3ecb0' },
-        {x: 'Level 3', y: (sections[3] || 0), colorScale: '#f7f9be' },
-        {x: 'Level 4', y: (sections[4] || 0), colorScale: '#ebd494' },
-        {x: 'Level 5', y: (sections[5] || 0), colorScale: '#E27A78' },
+        {label: 'Level 1', quantity: (sections[1] || 0)},
+        {label: 'Level 2', quantity: (sections[2] || 0)},
+        {label: 'Level 3', quantity: (sections[3] || 0)},
+        {label: 'Level 4', quantity: (sections[4] || 0)},
+        {label: 'Level 5', quantity: (sections[5] || 0)},
       ]
     }
-    let color = [ '#9ad2cb','#d3ecb0', '#f7f9be', '#ebd494', '#E27A78'];
+    data.color = [ '#9ad2cb','#d3ecb0', '#f7f9be', '#ebd494', '#E27A78'];
+    data.arcClass="arc";
   	return (
-  		<div>
-        <PieChart
-          data={pieData}
-          height={300}
-          width={300}
-          margin={{top: 5, bottom: 5, left: 100, right: 100}}
-         />
-			</div>
+      <div>
+      </div>
   	)
   }
 
