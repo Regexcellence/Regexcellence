@@ -48,7 +48,7 @@ module.exports = (app) => {
       res.end()
     } else {
       userHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
-        res.end('challenge created');
+        res.end('challenge completed');
       });
     }
   });
