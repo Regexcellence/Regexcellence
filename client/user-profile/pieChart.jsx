@@ -14,24 +14,19 @@ export default class ChallengePieChart extends Component {
       key: null,
     };
     this.mouseOverHandler = this.mouseOverHandler.bind(this);
-    // this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
     this.mouseOutHandler = this.mouseOutHandler.bind(this);
   }
 
   mouseOverHandler(d, e) {
-    this.setState({
-      showToolTip: true,
-      top: e.y,
-      left: e.x,
-      value: d.value,
-      key: d.data.key});
+    if (!this.state.showToolTip){
+      this.setState({
+        showToolTip: true,
+        top: e.y,
+        left: e.x,
+        value: d.value,
+        key: d.data.key});
+    }
   }
-
-  // mouseMoveHandler(e) {
-  //   if (this.state.showToolTip) {
-  //     this.setState({top: e.y, left: e.x});
-  //   }
-  // }
 
   mouseOutHandler() {
     this.setState({showToolTip: false});
@@ -60,7 +55,7 @@ export default class ChallengePieChart extends Component {
         /> : false }
         <PieChart 
           size={150}
-          innerHoleSize={90}
+          innerHoleSize={70}
           data={dataset}
           mouseOverHandler={this.mouseOverHandler}
           mouseOutHandler={this.mouseOutHandler}

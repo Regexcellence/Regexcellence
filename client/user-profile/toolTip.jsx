@@ -6,6 +6,7 @@ export default class ToolTip extends Component {
   		top: this.props.top + "px",
   		left: this.props.left + "px",
   	}
+  	console.log(position)
   	return (
       <div className="tool-tip" style={position}>
         {this.props.value} completed {this.props.keyVal} 
