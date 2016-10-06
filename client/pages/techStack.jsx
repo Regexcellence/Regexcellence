@@ -3,6 +3,8 @@ import stack from '../styles/images/stack.png';
 class TechStack extends Component {
   render() {
     return (
+    <div>
+      <hr className="profile-hr"></hr>
       <div className="container tech-stack">
         <h2 className="text-center">Our Tech Stack</h2>
         <div className="row">
@@ -56,7 +58,7 @@ class TechStack extends Component {
           </div>
         </div>
         </div>
-  
+      </div>
     );
   }
 }
