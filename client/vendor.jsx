@@ -8,3 +8,4 @@ import ReduxThunk from 'redux-thunk';
 import uuid from 'uuid';
 import XRegExp from 'xregexp';
 import _ from 'lodash';
+import reacteasychart from 'react-easy-chart';
