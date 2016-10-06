@@ -60,8 +60,8 @@ describe('Reducers-', () => {
 				testCasesExtractor({ pattern: '\\w', flags: 'g' }, isItALetter).testPassed.should.be.false;
 				const isItANumber = _.find(initialState.challenges, (challenge) => '57f3191f2bf2082f7a74ccf3' === challenge._id);
 				testCasesExtractor({ pattern: '\\d', flags: null }, isItANumber).testPassed.should.be.true;
-				testCasesExtractor({ pattern: '\\D', flags: null }, isItANumber).testPassed.should.be.false;
 				testCasesExtractor({ pattern: '[0-9]', flags: 'g' }, isItANumber).testPassed.should.be.true;
+				testCasesExtractor({ pattern: '\\D', flags: null }, isItANumber).testPassed.should.be.false;
 			})
 			it('checkRegex: Should return an array of test cases that are all passed', () => {
 				const isItALetter = _.find(initialState.challenges, (challenge) => '57f3191f2bf2082f7a74ccd5' === challenge._id);
@@ -77,11 +77,15 @@ describe('Reducers-', () => {
 				testCaseResults.should.be.instanceOf(Array);
 				_.some(testCaseResults, (testCase) => testCase.result).should.be.true;
 			});
-			it('innerTextMatching: Should return an object with parsed input', () => {
-				innerTextMatching()
-			})
-		})
-	})
+			it('innerTextMatching: Should return an object with start, match and end properties that correspond to the regex pattern', () => {
+				const isItANumber = _.find(initialState.challenges, (challenge) => '57f3191f2bf2082f7a74ccf3' === challenge._id);
+				const { start, match, end } = innerTextMatching({ pattern: 'b', flags: null }, { case: 'abc' });
+				start.should.equal('a');
+				match.should.equal('b');
+				end.should.equal('c');
+			});
+		});
+	});
 });
 
 
