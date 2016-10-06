@@ -98,46 +98,43 @@ describe('User Handling', () => {
       .expect('challenge completed', done);
     });
   });
+
+  describe('POST new answers', () => {
+    it('Should respond with "Successfully updated answer!"', (done) => {
+      agent.post('/regex/challenges/new-answer?57f3191f2bf2082f7a74ccd5')
+      .send({
+        answer: '/\D/',
+        user: 'ReginaldTheRegexDog',
+        userId: '57f5bb3033955d001122a971'
+      })
+      .expect(200)
+      .expect('Successfully updated answer!', done);
+    });
+  });
+
+  describe('GET User Completed', () => {
+    it('Should respond with an array of completed challenges', (done) => {
+      agent.get('/regex/challenges/user-completed?57f5bb3033955d001122a971')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+    });
+  });
+
+  describe('GET Authored Challenges', () => {
+    it('Should respond with an array of authored challenges', (done) => {
+      agent.get('/regex/user-info/authored-challenges?57f5bb3033955d001122a971')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+    });
+  });
 });
-
-/*
-  app.post('/regex/challenges/completed-challenge?', (req, res) => {
-    const userId = url.parse(req.url).query;
-    userHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
-      res.end('challenge created');
-    });
-  });
-  app.post('/regex/challenges/new-answer?', (req, res) => {
-    const query = url.parse(req.url).query;
-    dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
-      res.end('successfully updated answer!');
-    });
-  });
-  app.get('/regex/challenges/user-completed?', (req, res) => {
-    const userId = url.parse(req.url).query;
-    userHandlers.findUserRelatedChallenges(userId, 'completed_challenges', (completedChallenges) => {
-      res.send(completedChallenges)
-    })
-  });
-  app.get('/regex/user-info/authored-challenges?', (req, res) => {
-    const userId = url.parse(req.url).query;
-    userHandlers.findUserRelatedChallenges(userId, 'authored_challenges', (authoredChallenges) => {
-      res.send(authoredChallenges);
-    });
-  });
-  app.get('/regex/user-info', (req, res) => {
-    if (req.user) {
-      console.log('requested user info is ', req.user._id);
-      res.send(req.user);
-    } else {
-      res.send('Not logged in!')
-    }
-  });
-  app.get('/regex/logout', (req, res) => {
-    req.session.destroy((err) => {
-      if (err) throw err;
-      res.redirect('/');
-    });
-  })
-
-*/

@@ -55,7 +55,7 @@ module.exports = (app) => {
   app.post('/regex/challenges/new-answer?', (req, res) => {
     const query = url.parse(req.url).query;
     dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
-      res.end('Successftully updated answer!');
+      res.end('Successfully updated answer!');
     });
   });
   // TODO: Save more.
