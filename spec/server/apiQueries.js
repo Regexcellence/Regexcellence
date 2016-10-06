@@ -1,6 +1,6 @@
 const should = require('should');
 const request = require('supertest');
-const server = request.agent('http://localhost:3000');
+const server = request.agent('http://localhost:3001');
 
 const app = require('../../index');
 
@@ -42,15 +42,13 @@ describe('User Handling', () => {
   beforeEach((done) => {
     done();
   });
+
   describe('User Login', () => {
     it('Should login users and redirect', (done) => {
-      function onResponse(err, res) {
-        if (err) return done(err);
-        return done();
-      }
-      server.get('/regex/auth/github')
+      agent.get('/regex/auth/github')
       .expect(302)
-      .end(onResponse);
+      .end();
+      done();
     });
   });
 
