@@ -13,7 +13,7 @@ describe('Requesting Challenge and Tutorial Data', () => {
   });
   describe('Challenges', () => {
     it('Should respond with a Challenges Array', (done) => {
-      agent.get('/regex/challenges')
+      server.get('/regex/challenges')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
