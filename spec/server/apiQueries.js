@@ -45,7 +45,6 @@ describe('User Handling', () => {
   describe('User Login', () => {
     it('Should login users and redirect', (done) => {
       function onResponse(err, res) {
-        should.exist(res.headers['set-cookie']);
         if (err) return done(err);
         return done();
       }
