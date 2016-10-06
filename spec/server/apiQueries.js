@@ -39,8 +39,11 @@ describe('Requesting Challenge and Tutorial Data', () => {
 });
 
 describe('User Handling', () => {
-  function loginUser() {
-    return (done) => {
+  beforeEach((done) => {
+    done();
+  });
+  describe('User Login', () => {
+    it('Should login users and redirect', (done) => {
       function onResponse(err, res) {
         should.exist(res.headers['set-cookie']);
         if (err) return done(err);
@@ -49,15 +52,10 @@ describe('User Handling', () => {
       server.get('/regex/auth/github')
       .expect(302)
       .end(onResponse);
-     };
-   }
-
-  beforeEach((done) => {
-    loginUser();
-    done();
+    });
   });
+
   describe('Challenge Post', () => {
-    it('Should login users and redirect', loginUser());
     it('Should end with "challenge created"', (done) => {
       agent.post('/regex/challenges/new-challenge')
       .send({
