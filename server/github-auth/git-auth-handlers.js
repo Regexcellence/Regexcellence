@@ -41,12 +41,10 @@ module.exports = (app) => {
   app.get('/regex/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
-    //console.log('SESSION:', req.session);
+    console.log('SESSION:', req.session);
     res.redirect('/#');
   });
 
   app.get('/regex/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }));
-
- 
 };
