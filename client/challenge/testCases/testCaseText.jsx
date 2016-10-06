@@ -21,7 +21,13 @@ class TestCaseText extends React.Component {
     })
   }
   convertSpaces(string) {
-    string = string.replace(/\s/g, '\u2022');
+    // string = string.replace(/\s/g, '\u2022');
+    string = string.split('').map((letter) => { 
+      if (/\s/.test(letter)) {
+        return <span className="white-space">&#183;</span>
+      }
+      return letter;
+    });
     return string; 
   }
   render() {

@@ -28,7 +28,7 @@ class About extends Component {
               <img className="about-img" src="https://avatars3.githubusercontent.com/u/17036705" />
               <p className="lead">DANA LI</p>
               <div className="self-description">
-                <p>Kinfolk deep v quinoa, hammock forage cliche snackwave franzen enamel pin 8-bit small batch migas ethical unicorn lomo. Poke fixie la croix four loko, mixtape hexagon etsy portland poutine cronut distillery banh mi +1 master cleanse.
+                <p>I enjoy drawing and making things that bring values or better experiences, and that's what make coding so appealing to me. Also, currently a jiu-jitsu white belt in training. 
                 </p>
               </div>
               <a target="_blank" href="https://github.com/hellodanali">

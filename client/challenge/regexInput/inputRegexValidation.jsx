@@ -38,7 +38,7 @@ class InputRegexValidation extends React.Component {
     if (!editable || authenticatedInput) {
       return (
         <div>
-          <h4>{`\u2022 = whitespace`}</h4>
+          <h4> <span className="white-space">&#183;</span> = whitespace</h4>
           <form id="input-pattern" className="input-group">
             <input
               ref="regexInput"
