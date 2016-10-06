@@ -8,9 +8,9 @@ class Footer extends Component {
       <hr></hr>
       <div className="text-center">
         <ul className="footer">
+          <li><Link to="tech-stack">TechStack</Link></li>
           <li><Link to="about">ABOUT US</Link></li>
           <li>
-
             <a target="_blank" href="https://github.com/Regexcellence/Regexcellence">
             <i className="fa fa-github"></i>
               GitHub

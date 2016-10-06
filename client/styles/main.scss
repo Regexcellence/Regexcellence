@@ -10,7 +10,8 @@
 'progress_bar',
 'user-profile',
 'sign-in-modal',
-'challenge-filter';
+'challenge-filter',
+'tech-stack';
 
 
 @font-face {
@@ -42,6 +43,9 @@ body {
 a:hover {
   text-decoration: none;
 }
+a:focus{
+  outline: none;
+}
 
 .navbar {
   cursor: pointer;
@@ -52,17 +56,20 @@ a:hover {
   }
   .btn-group{
     &.open .dropdown-toggle {
+    outline: none;
     box-shadow: none;
     background-color:  #F5F5F5;
     }
     .dropdown-toggle{
       &:active{
         background-color: #F5F5F5;
+        outline: none;
       }
       &:focus{
         background-color: #F5F5F5;
         color: #E27A78;
         border-bottom: 1px solid #E27A78;
+        outline: none;
       }
     }
   }
