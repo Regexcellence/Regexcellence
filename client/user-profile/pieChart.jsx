@@ -13,9 +13,9 @@ export default class ChallengePieChart extends Component {
       key: null,
     };
     this.mouseOverHandler = this.mouseOutHandler.bind(this);
-    this.mouseMoveHandler = this.mouseOutHandler.bind(this);
+    this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
     this.mouseOutHandler = this.mouseOutHandler.bind(this);
-    this.createTooltip = this.mouseOutHandler.bind(this);
+    this.createTooltip = this.createTooltip.bind(this);
   }
 
   mouseOverHandler(d, e) {
@@ -65,6 +65,7 @@ export default class ChallengePieChart extends Component {
         {key: 'Level 4', value: (sections[4] || 0), color: '#ebd494'},
         {key: 'Level 5', value: (sections[5] || 0), color: '#E27A78'},
       ]
+
   	return (
       <div>
         <PieChart 
@@ -72,8 +73,9 @@ export default class ChallengePieChart extends Component {
           innerHoleSize={90}
           data={dataset}
           mouseOverHandler={this.mouseOverHandler}
-          mouseOutHandler={this.mouseOutHandler.bind(this)}
-          mouseMoveHandler={this.mouseMoveHandler.bind(this)}
+          mouseOutHandler={this.mouseOutHandler}
+          mouseMoveHandler={this.mouseMoveHandler}
+          createTooltip={this.createTooltip}
         />
       </div>
   	)

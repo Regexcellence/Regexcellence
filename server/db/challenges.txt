@@ -320,5 +320,19 @@
     {"case": "SIP", "expectation": false},
     {"case": "HELP", "expectation": false}
   ]
+},
+{
+  "name": "JavaScript Objects",
+  "author": "lwonsower",
+  "description": "Match to proper Javascript objects.",
+  "difficulty": 5,
+  "testCases": [
+    {"case": "var obj = { key: value }", "expectation": true},
+    {"case": "obj[a] = 1", "expectation": true},
+    {"case": "obj.b = 2", "expectation": true},
+    {"case": "var obj = [ key, value ]", "expectation": false},
+    {"case": "obj[()] = 10", "expectation": false},
+    {"case": "obj.hello", "expectation": false}
+  ]
 }
 ]
