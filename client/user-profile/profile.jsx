@@ -37,8 +37,6 @@ class UserProfile extends React.Component {
   }
   render() {
     const { userInfo, tutorials } = this.props;
-    console.log('tutorial progres is ', userInfo.tutorial_progress);
-    console.log('tutorial is ', tutorials);
 
     const { completed_challenges, authored_challenges } = userInfo;
     let completeLists = [];

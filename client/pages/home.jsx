@@ -16,15 +16,10 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <div className="home-banner">
+        <div className="jumbotron home-header">
           <img className="banner-img" src={trumpet} />
-          <h1>Learning Regex has never been this easy</h1>
-          <p className="lead">Or this competitive</p>
-        </div>
-        <div>
-          {/*<p className="home-page">
-            This is where we talk about the history of Regex. Pour-over XOXO poutine slow-carb. Forage retro raw denim umami, live-edge thundercats humblebrag godard green juice photo booth food truck man braid. Stumptown lyft slow-carb, chillwave raclette waistcoat williamsburg narwhal. Mlkshk next level tattooed kogi health goth. Microdosing chia semiotics pour-over, austin street art bitters. Mixtape direct trade everyday carry four dollar toast food truck, viral unicorn kale chips austin. You probably haven't heard of them microdosing 90's portland semiotics.
-          </p>*/}
+          <h2>Learning Regex has never been this easy</h2>
+          <p>Or this competitive</p>
         </div>
           <div className="container">
             <div className="row homepage-row">
