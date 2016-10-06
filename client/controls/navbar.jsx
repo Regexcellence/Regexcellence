@@ -32,7 +32,7 @@ class Navbar extends Component {
     return (
       <div>
         <nav className="navbar navbar-light bg-faded">
-        <div className="container">
+        <div>
         <Link to="" className="navbar-header navbar-brand logo">Regexcellence</Link>
         <div>
           <ul className="nav nav-pills pull-right">
