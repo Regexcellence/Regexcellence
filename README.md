@@ -106,3 +106,14 @@ Initiate both Development and Production servers by running ```$ npm run devStar
 
 Fronend development changes are reflected immediately on ```http://localhost:8080```
 Server side API requests are routed through the webpack-dev-server proxy to ```http://localhost:3000```
+
+## Testing
+Before testing make sure to have both servers running then run ```npm run test```
+
+## Contributing
+
+We are happy to review and merge pull requests. Please see [CONTRIBUTING](CONTRIBUTING.md) if you'd like to add to our amazing project.
+
+## License 
+
+MIT
