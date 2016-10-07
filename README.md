@@ -36,6 +36,7 @@ Regexcellence currently consists of a regex tutorial that walks the user through
 ## Testing
 * [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/)
 * [Enzyme](https://github.com/airbnb/enzyme) for React component testing
+* [Shouldjs](https://shouldjs.github.io/) and [Supertest](https://github.com/visionmedia/supertest) for API testing
 
 ## Dev/Build Tools
 * [Webpack](https://webpack.github.io/) for scaffolding and [Babel](https://babeljs.io/) for transpiling
@@ -52,15 +53,18 @@ Regexcellence currently consists of a regex tutorial that walks the user through
     |   |--tutorials/
     |   |--user-posts/
     |   |--user-profile/
-    |   |--user-challeges/
+    |   |--userChalleges/
     |   |--styles/
     |       |--SASS/SCSS
     |--server/
     |   |--db/
     |   |--auth/
     |   |--handlers
+    |   |
+    |--spec/
+    |   |--tests
+    |   |
     |--Node/Express server
-
 
 ## Install
 
@@ -96,3 +100,9 @@ Download all dependencies listed under package.json
 ```
 $ npm install
 ```
+
+#### To Run the Application
+Initiate both Development and Production servers by running ```$ npm run devStart``` and ```$ npm run production``` in separate terminal windows
+
+Fronend development changes are reflected immediately on ```http://localhost:8080```
+Server side API requests are routed through the webpack-dev-server proxy to ```http://localhost:3000```
