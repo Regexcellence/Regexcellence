@@ -1,5 +1,5 @@
 
-# Contributing to Regexellence
+# Contributing to Regexcellence
 
 Hello team! Please heed the following guidelines when contributing to the repo!
 
@@ -22,7 +22,7 @@ Make sure that you have properly forked the repo before cloning the repo into yo
 2) Upon cloning make sure to add the remote for your upstream repository.
 ```
 $ git clone https://github.com/[insert_username]/Regexcellence.git
-$ git remote add upstream https://github.com/Regexcellence/Regexellence.git
+$ git remote add upstream https://github.com/Regexcellence/Regexcellence.git
 ```
 3) Checkout to the "dev" branch. This is where most of your edits will be made.
 ```
