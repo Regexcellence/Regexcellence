@@ -334,5 +334,19 @@
     {"case": "obj[()] = 10", "expectation": false},
     {"case": "obj.hello", "expectation": false}
   ]
+},
+{
+  "name": "SQL commands",
+  "author": "lwonsower",
+  "description": "Match the correct SQL commmands!",
+  "difficulty": 5,
+  "testCases": [
+    {"case": "SELECT * FROM Users", "expectation": true},
+    {"case": "INSERT INTO Cities (ID, Name, State) VALUES (1, San Francisco, CA)", "expectation": true},
+    {"case": "DELETE FROM Kitties WHERE KittyID = 4", "expectation": true},
+    {"case": "JOIN # from Users", "expectation": false},
+    {"case": "FUZE into Cats", "expectation": false},
+    {"case": "(DELETE) FROM CATS ID5", "expectation": false}
+  ]
 }
 ]
