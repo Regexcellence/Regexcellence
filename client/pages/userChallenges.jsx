@@ -17,7 +17,7 @@ class UserChallenges extends Component {
           <div className="jumbotron challenge-header">
             <img className="banner-img" src={arrows} />
             <h2>Take your Regex skills to battle</h2>
-            <p className="lead">Practice your Regex skills at our challenges page</p>
+            <p className="lead">Train & test your expertise</p>
           </div>            
           { this.props.children || 
             <div>

@@ -11,9 +11,9 @@ class Post extends Component {
         <div className="jumbotron post-header">
           <img className="banner-img" src={quill} />
           <h2>
-            Thank you for your contribution. 
+            Contribute to the Regex community 
           </h2>
-          <p> - Regi, the Regexcellence dog</p>
+          <p>Thrill your friends, confound your enemies</p>
         </div>
         <br />
         <div className='post'>

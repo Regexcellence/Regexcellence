@@ -20,6 +20,7 @@ import UserChallenges from './pages/userChallenges';
 import TutorialMain from './tutorials/tutorialMain';
 import UserChallengeMain from './userChallenges/userChallengeMain';
 import UserProfile from './user-profile/profile';
+import TechStack from './pages/techStack';
 
 const history = useRouterHistory(createHistory)({ queryKey: false });
 
@@ -43,6 +44,7 @@ class App extends React.Component {
                 <Route path="/tutorial/:nameurl" component={TutorialMain} />
               </Route>
               <Route path="/profile" component={UserProfile} />
+              <Route path="/tech-stack" component={TechStack} />
             </Route>
           </Router>
         </Provider>

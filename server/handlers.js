@@ -48,14 +48,14 @@ module.exports = (app) => {
       res.end()
     } else {
       userHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
-        res.end('challenge created');
+        res.end('challenge completed');
       });
     }
   });
   app.post('/regex/challenges/new-answer?', (req, res) => {
     const query = url.parse(req.url).query;
     dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
-      res.end('Successftully updated answer!');
+      res.end('Successfully updated answer!');
     });
   });
   // TODO: Save more.

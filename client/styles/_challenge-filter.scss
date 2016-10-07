@@ -2,21 +2,23 @@
 	width: 50%;
 	margin: auto;
 	text-align: center;
-	font-size: 18px;
+	font-size: 1em;
 	border-color: #17A6B6;
 	border-width: 0px 0px 3px 0px;
 	margin-bottom: 20px;
 	span {
-		margin: 0 10px 0 5px
+		margin: 0 1.5em 0.5em 0.1em;
 	}
 	input[type='text'] {
 		width: 75%;
 		height: 40px;
 		text-align: center;
+		border: 0.1em solid #17A6B6;
+		background-color: transparent;
 	}
 	input[type='checkbox'] {
-		width: 25px;
-		height: 25px;
+		width: 1.2em;
+		height: 1.2em;
 		cursor: pointer;
 	}
 	#toggle-filter{
@@ -30,11 +32,22 @@
 #toggle-filter {
 	margin-left: 45%;
 	margin-right: 45%;
-	font-size: 15px;
+	font-size: 1em;
 	cursor: pointer;
-	&.glphyicon {
-		&:hover {
-			background-color: #cdfaf4;
+	button{
+		width: 8em;
+		background-color:transparent;
+		margin-bottom: 1em;
+		border: 0.1em solid #17A6B6;
+		&:focus{
+			outline: none;
 		}
+		&:hover{
+			background-color: #CEEAED;
+		}
+	}
+	span.glyphicon.glyphicon-triangle-top:before{
+	  margin-left: 1em;
+	  color: #17A6B6;
 	}
 }

@@ -1,88 +1,170 @@
 const should = require('should');
-var request = require('supertest');
-
+const request = require('supertest');
+const server = request.agent('http://localhost:3001');
+const mongoose = require('mongoose');
 const app = require('../../index');
+const Users = require('../../server/db/dbmodel').Users;
+const Challenges = require('../../server/db/dbmodel').Challenges;
 
-var agent = request.agent(app);
+
+const agent = request.agent(app);
 
 describe('Requesting Challenge and Tutorial Data', () => {
-	beforeEach((done) => {
+  beforeEach((done) => {
+    done();
+  });
+  describe('Challenges', () => {
+    it('Should respond with a Challenges Array', (done) => {
+      server.get('/regex/challenges')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.challenges.should.be.instanceOf(Array);
+        done();
+      });
+    });
+  });
 
-		done();
-	})
-	describe('Challenges', () => {
-		it('Should respond with a Challenges Array', (done) => {
-			agent
-			.get('/regex/challenges')
-			.expect(200)
-			.expect('Content-Type', /json/)
-			.end((err, res) => {
-				if (err) return done(err);
-				res.body.challenges.should.be.instanceOf(Array);
-				done();
-			});
-		});
-	});
-	describe('Tutorials', () => {
-		it('Should respond with a Tutorials Array', (done) => {
-			agent
-			.get('/regex/tutorial')
-			.expect(200)
-			.expect('Content-Type', /json/)
-			.end((err, res) => {
-				if (err) return done(err);
-				res.body.should.be.instanceOf(Array);
-				done();
-			});
-		});
-	});
+  describe('Tutorials', () => {
+    it('Should respond with a Tutorials Array', (done) => {
+      agent.get('/regex/tutorial')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+    });
+  });
 });
 
-/*
+describe('User Handling', () => {
+  let abc_challenge = {
+    name: "Abcs",
+    description: "Write a regex that matches whitespace at the beginning and end of strings",
+    author: 'johndoe',
+    difficulty: 2,
+    testCases: [
+      { case: " I have whitespace! ", expectation: true },
+      { case: "I have more whitespace!   ", expectation: true },
+      { case: "   I have some whitespace too!", expectation: true },
+      { case: "Did you say whitespace?", expectation: false },
+      { case: "Naw", expectation: false },
+      { case: "Remember me?", expectation: false }
+    ]
+  };
+  const johndoe = new Users({
+    gitHandle: 'johndoe',
+    _id: mongoose.Types.ObjectId(),
+    tutorial_progress: {
+      order: -1,
+      tutorialUrl: ''
+    },
+    completed_challenges: [
+      "57f3191f2bf2082f7a74cd0c",
+      "57f3191f2bf2082f7a74ccd5"
+    ],
+    authored_challenges: [1, 2, 3, 4]
+  });
 
-  app.post('/regex/challenges/new-challenge', (req, res) => {
-    dbHandlers.postChallenge(req.body, () => {
-      res.end('challenge created');
-    });
-  });
-  app.post('/regex/challenges/completed-challenge?', (req, res) => {
-    const userId = url.parse(req.url).query;
-    userHandlers.postCompletedChallenge(req.body.challengeId, userId, (updatedUser) => {
-      res.end('challenge created');
-    });
-  });
-  app.post('/regex/challenges/new-answer?', (req, res) => {
-    const query = url.parse(req.url).query;
-    dbHandlers.postChallengeAnswer(req.body, query, (updatedChallenge) => {
-      res.end('Successftully updated answer!');
-    });
-  });
-  // TODO: Save more.
-  app.get('/regex/challenges/user-completed?', (req, res) => {
-    const userId = url.parse(req.url).query;
-    userHandlers.findUserRelatedChallenges(userId, 'completed_challenges', (completedChallenges) => {
-      res.send(completedChallenges)
-    })
-  });
-  app.get('/regex/user-info/authored-challenges?', (req, res) => {
-    const userId = url.parse(req.url).query;
-    userHandlers.findUserRelatedChallenges(userId, 'authored_challenges', (authoredChallenges) => {
-      res.send(authoredChallenges);
-    });
-  });
-  app.get('/regex/user-info', (req, res) => {
-    if (req.user) {
-      console.log('requested user info is ', req.user._id);
-      res.send(req.user);
-    } else {
-      res.send('Not logged in!')
-    }
-  });
-  app.get('/regex/logout', (req, res) => {
-    req.session.destroy((err) => {
+  beforeEach((done) => {
+    johndoe.save((err, newUser) => {
       if (err) throw err;
-      res.redirect('/');
+      return newUser;
     });
-  })
+    done();
+  });
 
-*/
+  after((done) => {
+    Users.remove({ gitHandle: 'johndoe' }, (err, deleted) => {
+      if (err) done(err);
+      done();
+    });
+  });
+
+  describe('User Login', () => {
+    it('Should login users and redirect', (done) => {
+      agent.get('/regex/auth/github')
+      .expect(302)
+      .end();
+      done();
+    });
+  });
+
+  describe('Challenge Post', () => {
+    after((done) => {
+      Challenges.findOneAndRemove({ authorId: johndoe._id }, (err, removed) => {
+        if (err) throw err;
+        done();
+      });
+    });
+    it('Should end with "challenge created"', (done) => {
+      agent.post('/regex/challenges/new-challenge')
+      .send(abc_challenge)
+      .expect(200)
+      .expect('challenge created', done);
+    });
+  });
+  describe('GET user-info', () => {
+    it('Should retrieve user data but doesn\'t work!!', (done) => {
+      agent.get('/regex/user-info')
+      .expect(200)
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Object);
+        done();
+      });
+    });
+  });
+
+  describe('POST completed-challenge to list', () => {
+    it('Should respond with "challenge completed"', (done) => {
+      agent.post('/regex/challenges/completed-challenge?' + johndoe._id)
+      .expect(200)
+      .expect('challenge completed', done);
+    });
+  });
+
+  describe('POST new answers', () => {
+    it('Should respond with "Successfully updated answer!"', (done) => {
+      agent.post('/regex/challenges/new-answer?57f3191f2bf2082f7a74ccd5')
+      .send({
+        answer: '/\D/',
+        user: 'johndoe',
+        userId: johndoe._id
+      })
+      .expect(200)
+      .expect('Successfully updated answer!', done);
+    });
+  });
+
+  describe('GET User Completed', () => {
+    it('Should respond with an array of completed challenges', (done) => {
+      console.log('john_doe', johndoe._id);
+      agent.get('/regex/challenges/user-completed?' + johndoe._id)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+    });
+  });
+
+  describe('GET Authored Challenges', () => {
+    it('Should respond with an array of authored challenges', (done) => {
+      agent.get('/regex/user-info/authored-challenges?' + johndoe._id)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        res.body.should.be.instanceOf(Array);
+        done();
+      });
+    });
+  });
+});

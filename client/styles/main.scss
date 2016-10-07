@@ -10,7 +10,8 @@
 'progress_bar',
 'user-profile',
 'sign-in-modal',
-'challenge-filter';
+'challenge-filter',
+'tech-stack';
 
 
 @font-face {
@@ -25,30 +26,29 @@ body {
 }
 
 .logo {
-  font-size: 50px;
+  font-size: 4em;
   font-family: Lavanderia-Sturdy;
   color: #000;
   cursor: pointer;
   font-weight: bold;
-  padding: 20px 20px 20px 10px;
+  padding: 20px 20px 20px 1em;
   &:visited {
     color: #000;
   }
   &:active{
     color: #000;
   }
-  // &:hover {
-  //   color: #17A6B6;
-  // }
 }
 
 a:hover {
   text-decoration: none;
 }
+a:focus{
+  outline: none;
+}
 
 .navbar {
   cursor: pointer;
-  background-color: rgba(245,245,245,.8);
   min-height: 13%;
   .navbar-brand {
     margin-top: 1%;
@@ -56,26 +56,29 @@ a:hover {
   }
   .btn-group{
     &.open .dropdown-toggle {
+    outline: none;
     box-shadow: none;
     background-color:  #F5F5F5;
     }
     .dropdown-toggle{
       &:active{
         background-color: #F5F5F5;
+        outline: none;
       }
       &:focus{
         background-color: #F5F5F5;
-        color: #FF4C4D;
-        border-bottom: 1px solid #FF4C4D;
+        color: #E27A78;
+        border-bottom: 1px solid #E27A78;
+        outline: none;
       }
     }
   }
 }
 
 .nav-pills>li>a {
-  width: 150px;
+  width: 9.375em;
   text-align: center;
-	font-size: 15px;
+	font-size: 1em;
 	color: #000;
   border-radius: 0px;
   border-bottom: 1px solid #000;
@@ -88,8 +91,8 @@ a:hover {
   }
   &:focus {
     background-color: transparent;
-    border-bottom: 1px solid #FF4C4D;
-    color: #FF4C4D;
+    border-bottom: 1px solid #E27A78;
+    color: #E27A78;
   }
 }
 
@@ -136,21 +139,20 @@ a:hover {
   border-radius: 0px;
   box-shadow: none;
   &>.active>a{
-    background-color: white;
+    background-color: #FFF;
     background-image: none;
-    color: #FF4C4D;
+    color: #E27A78;
       &:hover{
         background-color: transparent;
         background-image: none;
         background: transparent;
-        // color: #17A6B6;
         color: #17A6B6;
       }
       &:focus{
         background-color: transparent;
         background-image: none;
         background: transparent;
-        color: #FF4C4D;
+        color: #E27A78;
       }
   }
   &>li>a{
@@ -183,13 +185,14 @@ a:hover {
       margin-bottom: 0.2em;
     }
   }
+  &.home-header {
+    background-color: #d3ecb0;
+  }
   .banner-img {
-    height: 150px;
-    width: 150px;
+    height: 9.375em;
+    width: 9.375em;
     float: left;
-    margin-left: 10em;
-    margin-right: 50px;
-    margin-top: -20px;
+    margin: 0 50px 0 10em;
   }
 }
 
