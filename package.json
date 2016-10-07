@@ -11,6 +11,7 @@
     "build": "webpack",
     "test:lint": "eslint . --ext .js --ext .jsx --cache",
     "test:server": "mocha spec/server/*.js",
+    "test:client": "mocha spec/client/reducers.js --compilers js:babel-register",
     "devStart": "webpack-dev-server --content-base build/",
     "insertChallenges": "node server/db/dbScripts/insertChallenges.js",
     "insertTutorials": "node server/db/dbScripts/insertTutorials.js",
