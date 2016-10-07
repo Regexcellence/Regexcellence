@@ -1,11 +1,13 @@
 const should = require('should');
 const request = require('supertest');
 const server = request.agent('http://localhost:3001');
-
+const mongoose = require('mongoose');
 const app = require('../../index');
+const Users = require('../../server/db/dbmodel').Users;
+const Challenges = require('../../server/db/dbmodel').Challenges;
+
 
 const agent = request.agent(app);
-
 
 describe('Requesting Challenge and Tutorial Data', () => {
   beforeEach((done) => {
@@ -39,8 +41,47 @@ describe('Requesting Challenge and Tutorial Data', () => {
 });
 
 describe('User Handling', () => {
+  let abc_challenge = {
+    name: "Abcs",
+    description: "Write a regex that matches whitespace at the beginning and end of strings",
+    author: 'johndoe',
+    difficulty: 2,
+    testCases: [
+      { case: " I have whitespace! ", expectation: true },
+      { case: "I have more whitespace!   ", expectation: true },
+      { case: "   I have some whitespace too!", expectation: true },
+      { case: "Did you say whitespace?", expectation: false },
+      { case: "Naw", expectation: false },
+      { case: "Remember me?", expectation: false }
+    ]
+  };
+  const johndoe = new Users({
+    gitHandle: 'johndoe',
+    _id: mongoose.Types.ObjectId(),
+    tutorial_progress: {
+      order: -1,
+      tutorialUrl: ''
+    },
+    completed_challenges: [
+      "57f3191f2bf2082f7a74cd0c",
+      "57f3191f2bf2082f7a74ccd5"
+    ],
+    authored_challenges: [1, 2, 3, 4]
+  });
+
   beforeEach((done) => {
+    johndoe.save((err, newUser) => {
+      if (err) throw err;
+      return newUser;
+    });
     done();
+  });
+
+  after((done) => {
+    Users.remove({ gitHandle: 'johndoe' }, (err, deleted) => {
+      if (err) done(err);
+      done();
+    });
   });
 
   describe('User Login', () => {
@@ -53,22 +94,15 @@ describe('User Handling', () => {
   });
 
   describe('Challenge Post', () => {
+    after((done) => {
+      Challenges.findOneAndRemove({ authorId: johndoe._id }, (err, removed) => {
+        if (err) throw err;
+        done();
+      });
+    });
     it('Should end with "challenge created"', (done) => {
       agent.post('/regex/challenges/new-challenge')
-      .send({
-        "name": "No Comments",
-        "author": "ReginaldTheRegexDog",
-        "description": "Math the valid javascript comments",
-        "difficulty": 2,
-        "testCases": [
-          {"case": "// San Francisco Makersquare!", "expectation": true},
-          {"case": "/* San Francisco Makersquare! */", "expectation": true},
-          {"case": "// Do it for the kitties!!", "expectation": true},
-          {"case": "/ / function getRegexcellence(cat) {return cat}", "expectation": false},
-          {"case": "/Hi*/Team*/Regexcellence*/", "expectation": false},
-          {"case": "supercalifragilisticexpialidocious", "expectation": false}
-        ]
-      })
+      .send(abc_challenge)
       .expect(200)
       .expect('challenge created', done);
     });
@@ -88,7 +122,7 @@ describe('User Handling', () => {
 
   describe('POST completed-challenge to list', () => {
     it('Should respond with "challenge completed"', (done) => {
-      agent.post('/regex/challenges/completed-challenge?57f5bb3033955d001122a971')
+      agent.post('/regex/challenges/completed-challenge?' + johndoe._id)
       .expect(200)
       .expect('challenge completed', done);
     });
@@ -99,8 +133,8 @@ describe('User Handling', () => {
       agent.post('/regex/challenges/new-answer?57f3191f2bf2082f7a74ccd5')
       .send({
         answer: '/\D/',
-        user: 'ReginaldTheRegexDog',
-        userId: '57f5bb3033955d001122a971'
+        user: 'johndoe',
+        userId: johndoe._id
       })
       .expect(200)
       .expect('Successfully updated answer!', done);
@@ -109,7 +143,8 @@ describe('User Handling', () => {
 
   describe('GET User Completed', () => {
     it('Should respond with an array of completed challenges', (done) => {
-      agent.get('/regex/challenges/user-completed?57f5bb3033955d001122a971')
+      console.log('john_doe', johndoe._id);
+      agent.get('/regex/challenges/user-completed?' + johndoe._id)
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -122,7 +157,7 @@ describe('User Handling', () => {
 
   describe('GET Authored Challenges', () => {
     it('Should respond with an array of authored challenges', (done) => {
-      agent.get('/regex/user-info/authored-challenges?57f5bb3033955d001122a971')
+      agent.get('/regex/user-info/authored-challenges?' + johndoe._id)
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
