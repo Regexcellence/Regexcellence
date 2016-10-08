@@ -28,7 +28,13 @@ class TestPassedButton extends React.Component {
   postTutorialProgress() {
     const { tutorialOrder, userInfo } = this.props;
     this.clearText();
-    this.props.postTutorialProgress(tutorialOrder);
+    console.log(tutorialOrder);
+    if(tutorialOrder !== 11) {
+      this.props.postTutorialProgress(tutorialOrder);
+    } else if (tutorialOrder === 11) {
+      this.props.postTutorialProgress(11);
+      console.log('DONE!');
+    }
   }
   render() {
     if (this.props.testPassed) {
@@ -36,8 +42,8 @@ class TestPassedButton extends React.Component {
         return (
           <span className="input-group-btn">
             <Link to={`/${this.props.nextUrl.url}`}>
-              <button 
-              onClick={this.props.editable ? this.submitNewChallenge : this.postTutorialProgress} 
+              <button
+              onClick={this.props.editable ? this.submitNewChallenge : this.postTutorialProgress}
               id="continue" className="btn btn-secondary">
               {this.props.nextUrl.nextText}
               </button>
@@ -48,8 +54,8 @@ class TestPassedButton extends React.Component {
         return (
           <span className="input-group-btn">
             <Link to={`/${this.props.nextUrl.url}`}>
-              <button 
-              onClick={this.postNewChallengeAnswer} 
+              <button
+              onClick={this.postNewChallengeAnswer}
               id="continue" className="btn btn-secondary">
               {this.props.nextUrl.nextText}
               </button>
@@ -63,11 +69,11 @@ class TestPassedButton extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-	return { 
-    text: state.userInput, 
-    newUserPost: state.newUserPost, 
-    userInfo: state.userInfo 
-  }
+	return {
+    text: state.userInput,
+    newUserPost: state.newUserPost,
+    userInfo: state.userInfo
+  };
 };
 
 export default connect(mapStateToProps, { postTutorialProgress, inputActionCreator, postChallengeActionCreator, postNewChallengeAnswer, postCompletedChallenge })(TestPassedButton);
