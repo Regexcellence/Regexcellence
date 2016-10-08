@@ -44,7 +44,7 @@ class About extends Component {
               <img className="about-img" src="https://avatars1.githubusercontent.com/u/13708462" />
               <p className="lead">BENJAMIN TRAN</p>
               <div className="self-description">
-                <p>When my computer is turned off, I'm either playing basketball, getting lost on hikes, or brewing pour over coffee. I can also tumble pretty well when doing a handstand.
+                <p>When my computer is turned off, I am either playing basketball, getting lost on hikes, or brewing pour over coffee. I can also tumble pretty well when doing a handstand.
                 </p>
               </div>
               <a target="_blank" href="https://github.com/bbtran">
