@@ -18,17 +18,17 @@ class TestCaseText extends React.Component {
       task,
       _id,
       case: this.props.testCaseInfo.case
-    })
+    });
   }
   convertSpaces(string) {
     // string = string.replace(/\s/g, '\u2022');
-    string = string.split('').map((letter) => { 
+    string = string.split('').map((letter) => {
       if (/\s/.test(letter)) {
         return <span className="white-space">&#183;</span>
       }
       return letter;
     });
-    return string; 
+    return string;
   }
   render() {
     let { start, match, end, globalMatch } = this.props.innerMatches;
@@ -40,7 +40,7 @@ class TestCaseText extends React.Component {
           {this.convertSpaces(end)}
           {this.props.editable ? <span onClick={this.enterEditMode} className="glyphicon glyphicon-pencil" aria-hidden="true" /> : false }
         </div>
-      )
+      );
     } else {
       const matches = globalMatch.map((matchObject) => {
         let { start, match } = matchObject;
@@ -52,21 +52,21 @@ class TestCaseText extends React.Component {
               {matchObject.end}
               {this.props.editable ? <span onClick={this.enterEditMode} className="glyphicon glyphicon-pencil" aria-hidden="true" /> : false }
             </div>
-          )
+          );
         } else {
           return (
             <div key={uuid.v4()} className="case-text">
               {start}
               <span className="text-match">{match}</span>
             </div>
-          )
+          );
         }
       });
       return (
         <div className="case-text">
           {matches}
         </div>
-      )
+      );
     }
   }
 }
