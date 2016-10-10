@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const models = require('./dbmodel');
+
 const Users = models.Users;
 
 // Below is to fix deprecated mongoose promise.
@@ -99,10 +100,20 @@ exports.findUserRelatedChallenges = (userId, desiredProperty, callback) => {
 
 exports.postTutorialProgress = (userId, tutorialNumber, callback) => {
   Users.findOne({ _id: userId }, (err, user) => {
-    if (user.tutorial_progress.order < tutorialNumber) {
-      Tutorial.findOne({ order: tutorialNumber +1 }, (err, tutorial) => {
+    let tutorial_progress = {};
+    if(tutorialNumber === 11) {
+      tutorial_progress = {
+        order: 11,
+        tutorialUrl: 'matching-phone-numbers'
+      };
+      Users.findOneAndUpdate({ _id: userId }, { tutorial_progress }, { new: true }, (err, updatedUser) => {
         if (err) throw err;
-        const tutorial_progress = {
+        callback(updatedUser);
+      });
+    } else if (user.tutorial_progress.order < tutorialNumber) {
+      Tutorial.findOne({ order: tutorialNumber+1 }, (err, tutorial) => {
+        if (err) throw err;
+        tutorial_progress = {
           order: tutorialNumber,
           tutorialUrl: tutorial.nameurl
         };

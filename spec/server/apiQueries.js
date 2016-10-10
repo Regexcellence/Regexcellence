@@ -79,7 +79,10 @@ describe('User Handling', () => {
 
   after((done) => {
     Users.remove({ gitHandle: 'johndoe' }, (err, deleted) => {
-      if (err) done(err);
+      if (err) throw err;
+    });
+    Challenges.findOneAndRemove({ author: 'johndoe' }, (err, removed) => {
+      if (err) throw err;
       done();
     });
   });
@@ -95,7 +98,7 @@ describe('User Handling', () => {
 
   describe('Challenge Post', () => {
     after((done) => {
-      Challenges.findOneAndRemove({ authorId: johndoe._id }, (err, removed) => {
+      Challenges.findOneAndRemove({ author: 'johndoe' }, (err, removed) => {
         if (err) throw err;
         done();
       });

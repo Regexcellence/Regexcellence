@@ -11,10 +11,14 @@
     "build": "webpack",
     "test:lint": "eslint . --ext .js --ext .jsx --cache",
     "test:server": "mocha spec/server/*.js",
+    "test:client": "mocha spec/client/reducers.js --compilers js:babel-register",
     "devStart": "webpack-dev-server --content-base build/",
     "insertChallenges": "node server/db/dbScripts/insertChallenges.js",
     "insertTutorials": "node server/db/dbScripts/insertTutorials.js",
     "db": "mongo ds147975.mlab.com:47975/db_reg -u teamUser -p regOrDie"
+  },
+  "engines": {
+    "node": "6.1.0"
   },
   "repository": {
     "type": "git",
@@ -89,7 +93,7 @@
     "react-d3-library": "^1.1.7",
     "react-dom": "^15.3.1",
     "react-easy-chart": "^0.1.12",
-    "react-faux-dom": "^3.0.0",
+    "react-faux-dom": "^2.5.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "react-router-bootstrap": "^0.23.1",

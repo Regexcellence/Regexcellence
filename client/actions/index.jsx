@@ -38,13 +38,13 @@ export function toggleAnswer(challengeId, challengeType) {
     type: 'TOGGLE-REVEAL-ANSWER',
     challengeId,
     challengeType,
-  }
+  };
 }
 
 export function resetWellFormedInput() {
   return {
     type: 'RESET-WELLFORMED-INPUT'
-  }
+  };
 }
 
 export function addUserInfoToPost(gitHandle, _id) {
@@ -52,12 +52,12 @@ export function addUserInfoToPost(gitHandle, _id) {
     type: 'USERINFO-TO-POST',
     gitHandle,
     _id,
-  }
+  };
 }
 
 export function filterChallenges(filterParams) {
   return {
-    type: 'FILTER-CHALLENGES', 
+    type: 'FILTER-CHALLENGES',
     filterParams
-  }
+  };
 }

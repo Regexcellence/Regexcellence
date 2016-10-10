@@ -32,17 +32,18 @@ class TutorialMain extends Component {
   }
 
   render() {
-    if (this.props.tutorials.length) {
+    let { tutorials } = this.props;
+    if (tutorials.length) {
       const currentTutorial = this.getTutorialProps().getProps(this.props.params.nameurl);
       const orderedList = this.getTutorialProps().tutorialsList;
       const nextTutorial = { nextText: 'Continue' };
+      let percent = '';
       if (orderedList[currentTutorial.order + 1] === undefined) {
         nextTutorial.url = '';
       } else {
         nextTutorial.url = `tutorial/${orderedList[currentTutorial.order + 1].nameurl}`;
       }
-    const percent = { width: (Math.floor(currentTutorial.order/this.props.tutorials.length*100)).toString()+"%" };
-
+      percent = { width: (Math.floor(currentTutorial.order/tutorials.length*100)).toString() + '%' };
       return (
         <div className="clear-top">
           <ProgressBar

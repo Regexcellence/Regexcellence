@@ -24,11 +24,11 @@ export function storeAuthoredChallenges(previousState, action) {
 }
 
 export function addCompletedChallenge(previousState, action) {
-  const { challengeId } = action; 
+  const { challengeId } = action;
   let { challenges, userInfo } = previousState;
   const completedChallenge = _.find(challenges, (o) => o._id === challengeId);
-  userInfo = Object.assign({}, userInfo, { 
-    completed_challenges: [...userInfo.completed_challenges, completedChallenge]
-  })
-  return Object.assign({}, previousState, { userInfo })
+  userInfo = Object.assign({}, userInfo, {
+    completed_challenges: [...userInfo.completed_challenges, completedChallenge],
+  });
+  return Object.assign({}, previousState, { userInfo });
 }

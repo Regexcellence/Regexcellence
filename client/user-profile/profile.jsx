@@ -44,7 +44,8 @@ class UserProfile extends React.Component {
     let percent = '';
     let tutorialUrl = '';
     if (userInfo.tutorial_progress) {
-      if (userInfo.tutorial_progress.order === -1){
+      console.log('USER INFO', userInfo.tutorial_progress);
+      if (userInfo.tutorial_progress.order === -1) {
         percent = { width: '0%'};
         tutorialUrl = 'learn-your-abcs';
       } else {
@@ -85,9 +86,9 @@ class UserProfile extends React.Component {
                     <td>
                       <h1><span>{this.props.userInfo.name}</span></h1>
                       <div>
-                      <ChallengePieChart 
-                        completed_challenges={ completeLists }
-                      />
+                        <ChallengePieChart
+                          completed_challenges={ completeLists }
+                        />
                       </div>
                     </td>
                   </tr>
